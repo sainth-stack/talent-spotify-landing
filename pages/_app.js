@@ -1,4 +1,7 @@
 import '../styles/globals.css'
+import '../styles/section.css'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import { useEffect } from "react";
 import Layout from './Layout';

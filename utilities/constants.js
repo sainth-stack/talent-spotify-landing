@@ -123,10 +123,9 @@ export const list42 = [
 ]
 
 export const list1N = [
-  "Integrated with AI and ML technology, TalentSpotify's",
-  "platform gives you the birds eyes view of your team's",
-  "chosen objectives and the detailed clarity to identify",
-  "early errors and risks, and predict success of your Key Results."
+  "Use Extensive OKR Library",
+  "Predict success of your Key Results",
+  "Get a bird’s eye view of your Team",
 ]
 
 export const list2N = [

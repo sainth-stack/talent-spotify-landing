@@ -27,7 +27,7 @@ export function Nav({
   const showHiddenMobile = () => {
     document.getElementById("showMenuMobile").style.display = document.getElementById("showMenuMobile").style.display === "block" ? "none" : "block";
   }
-  return <div className={`justify-content-between align-items-center pt-2 pb-2 pl-3 ${!isMobile ? 'd-flex' : 'p-3 '}`} style={{ background: isMobile ? "white" : (router.pathname === "/" ? "#e8e1d5" : "#2A8981"), boxShadow: isMobile ? "0px 2px 4px 0px #00000014" : "", position: 'fixed', top: 0, right: 0, left: 0, zIndex: 999 }}>
+  return <div className={`justify-content-between align-items-center pt-2 pb-2 pl-3 ${!isMobile ? 'd-flex' : 'p-3 '}`} style={{ background: isMobile ? "white" : (router.pathname === "/" ? "#FFFFFF" : "#2A8981"), boxShadow: isMobile ? "0px 2px 4px 0px #00000014" : "", position: 'fixed', top: 0, right: 0, left: 0, zIndex: 999 }}>
     {!isMobile && <Logo logoImg="2" textColor={textColor ? true : false} />}
     {/*<AnchorLink title="About us" path="/aboutus" />*/}
     <div className="d-none d-lg-flex flex-wrap justify-content-start align-items-center">
@@ -71,10 +71,10 @@ export function Nav({
     </div>
     <div className="d-none d-lg-flex">
       {/*<AnchorLink title="About us" path="/aboutus" textColor={textColor} />*/}
-      <Button className={`border-green ${bgColor ? 'bg-white' : 'bg-green'} ${textColor ? 'text-green' : 'text-white'}`} text='Free Trial & Consultancy' handleClick={() => handleClick2()} />
+      <Button style={{ background: 'white', border: 'none' }} text='Login' handleClick={() => window.open('https://www.talentspotifyapp.com/login', '_blank')} />
 
 
-      <Button className={`border-green bg-white text-green`} text='Schedule Demo' onClick={() => handleClick()} />
+      <Button className={`text-white`} text='Start for Free' style2={{ background: '#083C62', border: 'none' }} onClick={() => handleClick()} />
 
     </div>
   </div >;

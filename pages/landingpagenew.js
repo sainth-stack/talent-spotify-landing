@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import Navigation from '../Components/navigationNew';
-import { Content } from '../Components/Content1';
+import { Content } from '../Components/new-dashboard/Content1';
 import Footer from '../Components/Footer';
-import image1 from '../assets/svg/image1.svg'
-import image2 from '../assets/svg/image2.svg'
-import image3 from '../assets/svg/image3.svg'
-import image4 from '../assets/svg/image4.svg'
-import image7 from '../assets/svg/image7.svg'
-import { list1N, list11N, list2N, list21N, list31N, list32N, list41N, list42N, listHN } from '../utilities'
 import { useRef } from 'react';
 import MobileFooter from '../Components/mobile-version/MobileFooter';
 import useWindowSize from "../utilities/UseWindowSize";
@@ -15,6 +9,7 @@ import { Home } from '../Components/mobile-version/Home';
 import { OKR } from '../Components/mobile-version/okr';
 import HowItWorks from '../Components/mobile-version/HowItWorks';
 import Awards from '../Components/mobile-version/Awards';
+import { list1 } from '../utilities/data';
 export default function LandingPageNew() {
   const [showPopup, setShowPopup] = useState(false);
   const [showTrail, setShowTrail] = useState(false);
@@ -42,7 +37,7 @@ export default function LandingPageNew() {
         <OKR forwardRef={okrRef} />
         <HowItWorks forwardRef={howItWorksRef} />
         <Awards forwardRef={awardsRef} showPopup={() => setShowPopup(true)} showFreeTrail={() => setShowTrail(true)} />
-      </div> : <Content forwardRef={myRef} image1={image1} image6={""} listH={listHN} list1={list1N} list2={list2N} list11={list11N} list21={list21N} image2={image2} image3={image3} list31={list31N} list32={list32N} list41={list41N} list42={list42N} image4={image4} image5={""} list51={""} list52={""} image7={image7} showPopup={() => setShowPopup(true)} showFreeTrail={() => setShowTrail(true)} />
+      </div> : <Content forwardRef={myRef} data={list1} showPopup={() => setShowPopup(true)} showFreeTrail={() => setShowTrail(true)} />
       }
       {isMobile ? <MobileFooter homerefScroll={homerefScroll} okrrefScroll={okrrefScroll} howItWorksScroll={howItWorksScroll} awardsScroll={awardsScroll} /> : <Footer />}
     </div >
