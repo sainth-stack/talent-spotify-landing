@@ -1,20 +1,13 @@
-import okrIcon from "../assets/svg/okrIcon.svg";
-import rewardsIcon from "../assets/svg/rewardsIcon.svg";
-import recognitionIcon from "../assets/svg/recognitionIcon.svg";
-import reviewsIcon from "../assets/svg/reviewsIcon.svg";
-import swotIcon from "../assets/svg/swotIcon.svg";
-import blogIcon from "../assets/svg/blogIcon.svg";
-import webinarsIcon from "../assets/svg/webinarsIcon.svg";
-import okrExampleIcon from "../assets/svg/okrExampleIcon.svg";
+import okrIcon from "../assets/images/new-dashboard/nav1.svg";
+import rewardsIcon from "../assets/images/new-dashboard/nav2.svg";
+import recognitionIcon from "../assets/images/new-dashboard/nav3.svg";
+import reviewsIcon from "../assets/images/new-dashboard/nav4.svg";
+import blogIcon from "../assets/images/new-dashboard/nav5.svg";
+import webinarsIcon from "../assets/images/new-dashboard/nav6.svg";
 import careersIcon from "../assets/svg/careersIcon.svg";
 import pressIcon from "../assets/svg/pressIcon.svg";
-import releasesIcon from "../assets/svg/releasesIcon.svg";
 import contactusIcon from "../assets/svg/contactusIcon.svg";
-import banner1 from "../assets/svg/banner1.svg";
-import banner2 from "../assets/svg/banner2.svg";
-import banner3 from "../assets/svg/banner3.svg";
 import emptyBox from "../assets/svg/emptyBox.svg";
-
 
 export const WRONG_PASSWORD =
   "Password must contain 1 Alphabet, 1 Special Character, 1 Number. Min 8 and Max 16 character length only allowed.";
@@ -46,7 +39,7 @@ export const dummyData = [
 ]
 
 export const dummyPricing = [
-  { key: "Pricing", label: "Pricing", value: "pricing", icon: emptyBox, path: "/pricing" },
+  { key: "Pricing", label: "Pricing", value: "pricing", path: "/pricing" },
 ]
 export const dummyCompanyNav = [
   { key: "About Us", label: "About Us", value: "aboutus", icon: rewardsIcon, path: "/aboutus" },

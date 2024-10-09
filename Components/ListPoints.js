@@ -42,13 +42,14 @@ export default function ListPoints({
         ))}
       </ul>
       <div style={{ marginTop: '24px', display: 'flex', gap: '20px' }}> {/* Gap between header and buttons */}
-        <Button handleClick={()=>showPopup(true)} text="Book a Demo" style={{
+        <Button handleClick={()=>showPopup(true)} className="" text="Book a Demo" style2={{
           width: '178px',
           height: '40px',
           padding: '6px 32px',
-          borderRadius: '46px 0px 0px 0px',
+          borderRadius: '46px',
           border: '2px solid #083C62',
-          opacity: 1 // Set to 1 for visibility
+          opacity: 1, // Set to 1 for visibility
+          background:'transparent'
         }}>
 
         </Button>

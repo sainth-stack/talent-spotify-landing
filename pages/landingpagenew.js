@@ -28,7 +28,7 @@ export default function LandingPageNew() {
 
   const isMobile = useWindowSize();
   return (
-    <div className='bg-white' style={{ height: '100vh', overflow: 'auto' }}>
+    <div className='' style={{ height: '100vh', overflow: 'auto',background:'#EAE3D6' }}>
       <Navigation showPopup={showPopup} executeScroll={executeScroll} showDemo={showTrail} setShowPopup={() => setShowPopup(false)} setShowDemo={setShowTrail} />
       {isMobile ? <div className='p-3' style={{ marginTop: "80px", marginBottom: '80px' }}>
         <div ref={homeRef}>

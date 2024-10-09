@@ -10,7 +10,7 @@ export default function Logo({ logoImg = "1", textColor }) {
       <a className="text-decoration-none">
         <div className="d-flex align-items-center">
           <Image
-            src={logoImg === "2" && !textColor ? LogoBlack : LogoWhite}
+            src={logoImg === "2" && !textColor ? LogoBlack : LogoBlack}
             //width={70}
             //height={60}
             alt="applogo"

@@ -13,7 +13,7 @@ export const ShowMenuList = ({ menuList = [] }) => {
       {
         menuList.length > 0 && menuList.map((item, index) => (
           <Link href={item.path} key={index}><div className="d-flex align-items-center mb-1 heading-2 cursor-pointer menu-option">
-            <Image src={item.icon} alt="okr icon" className='productOption' />
+            {/* <Image src={item.icon} alt="okr icon" className='productOption' /> */}
             <span className="pl-2">{item.key}</span>
           </div></Link>
         ))

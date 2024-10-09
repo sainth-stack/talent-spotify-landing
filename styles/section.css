@@ -52,7 +52,7 @@
   padding: 6px 32px;
   border-radius: 55px;
   border: 2px solid #083C62;
-  background-color: white;
+  background-color: transparent;
   color: #083C62;
   font-size: 18px;
   font-weight: 600;
@@ -113,6 +113,8 @@
   /* Gap between the cards */
   border: 1px solid #e0e0e0;
   /* Optional: Add border for a cleaner look */
+  background-color: white !important;
+  box-shadow: 0px 1px 1px 0px #00000040;
   border-radius: 10px;
 }
 
