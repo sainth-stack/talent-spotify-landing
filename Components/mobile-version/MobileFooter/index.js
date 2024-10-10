@@ -22,10 +22,10 @@ const MobileFooter = (props) => {
   return (
     <div style={{ position: "fixed", bottom: "0%", width: "100%", zIndex: 1 }}>
       <nav className="m-footer">
-        <Link to="analyticsOverview" smooth={true} onClick={() => { setIsActObj({ ...actObj, analytics: 1, okrProgress: 0, howItWorks: 0, awards: 0 }); props.homerefScroll() }}><Image src={actObj.analytics === 1 ? dashboardFill : dashboard} alt="dashboard" /></Link>
-        <Link to="okrProgress" smooth={true} onClick={() => { setIsActObj({ ...actObj, analytics: 0, okrProgress: 1, howItWorks: 0, awards: 0 }); props.okrrefScroll() }}><Image src={actObj.okrProgress === 1 ? okrProgressFill : okrProgress} alt="okrProgress" /></Link>
-        <Link to="howItWorks" smooth={true} onClick={() => { setIsActObj({ ...actObj, analytics: 0, okrProgress: 0, howItWorks: 1, awards: 0 }); props.howItWorksScroll() }}><Image src={actObj.howItWorks === 1 ? howitworksfill : howitworks} alt="howitworks" /></Link>
-        <Link to="awards" smooth={true} onClick={() => { setIsActObj({ ...actObj, analytics: 0, okrProgress: 0, howItWorks: 0, awards: 1 }); props.awardsScroll() }}><Image src={actObj.awards === 1 ? awardsfill : awards} alt="awards" /></Link>
+        <Link to="analyticsOverview" smooth={true} onClick={() => { setIsActObj({ ...actObj, analytics: 1, okrProgress: 0, howItWorks: 0, awards: 0 }); props?.homerefScroll() }}><Image src={actObj.analytics === 1 ? dashboardFill : dashboard} alt="dashboard" /></Link>
+        <Link to="okrProgress" smooth={true} onClick={() => { setIsActObj({ ...actObj, analytics: 0, okrProgress: 1, howItWorks: 0, awards: 0 }); props?.okrrefScroll() }}><Image src={actObj.okrProgress === 1 ? okrProgressFill : okrProgress} alt="okrProgress" /></Link>
+        {/* <Link to="howItWorks" smooth={true} onClick={() => { setIsActObj({ ...actObj, analytics: 0, okrProgress: 0, howItWorks: 1, awards: 0 }); props?.howItWorksScroll() }}><Image src={actObj.howItWorks === 1 ? howitworksfill : howitworks} alt="howitworks" /></Link> */}
+        <Link to="awards" smooth={true} onClick={() => { setIsActObj({ ...actObj, analytics: 0, okrProgress: 0, howItWorks: 0, awards: 1 }); props?.awardsScroll() }}><Image src={actObj.awards === 1 ? awardsfill : awards} alt="awards" /></Link>
         {/* <Link to="celebrationList" smooth={true} onClick={() => setIsActObj({ ...actObj, analytics: 0, okrProgress: 0, celebrationList: 1, leaderBoard: 0 })}><Image src={actObj.celebrationList === 1 ? celebrationListFill : celebrationList} alt="celebrationList" /></Link>
         <Link to="leaderBoard" smooth={true} onClick={() => setIsActObj({ ...actObj, analytics: 0, okrProgress: 0, celebrationList: 0, leaderBoard: 1 })}><Image src={actObj.leaderBoard === 1 ? leaderBoardFill : leaderBoard} alt="leaderBoard" /></Link> */}
       </nav>

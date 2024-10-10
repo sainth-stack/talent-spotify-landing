@@ -45,6 +45,8 @@ export const list1 = [
         title: 'Insightful Employee Review',
         reverse: true,
         image: image4,
-        path:'/reviews'
+        path:'/reviews',
+        height:420,
+        width:280
     }
 ];

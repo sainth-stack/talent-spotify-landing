@@ -655,7 +655,7 @@ border-radius: 10px;
 .showMenu{
   display: none;
   position: absolute;
-  top:12%;
+  top:9%;
   z-index: 999;
   width:70%;
 }

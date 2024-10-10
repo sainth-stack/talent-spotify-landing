@@ -1,89 +1,61 @@
-import { NewMobileCard } from "./mobilecard"
-import card1 from '../../assets/svg/card1.svg'
-import card2 from '../../assets/svg/ngis.jpg'
-import card3 from '../../assets/svg/mediacover1.svg'
-// import main from '../../assets/svg/landingpage.svg'
-import Image from "next/image"
-import Button from "../Button"
+import React from 'react';
+import Image from 'next/image';
+import sectionImage from '../../assets/images/new-dashboard/section.png'; // Ensure the path is correct
+import play from '../../assets/images/new-dashboard/play.svg';
+
 export const Home = (props) => {
-  return <div className="" ref={props.forwardRef}>
-    <div style={{
-      background: '#EDF8F7',
-      borderRadius: "12px",
-      boxShadow: ' 0px 4px 4px 0px #0000000D',
-      padding: '15px 10px',
-    }}>
-      <h3 style={{ fontFamily: "Poppins", fontWeight: 500, fontSize: '18px', lineHeight: '27px', color: "#2A8881" }}>
-        AI & Behavioural Science-Powered Solutions for Optimizing Your Projects & Managing Your Workforce
-      </h3>
-      <h2 style={{
-        fontWeight: 600,
-        fontSize: '18px',
-        letter: '0.3px',
-        lineHeight: "27px",
-        color: 'black',
-        marginTop: '5%'
-      }}>
-        Supported by
-      </h2>
-      <div style={{ display: "flex" }}>
-        <NewMobileCard heading="Winner Next-Gen Startup Challenge" subHeading="Software Technology Parks of India - CHUNAUTI 2.0" image={card3} bgColor={"#2B294E"} width={"50%"} />
-        <div style={{ marginLeft: '15px' }}>
-          <NewMobileCard heading="Fastest Growing Start-Ups" subHeading="Next Generation Incubation Scheme" image={card2} bgColor={"black"} width={"90%"} />
+  return (
+    <div ref={props.forwardRef} style={{ padding: '15px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      {/* Section 1 content */}
+      <div className="text-content" style={{ textAlign: 'center', maxWidth: '90%', marginBottom: '20px' }}>
+        <h1 className="header" style={{ fontSize: '24px', fontWeight: '600' }}>
+          Unleash Your Team’s Potential with Our OKR Tool
+        </h1>
+        <p className="description" style={{ fontSize: '16px', margin: '10px 0' }}>
+          Transform your goal-setting process into a collaborative and engaging experience. Our OKR tool helps teams stay aligned and motivated.
+        </p>
+        <div className="button-group" style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '10px' }}>
+          <button
+            className="start-button"
+            onClick={() => props.showPopup(true)}
+            style={{ backgroundColor: '#2A8881', color: '#FFF', padding: '10px', border: 'none', borderRadius: '5px' }}
+          >
+            Start for Free
+          </button>
+          <button
+            className="demo-button"
+            onClick={() => props.showPopup(true)}
+            style={{ backgroundColor: '#FFF', color: '#2A8881', padding: '10px', border: '1px solid #2A8881', borderRadius: '5px' }}
+          >
+            Book a Demo
+          </button>
         </div>
-        <div style={{ marginLeft: '15px' }}>
-          <NewMobileCard heading="Top 4 Startups" subHeading="AP Innovation Society and A-Hub" image={card1} bgColor={"#0F9BD7"} width={"90%"} />
-        </div>
-      </div>
-      <div>
-        <div className="col-12 mt-2 bgImgNewMobile" style={{ height: "30vh" }}>
-          {/* <Image src={main} className="col-12" alt="main icon" /> */}
-        </div>
-        <h2 style={{ fontFamily: "Poppins", fontWeight: 400, fontSize: '14px', lineHeight: '23px', color: 'black' }}>
-          &quot;The system is straight forward for HR to manage their responsibilities, while also being user-friendly for managers and employees to utilize.&quot;
-        </h2>
-        <div className="d-flex justify-content-end flex-end">
-          <div>
-            <h5 style={{ fontFamily: "Poppins", fontSize: "13px", fontWeight: '700px', lineHeight: '20px', color: '#2A8981', p: 0, m: 0 }}>Joanna Prohaska</h5>
-            <h5 style={{ fontFamily: "Poppins", fontSize: "12px", lineHeight: "18px", fontWeight: 400, padding: 0, margin: 0 }}>HR Co-ordinator, OLLAA</h5>
-          </div>
-        </div>
-        <div style={{ display: "flex", justifyContent: "center", alignItems: 'center', marginTop: '10px' }}>
-          <div>
-            <h2 style={{
-              fontFamily: "Poppins",
-              fontWeight: 400,
-              fontSize: '12px',
-              lineHeight: '18px',
-              color: '#2A8981',
-              display: "flex", justifyContent: "center", alignItems: 'center',
-            }}>
-              What You Get
-            </h2>
-            <Button
-              className="border-1 border-white bg-green text-white w-90 pl-3 pr-3"
-              text="Watch TalentSpotify in action"
-              handleClick={() => props.executeScroll()}
+        <div className="watch-demo" style={{ display: 'flex', alignItems: 'center', marginTop: '10px' }}>
+          <span style={{ marginRight: '5px', fontSize: '12px' }}>Watch TalentSpotify in Action</span>
+          <button className="play-button" onClick={() => window.open('https://youtu.be/Z7lCNfJdpj4?si=4SmKQKEKcYI0iEbr', '_blank')}>
+            <Image
+              src={play}
+              alt="Play Video"
+              width={24}
+              height={24}
+              style={{ objectFit: 'cover', borderRadius: '10px' }}
             />
-          </div>
+          </button>
         </div>
       </div>
+
+      {/* Image section */}
+      <div className="image-content" style={{ maxWidth: '90%', textAlign: 'center' }}>
+        <Image
+          src={sectionImage}
+          alt="Section Illustration"
+          width={550}
+          height={400}
+          style={{ objectFit: 'cover', borderRadius: '10px', width: '100%', height: 'auto' }} // Ensures responsiveness
+        />
+      </div>
     </div>
-    <hr />
-    <div className='d-flex justify-content-center mt-2 mb-1'>
-      <Button
-        className="border-0 bg-green text-white mt-2 w-90 p-2"
-        style2={{ justifyContent: 'center', fontSize: '12px' }}
-        text="Free Trial & Consultancy"
-        handleClick={() => props.showFreeTrail()}
-      />
-      <Button
-        className="border-1 bg-white text-green mb-2 w-90"
-        style2={{ fontSize: '12px' }}
-        text="Schedule Demo"
-        handleClick={() => props.showPopup()}
-      />
-    </div>
-    <hr />
-  </div>
-}
+  );
+};
+
+export default Home;

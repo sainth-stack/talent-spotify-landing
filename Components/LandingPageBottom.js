@@ -8,7 +8,7 @@ import award4 from "../assets/images/new-dashboard/award4.png";
 import award5 from "../assets/images/new-dashboard/award5.png";
 import award6 from "../assets/images/new-dashboard/award6.png";
 
-const LandingPageBottom = () => {
+const LandingPageBottom = ({ awardsScroll }) => {
   const mediaCards = [
     {
       image: award1,
@@ -79,14 +79,32 @@ const LandingPageBottom = () => {
     slidesToShow: 4,
     slidesToScroll: 4,
     centerPadding: "0px",
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    // nextArrow: <SampleNextArrow />,
+    // prevArrow: <SamplePrevArrow />,
     autoplay: true,          // Enable auto-scrolling
     autoplaySpeed: 3000,     // Set the speed for auto-scrolling (in milliseconds)
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+        }
+      }
+    ]
   };
 
   return (
-    <div className='landing-page-bottom'>
+    <div className='landing-page-bottom' ref={awardsScroll}>
       <h3 className="landing-page-bottom__heading">
         <span>Awards and Media Coverage</span>
       </h3>

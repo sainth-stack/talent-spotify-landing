@@ -30,10 +30,10 @@ export default function ShowMenuMobile({ selectedType, handleClick, handleClick2
           <h3 className="heading-gray">RESOURCES</h3>
           <ShowMenuList menuList={dummyResources} />
         </div>
-        <div className='col-lg-4 col-md-12 col-xs-12 col-sm-12'>
+        {/* <div className='col-lg-4 col-md-12 col-xs-12 col-sm-12'>
           <h3 className="heading-gray">COMPANY</h3>
           <ShowMenuList menuList={dummyCompanyNav} />
-        </div>
+        </div> */}
         <div className='col-lg-4 col-md-12 col-xs-12 col-sm-12'>
           <h3 className="heading-gray">PRICING</h3>
           <ShowMenuList menuList={dummyPricing} />

@@ -3,10 +3,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 40px;
+  /* padding-left: 12.5%;
+  padding-right: 12.5%; */
 }
 
 .text-content {
   flex: 1;
+  width: 30% !important;
+  max-width: 30% !important;
 }
 
 .header {
@@ -93,6 +97,81 @@
   max-width: 600px;
   height: auto;
 }
+
+
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .section1-container {
+    flex-direction: column;
+    gap: 30px;
+    /* Adjusted gap for mobile */
+    padding: 20px;
+    /* Reduced padding for mobile */
+    margin-top: 20px;
+  }
+
+  .text-content {
+    max-width: 100% !important;
+    width: 100% !important;
+    text-align: center;
+    /* Centered text for mobile */
+  }
+
+  .header {
+    font-size: 32px;
+    /* Reduced font size for mobile */
+    line-height: 40px;
+  }
+
+  .description {
+    font-size: 18px;
+    /* Reduced font size for mobile */
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+
+  .button-group {
+    flex-direction: row;
+    /* Stack buttons vertically */
+    gap: 15px;
+    /* Adjusted gap between buttons */
+  }
+
+  .start-button,
+  .demo-button {
+    font-size: 12px;
+    width: 100%;
+    /* Full width buttons for mobile */
+  }
+
+  .watch-demo {
+    flex-direction: row;
+    /* Stack text and button vertically */
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: center;
+
+    span {
+      font-size: 16px !important;
+      /* Set the font size */
+    }
+  }
+
+  .image-content {
+    max-width: 100% !important;
+    text-align: center;
+    /* Center the image */
+  }
+
+  .imagePic {
+    width: 100%;
+    /* Full width image for mobile */
+    height: auto;
+    /* Maintain aspect ratio */
+  }
+}
+
 
 .landing-page-bottom {
   margin-top: 40px;
@@ -186,6 +265,54 @@
   padding: 10px;
 }
 
+@media (max-width: 768px) {
+  .landing-page-bottom {
+    padding-left: 10px;
+    margin-bottom: 30px !important;
+  }
+
+  .media-card {
+    width: 170px !important;
+  }
+
+  .media-card__image-container {
+    padding: 6px;
+  }
+
+  .media-card__content {
+    padding: 18px;
+    /* Adjusted inner padding */
+    text-align: left;
+    height: 170px;
+  }
+
+  .media-card__heading {
+    font-size: 14px !important;
+    line-height: 16px;
+  }
+
+  .media-card__subheading {
+    font-size: 10px !important;
+  }
+
+  .media-card__link {
+    text-align: right;
+    margin-top: 10px;
+  }
+
+  .media-card__link a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    text-decoration: none;
+    color: #007bff;
+  }
+
+  .slick-arrow {
+    display: none !important;
+  }
+}
 
 /* Section2.css */
 
@@ -234,7 +361,7 @@
   padding: 6px 32px;
   border: none;
   border-radius: 34px;
-  background:linear-gradient(0deg, #083C62, #083C62);
+  background: linear-gradient(0deg, #083C62, #083C62);
   color: #ffffff;
   font-family: 'Inter', sans-serif;
   font-size: 18px;
@@ -248,6 +375,7 @@
 .left-section .action-button:hover {
   opacity: 0.8;
 }
+
 .right-card {
   width: 719px;
   height: 237px;
@@ -262,9 +390,10 @@
 
 .profile-section {
   display: flex;
-  gap:20px;
+  gap: 20px;
   align-items: center;
-  margin-bottom: 20px; /* Space between profile and description */
+  margin-bottom: 20px;
+  /* Space between profile and description */
 }
 
 .profile-image {
@@ -309,6 +438,75 @@
   color: #333333;
 }
 
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .section-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    /* Reduce padding for smaller screens */
+  }
+
+  .right-card {
+    width: 100%;
+    /* Make the right card take full width on mobile */
+    height: auto;
+    /* Allow the height to adjust */
+    margin-top: 20px;
+    /* Add spacing above the card */
+  }
+
+  .profile-section {
+    flex-direction: column;
+    /* Stack profile image and details vertically */
+    align-items: flex-start;
+    /* Align items to the left */
+    gap: 10px;
+    /* Adjust gap for smaller screens */
+  }
+
+  .profile-image {
+    width: 60px;
+    /* Reduce image size */
+    height: 60px;
+    /* Reduce image size */
+  }
+
+  .name {
+    font-size: 20px;
+    /* Reduce name font size */
+  }
+
+  .title-text {
+    font-size: 16px;
+    /* Reduce title text size */
+  }
+
+  .card-content {
+    font-size: 16px;
+    /* Reduce card content font size */
+  }
+
+  .left-section .title {
+    font-size: 28px;
+    /* Reduce title size */
+  }
+
+  .left-section .left-desc {
+    font-size: 16px;
+    /* Reduce description size */
+  }
+
+  .left-section .action-button {
+    width: 100%;
+    /* Make button full width */
+    height: 40px;
+    /* Reduce button height */
+  }
+}
+
+
+
 
 
 /* footer */
@@ -348,6 +546,7 @@
         margin-bottom: 8px;
         color: #333;
         text-decoration: none;
+
         &:hover {
           text-decoration: underline;
         }
@@ -363,6 +562,7 @@
       margin-right: 15px;
       color: #333;
       transition: color 0.3s ease;
+
       &:hover {
         color: #1DA1F2;
       }
@@ -393,6 +593,7 @@
         font-weight: 400;
         color: #333;
         text-decoration: none;
+
         &:hover {
           text-decoration: underline;
         }
@@ -406,23 +607,29 @@
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  gap: 10px; /* Spacing between each link */
+  gap: 10px;
+  /* Spacing between each link */
 }
 
 .social-link {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #333; /* Adjust the color to fit your design */
+  color: #333;
+  /* Adjust the color to fit your design */
 }
 
 .social-icon {
-  font-size: 20px; /* Adjust the size of the icon */
-  min-width: 20px; /* Ensures that all icons have the same width */
-  margin-right: 10px; /* Space between icon and text */
+  font-size: 20px;
+  /* Adjust the size of the icon */
+  min-width: 20px;
+  /* Ensures that all icons have the same width */
+  margin-right: 10px;
+  /* Space between icon and text */
 }
 
 .social-name {
-  font-size: 16px; /* Adjust the size of the social media name */
+  font-size: 16px;
+  /* Adjust the size of the social media name */
   font-weight: 400;
 }

@@ -28,3 +28,8 @@
     align-items: center;
   }
   
+
+  .custom-padding{
+    padding-left: 120px !important;
+    padding-right: 120px !important;
+  }

@@ -47,7 +47,7 @@ export function Nav({
     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
   };
   const [openDropdown, setOpenDropdown] = useState(null);
-  return <div className={`justify-content-between align-items-center pt-2 pb-2 pl-3 ${!isMobile ? 'd-flex' : 'p-3 '}`} style={{ background: isMobile ? "white" : (router.pathname === "/" ? "#EAE3D6" : "#2A8981"), boxShadow: isMobile ? "0px 2px 4px 0px #00000014" : "", position: 'fixed', top: 0, right: 0, left: 0, zIndex: 999 }}>
+  return <div className={`justify-content-between align-items-center pt-2 pb-2 ${!isMobile ? 'd-flex custom-padding' : 'p-3 '}`} style={{ background: isMobile ? "white" : (router.pathname === "/" ? "#EAE3D6" : "#2A8981"), boxShadow: isMobile ? "0px 2px 4px 0px #00000014" : "", position: 'fixed', top: 0, right: 0, left: 0, zIndex: 999 }}>
     {!isMobile && <Logo logoImg="2" textColor={textColor ? true : false} />}
     {/*<AnchorLink title="About us" path="/aboutus" />*/}
     <div className="d-none d-lg-flex flex-wrap justify-content-start align-items-center">
@@ -68,46 +68,32 @@ export function Nav({
         }
         } />
       <Dropdown title="Pricing" selectedType={selectedType} bgColor={bgColor} options={dummyPricing}
-        isOpen={openDropdown === 'menu3'} 
-        handleToggle={() => handleDropdownToggle('menu3')} 
-      handleClick={() => {
-        setType("pricing");
-        showHidden()
-      }
-      } />
-      <Dropdown title="About Us" selectedType={selectedType} bgColor={bgColor} options={dummyCompany}
-        isOpen={openDropdown === 'menu4'} 
-        handleToggle={() => handleDropdownToggle('menu4')} 
-       handleClick={() => {
-        setType("company");
-        showHidden()
-      }
-      } />
+        isOpen={openDropdown === 'menu3'}
+        handleToggle={() => handleDropdownToggle('menu3')}
+        handleClick={() => {
+          setType("pricing");
+          showHidden()
+        }
+        } />
+      {/* <Dropdown title="About Us" selectedType={selectedType} bgColor={bgColor} options={dummyCompany}
+        isOpen={openDropdown === 'menu4'}
+        handleToggle={() => handleDropdownToggle('menu4')}
+        handleClick={() => {
+          setType("company");
+          showHidden()
+        }
+        } /> */}
 
-      {/*<Dropdown title="Our Approach" selectedType={selectedType} bgColor={bgColor} options={dummyCompany} handleClick={() => {
-        setType("approach");
-        showHidden()
-      }
-      } />*/}
-      {/*<a href="https://talent-spotify-frontend.vercel.app/auth/login" target="_blank" rel="noreferrer noopener">
-        <Button className='border-green bg-white text-green' text='Login' handleClick={() => null} />
-      </a>*/}
     </div>
     <div className="d-block d-lg-none d-flex">
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" onClick={() => showHiddenMobile()} aria-expanded="false" aria-label="Toggle navigation">
         <Image src={bgColor ? menuBarsWhite : menuBars} alt="menu" />
       </button>
       {isMobile && <div className="pl-3"><LogoMobile /></div>}
-      {/* <Button className={`border-green ${bgColor ? 'bg-white' : 'bg-green'} ${textColor ? 'text-green' : 'text-white'}`} text='Free Trail' handleClick={() => handleClick()} /> */}
-      {/*<Button className={`border-green ${bgColor ? 'bg-white' : 'bg-green'} ${textColor ? 'text-green' : 'text-white'}`} text='Menu' handleClick={() => showHidden()} />*/}
     </div>
     <div className="d-none d-lg-flex">
-      {/*<AnchorLink title="About us" path="/aboutus" textColor={textColor} />*/}
-      <Button style={{ background: 'white', border: 'none' }} text='Login' handleClick={() => window.open('https://www.talentspotifyapp.com/login', '_blank')} />
-
-
+      <Button style2={{ background: 'transparent', border: 'none' }} className="" text='Login' handleClick={() => window.open('https://www.talentspotifyapp.com/login', '_blank')} />
       <Button className={`text-white`} text='Start for Free' style2={{ background: '#083C62', border: 'none' }} onClick={() => handleClick()} />
-
     </div>
   </div >;
 }
