@@ -82,6 +82,13 @@
   cursor: pointer;
 }
 
+.demo-button:hover {
+  background: #083C62;
+  /* Background color on hover */
+  color: white;
+  /* Text color on hover */
+}
+
 .watch-demo {
   display: flex;
   align-items: center;
@@ -234,7 +241,7 @@
 .unique-button {
   width: 178px;
   height: 40px;
-  padding: 6px 32px;
+  padding: 6px 12px;
   border-radius: 46px;
   border: 2px solid #083C62;
   opacity: 1;

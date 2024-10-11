@@ -75,6 +75,7 @@ function List1({ image, title, list, reverse, path, showPopup, height, width }) 
           display: 'flex',
           flexDirection: 'column',
           alignItems: isMobile ? 'center' : 'flex-start', // Center items on mobile
+          
         }}
       >
         <div style={{ textAlign: isMobile ? 'center' : 'left', width: '100%' }}>{title}</div> {/* Center title on mobile */}

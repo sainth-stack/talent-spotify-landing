@@ -1841,6 +1841,7 @@ padding-top: -40px; */
   gap: 5px;
   /* Space between text and icon */
   color: #0C5FFF;
+  font-size: 16px;
   /* Color for the text */
 }
 

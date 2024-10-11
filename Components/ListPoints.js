@@ -13,7 +13,7 @@ export default function ListPoints({
   showPopup
 }) {
   return (
-    <div style={{ padding: '20px', borderRadius: '8px', textAlign: 'left' }}>
+    <div style={{ padding: '20px', borderRadius: '8px', textAlign: 'left',width:'100%' }}>
       <h2 style={{
         fontFamily: 'Lato',
         fontSize: '30px',
@@ -41,18 +41,15 @@ export default function ListPoints({
           </li>
         ))}
       </ul>
-      <div style={{ marginTop: '24px', display: 'flex', gap: '20px',width:'fit-content' }}> {/* Gap between header and buttons */}
+      <div style={{ marginTop: '24px', display: 'flex', gap: '16px' }}> {/* Gap between header and buttons */}
         <Button handleClick={() => showPopup(true)} className="unique-button" text="Book a Demo">
-
         </Button>
-
-        <a href={link} className="unique-link" style={{textDecoration:'none'}}>
+        <a href={link} className="unique-link" style={{ textDecoration: 'none' }}>
           <span>
             Learn more
           </span>
-          <Image src={arrow} alt="Arrow" width={18} height={18} style={{ }} />
+          <Image src={arrow} alt="Arrow" width={18} height={18} style={{}} />
         </a>
-
       </div>
     </div >
   );
