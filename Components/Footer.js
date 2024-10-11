@@ -6,18 +6,22 @@ import Image from 'next/image';
 export default function Footer() {
   return (
     <div style={{ padding: '0px 80px 30px 80px' }}>
+
       <footer className="footer-card">
+        <Image src={logo} alt="TalentSpotify Logo" style={{ marginBottom: '16px', marginTop: "" }} />
         <div className="footer-content">
+
           <div className="footer-column">
-            <Image src={logo} alt="TalentSpotify Logo" style={{ marginBottom: '16px' }} />
-            <Link href="/about"><a>About Us</a></Link>
+            <div className='flex flex-col '>
+
+              <Link href="/about" className='font-bold' ><h5 className=''>About Us</h5></Link></div>
             <Link href="/career"><a>Career</a></Link>
             <Link href="/login"><a>Login</a></Link>
             <Link href="/contact"><a>Contact Us</a></Link>
             <Link href="/pricing"><a>Pricing</a></Link>
           </div>
 
-          <div className="footer-column">
+          <div className="footer-column ">
             <h5>Products</h5>
             <Link href="/okr"><a>OKR</a></Link>
             <Link href="/rewards"><a>Rewards</a></Link>
@@ -25,7 +29,7 @@ export default function Footer() {
             <Link href="/reviews"><a>Reviews</a></Link>
           </div>
 
-          <div className="footer-column">
+          <div className="footer-column ">
             <h5>Resources</h5>
             <Link href="/blog"><a>Blog</a></Link>
             <Link href="/webinar"><a>Webinar</a></Link>
@@ -33,7 +37,7 @@ export default function Footer() {
             <Link href="/case-studies"><a>Case Studies</a></Link>
           </div>
 
-          <div className="footer-column">
+          <div className="footer-column ">
             <h5>Find us</h5>
             <div className="footer-social">
               <a href="https://www.facebook.com/Talentspotify" target="_blank" rel="noreferrer noopener" className="social-link">
