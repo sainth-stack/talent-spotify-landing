@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "PORT=5001 next dev",
     "build": "next build",
     "build-dev": "next build && next export",
     "deploy": "next build && next export && aws s3 sync out/ s3://talentspotifylanding.com --profile talentspotify.com",
