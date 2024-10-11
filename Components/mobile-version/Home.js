@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import sectionImage from '../../assets/images/new-dashboard/section.png'; // Ensure the path is correct
+// import sectionImage from '../../assets/images/new-dashboard/section.png'; // Ensure the path is correct
 import play from '../../assets/images/new-dashboard/play.svg';
 
 export const Home = (props) => {
@@ -46,13 +46,13 @@ export const Home = (props) => {
 
       {/* Image section */}
       <div className="image-content" style={{ maxWidth: '90%', textAlign: 'center' }}>
-        <Image
+        {/* <Image
           src={sectionImage}
           alt="Section Illustration"
           width={550}
           height={400}
           style={{ objectFit: 'cover', borderRadius: '10px', width: '100%', height: 'auto' }} // Ensures responsiveness
-        />
+        /> */}
       </div>
     </div>
   );

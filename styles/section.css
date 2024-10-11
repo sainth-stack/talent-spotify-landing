@@ -48,7 +48,26 @@
   font-weight: 600;
   border: none;
   cursor: pointer;
+  display: inline-flex;
+  /* Use flexbox for better alignment */
+  justify-content: center;
+  /* Center the text horizontally */
+  align-items: center;
+  /* Center the text vertically */
 }
+
+.start-button span {
+  display: inline-block;
+  /* Ensure span takes up space for transform */
+  transition: transform 0.3s ease;
+  /* Smooth transition for the hover effect */
+}
+
+.start-button:hover span {
+  transform: translateX(-10px);
+  /* Move the text to the right on hover */
+}
+
 
 .demo-button {
   width: 202px;
@@ -97,6 +116,145 @@
   max-width: 600px;
   height: auto;
 }
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: none !important;
+
+  &:hover {
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4);
+    /* Box shadow appears on hover */
+    /* transform: scale(1.02); */
+    /* Slight scaling of the entire container */
+
+    .play-image-container {
+      .play-image {
+        transform: scale(1.1);
+        /* Play button scaling on hover */
+      }
+    }
+
+    .top-right-image {
+      transform: translate(10px, -20px) scale(1.05);
+      /* Top-right image movement */
+    }
+
+    .bottom-left-image {
+      transform: translate(-10px, 30px) scale(1.05);
+      /* Bottom-left image movement */
+    }
+  }
+
+  .main-image-wrapper {
+    position: relative;
+    box-shadow: none !important;
+
+    .main-image {
+      border-radius: 30px;
+      box-shadow: none !important;
+    }
+
+    .play-image-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+
+      .play-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: none !important;
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+
+  .top-right-image {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 5;
+    transition: transform 0.3s ease;
+
+    .corner-image {
+      border-radius: 8px;
+      width: 100px;
+      height: 100px !important;
+      box-shadow: none !important;
+    }
+  }
+
+  .bottom-left-image {
+    position: absolute;
+    bottom: -30px;
+    left: 80px;
+    z-index: 5;
+    transition: transform 0.3s ease;
+
+    .corner-image {
+      border-radius: 8px;
+      width: 150px;
+      height: 100px;
+      box-shadow: none !important;
+    }
+  }
+}
+
+
+.video-wrapper {
+  position: relative;
+  width: 550px;
+  height: 360px;
+  background-color: black;
+  border-radius: 50px !important;
+}
+
+.close-button2 {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 20;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: red;
+  }
+}
+
+.unique-button {
+  width: 178px;
+  height: 40px;
+  padding: 6px 32px;
+  border-radius: 46px;
+  border: 2px solid #083C62;
+  opacity: 1;
+  /* Set to 1 for visibility */
+  background: transparent;
+  color: #083C62;
+  /* Text color */
+  transition: background 0.3s ease, color 0.3s ease;
+  /* Smooth transition */
+}
+
+.unique-button:hover {
+  background: #083C62;
+  /* Background color on hover */
+  color: white;
+  /* Text color on hover */
+}
+
+
+
 
 
 
@@ -195,6 +353,19 @@
   background-color: white !important;
   box-shadow: 0px 1px 1px 0px #00000040;
   border-radius: 10px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  /* Smooth transition for the hover effect */
+  position: relative;
+  /* Set position for proper layering */
+}
+
+.media-card:hover {
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.3);
+  /* More pronounced shadow */
+  transform: translateY(-1px) scale(1.01);
+  /* Lift the card and scale it slightly */
+  z-index: 1;
+  /* Bring the card to the front */
 }
 
 .media-card__image-container {
@@ -263,6 +434,7 @@
   border-radius: 50%;
   color: white;
   padding: 10px;
+  display: none !important;
 }
 
 @media (max-width: 768px) {
@@ -313,6 +485,7 @@
     display: none !important;
   }
 }
+
 
 /* Section2.css */
 

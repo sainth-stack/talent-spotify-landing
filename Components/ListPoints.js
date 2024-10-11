@@ -7,7 +7,7 @@ import arrow from '../assets/images/new-dashboard/rightArrow.svg'; // Import you
 
 export default function ListPoints({
   heading,
-  link='/',
+  link = '/',
   subheading,
   list1 = [],
   showPopup
@@ -41,37 +41,19 @@ export default function ListPoints({
           </li>
         ))}
       </ul>
-      <div style={{ marginTop: '24px', display: 'flex', gap: '20px' }}> {/* Gap between header and buttons */}
-        <Button handleClick={()=>showPopup(true)} className="" text="Book a Demo" style2={{
-          width: '178px',
-          height: '40px',
-          padding: '6px 32px',
-          borderRadius: '46px',
-          border: '2px solid #083C62',
-          opacity: 1, // Set to 1 for visibility
-          background:'transparent'
-        }}>
+      <div style={{ marginTop: '24px', display: 'flex', gap: '20px',width:'fit-content' }}> {/* Gap between header and buttons */}
+        <Button handleClick={() => showPopup(true)} className="unique-button" text="Book a Demo">
 
         </Button>
 
-        <Link href={link} style={{
-          marginLeft: '10px',
-          fontFamily: 'Poppins',
-          fontSize: '18px',
-          fontWeight: 400,
-          lineHeight: '27px',
-          textAlign: 'center',
-          background: '#0C5FFF',
-          padding: '6px 12px',
-          borderRadius: '4px',
-          color: '#FFFFFF' // Assuming white text color for the button
-        }}>
-          <span style={{ display: 'flex', alignItems: 'center', color: '#0C5FFF', gap: '5px', cursor: 'pointer' }}> {/* Wrap children in a span */}
+        <a href={link} className="unique-link" style={{textDecoration:'none'}}>
+          <span>
             Learn more
-            <Image src={arrow} alt="Arrow" width={18} height={18} style={{ marginLeft: '4px' }} /> {/* Added marginLeft for gap */}
           </span>
-        </Link>
+          <Image src={arrow} alt="Arrow" width={18} height={18} style={{ }} />
+        </a>
+
       </div>
-    </div>
+    </div >
   );
 }
