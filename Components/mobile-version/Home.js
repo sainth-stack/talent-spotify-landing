@@ -14,9 +14,9 @@ export const Home = (props) => {
         <p className="description" style={{ fontSize: '16px', margin: '10px 0' }}>
           Transform your goal-setting process into a collaborative and engaging experience. Our OKR tool helps teams stay aligned and motivated.
         </p>
-        <div className="button-group" style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '10px' }}>
+        <div className="button-group " style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '10px' }}>
           <button
-            className="start-button"
+            className="start-button  animate_startFree"
             onClick={() => props.showPopup(true)}
             style={{ backgroundColor: '#2A8881', color: '#FFF', padding: '10px', border: 'none', borderRadius: '5px' }}
           >

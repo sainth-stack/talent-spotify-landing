@@ -1,3 +1,9 @@
+/* styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 *,body,html{
   font-family: Poppins;
   scroll-behavior: smooth;
@@ -1484,4 +1490,39 @@ color: #7D7987;
   border:2px solid #2A7A7B;
   height: 100px;
   margin-left:200px;
+}
+
+
+
+/* animation styles */
+
+.nav_item_animation:hover{
+  animation: nav_item_animation 1s ease;
+translate: -10px 0px;
+transition: .5s;
+
+animation: name duration timing-function delay iteration-count direction fill-mode;
+border-bottom: 2px solid rgb(1, 1, 1) !important  ;
+}
+.login_animation:hover{
+  background: #c3bcbc !important  ;
+  animation: nav_item_animation 1s ease;
+transition: .5s;
+
+
+  
+
+}
+.animate_startFree {
+  background-color: #d0d8dd important; 
+  border: none; 
+  padding: 10px 20px; 
+  transform: translateY(0); 
+  cursor: pointer; 
+}
+
+/* Hover effect */
+.animate_startFree:hover {
+  background-color: #FFD700; /* Change background color on hover */
+  transform: translateY(-2px); /* Move button slightly up on hover */
 }
