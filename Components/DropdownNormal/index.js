@@ -6,7 +6,7 @@ import React from 'react';
 export default function DropdownNormal({ title, options = [], isOpen, aniStyle, handleToggle }) {
   return (
     <div className='d-flex align-items-center position-relative nav_item_animation'>
-      <div className={`dropdown actionDropdown drop ml-3 mr-3 border-0    `}>
+      <div className={`dropdown actionDropdown drop ml-3 mr-3 border-0   font-bold `}>
         <button
           className={`dropdown-toggle border-0 bg-transparent fs-14 transition duration-300 ease-in-out 
              ${aniStyle} `}
