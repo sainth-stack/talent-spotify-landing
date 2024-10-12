@@ -7,7 +7,7 @@ import Link from 'next/link'
 import AnchorLink from "./AnchorLink";
 import menuBars from '../assets/svg/menuBars.svg';
 import menuBarsWhite from '../assets/svg/menuBarsWhite.svg';
-import { dummyCompany, dummyPricing, dummyProducts, dummyResources } from "../utilities";
+import { dummyCompany, dummyProducts, dummyResources } from "../utilities";
 import Image from "next/image";
 import { useRouter } from "next/router";
 export function Nav({
@@ -56,8 +56,7 @@ export function Nav({
         isOpen={openDropdown === 'menu1'}
         handleToggle={() => handleDropdownToggle('menu1')}
         handleClick={() => {
-          setType("product");
-          showHidden();
+
         }
         }
 
@@ -66,18 +65,26 @@ export function Nav({
         isOpen={openDropdown === 'menu2'}
         handleToggle={() => handleDropdownToggle('menu2')}
         handleClick={() => {
-          setType("resources");
-          showHidden()
+
         }
-        } />
-      <Dropdown title="Pricing" selectedType={selectedType} bgColor={bgColor} options={dummyPricing}
+        }
+      />
+      <Dropdown
+        title="Pricing"
+        selectedType={selectedType}
+        bgColor={""}
+        // options={dummyPricing}
         isOpen={openDropdown === 'menu3'}
-        handleToggle={() => handleDropdownToggle('menu3')}
+        handleToggle={() => {
+
+        }}
         handleClick={() => {
-          setType("pricing");
-          showHidden()
-        }
-        } />
+          router.push("/pricing");
+
+        }}
+      />
+
+
       {/* <Dropdown title="About Us" selectedType={selectedType} bgColor={bgColor} options={dummyCompany}
         isOpen={openDropdown === 'menu4'}
         handleToggle={() => handleDropdownToggle('menu4')}

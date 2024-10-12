@@ -38,9 +38,9 @@ export const dummyData = [
   { key: "Product2", label: "Product2", value: "Product2" },
 ]
 
-export const dummyPricing = [
+/* export const dummyPricing = [
   { key: "Pricing", label: "Pricing", value: "pricing", path: "/pricing" },
-]
+] */
 export const dummyCompanyNav = [
   { key: "About Us", label: "About Us", value: "aboutus", icon: rewardsIcon, path: "/aboutus" },
   { key: "Careers", label: "Careers", value: "careers", icon: careersIcon, path: "/careers" },

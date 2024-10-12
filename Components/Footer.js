@@ -15,7 +15,10 @@ export default function Footer() {
             <Image src={logo} alt="TalentSpotify Logo" style={{ marginBottom: '18px', }} className=' ' />
             <div className='flex flex-col mt-3'>
 
-              <Link href="/about" className='font-bold' ><a className=''>About Us</a></Link></div>
+              <Link href="/about" className='font-bold' >
+
+                <a className=''>About Us</a></Link>
+            </div>
             <Link href="/career"><a>Career</a></Link>
             <Link href="/login"><a>Login</a></Link>
             <Link href="/contact"><a>Contact Us</a></Link>
