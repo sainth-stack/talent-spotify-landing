@@ -52,14 +52,12 @@ export function Nav({
     {/*<AnchorLink title="About us" path="/aboutus" />*/}
     <div className="d-none d-lg-flex flex-wrap justify-content-start align-items-center ">
       <Dropdown title="Product" selectedType={selectedType} bgColor={bgColor} options={dummyProducts}
-
         isOpen={openDropdown === 'menu1'}
         handleToggle={() => handleDropdownToggle('menu1')}
         handleClick={() => {
 
         }
         }
-
       />
       <Dropdown title="Resources" selectedType={selectedType} bgColor={bgColor} options={dummyResources}
         isOpen={openDropdown === 'menu2'}
@@ -109,9 +107,6 @@ export function Nav({
         style2={{ background: '#083C62', border: 'none' }}
         onClick={() => handleClick()}
       />
-
-
-
     </div>
   </div >;
 }

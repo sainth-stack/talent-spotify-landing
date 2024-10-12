@@ -24,9 +24,8 @@ export const Section1 = ({ reverse = true, showPopup, homerefScroll }) => {
                     Everything that you need to achieve your goal in one place.
                 </p>
                 <div className="button-group">
-             
                     <button className="start-button" onClick={() => showPopup(true)}><span>Start for Free</span></button>
-                    <button className="unique-button" style={{ padding: '6px 32px', fontSize: '18px', height: '50px',width:'202px' }} onClick={() => showPopup(true)}>Book a Demo</button>
+                    <button className="demo-button" onClick={() => showPopup(true)}>Book a Demo</button>
                 </div>
                 <div className="watch-demo">
                     <span>14 days free trial. No credit card required</span>
