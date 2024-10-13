@@ -17,14 +17,18 @@ export const Section1 = ({ reverse = true, showPopup, homerefScroll }) => {
         setIsVideoPlaying(!isVideoPlaying);
     };
     return (
-        <div className="section1-container d-flex align-items-start justify-content-center mt-4 mb-4 pb-4" ref={homerefScroll}>
+        <div className="section1-container d-flex align-items-start w-full justify-content-center mt-4 mb-4 pb-4" ref={homerefScroll}>
             <div className="text-content" style={{ maxWidth: '50%', width: '30%' }}>
-                <h1 className="header">OKR Tool That Makes Your Team Projects Fun & Rewarding</h1>
-                <p className="description">
+                <h1 className="header  font-bold lg:font-normal lg:text-black">
+                    OKR Tool That Makes Your Team Projects Fun & Rewarding
+                </h1>
+
+
+                <p className="description sm:text-center sm:font-bold md:text-left ">
                     Everything that you need to achieve your goal in one place.
                 </p>
                 <div className="button-group">
-                    <button className="start-button" onClick={() => showPopup(true)}><span>Start for Free</span></button>
+                    <button className="start-button lg:!bg-red-500 sm:mx-2 hover:bg-blue-600 transition duration-200 ease-in" onClick={() => showPopup(true)}><span>Start for Free</span></button>
                     <button className="demo-button" onClick={() => showPopup(true)}>Book a Demo</button>
                 </div>
                 <div className="watch-demo">
@@ -32,7 +36,7 @@ export const Section1 = ({ reverse = true, showPopup, homerefScroll }) => {
                 </div>
             </div>
             <div
-                className="image-content m-0 p-0"
+                className="image-content m-0 p-0 "
                 style={{
                     maxWidth: '50%',
                     paddingRight: reverse ? '20px' : '0',
@@ -50,6 +54,7 @@ export const Section1 = ({ reverse = true, showPopup, homerefScroll }) => {
                         />
                     </div>
                     <iframe
+                        className='video'
                         width="550"
                         height="360"
                         src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
@@ -59,7 +64,7 @@ export const Section1 = ({ reverse = true, showPopup, homerefScroll }) => {
                         allowFullScreen
                     ></iframe>
                 </div> :
-                    <div className="image-container" onClick={() => handlePlayVideo()}>
+                    <div className="image-container sm:mx-20 lg:mx-0 xs:mx-0" onClick={() => handlePlayVideo()}>
                         {/* Base image with play button overlay */}
                         <div className="main-image-wrapper">
                             <Image

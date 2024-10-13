@@ -1864,3 +1864,53 @@ padding-top: -40px; */
 .unique-link:hover {
   gap: 12px
 }
+
+
+
+/* for tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .header {
+
+    font-weight: bold !important;
+    text-align: center !important;
+    margin: .3rem !important;
+
+  }
+
+  .description {
+    text-align: center !important;
+
+
+  }
+
+  .tablet_okr {
+    display: flex !important;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+
+
+
+  }
+
+  .left-section {
+    display: grid !important;
+    place-items: center !important;
+    width: 100vw !important;
+    color: red !important;
+  }
+
+  .action-button {
+    max-width: 10rem !important;
+
+  }
+
+
+.video-wrapper{  margin-left:4rem !important;
+}
+
+
+
+
+
+}

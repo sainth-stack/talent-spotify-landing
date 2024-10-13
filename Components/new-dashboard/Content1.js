@@ -37,7 +37,7 @@ function List1({ image, title, list, reverse, path, showPopup, height, width }) 
   const isMobile = useWindowSize();
   return (
     <div
-      className={`d-flex flex-wrap align-items-start justify-content-center mt-4 mb-4 pb-4 pt-4 ${reverse ? 'flex-row-reverse' : ''}`}
+      className={`d-flex flex-wrap sm:mx-20 md-mx-0 align-items-start justify-content-center mt-4 mb-4 pb-4 pt-4 ${reverse ? 'flex-row-reverse' : ''}`}
       style={{
         gap: '15%',
         marginTop: '5%',
@@ -45,13 +45,14 @@ function List1({ image, title, list, reverse, path, showPopup, height, width }) 
       }}
     >
       <div
-        className="m-0 p-0"
+        className="m-0 p-0  "
         style={{
           maxWidth: isMobile ? '100%' : '50%', // Full width on mobile
           paddingRight: reverse && !isMobile ? '20px' : '0',
           paddingLeft: !reverse && !isMobile ? '20px' : '0',
           display: 'flex',
-          justifyContent: 'center', // Center the image on mobile
+          justifyContent: 'center',
+
         }}
       >
         <Image
@@ -69,16 +70,17 @@ function List1({ image, title, list, reverse, path, showPopup, height, width }) 
         />
       </div>
       <div
+        className=""
         style={{
           maxWidth: isMobile ? '100%' : '50%',
           width: isMobile ? '100%' : '30%', // Full width on mobile
           display: 'flex',
           flexDirection: 'column',
           alignItems: isMobile ? 'center' : 'flex-start', // Center items on mobile
-          
+
         }}
       >
-        <div style={{ textAlign: isMobile ? 'center' : 'left', width: '100%' }}>{title}</div> {/* Center title on mobile */}
+        <div style={{ textAlign: isMobile ? 'center' : 'left', width: '100%' }} >{title}</div> {/* Center title on mobile */}
         <ListPoints
           heading={title}
           list1={list} // Assuming ListPoints accepts a prop for a single list

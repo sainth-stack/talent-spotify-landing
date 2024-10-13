@@ -48,47 +48,21 @@ const LandingPageBottom = ({ awardsScroll }) => {
     }
   ];
 
-
-
-  const SampleNextArrow = (props) => {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", top: "-10px", right: "10px" }}
-        onClick={onClick}
-      />
-    );
-  };
-
-  const SamplePrevArrow = (props) => {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", top: "-40px", right: "50px" }}
-        onClick={onClick}
-      > </div>
-    );
-  };
-
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500, // Adjust speed to a more appropriate value
+    speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
     centerPadding: "0px",
-    // nextArrow: <SampleNextArrow />,
-    // prevArrow: <SamplePrevArrow />,
-    autoplay: true,          // Enable auto-scrolling
-    autoplaySpeed: 3000,     // Set the speed for auto-scrolling (in milliseconds)
+    autoplay: true,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 3, // Show 3 slides at this breakpoint
+          slidesToScroll: 3,
           infinite: true,
         }
       },
@@ -108,15 +82,14 @@ const LandingPageBottom = ({ awardsScroll }) => {
       <h3 className="landing-page-bottom__heading">
         <span>Awards and Media Coverage</span>
       </h3>
-      <div className='p-2 pb-5'>
+      <div className='p-2 pb-5 award_tablet'>
         <Slider {...settings}>
           {mediaCards.map((mediaCard, index) => (
-            <div key={index} className=''>
+            <div key={index}>
               <div className="media-card">
                 <div className="media-card__image-container">
                   <Image src={mediaCard.image} alt="Card image" layout="intrinsic" className="media-card__image" />
                 </div>
-
                 <div className="media-card__content">
                   <p className="media-card__heading">{mediaCard.heading}</p>
                   <p className="media-card__subheading">{mediaCard.subHeading}</p>
