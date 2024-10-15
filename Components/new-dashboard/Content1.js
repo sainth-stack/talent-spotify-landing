@@ -7,6 +7,8 @@ import LandingPageBottom from "../LandingPageBottom";
 import { Section1 } from "./section1";
 import { Section2 } from "./section2";
 import useWindowSize from "../../utilities/UseWindowSize";
+import useTablet from './../../utilities/UseTabletView';
+
 export function Content({
   data,
   showPopup,
@@ -18,6 +20,7 @@ export function Content({
 }) {
   return (
     <div className="container-fluid mt-5 p-2">
+
       <Section1 showPopup={showPopup} homerefScroll={homerefScroll} />
       <div ref={okrrefScroll}>
         {data.map((item) => {
@@ -33,13 +36,20 @@ export function Content({
 }
 
 
+
+
+
 function List1({ image, title, list, reverse, path, showPopup, height, width }) {
-  const isMobile = useWindowSize();
+  const { isMobile } = useWindowSize();
+  const isTablet =useTablet()
   return (
+
+
+
     <div
-      className={`d-flex flex-wrap sm:mx-20 md-mx-0 align-items-start justify-content-center mt-4 mb-4 pb-4 pt-4 ${reverse ? 'flex-row-reverse' : ''}`}
+      className={`flex  md:flex-row md:gap-0   align-items-start justify-content-center mt-4 mb-4 pb-4 pt-4 ${reverse ? 'flex-row-reverse' : 'flex-row'}`}
       style={{
-        gap: '15%',
+        gap: isTablet ? "5%":'15%',
         marginTop: '5%',
         flexDirection: isMobile ? 'column' : 'row', // Stack items vertically on mobile
       }}
@@ -72,8 +82,8 @@ function List1({ image, title, list, reverse, path, showPopup, height, width }) 
       <div
         className=""
         style={{
-          maxWidth: isMobile ? '100%' : '50%',
-          width: isMobile ? '100%' : '30%', // Full width on mobile
+          maxWidth: isMobile ? '100%'  : '50%',
+          width: isMobile ? '100%' : isTablet ? '60%': '30%', // Full width on mobile
           display: 'flex',
           flexDirection: 'column',
           alignItems: isMobile ? 'center' : 'flex-start', // Center items on mobile

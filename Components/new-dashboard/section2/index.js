@@ -5,9 +5,9 @@ import Image from 'next/image';
 
 export const Section2 = () => {
     return (
-        <div className="section-container">
-            <div className="left-section ">
-                <h2 className="title">Satisfied Customers</h2>
+        <div className="section-container ">
+            <div className="left-section   ">  
+                <h2 className="title   ">Satisfied Customers</h2>
                 <p className="left-desc">
                     Hear from enterprises that prefer TalentSpotify
                 </p>

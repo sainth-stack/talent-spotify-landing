@@ -1869,7 +1869,7 @@ padding-top: -40px; */
 
 
 /* for tablets */
-@media (min-width: 768px) and (max-width: 1024px) {
+/* @media (min-width: 768px) and (max-width: 1024px) {
 
   .header {
     font-weight: bold !important;
@@ -1937,7 +1937,7 @@ padding-top: -40px; */
 }
 
  .okrMob{
-  /* margin-top: 2rem !important; */
+ 
   min-height: 40px !important;
 
   
@@ -1949,16 +1949,119 @@ padding-top: -40px; */
 }
 
 
-.tablet_login{
-  display: flex !important;
-  justify-items:flex-end !important  ;
+
+
+
+
 
 }
+ */
 
 
-/* .left-side-okr {
-  margin-top: -2rem !important;
-}  */
 
+
+
+ @media (min-width: 768px) and (max-width: 1024px) {
+    .section1-container {
+        display: flex !important;
+        justify-content: center; /* Centers content horizontally */
+        align-items: center;     /* Centers content vertically */
+        flex-direction: row !important;     /* Align the text and image side by side */
+        padding: 20px;           /* Optional: Adjust spacing */
+    }
+
+    .text-content {
+        max-width: 45%; /* Adjusting the width for better spacing */
+        padding: 0 20px; /* Optional: Add padding for better spacing */
+    }
+
+    .text-content > h1 {
+        font-size: 24px;   /* Medium font size */
+        font-weight: bold; /* Keep bold text */
+        margin: 0 !important; /* No extra margin */
+    }
+
+    .image-content {
+        max-width: 100%; /* Adjust width for balance */
+         /* Background color for image section */
+        padding: 20px; /* Optional: Padding for image section */
+        height: auto;  /* Auto height to adjust based on content */
+    }
+
+    .main-image-wrapper, .video-wrapper {
+        max-width: 100%; /* Full width within the image-content */
+        text-align: center;
+    }
+
+    .play-image-container {
+        position: absolute; /* Ensure the play button is centered */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .button-group {
+        display: flex;
+        gap: 10px; 
+    }
+   
+
+        .top-right-image {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        z-index: 5;
+        transition: transform 0.3s ease;
+    
 }
 
+    .bottom-left-image {
+        position: absolute;
+        bottom: -30px;
+        left: 80px;
+        z-index: 5;
+        transition: transform 0.3s ease;
+    
+}
+
+ .tablet_view{
+  background: #000;
+       display: flex !important;
+
+        justify-content: center; 
+        align-items: center;     
+        padding: 20px;  
+    }
+    .section-container{
+     display:grid !important;
+     place-items:center !important
+    }
+   
+ }
+
+
+
+ /* ipad pro */
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+   .button-group {
+        display: flex;
+
+        gap: 10px; 
+        
+    }
+    .button-group>button{
+      
+    padding:1rem ;
+    text-align:center !important;
+    width:fit-content; 
+    
+    }
+
+    .button-group>span{
+          width:fit-content; 
+
+    }
+
+
+}
