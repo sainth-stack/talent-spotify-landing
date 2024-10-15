@@ -40,18 +40,17 @@ export function Content({
 
 
 function List1({ image, title, list, reverse, path, showPopup, height, width }) {
-  const { isMobile } = useWindowSize();
+  const  isMobile  = useWindowSize();
   const isTablet =useTablet()
   return (
 
 
 
-    <div
-      className={`flex  md:flex-row md:gap-0   align-items-start justify-content-center mt-4 mb-4 pb-4 pt-4 ${reverse ? 'flex-row-reverse' : 'flex-row'}`}
+     <div
+      className={`flex mobile_view ${isMobile ? 'flex-col' : 'flex-row'} ${isTablet ? (reverse ? 'flex-row-reverse' : 'flex-row') : ''} md:gap-0 items-center justify-center mt-4 mb-4 pb-4 pt-4`}
       style={{
-        gap: isTablet ? "5%":'15%',
+        gap: isTablet ? "5%" : '15%',
         marginTop: '5%',
-        flexDirection: isMobile ? 'column' : 'row', // Stack items vertically on mobile
       }}
     >
       <div

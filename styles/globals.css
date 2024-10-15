@@ -2065,3 +2065,12 @@ padding-top: -40px; */
 
 
 }
+
+
+@media (max-width: 768px){
+  .mobile_view{
+    display:flex;
+    flex-direction:column !important;
+  }
+
+}
