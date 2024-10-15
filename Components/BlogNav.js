@@ -46,18 +46,18 @@ export default function BlogNav(props) {
   }, [props, orderModalShow])
   return (
     <div>
-      <div className="container p-0 m-0">
+      <div className="container p-0 m-0  ">
         <Nav dummyData={dummyData} selectedType={selectedType} setType={setType} handleClick={handleClick} bgColor="green" textColor="white" handleClick2={handleClick2} />
         <ShowMenu selectedType={selectedType} handleClick={handleClick} />
         <ShowMenuMobile selectedType={selectedType} handleClick={handleClick} />
-        <div className="d-flex flex-wrap justify-content-center align-items-center bannerHeight2 pb-5 mb-5">
-          <div className="col-lg-12 text-center pt-5 mt-5">
+        <div className="d-flex flex-wrap justify-content-center    align-items-center bannerHeight2 pb-5 mb-5 sm:-mt-3  ">
+          <div className="col-lg-12 text-center pt-5 mt-5 tablet_Header ">
             <h6 className="text-white pb-4 font-weight-bold ml-3 text-uppercase fs-22">
               {props.heading}
             </h6>
             {
               props?.subheading ? <h1 className="font-weight-bold text-white">{props?.subheading}</h1> :
-                <h1 className="font-weight-bold text-white">Where do we want to go? – O- Objective<br /> How will we know we’re actually getting there? – KR- Key Results</h1>
+                <h1 className="font-weight-bold text-white tablet_okr_text">Where do we want to go? – O- Objective<br /> How will we know we’re actually getting there? – KR- Key Results</h1>
             }
             {/* <h1 className="font-weight-bold text-white">Where do we want to go? – O- Objective<br/> How will we know we’re actually getting there? – KR- Key Results</h1> */}
           </div>

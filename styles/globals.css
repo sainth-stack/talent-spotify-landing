@@ -1869,8 +1869,8 @@ padding-top: -40px; */
 
 /* for tablets */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .header {
 
+  .header {
     font-weight: bold !important;
     text-align: center !important;
     margin: .3rem !important;
@@ -1879,8 +1879,6 @@ padding-top: -40px; */
 
   .description {
     text-align: center !important;
-
-
   }
 
   .tablet_okr {
@@ -1888,9 +1886,6 @@ padding-top: -40px; */
     flex-direction: column;
     justify-items: center;
     align-items: center;
-
-
-
   }
 
   .left-section {
@@ -1904,13 +1899,65 @@ padding-top: -40px; */
     max-width: 10rem !important;
 
   }
+  .bgOkr{
+    
+  }
 
 
-.video-wrapper{  margin-left:4rem !important;
+.video-wrapper{ 
+   margin-left:4rem !important;
 }
 
 
+.tablet_nav{
+  width: 100% !important;
+  
+}
 
+.bgOkr {
+  background-image: url("../assets/svg/bgOkr.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+}
+.tablet_okr_text{
+  padding:4rem !important;
+  color:red !important;
+}
+.tablet_Header{
+ margin-top: -4rem !important;
+}
+.tablet_bottom_okr{
+  width: 100vw !important;
+  height: auto !important;
+  display:flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+ .okrMob{
+  /* margin-top: 2rem !important; */
+  min-height: 40px !important;
+
+  
+}
+.okrMob{
+   margin-top: 2rem !important; 
 
 
 }
+
+
+.tablet_login{
+  display: flex !important;
+  justify-items:flex-end !important  ;
+
+}
+
+
+/* .left-side-okr {
+  margin-top: -2rem !important;
+}  */
+
+}
+

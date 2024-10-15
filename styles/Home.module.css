@@ -118,3 +118,18 @@
     flex-direction: column;
   }
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+ .okrMob{
+  margin-top: 2rem !important;
+  height: auto !important;
+
+  
+}
+.tablet_bottom_okr{
+  display:flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+}

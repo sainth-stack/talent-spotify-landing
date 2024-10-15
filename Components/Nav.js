@@ -47,10 +47,10 @@ export function Nav({
     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
   };
   const [openDropdown, setOpenDropdown] = useState(null);
-  return <div className={`justify-content-between align-items-center pt-2 pb-2 ${!isMobile ? 'd-flex custom-padding' : 'p-3 '}`} style={{ background: isMobile ? "white" : (router.pathname === "/" ? "#EAE3D6" : "#2A8981"), boxShadow: isMobile ? "0px 2px 4px 0px #00000014" : "", position: 'fixed', top: 0, right: 0, left: 0, zIndex: 999 }}>
+  return <div className={` tablet_nav justify-content-between align-items-center pt-2 pb-2 ${!isMobile ? 'd-flex custom-padding' : 'p-3 '}`} style={{ background: isMobile ? "white" : (router.pathname === "/" ? "#EAE3D6" : "#2A8981"), boxShadow: isMobile ? "0px 2px 4px 0px #00000014" : "", position: 'fixed', top: 0, right: 0, left: 0, zIndex: 999 }}>
     {!isMobile && <Logo logoImg="2" textColor={textColor ? true : false} />}
     {/*<AnchorLink title="About us" path="/aboutus" />*/}
-    <div className="d-none d-lg-flex flex-wrap justify-content-start align-items-center ">
+    <div className="d-none  d-lg-flex flex-wrap justify-content-start align-items-center ">
       <Dropdown title="Product" selectedType={selectedType} bgColor={bgColor} options={dummyProducts}
         isOpen={openDropdown === 'menu1'}
         handleToggle={() => handleDropdownToggle('menu1')}
@@ -99,7 +99,7 @@ export function Nav({
       </button>
       {isMobile && <div className="pl-3"><LogoMobile /></div>}
     </div>
-    <div className="d-none d-lg-flex ">
+    <div className=" tablet_login d-lg-flex ">
       <Button style2={{ background: 'transparent', border: 'none' }} className="bg-red-500 login_animation" text='Login' handleClick={() => window.open('https://www.talentspotifyapp.com/login', '_blank')} />
       <Button
         className={`text-white animate_startFree`}

@@ -52,10 +52,10 @@ export default function Home() {
               <p className='m-0 bisText'>Execution is everything</p>
             </div>
           </div> */}
-          <Image src={okrflow} alt="okrflow" className="okrMob" />
+          <Image src={okrflow} alt="okrflow" className="okrMob h-auto w-auto" />
 
         </div>
-        <div className=" d-flex flex-wrap align-items-start  mt-lg-5 mb-lg-5 pb-lg-5 pt-lg-5">
+        <div className=" d-flex flex-wrap align-items-start  mt-lg-5 mb-lg-5 pb-lg-5 pt-lg-5 tablet_bottom_okr">
           <div className="okrMob col-md-5  m-0 p-0">
             <Image src={okrMob} alt="okrMob" className="okrMob" />
           </div>
