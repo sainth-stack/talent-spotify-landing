@@ -260,7 +260,23 @@
   /* Text color on hover */
 }
 
+@media screen and (max-width: 1440px) {
 
+  .demo-button,
+  .start-button {
+    font-size: 16px;
+    padding: 6px 16px;
+  }
+
+  .unique-link {
+    font-size: 12px;
+    padding: 0px;
+
+    span {
+      font-size: 14px;
+    }
+  }
+}
 
 
 
@@ -703,7 +719,7 @@
   .footer-content {
     display: flex;
     justify-content: space-evenly;
-    
+
     margin-bottom: 30px;
 
     .footer-column {

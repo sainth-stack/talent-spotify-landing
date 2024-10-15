@@ -15,10 +15,8 @@ export default function ListPoints({
   return (
     <div
       className="tablet_okr"
-
       style={{ padding: '20px', borderRadius: '8px', textAlign: 'left', width: '100%' }}
     >
-
       <h2 style={{
         fontFamily: 'Lato',
         fontSize: '30px',
@@ -28,7 +26,7 @@ export default function ListPoints({
         margin: '0 0 24px 0' // Margin for spacing
       }}>{heading}</h2>
       {subheading && <p style={{ fontSize: '16px', color: '#666' }}>{subheading}</p>}
-      <ul style={{ listStyleType: 'none', padding: '0' }} className="tablet_okr">
+      <ul style={{ listStyleType: 'none', padding: '0' }} className="">
         {list1.map((item, index) => (
           <li key={index} style={{
             display: 'flex',

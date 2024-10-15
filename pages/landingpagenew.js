@@ -5,10 +5,6 @@ import Footer from '../Components/Footer';
 import { useRef } from 'react';
 import MobileFooter from '../Components/mobile-version/MobileFooter';
 import useWindowSize from "../utilities/UseWindowSize";
-import { Home } from '../Components/mobile-version/Home';
-import { OKR } from '../Components/mobile-version/okr';
-import HowItWorks from '../Components/mobile-version/HowItWorks';
-import Awards from '../Components/mobile-version/Awards';
 import { list1 } from '../utilities/data';
 export default function LandingPageNew() {
   const [showPopup, setShowPopup] = useState(false);

@@ -1912,7 +1912,8 @@ padding-top: -40px; */
 
 .tablet_nav{
   width: 100% !important;
-  
+  display: flex;
+
 }
 
 .bgOkr {

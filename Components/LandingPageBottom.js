@@ -59,10 +59,18 @@ const LandingPageBottom = ({ awardsScroll }) => {
     autoplaySpeed: 3000,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1440,
         settings: {
           slidesToShow: 3, // Show 3 slides at this breakpoint
           slidesToScroll: 3,
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2, // Show 3 slides at this breakpoint
+          slidesToScroll: 2,
           infinite: true,
         }
       },
