@@ -73,6 +73,7 @@ export function Nav({
         bgColor={""}
         // options={dummyPricing}
         isOpen={openDropdown === 'menu3'}
+        dropdown={false}
         handleToggle={() => {
 
         }}

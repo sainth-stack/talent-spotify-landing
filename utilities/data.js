@@ -46,7 +46,7 @@ export const list1 = [
         reverse: true,
         image: image4,
         path:'/reviews',
-        height:420,
-        width:280
+        height:400,
+        width:230
     }
 ];
