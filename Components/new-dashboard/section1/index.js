@@ -17,7 +17,7 @@ export const Section1 = ({ reverse = true, showPopup, homerefScroll }) => {
         setIsVideoPlaying(!isVideoPlaying);
     };
     return (
-        <div className="section1-container d-flex align-items-start w-full justify-content-center mt-4 mb-4 pb-4" ref={homerefScroll}>
+        <div className="section1-container d-flex align-items-center w-full justify-content-center mt-4 mb-4 pb-4" ref={homerefScroll}>
             <div className="text-content" style={{ maxWidth: '50%', width: '30%' }}>
                 <h1 className="header  font-bold lg:font-normal lg:text-black">
                     OKR Tool That Makes Your Team Projects Fun & Rewarding
