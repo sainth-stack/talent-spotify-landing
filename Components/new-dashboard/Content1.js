@@ -40,7 +40,7 @@ function List1({ image, title, list, reverse, path, showPopup, height, width }) 
       className={`d-flex flex-wrap sm:mx-20 md-mx-0 align-items-center justify-content-center mt-4 mb-4 pb-4 pt-4 ${reverse ? 'flex-row-reverse' : ''}`}
       style={{
         gap: '15%',
-        marginTop: '5%',
+        margin: 'auto',
         flexDirection: isMobile ? 'column' : 'row', // Stack items vertically on mobile
       }}
     >
