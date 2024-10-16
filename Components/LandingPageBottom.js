@@ -67,7 +67,7 @@ const LandingPageBottom = ({ awardsScroll }) => {
         }
       },
       {
-        breakpoint: 1024,
+        breakpoint: 102,
         settings: {
           slidesToShow: 2, // Show 3 slides at this breakpoint
           slidesToScroll: 2,
