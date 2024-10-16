@@ -38,13 +38,25 @@ export default function ShowMenuMobile({ selectedType, handleClick, handleClick2
           <h3 className="heading-gray">PRICING</h3>
           <ShowMenuList menuList={dummyPricing} />
         </div>
-        <div className='d-lg-none d-flex justify-content-center align-items-center'>
+        <div className='d-lg-none d-flex  flex-wrap justify-content-center align-items-center'>
           <Button className={`border-green bg-green text-white`} text='Free Trail' handleClick={() => handleClick2()} />
           <Button className='border-green bg-white text-green' text='Schedule Demo' handleClick={() => handleClick()} />
           {/*<a href="https://talent-spotify-frontend.vercel.app/auth/login" target="_blank" rel="noreferrer noopener">
             <Button className='border-green bg-white text-green' text='Login' handleClick={() => null} />
           </a>*/}
+          
+          <div className="flex">
+              <Button style2={{ background: 'transparent', border: 'none' }} className="bg-red-500 login_animation" text='Login' handleClick={() => window.open('https://www.talentspotifyapp.com/login', '_blank')} />
+      <Button
+        className={`text-white animate_startFree`}
+        text='Start for Free'
+        style2={{ background: '#083C62', border: 'none' }}
+        onClick={() => handleClick()}
+      />
+          </div>
         </div>
+
+         
       </div>
     </div>
   )
