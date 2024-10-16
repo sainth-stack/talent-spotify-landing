@@ -20,5 +20,5 @@ export default function useWindowSize() {
     
     return () => window.removeEventListener("resize", handleResize);
   }, []); 
-  return windowSize.width <= 1000;
+  return windowSize.width <= 768;
 }

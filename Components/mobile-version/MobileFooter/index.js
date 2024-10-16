@@ -20,7 +20,7 @@ const MobileFooter = (props) => {
     // leaderBoard: 0
   });
   return (
-    <div style={{ position: "fixed", bottom: "0%", width: "100%", zIndex: 1 }}>
+    <div style={{ position: "absolute", bottom: "0%", width: "100%", zIndex: 1 }}>
       <nav className="m-footer">
         <Link to="analyticsOverview" smooth={true} onClick={() => { setIsActObj({ ...actObj, analytics: 1, okrProgress: 0, howItWorks: 0, awards: 0 }); props?.homerefScroll() }}><Image src={actObj.analytics === 1 ? dashboardFill : dashboard} alt="dashboard" /></Link>
         <Link to="okrProgress" smooth={true} onClick={() => { setIsActObj({ ...actObj, analytics: 0, okrProgress: 1, howItWorks: 0, awards: 0 }); props?.okrrefScroll() }}><Image src={actObj.okrProgress === 1 ? okrProgressFill : okrProgress} alt="okrProgress" /></Link>

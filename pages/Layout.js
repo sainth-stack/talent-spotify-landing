@@ -1,5 +1,6 @@
 import ScrollToTop from "react-scroll-to-top";
 import Head from "next/head"; // Import the Head component from Next.js
+import Footer from "../Components/Footer";
 
 export default function Layout({ children }) {
   return (
@@ -11,6 +12,7 @@ export default function Layout({ children }) {
       </Head>
       <main>{children}</main>
       <ScrollToTop smooth color="#2A7A7B" />
+      
     </>
   );
 }

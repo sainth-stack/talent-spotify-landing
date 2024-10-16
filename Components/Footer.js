@@ -3,9 +3,12 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from 're
 import Link from 'next/link';
 import logo from '../assets/images/new-dashboard/logo.svg'
 import Image from 'next/image';
+import useWindowSize from '../utilities/UseWindowSize';
 export default function Footer() {
+
+  const  isMobile  = useWindowSize();
   return (
-    <div style={{ padding: '0px 80px 30px 80px' }}>
+    <div style={{ padding: isMobile ? '0px' : '0px 80px 30px 80px' }}>
 
       <footer className="footer-card">
 

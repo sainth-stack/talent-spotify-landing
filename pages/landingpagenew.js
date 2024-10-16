@@ -22,7 +22,7 @@ export default function LandingPageNew() {
   const awardsScroll = () => awardsRef.current?.scrollIntoView({ behavior: 'smooth' })
   // const itworksref=()=> ititWorksRefWorks.current.scrollIntoView()
 
-  const isMobile = useWindowSize();
+  const {isMobile} = useWindowSize();
   return (
     <div className='' style={{ height: '100vh', overflow: 'auto', background: '#EAE3D6' }}>
       <Navigation showPopup={showPopup} executeScroll={executeScroll} showDemo={showTrail} setShowPopup={() => setShowPopup(false)} setShowDemo={setShowTrail} />
