@@ -14,7 +14,7 @@ export function Content({
   forwardRef,
   homerefScroll,
   okrrefScroll,
-  awardsScroll
+  awardsScroll,
 }) {
   return (
     <div className="container-fluid mt-5 p-2">
@@ -22,37 +22,61 @@ export function Content({
       <div ref={okrrefScroll}>
         {data.map((item) => {
           return (
-            <List1 image={item.image} title={item.title} list={item.list} reverse={item.reverse} key={"any"} showPopup={showPopup} path={item.path} height={item.height} width={item.width} />
-          )
+            <List1
+              image={item.image}
+              title={item.title}
+              list={item.list}
+              reverse={item.reverse}
+              key={"any"}
+              showPopup={showPopup}
+              path={item.path}
+              height={item.height}
+              width={item.width}
+            />
+          );
         })}
       </div>
-      <LandingPageBottom showPopup={showPopup} showFreeTrail={showFreeTrail} awardsScroll={awardsScroll} />
+      <LandingPageBottom
+        showPopup={showPopup}
+        showFreeTrail={showFreeTrail}
+        awardsScroll={awardsScroll}
+      />
       <Section2 />
     </div>
   );
 }
 
-
-function List1({ image, title, list, reverse, path, showPopup, height, width }) {
+function List1({
+  image,
+  title,
+  list,
+  reverse,
+  path,
+  showPopup,
+  height,
+  width,
+}) {
   const isMobile = useWindowSize();
   return (
     <div
-      className={`d-flex flex-wrap sm:mx-20 md-mx-0 align-items-center justify-content-center mt-4 mb-4 pb-4 pt-4 ${reverse ? 'flex-row-reverse' : ''}`}
+      className={`d-flex flex-wrap sm:mx-20 md-mx-0 align-items-center justify-content-center mt-4 mb-4 pb-4 pt-4 ${
+        reverse ? "flex-row-reverse" : ""
+      }`}
       style={{
-        gap: '15%',
-        margin: 'auto',
-        flexDirection: isMobile ? 'column' : 'row', // Stack items vertically on mobile
+        gap: "15%",
+        margin: "auto",
+        flexDirection: isMobile ? "column" : "row", // Stack items vertically on mobile
       }}
     >
       <div
         className="m-0 p-0  "
         style={{
-          maxWidth: isMobile ? '100%' : '50%', // Full width on mobile
-          paddingRight: reverse && !isMobile ? '20px' : '0',
-          paddingLeft: !reverse && !isMobile ? '20px' : '0',
-          display: 'flex',
-          justifyContent: 'center',
-          width: 530
+          maxWidth: isMobile ? "100%" : "50%", // Full width on mobile
+          paddingRight: reverse && !isMobile ? "20px" : "0",
+          paddingLeft: !reverse && !isMobile ? "20px" : "0",
+          display: "flex",
+          justifyContent: "center",
+          width: 530,
         }}
       >
         <Image
@@ -62,25 +86,27 @@ function List1({ image, title, list, reverse, path, showPopup, height, width }) 
           width={width ? width : 550} // You can adjust this based on your design
           height={height ? height : 350} // You can adjust this based on your design
           style={{
-            objectFit: 'cover',
-            borderRadius: '10px',
-            width: isMobile ? '100%' : 'auto', // Full width on mobile
-            height: isMobile ? 'auto' : 'auto', // Maintain aspect ratio on mobile
+            objectFit: "cover",
+            borderRadius: "10px",
+            width: isMobile ? "100%" : "auto", // Full width on mobile
+            height: isMobile ? "auto" : "auto", // Maintain aspect ratio on mobile
           }}
         />
       </div>
       <div
         className=""
         style={{
-          maxWidth: isMobile ? '100%' : '50%',
-          width: isMobile ? '100%' : '30%', // Full width on mobile
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: isMobile ? 'center' : 'flex-start', // Center items on mobile
-
+          maxWidth: isMobile ? "100%" : "50%",
+          width: isMobile ? "100%" : "30%", // Full width on mobile
+          display: "flex",
+          flexDirection: "column",
+          alignItems: isMobile ? "center" : "flex-start", // Center items on mobile
         }}
       >
-        <div style={{ textAlign: isMobile ? 'center' : 'left', width: '100%' }} >{title}</div> {/* Center title on mobile */}
+        <div style={{ textAlign: isMobile ? "center" : "left", width: "100%" }}>
+          {title}
+        </div>{" "}
+        {/* Center title on mobile */}
         <ListPoints
           heading={title}
           list1={list} // Assuming ListPoints accepts a prop for a single list
@@ -93,4 +119,3 @@ function List1({ image, title, list, reverse, path, showPopup, height, width }) 
 }
 
 export default List1;
-
