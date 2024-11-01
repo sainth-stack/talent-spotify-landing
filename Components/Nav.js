@@ -101,7 +101,7 @@ export function Nav({
       {isMobile && <div className="pl-3"><LogoMobile /></div>}
     </div>
     <div className="tablet_login d-lg-flex" style={{ display: isMobile ? 'none' : 'flex'}}>
-      <Button style2={{ background: 'transparent', border: 'none' }} className="bg-red-500 login_animation" text='Login' handleClick={() => window.open('https://www.talentspotifyapp.com/login', '_blank')} />
+      <Button style2={{ background: 'transparent', border: 'none' }} className="bg-red-500 login_animation" text='Login' handleClick={() => window.open('https://www.talentspotifyapp.com/auth/login', '_blank')} />
       <Button
         className={`text-white animate_startFree`}
         text='Start for Free'
