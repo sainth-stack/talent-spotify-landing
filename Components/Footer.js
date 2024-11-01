@@ -27,17 +27,17 @@ export default function Footer() {
               className=" "
             />
             <div className="flex flex-col mt-3">
-              <Link href="/about" className="font-bold">
+              <Link href="/aboutus" className="font-bold">
                 <a className="">About Us</a>
               </Link>
             </div>
-            <Link href="/career">
+            <Link href="/careers">
               <a>Career</a>
             </Link>
-            <Link href="/login">
+            <Link href="https://www.talentspotifyapp.com/auth/login">
               <a>Login</a>
             </Link>
-            <Link href="/contact">
+            <Link href="/contactus">
               <a>Contact Us</a>
             </Link>
             <Link href="/pricing">
