@@ -5,6 +5,8 @@ import image2 from ".././assets/svg/pricing2.svg";
 import image3 from ".././assets/svg/pricing3.svg";
 import Card3 from "../Components/Card3";
 import BlogNav from "../Components/BlogNav";
+import { features, plans } from "../Components/table/data";
+import FeatureTable from "../Components/table/FeatureTable";
 
 export default function Pricing() {
   const [showPopup, setShowPopup] = useState(false);
@@ -13,33 +15,32 @@ export default function Pricing() {
     description: "OKR + Rewards + Recognition",
     name: "$2",
     buttonText: "Try  For Free",
-    description2:
-      "Support by email and chat - $1 per employee/month (billed Annually)",
+    description2: "Plan Includes:",
     keypoints: [
-      "Fun social recognition and achievements",
-      "Engaging chat tool and intranet integrations",
-      "Easy-to-use mobile apps",
+      "Support by email and chat",
+      "Social recognition and achievements",
       "Actionable analytics",
       "Effortless global rewards",
+      "Effortless global rewards",
       "Automated recognition for work anniversaries and birthdays",
-      "Legendary customer support",
     ],
     image: image1,
   };
   const data2 = {
-    heading: "Pro Plan",
+    heading: "Pro",
     description: "Basic + Performance Review",
     name: "$3",
     buttonText: "Try It For Free",
     top: true,
-    description2:
-      "Dedicated  Account manager- $2 per employee/month (billed Annualy)",
+    description2: "Everything in Basic plus:",
     keypoints: [
-      "Bonusly Pro includes every Core feature, plus:",
+      "Dedicated Account manager",
       "Centralized company incentives and awards",
       "Configurable admin permissions",
       "Advanced reporting",
       "Incentivized employee feedback gathering",
+      "Performance review",
+      "1:1 Meetings",
     ],
     image: image2,
   };
@@ -48,19 +49,19 @@ export default function Pricing() {
     description: "Pro + Integration",
     name: "Contact us for Pricing",
     buttonText: "REQUEST A DEMO",
-    description2:
-      "Dedicated Account manager and priority service - $2.5 per employee/month (More than 1000 employees)",
+    description2: "Everything in Pro plus:",
     keypoints: [
-      "Bonusly Custom includes every Core & Pro feature, plus options for:",
+      "Dedicated Account manager and priority service",
       "99% guaranteed uptime SLA",
       "Dedicated support and consultation team",
       "Launch strategy and rollout support",
       "Manager resources and training",
       "Custom HRIS integrations",
+      "Custom integrations to KPI sources",
     ],
     image: image3,
   };
-  
+
   return (
     <div className="bg-[#EAE3D6] ">
       <div className="container">
@@ -88,6 +89,11 @@ export default function Pricing() {
           setShowPopup={setShowPopup}
           className="w-[300px] p-2"
         />
+      </div>
+
+      <h1 className="text-center">Compare our Plans</h1>
+      <div className="p-4">
+        <FeatureTable features={features} plans={plans} />
       </div>
 
       <Footer />

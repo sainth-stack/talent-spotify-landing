@@ -58,7 +58,7 @@ export default function BlogNav(props) {
         />
         <ShowMenu selectedType={selectedType} handleClick={handleClick} />
         <ShowMenuMobile selectedType={selectedType} handleClick={handleClick} />
-        <div className="d-flex flex-wrap justify-content-center    align-items-center bannerHeight2 pb-5 mb-2 sm:-mt-3  ">
+        <div className="d-flex flex-wrap justify-content-center    align-items-center  pb-5 mb-2 sm:-mt-3  ">
           <div className="col-lg-12 text-center pt-5 mt-5 tablet_Header ">
             {props?.subheading && (
               <h1 className="font-weight-bold text-black">

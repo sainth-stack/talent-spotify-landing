@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.try_for_free {
+  border: none; /* No border */
+  border-radius: 0.5rem; /* Rounded corners */
+  /* Padding for the button */
+  font-weight: bold; /* Bold text */
+  text-align: center; /* Center the text */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+/* Styles for when top is true */
+.try_for_free.top {
+  background-color: #083c61 !important; /* Initial background color for top */
+  color: white !important; /* Initial text color for top */
+}
+
+.try_for_free.top:hover {
+  background-color: transparent !important; /* Change background to transparent on hover */
+  color: #083c61 !important; /* Change text color to the initial background color on hover */
+}
+
+/* Styles for when top is false */
+.try_for_free:not(.top) {
+  background-color: transparent !important; /* Initial background color for not top */
+  color: #083c61 !important; /* Initial text color for not top */
+  border: 1px solid #083c61; /* Border for not top */
+}
+
+.try_for_free:not(.top):hover {
+  background-color: #083c61 !important; /* Change background to top color on hover */
+  color: white !important; /* Change text color to white on hover */
+  border: none; /* Remove border on hover */
+}
+
+.default {
+  margin: 0 !important;
+  padding: 0 !important;
+}
