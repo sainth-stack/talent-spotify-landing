@@ -7,6 +7,7 @@ import LandingPageBottom from "../LandingPageBottom";
 import { Section1 } from "./section1";
 import { Section2 } from "./section2";
 import useWindowSize from "../../utilities/UseWindowSize";
+
 export function Content({
   data,
   showPopup,
