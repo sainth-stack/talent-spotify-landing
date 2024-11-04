@@ -1,61 +1,54 @@
 import React from "react";
-import ListPoints from "./ListPointsAbout";
-import Image from "next/image";
-import about1 from "../../assets/svg/about1.svg";
-import about2 from "../../assets/svg/about2.svg";
-import about3 from "../../assets/svg/about3.svg";
-import about4 from "../../assets/svg/about4.svg";
-import yellowdot from "../../assets/svg/yellowdot.svg";
 import FinalAboutus from "../../Components/About/FinalAboutus";
+
 export function AboutOurValues() {
+  const ValueItem = ({ color, title, description, arrowColor }) => {
+    return (
+      <div className="flex flex-col items-center relative">
+        <div className={`${color} text-white px-6 py-2 rounded-md`}>{title}</div>
+        <p className="text-gray-600 mt-2 text-center ">{description}</p>
+        {/* <div className={`absolute w-0 h-0 border-l-8 border-l-transparent border-b-8 border-b-${arrowColor} -translate-y-6`}></div> */}
+      </div>
+    );
+  };
+
   return (
-    <div className="container-fluid mt-5 pt-lg-5">
+    <div className="container">
       <div className="d-flex flex-wrap justify-content-center">
         <FinalAboutus />
         <h1 className="text-center pb-4 mt-5 font-weight-bold">Our Values</h1>
-        <div className="text-center yellowdot2">
-          <Image src={yellowdot} alt="yellowdot" className="yellowDot" />
+
+        <div className="relative flex flex-col items-center mt-5">
+          
+         {/*  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 h-20 w-1 bg-gray-300"></div> */}
+
+          <div className="flex justify-around w-full mt-5">
+            <ValueItem 
+              color="bg-blue-400" 
+              title="Empathy" 
+              description="Empathy connects us with customers." 
+              arrowColor="blue-400"
+            />
+            <ValueItem 
+              color="bg-green-400" 
+              title="Customer First" 
+              description="Constantly enhancing positive customer experiences." 
+              arrowColor="green-400"
+            />
+            <ValueItem 
+              color="bg-purple-400" 
+              title="Winning Together" 
+              description="Driving innovative talent management solutions." 
+              arrowColor="purple-400"
+            />
+            <ValueItem 
+              color="bg-pink-400" 
+              title="Trustworthy" 
+              description="Ensuring trust in Talentpath's integrity." 
+              arrowColor="pink-400"
+            />
+          </div>
         </div>
-        <List2 image1={about1} heading="Empathy" list1={["Empathy helps us focus on listening. It forces us to reflect on our actions and words and it brings us closer together. We understand customer needs and their pains."]} list2={[]} />
-        <List1 image1={about2} heading="Winning Together" list1={["We are committed to creating unique, pioneering Talent management concepts which set trends and drive achievement of collective stakeholder goals."]} list2={[]} />
-        <List2 image1={about3} heading="Trustworthy" list1={["We will make sure that our customers build confidence in the integrity, reliability, and fairness of TalentSpotify."]} list2={[]} />
-        <List1 image1={about4} heading="Customer First" list1={["we always seeking ways to deliver a positive customer experience consistently and proactively by designing and delivering with the customer in mind."]} list2={[]} />
-      </div>
-    </div>
-  );
-}
-
-function List1({ image1, list1, list2, heading }) {
-  return (
-    <div className="d-flex flex-wrap align-items-start justify-content-center">
-
-      <div className="imagePic col-md-5">
-        <Image src={image1} alt="image1" className="imagePic" />
-      </div>
-      <ListPoints
-        heading={heading}
-        subheading=""
-        list1={list1}
-        list2={list2}
-      />
-    </div>
-  );
-}
-
-function List2({ image1, list1, list2, heading }) {
-  return (
-    <div className="d-flex flex-wrap align-items-start justify-content-center">
-      <div className="d-block d-lg-none imagePic col-md-5">
-        <Image src={image1} alt="image1" className="imagePic" />
-      </div>
-      <ListPoints
-        heading={heading}
-        subheading=""
-        list1={list1}
-        list2={list2}
-      />
-      <div className="d-none d-lg-block imagePic col-md-5">
-        <Image src={image1} alt="image1" className="imagePic" />
       </div>
     </div>
   );
