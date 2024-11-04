@@ -7,6 +7,9 @@ import Card3 from "../Components/Card3";
 import BlogNav from "../Components/BlogNav";
 import TermsConditions from "../Components/TermsConditions";
 import Reviews from "../Components/Reviews";
+import { reviewItems } from "../utilities/reviewData";
+import ReviewsAndCards from "../Components/Reviews";
+import ChatImg from "../assets/images/Chat.png";
 
 export default function Review() {
   const [showPopup, setShowPopup] = useState(false);
@@ -22,8 +25,12 @@ export default function Review() {
           styles="uppercase"
         />
       </div>
-      <div className="d-flex justify-content-center  ">
-        <Reviews />
+      <div className="d-flex justify-content-center ">
+        <ReviewsAndCards
+          reviewItems={reviewItems} 
+      
+          imageSrc={ChatImg} 
+        />
       </div>
       <Footer />
     </div>
