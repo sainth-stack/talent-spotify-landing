@@ -70,11 +70,11 @@ export default function Home() {
         />
       </div>
 
-      <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
+      <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 p-4">
         {mediaCards.map((mediaCard, index) => (
           <div
             key={index}
-            className="media-card border rounded-lg shadow-md  flex flex-col"
+            className="media-card border rounded-lg shadow-md flex flex-col w-full" // Added w-full here
           >
             <div className="media-card__image-container">
               <Image
@@ -84,11 +84,11 @@ export default function Home() {
                 className="media-card__image"
               />
             </div>
-            <div className="media-card__content flex-grow p-4">
-              <p className="media-card__heading font-bold text-lg mb-2 truncate">
+            <div className="media-card__content flex-grow">
+              <p className="media-card__heading font-bold text-lg mb-2 flex-wrap">
                 {mediaCard.heading}
               </p>
-              <p className="media-card__subheading text-gray-600 mb-4 truncate">
+              <p className="media-card__subheading text-gray-600 flex-wrap">
                 {mediaCard.subHeading}
               </p>
               <div className="media-card__link">

@@ -1,19 +1,19 @@
 // reviewData.js
 export const reviewItems = [
   {
-    heading:
+    answer:
       "Competency evaluation focuses on objective metrics, reducing subjective bias.",
   },
   {
-    heading:
+    answer:
       "Behavioral competency questions assessed by manager and peers, analyzed by Machine Learning for consolidated employee feedback.",
   },
   {
-    heading:
+    answer:
       "Emphasis on feed-forward guidance rather than traditional feedback.",
   },
   {
-    heading:
+    answer:
       "Pre-populated appraisal forms based on goal achievements and ongoing feedback throughout the year.",
   },
 ];

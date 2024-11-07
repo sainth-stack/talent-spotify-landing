@@ -25,13 +25,10 @@ export default function Review() {
           styles="uppercase"
         />
       </div>
-      <div className="d-flex justify-content-center ">
-        <ReviewsAndCards
-          reviewItems={reviewItems} 
-      
-          imageSrc={ChatImg} 
-        />
+      <div className="d-flex justify-content-center text-left mt-5 ">
+        <ReviewsAndCards reviewItems={reviewItems} imageSrc={ChatImg} />
       </div>
+
       <Footer />
     </div>
   );
