@@ -12,8 +12,8 @@ import { WebinarPastContent } from '../Components/WebinarComponents/WebinarPastC
 export default function WebinarMain() {
   const [showPopup, setShowPopup] = useState(false);
   return (
-    <div className='bg-whites bgWebinar'>
-      <Navigation showPopup={showPopup} setShowPopup={() => setShowPopup(false)} heading="Webinars" subheading="Weekdone webinars pack a ton of information in a short amount of time and give you actionable tips on how to make the most of OKRs." />
+    <div className='bg-[#ebe3d5] '>
+      <Navigation showPopup={showPopup} setShowPopup={() => setShowPopup(false)}  />
       <WebinarPastContent image1={image1} list1={list1} list2={list2} list11={list11} list21={list21} image2={image2} image3={image3} list31={list31} list32={list32} list41={list41} list42={list42} image4={image4} image5={image5} list51={list51} list52={list52} showPopup={() => setShowPopup(true)} />
       <Footer />
     </div >

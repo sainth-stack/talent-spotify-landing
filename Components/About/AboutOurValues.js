@@ -2,52 +2,63 @@ import React from "react";
 import FinalAboutus from "../../Components/About/FinalAboutus";
 
 export function AboutOurValues() {
-  const ValueItem = ({ color, title, description, arrowColor }) => {
+  const ValueItem = ({ color, descriptionColor, title, description }) => {
     return (
-      <div className="flex flex-col items-center relative">
-        <div className={`${color} text-white px-6 py-2 rounded-md`}>{title}</div>
-        <p className="text-gray-600 mt-2 text-center ">{description}</p>
-        {/* <div className={`absolute w-0 h-0 border-l-8 border-l-transparent border-b-8 border-b-${arrowColor} -translate-y-6`}></div> */}
+      <div className="flex items-center justify-center mb-4 w-full max-w-3xl mx-auto">
+        <div
+          className={` text-white font-semibold px-4 py-2 text-center rounded-lg `}
+          style={{
+            flex: "1 0 30%",
+            backgroundColor: color,
+          }}
+        >
+          {title}
+        </div>
+
+        <div
+          className={` px-4 py-2 text-gray-800 rounded-r-lg w-full`}
+          style={{
+            flexGrow: 1,
+            backgroundColor: descriptionColor,
+          }}
+        >
+          {description}
+        </div>
       </div>
     );
   };
 
   return (
-    <div className="container">
-      <div className="d-flex flex-wrap justify-content-center">
+    <div className="container mx-auto px-4">
+      <div className="text-center">
         <FinalAboutus />
-        <h1 className="text-center pb-4 mt-5 font-weight-bold">Our Values</h1>
+        <h1 className="text-center pb-4 mt-4 font-bold text-xl">Our Values</h1>
 
-        <div className="relative flex flex-col items-center mt-5">
-          
-         {/*  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 h-20 w-1 bg-gray-300"></div> */}
-
-          <div className="flex justify-around w-full mt-5">
-            <ValueItem 
-              color="bg-blue-400" 
-              title="Empathy" 
-              description="Empathy connects us with customers." 
-              arrowColor="blue-400"
-            />
-            <ValueItem 
-              color="bg-green-400" 
-              title="Customer First" 
-              description="Constantly enhancing positive customer experiences." 
-              arrowColor="green-400"
-            />
-            <ValueItem 
-              color="bg-purple-400" 
-              title="Winning Together" 
-              description="Driving innovative talent management solutions." 
-              arrowColor="purple-400"
-            />
-            <ValueItem 
-              color="bg-pink-400" 
-              title="Trustworthy" 
-              description="Ensuring trust in Talentpath's integrity." 
-              arrowColor="pink-400"
-            />
-          </div>
+        <div className="flex flex-col items-center w-full mb-4">
+          <ValueItem
+            color="#6f9ce3"
+            descriptionColor="#c7dcff"
+            title="Empathy"
+            description="Empathy connects us with customers."
+          />
+          <ValueItem
+            color="#fca59a"
+            descriptionColor="#ffdbd4"
+            title="Trustworthy"
+            description="Ensuring trust in TalentSpotify's integrity."
+          />
+          <ValueItem
+            color="#89ccae"
+            descriptionColor="#d4ffd6"
+            title="Customer First"
+            description="Consistently enhancing positive customer experiences."
+          />
+          <ValueItem
+            color="#c39ded"
+            descriptionColor="#f1e3ff"
+            title="Winning Together"
+            description="Driving innovative talent management solutions."
+          />
         </div>
       </div>
     </div>
