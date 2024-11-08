@@ -67,23 +67,12 @@ export default function BlogNav(props) {
             )}
             {/* <h6 className="text-white pb-4 font-weight-bold ml-3 text-uppercase fs-22">
               {props.heading}
-<<<<<<< HEAD
             </h6>
             {/* {
               props?.subheading ? <h1 className="font-weight-bold text-white">{props?.subheading}</h1> :
                 <h1 className="font-weight-bold text-white tablet_okr_text">Where do we want to go? – O- Objective<br /> How will we know we’re actually getting there? – KR- Key Results</h1>
             } */}
             {/* <h1 className="font-weight-bold text-white">Where do we want to go? – O- Objective<br/> How will we know we’re actually getting there? – KR- Key Results</h1> */}
-=======
-            </h6> */}
-
-            {/*  <h1 className="font-weight-bold text-white tablet_okr_text">
-                Where do we want to go? – O- Objective
-                <br /> How will we know we’re actually getting there? – KR- Key
-                Results
-              </h1>
-            )} */}
->>>>>>> 88675f4f386b1ee2e556d7020808c5698a756836
           </div>
         </div>
       </div>

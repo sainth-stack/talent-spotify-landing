@@ -261,7 +261,7 @@ export default function Contact() {
   return (
     <div className="main-contactus">
       <div className="card main-contact">
-        <h4 style={{ marginLeft: "320px",marginTop:'10px',fontWeight:'800px' }}>Get in touch with us </h4>
+        <h4 style={{ marginLeft: "320px",marginTop:'40px',fontWeight:'800px' }}>Get in touch with us </h4>
         <form onSubmit={handleSubmit}>
           <div>
             <input

@@ -1535,23 +1535,24 @@ textarea.form-control {
 }
 .main-contactus {
   width: 900px;
-  height: 800px;
-  margin-top: -150px;
-  border-color: 2px solid #0c5fff;
-  border-radius: 7px;
+  height: 850px;
+
+border:1px solid rgb(131, 188, 224);
+  border-radius:10px;
+  margin: 20px;
 }
 .checkbox7 {
   margin-left: 90px;
   margin-bottom: 20px;
 }
-.contact-button{
-  width:700px;
+.contact-button {
+  width: 700px;
   background-color: #16387ce3;
-  color:white;
-  margin-left:90px;
-  padding:15px;
+  color: white;
+  margin-left: 90px;
+  padding: 15px;
   border-radius: 7px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 .careerh {
   font-family: "Poppins";
