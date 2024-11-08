@@ -13,12 +13,12 @@ export default function Privacy() {
   const [showPopup, setShowPopup] = useState(false);
 
   return (
-    <div className='bg-white bgprivacynav'>
+    <div className='bg-[#EAE3D6]  '>
       <div className='container'>
         <BlogNav showPopup={showPopup} setShowPopup={() => setShowPopup(false)} heading="privacy policy" subheading="" />
 
       </div>
-      <div className='d-flex justify-content-center mt-lg-5 pt-lg-5 mb-lg-5 pb-lg-5 flex-wrap'>
+      <div className='d-flex justify-content-center container  flex-wrap'>
         <Privacypolicy />
       </div>
       <Footer />

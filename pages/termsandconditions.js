@@ -12,12 +12,12 @@ export default function Termsandconditions() {
   const [showPopup, setShowPopup] = useState(false);
 
   return (
-    <div className='bg-white bgtermnav'>
+    <div className='bg-[#EAE3D6]'>
       <div className='container'>
         <BlogNav showPopup={showPopup} setShowPopup={() => setShowPopup(false)} heading="Terms and Conditions" subheading="" />
 
       </div>
-      <div className='d-flex justify-content-center mt-lg-5 pt-lg-5 mb-lg-5 pb-lg-5'>
+      <div className='d-flex justify-content-center'>
         <TermsConditions />
       </div>
       <Footer />

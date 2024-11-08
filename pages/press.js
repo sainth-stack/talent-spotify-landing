@@ -1,35 +1,112 @@
-import React, { useState } from 'react';
-import Footer from '../Components/Footer';
-import Card from '../Components/CardBlogDetails';
-import image1 from '.././assets/images/thumb1.jpg'
-import image2 from '.././assets/images/thumb2.jpg'
-import image3 from '.././assets/images/thumb3.jpg'
-import BlogNav from '../Components/BlogNav';
-import Dropdown from '../Components/Dropdown';
+import React, { useState } from "react";
+import Image from "next/image";
+import Footer from "../Components/Footer";
+import BlogNav from "../Components/BlogNav";
+import award1 from "../assets/images/new-dashboard/award1.png";
+import award2 from "../assets/images/new-dashboard/award2.png";
+import award3 from "../assets/images/new-dashboard/award3.png";
+import award4 from "../assets/images/new-dashboard/award4.png";
+import award5 from "../assets/images/new-dashboard/award5.png";
+import award6 from "../assets/images/new-dashboard/award6.png";
+import spotlight from "../assets/images/spotlight.png";
+
 export default function Home() {
-  const options = [
-    { key: "Performance & Growth", value: "Performance & Growth" },
-    { key: "Performance", value: "Performance" },
-    { key: "Growth", value: "Growth" }
-  ]
+  const mediaCards = [
+    {
+      image: award1,
+      heading: "National HR Excellence Awards 24",
+      subHeading:
+        "Tata Consultancy Services recognized at the National HR Excellence Program",
+      link: "https://www.linkedin.com/posts/talentspotify_employeeengagement-hrawards-innovation-activity-7236591265268572160-0gk5?utm_source=share&utm_medium=member_desktop",
+    },
+    {
+      image: award2,
+      heading: "STPI Disburses Seed Fund",
+      subHeading:
+        "Submissions pouring in for businesses and startups looking for seed funding",
+      link: "https://startupstorymedia.com/stories-2023-07-talentspotify-startup-story/",
+    },
+    {
+      image: award3,
+      heading: "The Great Leaders Magazine",
+      subHeading:
+        "Featuring inspiring and influential HR leaders from across the world",
+      link: "https://gcpit.org/the-great-leaders-aug-2024-v09/",
+    },
+    {
+      image: award4,
+      heading: "Getting AI Into HR",
+      subHeading:
+        "Innovative methods in artificial intelligence transforming HR practices",
+      link: "https://www.viscan.in/getting-ai-into-hr/",
+    },
+    {
+      image: award5,
+      heading: "Fast-growing HR startups",
+      subHeading:
+        "Rapidly scaling HR tech startups leading innovation in the field",
+      link: "https://www.peoplematters.in/article/entrepreneurship-start-ups/fast-growing-hr-and-worktech-startups-to-track-at-people-matters-techhr-singapore-2022-34886",
+    },
+    {
+      image: award6,
+      heading: "Startup Story Media",
+      subHeading:
+        "Innovative solutions by renowned startup leaders and HR tech entrepreneurs",
+      link: "https://startupstorymedia.com/stories-2023-07-talentspotify-startup-story/",
+    },
+  ];
+
   const [showPopup, setShowPopup] = useState(false);
-  const heading1 = 'GETTING AI INTO HR'
-  const heading2 = 'Fast-growing HR and WorkTech startups that made a mark at People Matters TechHR India 2022'
-  const heading3 = 'STPI Disburses Seed Fund to Tech Start-ups for Scaling up their Ventures'
-  const subheading1 = `Employee retention is probably one of the biggest tasks and challenges a company has to deal with. Moreover if you have top performing employees one needs to be extra cautious in making sure they are happy and content with the organization. Despite HR’s best efforts many times you see companies lose out on good/talented employees because they have not been adequately recognized, awarded or heard.`
-  const subheading2 = 'This year at People Matters TechHR India 2022, we had a diverse line-up of the best HR and WorkTech startups such as Apli.ai, TalentSpotify, TRST Score, Intervue.io, Veremark, SenseLoaf Technologies, Swageazy and OpenOffers that focus on talent attraction and retention.'
-  const subheading3 = 'During Digital India Week 2022, Software Technology Parks of India (STPI) enabled funding to promising start-ups through the Next Generation Incubation Scheme (NGIS) and Centres of Entrepreneurship (CoEs) programs in order to enable the digital start-ups to scale operations and commercialize their products. In ongoing Digital India Week, 28 promising start-ups were provided seed fund/financial help of Rs. 342.5 Lakh.'
+
+  console.log(mediaCards.map((item) => item.image)); // Debugging: Check if mediaCards data is available
+
   return (
-    <div className='bg-white bgBlogDetails'>
-      <div className='container'>
-        <BlogNav showPopup={showPopup} setShowPopup={() => setShowPopup(false)} heading="Press" subheading="Get latest updates here..!" />
+    <div className="bg-[#ebe3d5] min-h-screen">
+      <div className="container mx-auto">
+        <BlogNav
+          showPopup={showPopup}
+          setShowPopup={() => setShowPopup(false)}
+          heading="Press"
+        />
       </div>
-      <div className='d-flex justify-content-center mt-lg-5 pt-lg-5 flex-wrap'>
-        <Card image={image1} heading={heading1} subheading={subheading1} url="https://www.viscan.in/getting-ai-into-hr/" />
-        <Card image={image2} heading={heading2} subheading={subheading2} url="https://www.peoplematters.in/article/entrepreneurship-start-ups/fast-growing-hr-and-worktech-startups-to-track-at-people-matters-techhr-singapore-2022-34886" />
-        <Card image={image3} heading={heading3} subheading={subheading3} url="https://www.sangritoday.com/spotlight/stpi-disburses-seed-fund-to-tech-start-ups-for-scaling-up-their-ventures" />
+
+      <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 p-4">
+        {mediaCards.map((mediaCard, index) => (
+          <div
+            key={index}
+            className="media-card border rounded-lg shadow-md flex flex-col w-full" // Added w-full here
+          >
+            <div className="media-card__image-container">
+              <Image
+                src={mediaCard.image}
+                alt="Card image"
+                layout="intrinsic"
+                className="media-card__image"
+              />
+            </div>
+            <div className="media-card__content flex-grow">
+              <p className="media-card__heading font-bold text-lg mb-2 flex-wrap">
+                {mediaCard.heading}
+              </p>
+              <p className="media-card__subheading text-gray-600 flex-wrap">
+                {mediaCard.subHeading}
+              </p>
+              <div className="media-card__link">
+                <a
+                  href={mediaCard.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:underline"
+                >
+                  View more &#62;
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
+
       <Footer />
-    </div >
-  )
+    </div>
+  );
 }

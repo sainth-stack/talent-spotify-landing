@@ -1,28 +1,35 @@
-import React, { useState } from 'react';
-import Footer from '../Components/Footer';
-import image1 from '.././assets/images/pricing1.png'
-import image2 from '.././assets/images/pricing2.png'
-import image3 from '.././assets/images/pricing3.png'
-import Card3 from '../Components/Card3';
-import BlogNav from '../Components/BlogNav';
-import TermsConditions from '../Components/TermsConditions';
-import Reviews from '../Components/Reviews';
-
+import React, { useState } from "react";
+import Footer from "../Components/Footer";
+import image1 from ".././assets/images/pricing1.png";
+import image2 from ".././assets/images/pricing2.png";
+import image3 from ".././assets/images/pricing3.png";
+import Card3 from "../Components/Card3";
+import BlogNav from "../Components/BlogNav";
+import TermsConditions from "../Components/TermsConditions";
+import Reviews from "../Components/Reviews";
+import { reviewItems } from "../utilities/reviewData";
+import ReviewsAndCards from "../Components/Reviews";
+import ChatImg from "../assets/images/Chat.png";
 
 export default function Review() {
   const [showPopup, setShowPopup] = useState(false);
 
   return (
-    <div className='bg-white bgReview'>
-      <div className='container'>
-        <BlogNav showPopup={showPopup} setShowPopup={() => setShowPopup(false)} heading="Review" subheading="One platform for all your employee performance and engagement" />
+    <div className="bg-[#ebe3d5]">
+      <div className="container ">
+        <BlogNav
+          showPopup={showPopup}
+          setShowPopup={() => setShowPopup(false)}
+          heading="Review"
+          subheading="One Platform For All Your Employee Performance And Engagement"
+          styles="uppercase"
+        />
+      </div>
+      <div className="d-flex justify-content-center text-left mt-5 ">
+        <ReviewsAndCards reviewItems={reviewItems} imageSrc={ChatImg} />
+      </div>
 
-      </div>
-      <div className='d-flex justify-content-center mt-lg-5 pt-lg-5 '>
-        <Reviews />
-      </div>
       <Footer />
-    </div >
-  )
-
+    </div>
+  );
 }

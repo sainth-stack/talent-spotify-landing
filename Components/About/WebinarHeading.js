@@ -2,7 +2,7 @@ import { Nav } from "../Nav";
 import React, { useEffect, useState } from "react";
 import { dummyData } from "../../utilities/constants";
 import "../../styles/Home.module.css";
-import ShowMenu from '../ShowMenu'
+import ShowMenu from "../ShowMenu";
 import RequestDemoPopup from "../requestDemoPopup";
 import axios from "axios";
 import ShowMenuMobile from "../ShowMenuMobile";
@@ -21,8 +21,10 @@ export default function WebinarsHeading(props) {
   };
   const handleCallback = async (childData) => {
     setLoading(true);
-    let response = await axios.post("https://talent-spotify-backend.vercel.app/api/landing/requestDemo", childData.data
-    )
+    let response = await axios.post(
+      "https://talent-spotify-backend.vercel.app/api/landing/requestDemo",
+      childData.data
+    );
     if (response.data.success) {
       setLoading(false);
       setOrderModalShow(false);
@@ -37,28 +39,40 @@ export default function WebinarsHeading(props) {
   };
   useEffect(() => {
     if (props.showPopup) {
-      setOrderModalShow(!orderModalShow)
+      setOrderModalShow(!orderModalShow);
     }
     if (!orderModalShow) {
       props.setShowPopup(false);
     }
-  }, [props, orderModalShow])
+  }, [props, orderModalShow]);
   return (
     <div>
       <div className="container">
-        <Nav dummyData={dummyData} selectedType={selectedType} setType={setType} handleClick={handleClick} bgColor="white" textColor="green" handleClick2={handleClick2} />
+        <Nav
+          dummyData={dummyData}
+          selectedType={selectedType}
+          setType={setType}
+          handleClick={handleClick}
+          handleClick2={handleClick2}
+          bgColor="white"
+          textColor="green"
+        />
         <ShowMenu selectedType={selectedType} handleClick={handleClick} />
         <ShowMenuMobile selectedType={selectedType} handleClick={handleClick} />
-        <div className="d-flex flex-wrap justify-content-center align-items-center bannerHeight2 pb-5 mb-5">
-          <div className="col-lg-12 text-center pt-5 mt-5">
+
+        <div className="d-flex flex-wrap justify-content-center align-items-center">
+          <div className="col-lg-12 text-center">
             <h6 className="text-white pb-4 font-weight-bold ml-3 text-uppercase fs-22">
               {props.heading}
             </h6>
-            <h1 className="font-weight-bold text-white mb-heading">{props.subheading}</h1>
+            <h1 className="font-weight-bold text-white mb-heading">
+              {props.subheading}
+            </h1>
           </div>
         </div>
       </div>
 
+      {/* Modals */}
       <RequestDemoPopup
         show={orderModalShow}
         onHide={() => setOrderModalShow(false)}
