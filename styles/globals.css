@@ -1521,7 +1521,8 @@ textarea.form-control {
   border-radius: 7px;
   border: 2px solid rgba(0, 0, 0, 0.686);
   margin-top: 30px;
-  margin-left: 90px;
+  margin: 20px;
+  margin-left: 70px;
 }
 .inner-contact2 {
   width: 700px;
@@ -1531,25 +1532,25 @@ textarea.form-control {
   margin-bottom: 40px;
   margin-top: 30px;
   border: 2px solid rgba(0, 0, 0, 0.686);
-  margin-left: 90px;
+  margin-left: 70px;
 }
 .main-contactus {
   width: 900px;
-  height: 850px;
+  height: 789px;
 
-border:1px solid rgb(131, 188, 224);
-  border-radius:10px;
+  border: 1px solid rgb(131, 188, 224);
+  border-radius: 10px;
   margin: 20px;
 }
 .checkbox7 {
-  margin-left: 90px;
+  margin-left: 70px;
   margin-bottom: 20px;
 }
 .contact-button {
   width: 700px;
   background-color: #16387ce3;
   color: white;
-  margin-left: 90px;
+  margin-left: 70px;
   padding: 15px;
   border-radius: 7px;
   margin-bottom: 40px;
@@ -1564,6 +1565,17 @@ border:1px solid rgb(131, 188, 224);
   /* padding-left: 550px;
 padding-bottom: 30px;
 padding-top: -40px; */
+}
+.Carer-heading {
+  display: flex;
+  background-color: #ebebeb;
+  justify-content: space-around;
+}
+.browse-file {
+  width: 710px;
+  margin-left: 65px;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .cbuttons {
