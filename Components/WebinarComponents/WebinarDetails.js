@@ -50,8 +50,8 @@ export default function WebinarDetails(props) {
         <Nav dummyData={dummyData} selectedType={selectedType} setType={setType} handleClick={handleClick} bgColor="green" textColor="white" handleClick2={handleClick2} />
         <ShowMenu selectedType={selectedType} handleClick={handleClick} />
         <ShowMenuMobile selectedType={selectedType} handleClick={handleClick} />
-        <div className="d-flex flex-wrap justify-content-center align-items-center bannerHeight2 pb-lg-5 mb-5">
-          <div className="col-lg-12 text-center pt-5 mt-5">
+        <div className="d-flex flex-wrap justify-content-center align-items-center ">
+          <div className="col-lg-12 text-center mt-4 ">
             <h3 className="font-weight-bold text-white pb-3">{props.mainheading}</h3>
             <h6 className={`text-white pb-4 font-weight-bold ml-3 ${props.type ? '' : 'text-uppercase fs-22'}`} style={{ fontSize: props?.type && "40px" }}>
               {props.heading}

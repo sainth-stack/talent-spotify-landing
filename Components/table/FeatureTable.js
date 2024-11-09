@@ -2,7 +2,7 @@ import React from "react";
 
 const FeatureTable = ({ features, plans }) => {
   return (
-    <div className="container-lg overflow-x-auto bg-white shadow-md p-4 pt-8">
+    <div className="container-lg overflow-x-auto my-3 bg-white shadow-md p-4 pt-8">
       <table className="min-w-full border border-gray-300">
         <thead className="bg-gray-100">
           <tr>

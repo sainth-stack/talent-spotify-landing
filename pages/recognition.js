@@ -1,25 +1,15 @@
 import React, { useState } from "react";
 import Footer from "../Components/Footer";
-import Image from "next/image";
 import BlogNav from "../Components/BlogNav";
-import Pie from "../Components/Pie";
-import yellowdot from "../assets/svg/yellowdot.svg";
-import mobRecog from "../assets/svg/mobRecog.svg";
-import RegCard from "../Components/RegCard";
-import regCard1 from "../assets/svg/regCard1.svg";
-import regCard2 from "../assets/svg/regCard2.svg";
-import regCard3 from "../assets/svg/regCard3.svg";
-import pie1 from "../assets/svg/Pie.svg";
-import pie2 from "../assets/svg/Pie2.svg";
-import pie3 from "../assets/svg/Pie3.svg";
-import recog_phone from "../assets/images/recog_phone.png";
-
 import Recognitions from "../Components/Recognitions";
+import { ProgressCircle } from "./../Components/Progress/ProgressCard";
+import { recognitionProgressData } from "../utilities/progressData";
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
+
   return (
-    <div className="bg-[#ebe3d5] ">
+    <div className="bg-[#ebe3d5]">
       <div className="container">
         <BlogNav
           showPopup={showPopup}
@@ -28,10 +18,27 @@ export default function Home() {
           subheading="Did you know that companies with highly engaged employees experience..."
         />
       </div>
-      <div className="d-flex justify-content-center  flex-wrap">
-        <Recognitions />
+
+      <div className="flex justify-evenly flex-wrap gap-6 p-6">
+        {recognitionProgressData.map((data, index) => (
+          <div
+            key={index}
+            className="flex flex-col justify-center items-center p-4"
+          >
+            <ProgressCircle
+              percentage={data.percentage}
+              text={data.text}
+              borderColor={data.borderColor || "border-gray-300"} // Fallback color if `borderColor` is not defined
+            />
+            {/* Directly placing the text under the circle */}
+            <div className="text-lg w-32 flex-wrap   text-center font-bold text-gray-700 mt-2">
+              {data.text}
+            </div>
+          </div>
+        ))}
       </div>
 
+      <Recognitions />
       <Footer />
     </div>
   );

@@ -72,7 +72,7 @@ export default function Pricing() {
         />
       </div>
 
-      <div className=" container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 justify-items-center">
+      <div className=" container grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-2 justify-items-center">
         <Card3
           data={data1}
           setShowPopup={setShowPopup}

@@ -8,7 +8,7 @@ export default function Card3({ data, top, setShowPopup }) {
   const fw = data.description === "Pro + Integration" ? "700" : "400";
   const lh = data.description === "Pro + Integration" ? "30" : "19.5";
   return (
-    <div className=" bg-white shadow-lg w-[300px] mb-5 mt-2 flex flex-col items-center justify-start rounded-lg border border-gray-300 p-4">
+    <div className=" bg-white shadow-lg w-[300px] mb-5 my-6 flex flex-col items-center justify-start rounded-lg border border-gray-300 p-4">
       {top && (
         <p className="text-center bg-gradient-to-r from-blue-500 via-indigo-600 to-purple-500 text-white rounded-full mt-[-3rem] font-bold p-2 text-sm w-full">
           MOST POPULAR PLAN
@@ -25,9 +25,8 @@ export default function Card3({ data, top, setShowPopup }) {
 
       <div className="m-2 p-2  mt-0 text-center w-full">
         <button
-          className={` try_for_free ${
-            top ? "top" : ""
-          } rounded-lg font-bold border p-2 transition duration-300 ease-in-out w-full
+          className={` try_for_free ${top ? "top" : ""
+            } rounded-lg font-bold border p-2 transition  duration-300 ease-in-out w-full
   `}
           onClick={() => setShowPopup(true)}
         >

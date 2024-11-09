@@ -1,6 +1,6 @@
 // recognitionData.js
 
- export const recognitionData = [
+export const recognitionData = [
   {
     title: "Gamified and Real-Time Leaderboards",
     answer:
@@ -17,3 +17,38 @@
       "Encourage peer-to-peer recognition to build trust and enhance team collaboration",
   },
 ];
+
+
+export const rewardData = [
+  {
+    title: "Gamified and Real-Time Leaderboards",
+    answer:
+      "Customizable reward catalog to delight employees and reinforce company values",
+
+  },
+  {
+    title: "Foster a work environment",
+    answer:
+      "Reward points earned through objective/KR achievements",
+  },
+  {
+    title: "Encourage peer-to-peer recognition",
+    answer:
+      "Extensive options for meaningful recognition",
+  },
+  {
+    title: "Encourage peer-to-peer recognition",
+    answer:
+      "Global catalog with diverse redemption options, no markups, and instant delivery",
+  },
+  {
+    title: "Encourage peer-to-peer recognition",
+    answer:
+      "Choices include both Monetary and non-monetary reward.",
+  },
+];
+
+
+
+
+

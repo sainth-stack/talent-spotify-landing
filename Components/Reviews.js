@@ -9,7 +9,7 @@ const ReviewsAndCards = ({
   renderReviewItem,
 }) => {
   return (
-    <div className="container mx-auto ">
+    <div className="container mx-auto my-4 ">
       <div className="flex items-center justify-center mb-4">
         <div
           className="w-4/12 flex justify-end ml-10"
@@ -21,11 +21,11 @@ const ReviewsAndCards = ({
             position: "relative",
           }}
         >
-          <Image src={imageSrc} alt="Review Image" className="w-3/4 h-auto" />
+          {imageSrc && <Image src={imageSrc} alt="Review Image" className="w-3/4 h-auto" />}
         </div>
 
         <div className="relative w-full bg-gradient-to-r from-transparent to-white border border-gray-300 rounded-lg shadow-md p-4 flex flex-col justify-center items-center">
-          <div className="absolute inset-0 rounded-lg border-4 border-gradient-to-b from-blue-500 to-indigo-500 opacity-50" />
+          <div className="absolute r" />
           <div className="relative z-10">
             <ul className="list-disc list-inside mb-3 ml-28">
               <h3 className="font-bold">

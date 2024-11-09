@@ -16,7 +16,7 @@ export function AboutOurValues() {
         </div>
 
         <div
-          className={` px-4 py-2 text-gray-800 rounded-r-lg w-full`}
+          className={` px-4 py-2 text-gray-800  font-semibold rounded-r-lg w-full`}
           style={{
             flexGrow: 1,
             backgroundColor: descriptionColor,

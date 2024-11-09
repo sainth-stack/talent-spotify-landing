@@ -28,8 +28,8 @@ export default function Home() {
             What Makes OKR Powerful for startups?
           </h3>
         </div>
-        <div className="d-flex justify-content-center mt-lg-5">
-          <Image src={okrflow} alt="okrflow" className="okrMob h-auto w-auto" />
+        <div className="d-flex justify-content-center m-lg-5">
+          <Image src={okrflow} alt="okrflow" className="okrMob  h-auto w-auto" />
         </div>
         <ReviewsAndCards
           reviewItems={objectiveDesignQuestions}

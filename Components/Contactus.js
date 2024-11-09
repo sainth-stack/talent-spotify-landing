@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 import careerimg from "../assets/svg/careerimg.svg";
 import Image from "next/image";
 import Button from "./Button";
@@ -62,3 +62,4 @@ export default function Contactus() {
     </div>
   );
 }
+ */
