@@ -5,25 +5,26 @@ import linkedinIcon from "../../assets/svg/linkedinIcon.svg";
 import Image from "next/image";
 import { useTranslation, Trans } from "next-i18next";
 import Card from "../Card";
-
+import  aboutCss from  "../../styles/about.module.css";
 export default function FinalAboutus() {
   return (
-    <div>
+    <div >
       <div
-        className="d-flex justify-content-center relative   mt-6"
-        style={{
-          border: "5px solid transparent",
-          borderImage: "linear-gradient(to right,#9967f5, #576afa) 1",
+        className="d-flex justify-content-center relative mt-6 rounded-2xl border-4 border-transparent"
 
-          borderRadius: "1rem",
-        }}
+        style={{
+    borderRadius: "20px", // Apply border-radius for rounded corners
+    border: "5px solid transparent", // Set the border to transparent to allow border-image to show
+    borderImage: "linear-gradient(to right, #9967f5, #576afa) 1 stretch", // Apply gradient to the border
+  }}
       >
         {/* <p className="h1 text-center font-weight-bold">Founders</p> */}
-        <div className="flex justify-center m-4">
+        <div className={`flex justify-center m-4  `}>
           {/* Title inside the border */}
           <h2
-            className="absolute -top-4 left-1/2 transform -translate-x-1/2 text-2xl text-white w-34 font-bold mb-4 px-2"
+            className=" tablet_view absolute -top-4 left-1/2 transform -translate-x-1/2 text-xl text-white w-40 font-bold mb-4 px-6 rounded-full"
             style={{
+
               backgroundImage: "linear-gradient(to right, #9967f5, #576afa)",
               borderImage: "linear-gradient(to right, #9967f5, #576afa) 1",
               zIndex: 10,
@@ -32,9 +33,9 @@ export default function FinalAboutus() {
             Founders
           </h2>
 
-          <div className="flex justify-center flex-wrap gap-8 m-3">
+          <div className="flex justify-center flex-wrap gap-8 m-3 ">
             <Card
-              styles="shadow-lg"
+              styles={`tablet_Card shadow-lg`} 
               icon={aneel}
               heading="Aneel"
               subheading="Founder, CEO"
@@ -44,7 +45,7 @@ export default function FinalAboutus() {
               }}
             />
             <Card
-              styles="shadow-lg"
+              styles=" tablet_Card shadow-lg"
               icon={prasanth}
               heading="Prashanth Reddy"
               subheading="Co-Founder, CTO"

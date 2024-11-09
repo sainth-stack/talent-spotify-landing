@@ -6,6 +6,7 @@ import image2 from "../assets/svg/image2.svg";
 import image3 from "../assets/svg/image3.svg";
 import image4 from "../assets/svg/image4.svg";
 import image5 from "../assets/svg/image5.svg";
+import "../styles/about.module.css"
 import {
   list1,
   list11,

@@ -4,9 +4,9 @@ import FinalAboutus from "../../Components/About/FinalAboutus";
 export function AboutOurValues() {
   const ValueItem = ({ color, descriptionColor, title, description }) => {
     return (
-      <div className="flex items-center justify-center mb-4 w-full max-w-3xl mx-auto">
+      <div className="flex  mobile_view items-center justify-center mb-4 w-full  max-w-3xl mx-auto">
         <div
-          className={` text-white font-semibold px-4 py-2 text-center rounded-lg `}
+          className={`   text-white font-semibold px-4 py-2 text-center rounded-lg `}
           style={{
             flex: "1 0 30%",
             backgroundColor: color,

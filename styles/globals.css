@@ -1883,6 +1883,17 @@ padding-top: -40px; */
 
 /* for tablets */
 @media (min-width: 768px) and (max-width: 1024px) {
+
+   
+/* /styles/about.module.css */
+.tablet_Card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+
   .header {
     font-weight: bold !important;
     text-align: center !important;
@@ -2027,6 +2038,17 @@ padding-top: -40px; */
 /* for mobile */
 
 @media (max-width: 768px) {
+  .mobile_view {
+    display: flex;
+    flex-direction: column; /* Change to column layout on mobile */
+    align-items: center;
+    gap:.5rem/* Optional: Align items to the start */
+  }
+  .tablet_Card {
+    /* Example change for smaller screens */
+    width: 100%; /* Ensure it takes up full width on smaller screens */
+    /* Reduce padding */
+  }
   .footer-card {
     width: 100% !important;
     background: #f8f8f8;

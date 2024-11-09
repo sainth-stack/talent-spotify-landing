@@ -59,31 +59,50 @@ export function WebinarPastContent() {
         </h3>
       </div>
 
-      <div className="d-flex w-full  justify-center gap-4">
-        <Card
-          image={image1}
-          heading="How To Measure Your OKRs Successfully"
-          subheading="Exploring approaches to performance reviews and feedback for a more engaged, future-ready workplace."
-          width="45%"
-          height="400px"
-        />
-        <Card
-          image={image2}
-          heading="Performance Metrics for Growth"
-          subheading="Discover the next generation of performance reviews and feedback to drive growth and engagement."
-          width="45%"
-          height="400px"
-        />
+
+      {/* cards badge */}
+
+      <div className="flex w-full justify-center gap-4 relative">
+        {/* Card 1 with Upcoming Badge */}
+        <div className="relative w-45%">
+          <span className="absolute top-1 left-2 bg-gradient-to-r from-blue-500 to-violet-500 text-white px-3 py-1 rounded-lg text-sm font-semibold z-10">
+            Upcoming
+          </span>
+          <Card
+            image={image1}
+            heading="How To Measure Your OKRs Successfully"
+            subheading="Exploring approaches to performance reviews and feedback for a more engaged, future-ready workplace."
+            width="100%" // Ensure the card takes full width of the wrapper
+            height="400px"
+          />
+        </div>
+
+        {/* Card 2 with Upcoming Badge */}
+        <div className="relative w-45%">
+          <span className="absolute top-1 left-2 bg-gradient-to-r from-blue-500 to-violet-500 text-white px-3 py-1 rounded-lg text-sm font-semibold z-10">
+            Upcoming
+          </span>
+          <Card
+            image={image2}
+            heading="Performance Metrics for Growth"
+            subheading="Discover the next generation of performance reviews and feedback to drive growth and engagement."
+            width="100%" // Ensure the card takes full width of the wrapper
+            height="400px"
+          />
+        </div>
       </div>
 
+      {/* cards badge */}
       <h3 className="text-3xl font-bold mb-2 text-left">All webinar</h3>
 
-      <div className="d-flex  justify-between gap-4 w-full">
+      <div className="d-flex  justify-between gap-4 w-full ">
         {filteredWebinars.map((webinar, index) => (
           <div
             key={index}
-           
+            className=""
+
           >
+
             <Card
               image={webinar.image}
               heading={webinar.heading}

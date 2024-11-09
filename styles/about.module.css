@@ -1,0 +1,12 @@
+/* tablests */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .tablet_view {
+        background-color: red !important; /* Corrected: no quotes around the color */
+    }
+    .tablet_Card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+}
