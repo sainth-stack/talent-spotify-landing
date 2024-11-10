@@ -899,18 +899,18 @@ input.largerCheckbox:checked {
   background-repeat: no-repeat;
   background-size: contain;
 }
-
+/* 
 .bgContactus {
   background-image: url("../assets/svg/contactus.svg");
   background-repeat: no-repeat;
   background-size: contain;
-}
-
+} */
+/* 
 .bgCareer {
   background-image: url("../assets/svg/career.svg");
   background-repeat: no-repeat;
   background-size: contain;
-}
+} */
 
 .bgSwot {
   background-image: url("../assets/svg/swotnav.svg");
@@ -1521,7 +1521,7 @@ textarea.form-control {
   border-radius: 7px;
   border: 2px solid rgba(0, 0, 0, 0.686);
   margin-top: 30px;
-  margin: 20px;
+  margin: 15px;
   margin-left: 70px;
 }
 .inner-contact2 {
@@ -1541,6 +1541,7 @@ textarea.form-control {
   border: 1px solid rgb(131, 188, 224);
   border-radius: 10px;
   margin: 20px;
+  background-color: pink;
 }
 .checkbox7 {
   margin-left: 70px;
@@ -1566,10 +1567,42 @@ textarea.form-control {
 padding-bottom: 30px;
 padding-top: -40px; */
 }
+@media (max-width: 768px) {
+  .main-contactus {
+    width: 900px;
+    height: 789px;
+
+    border: 1px solid rgb(131, 188, 224);
+    border-radius: 10px;
+    margin: 30px;
+    margin-left: 70px;
+  }
+  .footer_container {
+    width: 820px;
+  }
+}
 .Carer-heading {
   display: flex;
-  background-color: #ebebeb;
+  background-color: #ebe3d5;
   justify-content: space-around;
+  width: 1550px;
+  margin-left: -210px;
+  margin-top: -9px;
+  height: 350px;
+  padding: 20px;
+}
+.Carer-heading h1 {
+  margin-top: 35px;
+}
+.btn-open {
+  background-color: #134595;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+.career-image {
+  margin-top: 40px;
 }
 .browse-file {
   width: 710px;

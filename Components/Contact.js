@@ -259,7 +259,8 @@ export default function Contact() {
   };
 
   return (
-    <div className="main-contactus">
+  <div style={{backgroundColor:'#ebe3d5'}}>
+      <div className="main-contactus">
       <div className="card main-contact">
         <h4 style={{ marginLeft: "320px",marginTop:'40px',fontWeight:'800px' }}>Get in touch with us </h4>
         <form onSubmit={handleSubmit}>
@@ -340,5 +341,6 @@ export default function Contact() {
         </form>
       </div>
     </div>
+  </div>
   );
 }

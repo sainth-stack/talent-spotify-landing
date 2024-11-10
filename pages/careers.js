@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Footer from "../Components/Footer";
 import image1 from ".././assets/images/pricing1.png";
-import image2 from ".././assets/images/pricing2.png";
-import image3 from ".././assets/images/pricing3.png";
+import image2 from ".././assets/images/pricing3.png";
+import image3 from "../assets/images/pricing3.png";
 import Card3 from "../Components/Card3";
 import BlogNav from "../Components/BlogNav";
 import TermsConditions from "../Components/TermsConditions";
 import Careers from "../Components/Careers";
-
+import Image from "next/image";
 export default function Career() {
   const [showPopup, setShowPopup] = useState(false);
 
@@ -18,19 +18,21 @@ export default function Career() {
           showPopup={showPopup}
           setShowPopup={() => setShowPopup(false)}
         />
-        {/* <div className="Carer-heading">
-          <div><h1>Work With Us!</h1>
-        
-        <p>
-          To amplify human potential and create the <br />
-          next oppurtunity for people,businesses and communities.
-        </p>
-        <button>View Job Openings</button></div>
-      
-       <div>
-        <img  className="career-image"src={image3} alt="image"/>
-       </div>
-       </div> */}
+        <div className="Carer-heading">
+          <div>
+            <h1>Work With Us!</h1>
+
+            <p>
+              To amplify human potential and create the <br />
+              next oppurtunity for people,businesses and communities.
+            </p>
+            <button className="btn-open">View Job Openings</button>
+          </div>
+
+          <div className="career-image">
+            <Image  src={image3} alt="image" />
+          </div>
+        </div>
       </div>
       <div className="d-flex justify-content-center mt-lg-5 pt-lg-5 flex-wrap">
         <Careers />
