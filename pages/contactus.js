@@ -9,14 +9,14 @@ import Contact from "../Components/Contact";
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
   return (
-    <div className="bg-white bgContactus">
+    <div style={{ backgroundColor: "#ebe3d5" }}>
       <div className="container">
         <BlogNav
           showPopup={showPopup}
           setShowPopup={() => setShowPopup(false)}
         />
       </div>
-      <div className='d-flex justify-content-center mt-lg-5 pt-lg-5 flex-wrap'>
+      <div className="d-flex justify-content-center mt-lg-5 pt-lg-5 flex-wrap">
         <Contact />
       </div>
 

@@ -118,7 +118,6 @@
 
 //     //   </div>
 
-
 //     // </div>
 // <div>
 // <h4 style={{ marginLeft: "320px",marginTop:'40px',fontWeight:'800px' }}>JOB APPLY </h4>
@@ -169,7 +168,7 @@
 //               name="subject"
 //               className="inner-contact"
 //               placeholder="linkedinURL*"
-              
+
 //               onChange={handleChange}
 //             />
 //           </div>
@@ -179,7 +178,7 @@
 //                 <BrowseFilesNormal setData={({ url }) => setUser((prevUser) => ({ ...prevUser, cvURL: url }))} />
 //               </div>
 //               {validator.current.message("CV ", user.cvURL, "required")}
-              
+
 //          </div>
 //           <button type="submit" className="contact-button" disabled={loading}>
 //             {loading ? "Submitting..." : "Submit"}
@@ -207,7 +206,7 @@ export default function Carrers() {
     email: "",
     phone: "",
     cvURL: "",
-    company: "",  // added company to match Role input in the form
+    company: "", // added company to match Role input in the form
   });
 
   const handleChange = ({ target: { name, value } }) => {
@@ -223,7 +222,7 @@ export default function Carrers() {
       email: "",
       phone: "",
       cvURL: "",
-      company: "",  // Reset company as well
+      company: "", // Reset company as well
     });
   };
 
@@ -253,7 +252,9 @@ export default function Carrers() {
         }
       } catch (error) {
         setLoading(false);
-        setError("An error occurred while submitting the form. Please try again.");
+        setError(
+          "An error occurred while submitting the form. Please try again."
+        );
         console.error("Error:", error);
       }
     } else {
@@ -264,7 +265,11 @@ export default function Carrers() {
 
   return (
     <div>
-      <h4 style={{ marginLeft: "320px", marginTop: '40px', fontWeight: '1200px' }}>JOB APPLY</h4>
+      <h4
+        style={{ marginLeft: "320px", marginTop: "-20px", fontWeight: "1200px" }}
+      >
+        JOB APPLY
+      </h4>
       <form onSubmit={handleSubmit}>
         <div>
           <input
@@ -318,7 +323,11 @@ export default function Carrers() {
         </div>
         <div>
           <div className="browse-file">
-            <BrowseFilesNormal setData={({ url }) => setUser((prevUser) => ({ ...prevUser, cvURL: url }))} />
+            <BrowseFilesNormal
+              setData={({ url }) =>
+                setUser((prevUser) => ({ ...prevUser, cvURL: url }))
+              }
+            />
           </div>
           {validator.current.message("CV ", user.cvURL, "required")}
         </div>
@@ -329,4 +338,3 @@ export default function Carrers() {
     </div>
   );
 }
-
