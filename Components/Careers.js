@@ -264,77 +264,157 @@ export default function Carrers() {
   };
 
   return (
-    <div>
-      <h4
-        style={{ marginLeft: "320px", marginTop: "-20px", fontWeight: "1200px" }}
-      >
-        JOB APPLY
-      </h4>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <input
-            type="text"
-            name="name"
-            className="inner-contact"
-            placeholder="First name*"
-            value={user.name}
-            onChange={handleChange}
-          />
+    <div style={{ height: "100%", marginTop: "-20px" }}>
+      <div className="main-contactus2">
+        <div className="  main-contact" style={{ backgroundColor: "white" }}>
+          <h4
+            style={{
+              marginLeft: "320px",
+              marginTop: "-20px",
+              fontWeight: "1200px",
+            }}
+          >
+            JOB APPLY
+          </h4>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <input
+                type="text"
+                name="name"
+                className="inner-contact"
+                placeholder="First name*"
+                value={user.name}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <input
+                type="email"
+                name="email"
+                className="inner-contact"
+                placeholder="Work Email*"
+                value={user.email}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                name="phone"
+                className="inner-contact"
+                placeholder="Phone number*"
+                value={user.phone}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                name="company"
+                className="inner-contact"
+                placeholder="Role*"
+                value={user.company}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                name="linkedinURL"
+                className="inner-contact"
+                placeholder="LinkedIn URL*"
+                value={user.linkedinURL}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <div className="browse-file">
+                <BrowseFilesNormal
+                  setData={({ url }) =>
+                    setUser((prevUser) => ({ ...prevUser, cvURL: url }))
+                  }
+                />
+              </div>
+              {validator.current.message("CV ", user.cvURL, "required")}
+            </div>
+            <button type="submit" className="contact-button" disabled={loading}>
+              {loading ? "Submitting..." : "Submit"}
+            </button>
+          </form>
         </div>
-        <div>
-          <input
-            type="email"
-            name="email"
-            className="inner-contact"
-            placeholder="Work Email*"
-            value={user.email}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            name="phone"
-            className="inner-contact"
-            placeholder="Phone number*"
-            value={user.phone}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            name="company"
-            className="inner-contact"
-            placeholder="Role*"
-            value={user.company}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            name="linkedinURL"
-            className="inner-contact"
-            placeholder="LinkedIn URL*"
-            value={user.linkedinURL}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <div className="browse-file">
-            <BrowseFilesNormal
-              setData={({ url }) =>
-                setUser((prevUser) => ({ ...prevUser, cvURL: url }))
-              }
-            />
-          </div>
-          {validator.current.message("CV ", user.cvURL, "required")}
-        </div>
-        <button type="submit" className="contact-button" disabled={loading}>
-          {loading ? "Submitting..." : "Submit"}
-        </button>
-      </form>
+      </div>
     </div>
   );
 }
+//  <div className="main-career">
+// <h4
+//   style={{ marginLeft: "320px", marginTop: "-20px", fontWeight: "1200px" }}
+// >
+//   JOB APPLY
+// </h4>
+// <form onSubmit={handleSubmit}>
+//   <div>
+//     <input
+//       type="text"
+//       name="name"
+//       className="inner-contact"
+//       placeholder="First name*"
+//       value={user.name}
+//       onChange={handleChange}
+//     />
+//   </div>
+//   <div>
+//     <input
+//       type="email"
+//       name="email"
+//       className="inner-contact"
+//       placeholder="Work Email*"
+//       value={user.email}
+//       onChange={handleChange}
+//     />
+//   </div>
+//   <div>
+//     <input
+//       type="text"
+//       name="phone"
+//       className="inner-contact"
+//       placeholder="Phone number*"
+//       value={user.phone}
+//       onChange={handleChange}
+//     />
+//   </div>
+//   <div>
+//     <input
+//       type="text"
+//       name="company"
+//       className="inner-contact"
+//       placeholder="Role*"
+//       value={user.company}
+//       onChange={handleChange}
+//     />
+//   </div>
+//   <div>
+//     <input
+//       type="text"
+//       name="linkedinURL"
+//       className="inner-contact"
+//       placeholder="LinkedIn URL*"
+//       value={user.linkedinURL}
+//       onChange={handleChange}
+//     />
+//   </div>
+//   <div>
+//     <div className="browse-file">
+//       <BrowseFilesNormal
+//         setData={({ url }) =>
+//           setUser((prevUser) => ({ ...prevUser, cvURL: url }))
+//         }
+//       />
+//     </div>
+//     {validator.current.message("CV ", user.cvURL, "required")}
+//   </div>
+//   <button type="submit" className="contact-button" disabled={loading}>
+//     {loading ? "Submitting..." : "Submit"}
+//   </button>
+// </form>
+// </div>

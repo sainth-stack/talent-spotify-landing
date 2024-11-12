@@ -1,0 +1,42 @@
+.Carer-heading {
+  display: flex;
+  background-color: #ebe3d5;
+  justify-content: space-around;
+  width: 1550px;
+  margin-left: -210px;
+  margin-top: -19px;
+  height: 350px;
+  padding: 20px;
+}
+.Carer-heading h1 {
+  margin-top: 35px;
+}
+.btn-open {
+  background-color: #134595;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+.career-image {
+  margin-top: 40px;
+}
+.browse-file {
+  width: 925px;
+
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+.main-contactus2 {
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  .Carer-heading {
+    width: 1018px;
+    margin-left: -15px;
+    display: flex;
+
+    flex-direction: row;
+  }
+}
