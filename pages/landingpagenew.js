@@ -23,7 +23,7 @@ export default function LandingPageNew() {
     awardsRef.current?.scrollIntoView({ behavior: "smooth" });
   // const itworksref=()=> ititWorksRefWorks.current.scrollIntoView()
 
-  const { isMobile } = useWindowSize();
+  const  isMobile  = useWindowSize();
   return (
     <div
       className=""
@@ -49,6 +49,7 @@ export default function LandingPageNew() {
       />
 
       {isMobile ? (
+        
         <MobileFooter
           homerefScroll={homerefScroll}
           okrrefScroll={okrrefScroll}

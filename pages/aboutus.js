@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import Navigation from "../Components/About/AboutUs";
 import Footer from "../Components/Footer";
 import image1 from "../assets/svg/image1.svg";
 import image2 from "../assets/svg/image2.svg";
 import image3 from "../assets/svg/image3.svg";
 import image4 from "../assets/svg/image4.svg";
+import { useRef } from "react";
+
 import image5 from "../assets/svg/image5.svg";
 import "../styles/about.module.css"
 import {
@@ -21,15 +22,38 @@ import {
 } from "../utilities";
 import { AboutOurValues } from "../Components/About/AboutOurValues";
 import "../i18n";
+import Navigation from "../Components/navigationNew";
+import useWindowSize from "../utilities/UseWindowSize";
+import MobileFooter from "../Components/mobile-version/MobileFooter";
 export default function AboutUs() {
   const [showPopup, setShowPopup] = useState(false);
+  const [showTrail, setShowTrail] = useState(false);
+  const myRef = useRef(null);
+  const homeRef = useRef(null);
+  const okrRef = useRef(null);
+  const howItWorksRef = useRef(null);
+  const awardsRef = useRef(null);
+  // const itWorksRef = useRef(null)
+  const executeScroll = () => myRef.current?.scrollIntoView();
+  const homerefScroll = () => homeRef.current?.scrollIntoView();
+  const okrrefScroll = () => okrRef.current?.scrollIntoView();
+  const howItWorksScroll = () => howItWorksRef.current?.scrollIntoView();
+  const awardsScroll = () =>
+    awardsRef.current?.scrollIntoView({ behavior: "smooth" });
+  // const itworksref=()=> ititWorksRefWorks.current.scrollIntoView()
+
+  const  isMobile  = useWindowSize();
   return (
-    <div className="bg-[#ebe3d5]">
+    <div
+      className=""
+      style={{ height: "100vh", overflow: "auto", background: "#EAE3D6" }}
+    >
       <Navigation
         showPopup={showPopup}
+        executeScroll={executeScroll}
+        showDemo={showTrail}
         setShowPopup={() => setShowPopup(false)}
-       
-        subheading="On a mission to build a culture that truly works for you"
+        setShowDemo={setShowTrail}
       />
       <AboutOurValues
         image1={image1}
@@ -49,7 +73,17 @@ export default function AboutUs() {
         list52={list52}
         showPopup={() => setShowPopup(true)}
       />
-      <Footer />
+      {isMobile ? (
+
+        <MobileFooter
+          homerefScroll={homerefScroll}
+          okrrefScroll={okrrefScroll}
+          howItWorksScroll={howItWorksScroll}
+          awardsScroll={awardsScroll}
+        />
+      ) : (
+        <Footer />
+      )}
     </div>
   );
 }

@@ -2071,6 +2071,29 @@ padding-top: -40px; */
 /* for mobile */
 
 @media (max-width: 768px) {
+  .mobile_values{
+    margin-bottom: 3rem !important;
+  }
+  .mobile_table{
+    margin-bottom: 5rem !important;
+  }
+  .mobile_cards{
+    margin-bottom: 3rem !important;
+
+
+  }
+
+  
+  .mobile_blog_card{
+        display: flex !important;
+    flex-direction: column;
+    height:350px !important;
+
+
+  }
+
+  
+  
   .mobile_view {
     display: flex;
     flex-direction: column; /* Change to column layout on mobile */

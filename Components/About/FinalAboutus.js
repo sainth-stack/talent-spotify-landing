@@ -8,9 +8,12 @@ import Card from "../Card";
 import  aboutCss from  "../../styles/about.module.css";
 export default function FinalAboutus() {
   return (
-    <div >
+    <div  className=" text-center">
+      <div style={{ marginTop: "4rem" }} className=" text-center">
+        <h1 className="font-bold mb-4 ">On a mission to build a culture that truly works for you</h1>
+      </div>
       <div
-        className="d-flex justify-content-center relative mt-6 rounded-2xl border-4 border-transparent"
+        className="d-flex justify-content-center relative rounded-2xl border-4 border-transparent"
 
         style={{
     borderRadius: "20px", // Apply border-radius for rounded corners

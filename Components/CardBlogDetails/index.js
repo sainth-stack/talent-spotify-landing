@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { CiCircleChevRight } from "react-icons/ci";
+
 export default function CardBlogDetails({
   image,
   heading,
@@ -9,40 +10,24 @@ export default function CardBlogDetails({
   url = "",
 }) {
   return (
-    <div className="cardhover d-flex   w-full h-[250px]  bg-white shadow-lg rounded-md mb-3 container">
-      <Image
-        src={image}
-        alt="cardicon"
-        className="card-img-     p-4 object-cover" // Adjust height for the image
-        width={600} // Set a width appropriate for your layout
-        height={200}
-        // Set a height for the image
-      />
+    <div className="cardhover mobile_blog_card flex flex-col md:text-center md:flex-col md:p-2 w-full bg-white shadow-lg rounded-md mb-3 container">
+      {/* Image Section */}
+      <div className="relative w-full md:w-1/2  h-[200px] md:h-[250px]">
+        <Image
+          src={image}
+          alt="cardicon"
+          layout="fill" // Ensures the image covers the container
+          objectFit="cover" // Ensures the image fits without distortion
+          className="rounded-md  py-2"
+        />
+      </div>
 
+      {/* Content Section */}
       <div className="card-body flex-grow p-4">
-        {" "}
-        {/* Added p-4 for padding */}
-        <h6
-          className="card-title font-weight-bold"
-          style={{
-            fontSize: "19px",
-            fontFamily: "Poppins",
-            lineHeight: "28.6px",
-          }} // Corrected 'size' to 'fontSize'
-        >
-          {heading}
-        </h6>
-        <p
-          className=""
-          style={{
-            fontSize: "16px",
-            fontFamily: "Poppins",
-            lineHeight: "24px",
-          }} // Corrected 'size' to 'fontSize'
-        >
-          {subheading}
-        </p>
-        <div className="flex justify-end items-end mt-4 relative">
+        <p className="text-lg sm:text-xl md:text-2xl font-bold mb-2">{heading}</p>
+        <p className="text-sm sm:text-base text-gray-600 mb-4">{subheading}</p>
+
+        <div className="flex justify-end items-center mt-4 relative">
           <a
             href={url}
             target="_blank"

@@ -7,9 +7,29 @@ import Card3 from "../Components/Card3";
 import BlogNav from "../Components/BlogNav";
 import { features, plans } from "../Components/table/data";
 import FeatureTable from "../Components/table/FeatureTable";
+import Navigation from "../Components/navigationNew";
+import useWindowSize from "../utilities/UseWindowSize";
+import MobileFooter from "../Components/mobile-version/MobileFooter";
+import { useRef } from "react";
 
 export default function Pricing() {
   const [showPopup, setShowPopup] = useState(false);
+  const [showTrail, setShowTrail] = useState(false);
+  const myRef = useRef(null);
+  const homeRef = useRef(null);
+  const okrRef = useRef(null);
+  const howItWorksRef = useRef(null);
+  const awardsRef = useRef(null);
+  // const itWorksRef = useRef(null)
+  const executeScroll = () => myRef.current?.scrollIntoView();
+  const homerefScroll = () => homeRef.current?.scrollIntoView();
+  const okrrefScroll = () => okrRef.current?.scrollIntoView();
+  const howItWorksScroll = () => howItWorksRef.current?.scrollIntoView();
+  const awardsScroll = () =>
+    awardsRef.current?.scrollIntoView({ behavior: "smooth" });
+  // const itworksref=()=> ititWorksRefWorks.current.scrollIntoView()
+
+  const  isMobile  = useWindowSize();
   const data1 = {
     heading: "Basic",
     description: "OKR + Rewards + Recognition",
@@ -63,16 +83,25 @@ export default function Pricing() {
   };
 
   return (
-    <div className="bg-[#EAE3D6] ">
-      <div className="container">
-        <BlogNav
-          showPopup={showPopup}
-          setShowPopup={() => setShowPopup(false)}
-          subheading="Transparent Pricing According to your need"
-        />
-      </div>
+    <div className="bg-[#EAE3D6] " style={{ height: "100vh", overflow: "auto", background: "#EAE3D6" }}>
+      
+      
 
-      <div className=" container grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-2 justify-items-center">
+      <Navigation
+        showPopup={showPopup}
+        executeScroll={executeScroll}
+        showDemo={showTrail}
+        setShowPopup={() => setShowPopup(false)}
+        setShowDemo={setShowTrail}
+      />
+<div style={{marginTop:"6rem"}} className=" text-center container">
+      <h1 className="font-bold mb-4 ">Transparent Pricing According to your need</h1>
+      </div>
+      <div className=" container grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-2 justify-items-center " >
+
+        
+
+        
         <Card3
           data={data1}
           setShowPopup={setShowPopup}
@@ -96,7 +125,17 @@ export default function Pricing() {
         <FeatureTable features={features} plans={plans} />
       </div>
 
-      <Footer />
+      {isMobile ? (
+        
+        <MobileFooter
+          homerefScroll={homerefScroll}
+          okrrefScroll={okrrefScroll}
+          howItWorksScroll={howItWorksScroll}
+          awardsScroll={awardsScroll}
+        />
+      ) : (
+        <Footer />
+      )}
     </div>
   );
 }
