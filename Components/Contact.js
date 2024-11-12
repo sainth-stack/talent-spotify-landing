@@ -259,10 +259,10 @@ export default function Contact() {
   };
 
   return (
-  <div style={{backgroundColor:'#ebe3d5'}}>
+  <div style={{backgroundColor:'#ebe3d5',height:"100%",marginTop:'-20px'}}>
       <div className="main-contactus">
       <div className="card main-contact">
-        <h4 style={{ marginLeft: "320px",marginTop:'40px',fontWeight:'800px' }}>Get in touch with us </h4>
+        <h4 style={{ marginLeft: "300px",marginTop:'40px',fontWeight:'800px' }}>Get in touch with us </h4>
         <form onSubmit={handleSubmit}>
           <div>
             <input
