@@ -22,7 +22,7 @@
   margin-top: 40px;
 }
 .browse-file {
-  width: 925px;
+  width: 725px;
 
   margin-bottom: 40px;
   margin-top: 40px;
@@ -32,11 +32,19 @@
 }
 
 @media (max-width: 768px) {
+  ..main-contact2{
+    width:950px;
+    margin-top:20px;
+  }
   .Carer-heading {
     width: 1018px;
     margin-left: -15px;
     display: flex;
 
     flex-direction: row;
+  }
+  .browse-border{
+    width:77%;
+  
   }
 }

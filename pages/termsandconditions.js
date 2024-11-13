@@ -1,27 +1,29 @@
-import React, { useState } from 'react';
-import Footer from '../Components/Footer';
-import image1 from '.././assets/images/pricing1.png'
-import image2 from '.././assets/images/pricing2.png'
-import image3 from '.././assets/images/pricing3.png'
-import Card3 from '../Components/Card3';
-import BlogNav from '../Components/BlogNav';
-import TermsConditions from '../Components/TermsConditions';
-
+import React, { useState } from "react";
+import Footer from "../Components/Footer";
+import image1 from ".././assets/images/pricing1.png";
+import image2 from ".././assets/images/pricing2.png";
+import image3 from ".././assets/images/pricing3.png";
+import Card3 from "../Components/Card3";
+import BlogNav from "../Components/BlogNav";
+import TermsConditions from "../Components/TermsConditions";
 
 export default function Termsandconditions() {
   const [showPopup, setShowPopup] = useState(false);
 
   return (
-    <div className='bg-[#EAE3D6]'>
-      <div className='container'>
-        <BlogNav showPopup={showPopup} setShowPopup={() => setShowPopup(false)} heading="Terms and Conditions" subheading="" />
-
+    <div className="bg-[#EAE3D6]">
+      <div className="container">
+        <BlogNav
+          showPopup={showPopup}
+          setShowPopup={() => setShowPopup(false)}
+          heading="Terms and Conditions"
+          subheading=""
+        />
       </div>
-      <div className='d-flex justify-content-center'>
+      <div className="d-flex justify-content-center">
         <TermsConditions />
       </div>
       <Footer />
-    </div >
-  )
-
+    </div>
+  );
 }

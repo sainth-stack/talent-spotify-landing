@@ -215,4 +215,39 @@ export const terms = [
       },
     ],
   },
+  {
+    title: "6.PROPRIETARY RIGHTS",
+    items: [
+      {
+        term: "5.1 Confidential Information",
+        description:
+          "Each party (the “Receiving Party”) understands that the other party (the “Disclosing Party”) has disclosed or may disclose business, technical and marketing information, business plans, methods, processes, inventions, techniques, designs, data, know-how, ideas, concepts, strategies, trade secrets or financial information or any other information relating to the Disclosing Party’s business (hereinafter referred to as “Confidential Information” of the Disclosing Party). Confidential Information of Company includes non-public information regarding features, functionality and performance of the Software, Subscription, Services, Custom Integration or any other services. Confidential Information of Customer includes Customer Data.",
+      },
+      {
+        term: "5.2 Exceptions",
+        description:
+          "Notwithstanding anything to the contrary contained herein, Confidential Information shall not include any information that the Receiving Party can document (i) is or becomes generally available to the public, (ii) was in its possession or known by it prior to receipt from the Disclosing Party, (iii) was rightfully disclosed to it without restriction by a third party, or (iv) was independently developed without use of any Confidential Information of the Disclosing Party.",
+      },
+      {
+        term: "5.3 Protection of Confidential Information",
+        description:
+          "The Receiving Party agrees: (i) to take reasonable precautions to protect such Confidential Information, and (ii) not to use (except in performance of the Services or as otherwise permitted herein) or divulge to any third person any such Confidential Information.",
+      },
+      {
+        term: "5.4 Compelled Disclosure",
+        description:
+          "The Receiving Party may disclose Confidential Information of the Disclosing Party to the extent compelled by law to do so, provided the Receiving Party gives the Disclosing Party prior notice of the compelled disclosure (to the extent legally permitted) and reasonable assistance, at the Disclosing Party’s cost, if the Disclosing Party wishes to contest the disclosure.",
+      },
+      {
+        term: "5.5 Injunctive Relief",
+        description:
+          "The Receiving Party agrees that any violation of the confidentiality obligations will cause irreparable injury to the Disclosing Party, entitling Disclosing Party to obtain injunctive relief in addition to all legal remedies.",
+      },
+      {
+        term: "5.6 Private Data Confidentiality",
+        description:
+          "The Permitted Users may share individual data including feedbacks, information or material with a degree of privacy and/ or anonymity as part of the Subscription (“Private Data”), in which case, the Company may provide Permitted Users with a Confidentiality Notice for the same. The ownership, rights, title and interest in the Private Data will be retained by the Permitted User.",
+      },
+    ],
+  },
 ];

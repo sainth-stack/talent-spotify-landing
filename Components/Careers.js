@@ -266,10 +266,10 @@ export default function Carrers() {
   return (
     <div style={{ height: "100%", marginTop: "-20px" }}>
       <div className="main-contactus2">
-        <div className="  main-contact" style={{ backgroundColor: "white" }}>
+        <div className="  main-contact2" style={{ backgroundColor: "white" }}>
           <h4
             style={{
-              marginLeft: "320px",
+              textAlign:"center",
               marginTop: "-20px",
               fontWeight: "1200px",
             }}
