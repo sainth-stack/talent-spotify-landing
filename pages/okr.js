@@ -4,7 +4,7 @@ import Footer from "../Components/Footer";
 import BlogNav from "../Components/BlogNav";
 import OkrGreenCard from "../Components/OkrGreenCard";
 import okrMob from "../assets/svg/okrMob.svg";
-import okrflow from "../assets/svg/okrFlow.svg";
+import okrflow from "../assets/svg/okrflow.svg";
 import okrImage from "../assets/images/reviewImage.png";
 
 import yellowdot from "../assets/svg/yellowdot.svg";
