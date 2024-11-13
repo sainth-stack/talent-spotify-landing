@@ -32,9 +32,9 @@
 }
 
 @media (max-width: 768px) {
-  ..main-contact2{
-    width:950px;
-    margin-top:20px;
+  ..main-contact2 {
+    width: 950px;
+    margin-top: 20px;
   }
   .Carer-heading {
     width: 1018px;
@@ -43,8 +43,7 @@
 
     flex-direction: row;
   }
-  .browse-border{
-    width:77%;
-  
+  .browse-border {
+    width: 77%;
   }
 }
