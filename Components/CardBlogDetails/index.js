@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import { CiCircleChevRight } from "react-icons/ci";
 
@@ -10,29 +9,33 @@ export default function CardBlogDetails({
   url = "",
 }) {
   return (
-    <div className="cardhover mobile_blog_card flex flex-col md:text-center md:flex-col md:p-2 w-full bg-white shadow-lg rounded-md mb-3 container">
+    <div className="cardhover mobile_blog_card flex flex-col md:flex-row w-full bg-white shadow-lg rounded-lg mb-6 container overflow-hidden">
       {/* Image Section */}
-      <div className="relative w-full md:w-1/2  h-[200px] md:h-[250px]">
+      <div className="relative w-full h-[200px] md:w-1/3 md:h-[250px] rounded-t-lg md:rounded-l-lg ">
         <Image
           src={image}
           alt="cardicon"
           layout="fill" // Ensures the image covers the container
           objectFit="cover" // Ensures the image fits without distortion
-          className="rounded-md  py-2"
+          className="rounded-t-lg md:rounded-l-lg"
         />
       </div>
 
       {/* Content Section */}
-      <div className="card-body flex-grow p-4">
-        <p className="text-lg sm:text-xl md:text-2xl font-bold mb-2">{heading}</p>
-        <p className="text-sm sm:text-base text-gray-600 mb-4">{subheading}</p>
+      <div className="card-body h-auto p-4 flex flex-col justify-between md:w-2/3 md:pl-6 sm:p-2">
+        {/* Heading */}
+        <p className="text-lg sm:text-xl font-bold mb-1 text-gray-800">{heading}</p>
+        
+        {/* Subheading */}
+        <p className="text-sm sm:text-base text-gray-600 mb-4 h-auto">{subheading}</p>
 
-        <div className="flex justify-end items-center mt-4 relative">
+        {/* Read More Link */}
+        <div className="flex justify-start md:justify-end items-center mt-4">
           <a
             href={url}
             target="_blank"
             rel="noreferrer"
-            className="text-blue-800 cursor-pointer"
+            className="text-blue-800 hover:text-blue-600 cursor-pointer flex items-center"
           >
             <span
               className="flex items-center"

@@ -7,23 +7,28 @@ const ReviewsAndCards = ({
   buttonLabel = "Book a Demo",
   imageSrc,
   renderReviewItem,
+  title,
+  topHeading
 }) => {
   return (
-    <div className="container mx-auto my-8 px-4">
+    <div className="container mx-auto my-8 px-4 py-2">
       {/* Header */}
       <div className="text-center mb-8">
-        <h1 className="font-bold text-2xl lg:text-3xl">
-          On a mission to build a culture that truly works for you
+        <h1 className="font-bold text-2xl lg:text-3xl capitalize">
+         {topHeading}
         </h1>
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-col lg:flex-row items-center justify-center lg:space-x-8 relative">
+      <div className="flex flex-col lg:flex-row items-center  justify-center lg:space-x-8 relative ">
 
         {/* Image Container with Overlay on larger screens */}
         <div
-          className="w-full lg:w-5/12 flex justify-center lg:justify-end relative lg:-translate-x-10 lg:translate-y-10"
-          style={{ zIndex: 10 }}
+          className="w-full lg:w-5/12 flex justify-center lg:justify-end relative"
+          style={{
+            zIndex: 10,
+            left: "10%", // Adjust the left position as needed
+          }}
         >
           {imageSrc && (
             <Image
@@ -34,15 +39,25 @@ const ReviewsAndCards = ({
           )}
         </div>
 
-        {/* Card Container */}
-        <div className="w-full lg:w-7/12 bg-white border border-gray-300 rounded-lg shadow-lg p-6 lg:p-8 lg:ml-[-3rem] flex flex-col items-start z-0">
+        {/* Card Container with Transparent-to-White Gradient Background */}
+        <div
+          className="w-full lg:max-w-4xl px-5  py-2 flex flex-col items-start"
+          style={{
+            background: "linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))", // Transparent-to-white gradient background
+            borderRadius: "20px", // Rounded corners
+            border: "5px solid transparent", // Transparent border to allow the gradient border to be visible
+            borderImage: "linear-gradient(to right, rgba(255, 255, 255, 0), #9967f5, #576afa) 1", // Transparent-to-gradient border
+            boxShadow: "0px 1px 10px rgba(0, 0, 0, 0.1)", // Shadow for card visibility
+          }}
+
+        >
           {/* Card Header */}
-          <h3 className="font-bold text-xl mb-4 text-center lg:text-left">
-            How do you design effective Objectives?
+          <h3 className="font-bold text-xl mb-6 text-center lg:text-left w-full">
+           {title}
           </h3>
 
           {/* Review List */}
-          <ol className="space-y-4">
+          <ol className="space-y-1 w-full pl-8">
             {reviewItems.map((item, index) =>
               renderReviewItem ? (
                 renderReviewItem(item, index)
@@ -66,14 +81,15 @@ const ReviewsAndCards = ({
                 </li>
               )
             )}
-          </ol>
-
-          {/* Button */}
-          <div className="flex justify-center lg:justify-start mt-6">
-            <button className="px-5 py-2 bg-[#083c61] text-white rounded-full">
+             <div className="flex justify-center lg:justify-start mt-6 w-full">
+            <button className="px-6 py-3 bg-[#083c61] text-white rounded-full">
               {buttonLabel}
             </button>
           </div>
+          </ol>
+
+          {/* Button */}
+         
         </div>
       </div>
     </div>

@@ -7,16 +7,16 @@ import ProgressCard from "./Progress/ProgressCard";
 
 const RewardsFinal = () => {
   return (
-
     <>
-
+      {/* Add margin-top to create a gap between the Navbar and the content */}
       <div
         className="d-flex flex-wrap justify-center mt-4"
         style={{
           display: 'flex',
           justifyContent: 'center', // Center the content horizontally
           alignItems: 'center', // Center the content vertically
-          flexDirection: 'column', // Ensure the layout is in column direction for stacking
+          flexDirection: 'column',
+          marginTop: "5%" // Ensure there's a gap from the top (Navbar)
         }}
       >
         {/* Render the ReviewCard with the reward data */}
@@ -31,11 +31,10 @@ const RewardsFinal = () => {
         >
           <ReviewCard reviewItems={rewardData} imageSrc={cards_images} />
         </div>
-
-
       </div>
 
-      <div className="container">
+      {/* Progress Card Section */}
+      <div className="container mt-6"> {/* Add margin-top to create space between sections */}
         <ProgressCard />
       </div>
     </>

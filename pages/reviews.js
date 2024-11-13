@@ -47,9 +47,10 @@ export default function Review() {
       />
       
 
-      <div className="d-flex justify-content-center text-left mt-5 ">
+      <div className="d-flex justify-content-center w-full  text-left mt-5 ">
       
-        <ReviewsAndCards reviewItems={reviewItems} imageSrc={ChatImg} />
+        <ReviewsAndCards reviewItems={reviewItems} imageSrc={ChatImg} topHeading="One Platform for all your employee performance
+and enga" title="Review"/>
       </div>
 
        {isMobile ? (

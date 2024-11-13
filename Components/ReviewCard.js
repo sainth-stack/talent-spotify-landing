@@ -44,7 +44,7 @@ const ReviewCard = ({ reviewItems, imageSrc }) => {
                         alt="Recognition"
                         layout="intrinsic" // Ensures the image respects width and height
                         width={350}
-                        height={600}
+                        height={550}
                         style={{
                             borderRadius: "8px",
 
