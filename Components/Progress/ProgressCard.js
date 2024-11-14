@@ -30,7 +30,7 @@ const ProgressCard = () => {
                 <div key={index} className="d-flex my-3 justify-center items-center">
                     {data.align === 'right' ? (
                         <>
-                            <div className={`text-lg font-medium text-gray-700 p-3 border-2 ${borderColorClasses[data.borderColor]} rounded-lg mr-4`}>
+                            <div className={`text-lg font-medium text-gray-700 p-3 border-2 ${borderColorClasses[data.borderColor]} rounded-3xl mr-4`}>
                                 {data.text}
                             </div>
                             <div className={`w-6 border-t-4 border-dotted ${borderColorClasses[data.borderColor]} mx-4`}></div>
@@ -46,7 +46,7 @@ const ProgressCard = () => {
                                 borderColor={data.borderColor}
                             />
                             <div className={`w-6 border-t-4 border-dotted ${borderColorClasses[data.borderColor]} mx-4`}></div>
-                            <div className={`text-lg font-medium text-gray-700 p-3 border-2 ${borderColorClasses[data.borderColor]} rounded-lg ml-4`}>
+                            <div className={`text-lg font-medium text-gray-700 p-3 border-2 ${borderColorClasses[data.borderColor]} rounded-3xl ml-4`}>
                                 {data.text}
                             </div>
                         </>

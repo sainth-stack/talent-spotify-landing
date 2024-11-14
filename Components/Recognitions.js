@@ -74,7 +74,7 @@ export default function Recognitions() {
 
       {/* featutrers */}
 
-      <div className="bg-black py-8 w-screen  flex mb-4 flex-col items-center">
+      <div className="bg-black py-8   flex mb-4 flex-col items-center">
         {/* Heading Section */}
         <div className="text-center mb-6">
           <h2 className="text-white font-bold text-2xl">Features</h2>
@@ -82,11 +82,11 @@ export default function Recognitions() {
 
         {/* Cards Section */}
 
-        <div className="d-flex flex-wrap  justify-evenly  w-full">
+        <div className=" flex container">
           {filteredWebinars.map((webinar, index) => (
             <div
               key={index}
-              className="shadow-md"
+              className="shadow-md   "
 
             >
               <Card

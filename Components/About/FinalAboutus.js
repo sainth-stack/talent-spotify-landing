@@ -5,7 +5,7 @@ import linkedinIcon from "../../assets/svg/linkedinIcon.svg";
 import Image from "next/image";
 import { useTranslation, Trans } from "next-i18next";
 import Card from "../Card";
-import  aboutCss from  "../../styles/about.module.css";
+//import  aboutCss from  "../../styles/about.module.css";
 export default function FinalAboutus() {
   return (
     <div  className=" text-center">
