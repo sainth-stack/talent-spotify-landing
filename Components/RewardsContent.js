@@ -35,6 +35,7 @@ const RewardsFinal = () => {
 
       {/* Progress Card Section */}
       <div className="container mt-6"> {/* Add margin-top to create space between sections */}
+          <h1 className="font-bold pt-4 text-center">Why It Matters?</h1>
         <ProgressCard />
       </div>
     </>

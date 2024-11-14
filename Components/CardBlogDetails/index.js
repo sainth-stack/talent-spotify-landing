@@ -17,7 +17,7 @@ export default function CardBlogDetails({
           alt="cardicon"
           layout="fill" // Ensures the image covers the container
           objectFit="cover" // Ensures the image fits without distortion
-          className="rounded-t-lg md:rounded-l-lg"
+          className="rounded-t-lg md:rounded-l-lg py-2"
         />
       </div>
 

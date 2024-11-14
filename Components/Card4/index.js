@@ -23,12 +23,13 @@ export default function Card({
       <Image
         src={image}
         alt="cardicon"
-        className="object-cover w-full h-48 rounded-lg" 
+        className="object-cover w-full h-48 py-1 rounded-lg" 
         width={400}  
         height={250} 
         style={{ objectFit: "cover" }}  
         data-toggle="modal"
         data-target="#exampleModal"
+        
       />
 
       <div className="card-body p-4">
