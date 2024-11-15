@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Footer from "../Components/Footer";
+import Spotlight from ".././assets/images/spotlight.png";
 import BlogNav from "../Components/BlogNav";
 import award1 from "../assets/images/new-dashboard/award1.png";
 import award2 from "../assets/images/new-dashboard/award2.png";
@@ -12,6 +13,7 @@ import spotlight from "../assets/images/spotlight.png";
 import MobileFooter from "../Components/mobile-version/MobileFooter";
 import Navigation from "../Components/navigationNew";
 import useWindowSize from "../utilities/UseWindowSize";
+import ShowMoreButton from "../Components/Button/ShowMoreButton";
 
 export default function Home() {
 
@@ -94,8 +96,18 @@ export default function Home() {
         setShowPopup={() => setShowPopup(false)}
         setShowDemo={setShowTrail}
       />
-      <div style={{ marginTop: "6rem" }} className=" text-center container">
-        <h1 className="font-bold mb-4 ">Transparent Pricing According to your need</h1>
+      <div style={{ marginTop: "6rem", textAlign: "center" }}>
+        <div style={{ position: "relative", width: "80%", height: "auto", margin: "0 auto", padding: 0 }}>
+          <Image
+            src={Spotlight}
+            alt="Transparent Pricing"
+            width={500}  // Adjust width to make the image smaller
+            height={100}  // Adjust height accordingly to maintain aspect ratio
+            objectFit="contain"  // Ensures the entire image is visible, maintaining aspect ratio
+            objectPosition="center"  // Ensures the image is centered
+            style={{ display: "block", margin: "0", padding: "0", width: "100%", height: "6rem" }}  // Removes margin and padding
+          />
+        </div>
       </div>
 
      <div className="container mobile_cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 p-3">
@@ -132,9 +144,18 @@ export default function Home() {
           </a>
         </div>
       </div>
+
     </div>
   ))}
+        
+  
+        
 </div>
+
+<div className=" flex justify-center items-center my-4">
+            <ShowMoreButton />
+
+  </div>
 
 
 

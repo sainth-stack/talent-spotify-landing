@@ -5,63 +5,73 @@ import linkedinIcon from "../../assets/svg/linkedinIcon.svg";
 import Image from "next/image";
 import { useTranslation, Trans } from "next-i18next";
 import Card from "../Card";
-import  aboutCss from  "../../styles/about.module.css";
+//import  aboutCss from  "../../styles/about.module.css";
 export default function FinalAboutus() {
   return (
     <div  className=" text-center">
-      <div style={{ marginTop: "4rem" }} className=" text-center">
-        <h1 className="font-bold mb-4 ">On a mission to build a culture that truly works for you</h1>
+      <div style={{ marginTop: "7rem" }} className=" text-center">
+        <h1 className="font-bold mb-4 ">On a mission to build a culture that truly <br />works for you</h1>
       </div>
+      
+      {/* border */}
       <div
-        className="d-flex justify-content-center relative rounded-2xl border-4 border-transparent"
-
+        className="relative rounded-2xl"
         style={{
-    borderRadius: "20px", // Apply border-radius for rounded corners
-    border: "5px solid transparent", // Set the border to transparent to allow border-image to show
-    borderImage: "linear-gradient(to right, #9967f5, #576afa) 1 stretch", // Apply gradient to the border
-  }}
+          padding: "5px", // Space for the gradient "border"
+          borderRadius: "10px", // Rounded corners for the outer div
+          background: "linear-gradient(to right, #9967f5, #576afa)", // Gradient background for the border effect
+        }}
       >
-        {/* <p className="h1 text-center font-weight-bold">Founders</p> */}
-        <div className={`flex justify-center m-4  `}>
-          {/* Title inside the border */}
-          <h2
-            className=" tablet_view absolute -top-4 left-1/2 transform -translate-x-1/2 text-xl text-white w-40 font-bold mb-4 px-6 rounded-full"
-            style={{
-
-              backgroundImage: "linear-gradient(to right, #9967f5, #576afa)",
-              borderImage: "linear-gradient(to right, #9967f5, #576afa) 1",
-              zIndex: 10,
-            }}
-          >
-            Founders
-          </h2>
-
-          <div className="flex justify-center flex-wrap gap-8 m-3 ">
-            <Card
-              styles={`tablet_Card shadow-lg`} 
-              icon={aneel}
-              heading="Aneel"
-              subheading="Founder, CEO"
-              link={{
-                url: "https://www.linkedin.com/in/aneel-kumar-bonu/",
-                icon: linkedinIcon,
+        {/* Inner content div with white background */}
+        <div
+          className="d-flex justify-content-center rounded-2xl"
+          style={{
+            borderRadius: "15px", // Inner border radius to match the outer div
+            backgroundColor: "#ebe3d5", // Background color for inner content
+            padding: "20px", // Adjust padding as needed for inner content
+          }}
+        >
+          <div className=" justify-center m-4">
+            {/* Title inside the border */}
+            <h2
+              className=" absolute -top-4 left-1/2 transform -translate-x-1/2 text-xl text-white w-40 font-bold mb-4 px-6 rounded-full"
+              style={{
+                backgroundImage: "linear-gradient(to right, #9967f5, #576afa)",
+                zIndex: 10,
               }}
-            />
-            <Card
-              styles=" tablet_Card shadow-lg"
-              icon={prasanth}
-              heading="Prashanth Reddy"
-              subheading="Co-Founder, CTO"
-              link={{
-                url: "https://www.linkedin.com/in/prashanth-s-reddy/",
-                icon: linkedinIcon,
-              }}
-            />
+            >
+              Founders
+            </h2>
+
+            {/* Cards */}
+            <div className="flex justify-center flex-wrap gap-8 m-3">
+              <Card
+                styles=" shadow-lg"
+                icon={aneel}
+                heading="Aneel"
+                subheading="Founder, CEO"
+                link={{
+                  url: "https://www.linkedin.com/in/aneel-kumar-bonu/",
+                  icon: linkedinIcon,
+                }}
+              />
+              <Card
+                styles=" shadow-lg"
+                icon={prasanth}
+                heading="Prashanth Reddy"
+                subheading="Co-Founder, CTO"
+                link={{
+                  url: "https://www.linkedin.com/in/prashanth-s-reddy/",
+                  icon: linkedinIcon,
+                }}
+              />
+            </div>
           </div>
         </div>
-
-        {/* boreder */}
       </div>
+
+
+      {/* border */}
 
       <div>
         <h1 className="text-left pb-4 mt-4 font-weight-bold">Our Motivation</h1>

@@ -15,7 +15,7 @@ export default function Home() {
           showPopup={showPopup}
           setShowPopup={() => setShowPopup(false)}
           heading="Recognition"
-          subheading="Did you know that companies with highly engaged employees experience..."
+          subheading="Did You Know That Companies With Highly Engaged Employees Experience..."
         />
       </div>
 

@@ -96,7 +96,7 @@ const LandingPageBottom = ({ awardsScroll }) => {
             <div key={index}>
               <div className="media-card">
                 <div className="media-card__image-container">
-                  <Image src={mediaCard.image} alt="Card image" layout="intrinsic" className="media-card__image" />
+                  <Image src={mediaCard.image} alt="Card image" layout="intrinsic" className="media-card__image " />
                 </div>
                 <div className="media-card__content">
                   <p className="media-card__heading">{mediaCard.heading}</p>

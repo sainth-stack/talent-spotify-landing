@@ -138,7 +138,7 @@ export function Nav({
       >
         <Button
           style2={{ background: "transparent", border: "none" }}
-          className="bg-red-500 login_animation"
+          className="bg-[#ded7c8] login_animation"
           text="Login"
           handleClick={() =>
             window.open("https://www.talentspotifyapp.com/login", "_blank")

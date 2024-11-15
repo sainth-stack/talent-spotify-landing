@@ -34,6 +34,7 @@ export default function Home() {
         <ReviewsAndCards
           reviewItems={objectiveDesignQuestions}
           imageSrc={okrImage}
+          title="How do you design effective Objectives?"
         />{" "}
       </div>
       <Footer />

@@ -11,32 +11,33 @@ export default function Card({
 }) {
   return (
     <div
-      className=" bg-white card  w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2 mb-5 shadow-lg shadow-lg "
+      className="  w-auto mx-3 bg-gray-50    p-1 shadow-lg  "
       style={{
         width,
         height,
         border: "1px solid #D1D5DB",
-        borderRadius: ".7rem",
+        borderRadius: "1rem",
         
       }}
     >
       <Image
         src={image}
         alt="cardicon"
-        className="object-cover w-full h-48 rounded-lg" 
-        width={400}  
+        className="object-cover bg-gray-100 shadow-lg w-full px-1 h-48 py-3 " 
+        width={500}  
         height={250} 
         style={{ objectFit: "cover" }}  
         data-toggle="modal"
         data-target="#exampleModal"
+        
       />
 
-      <div className="card-body p-4">
+      <div className=" p-2">
         <h6 className="font-weight-bold text-xl text-left text-gray-800">
           {heading}
         </h6>
 
-        <p className="text-sm text-left text-gray-600">
+        <p className="text-sm text-left text-gray-600 line-clamp-3">
           {subheading}
         </p>
       </div>
