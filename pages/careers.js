@@ -18,6 +18,7 @@ export default function Career() {
           showPopup={showPopup}
           setShowPopup={() => setShowPopup(false)}
         />
+
         <div className="Carer-heading">
           <div>
             <h1>Work With Us!</h1>
@@ -30,7 +31,7 @@ export default function Career() {
           </div>
 
           <div className="career-image">
-            <Image  src={image3} alt="image" />
+            <Image src={image3} alt="image" />
           </div>
         </div>
       </div>

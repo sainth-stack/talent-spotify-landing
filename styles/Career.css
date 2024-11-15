@@ -2,14 +2,15 @@
   display: flex;
   background-color: #ebe3d5;
   justify-content: space-around;
-  width: 1550px;
+  width:1330px;
   margin-left: -210px;
-  margin-top: -19px;
-  height: 350px;
+  margin-top: -10px;
+  height: 300px;
   padding: 20px;
+  padding-left:60px;
 }
 .Carer-heading h1 {
-  margin-top: 35px;
+  margin-top: 40px;
 }
 .btn-open {
   background-color: #134595;
@@ -19,7 +20,7 @@
   margin-top: 30px;
 }
 .career-image {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .browse-file {
   width: 725px;
@@ -32,15 +33,16 @@
 }
 
 @media (max-width: 768px) {
-  ..main-contact2 {
+  .main-contact2 {
     width: 950px;
     margin-top: 20px;
   }
   .Carer-heading {
-    width: 1018px;
-    margin-left: -15px;
+    width: 1055px;
+    margin-left: -20px;
     display: flex;
 
+    margin-top: -25px;
     flex-direction: row;
   }
   .browse-border {
