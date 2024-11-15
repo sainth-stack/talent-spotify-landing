@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Footer from "../Components/Footer";
 import image1 from ".././assets/svg/pricing1.svg";
 import image2 from ".././assets/svg/pricing2.svg";
@@ -10,7 +10,6 @@ import FeatureTable from "../Components/table/FeatureTable";
 import Navigation from "../Components/navigationNew";
 import useWindowSize from "../utilities/UseWindowSize";
 import MobileFooter from "../Components/mobile-version/MobileFooter";
-import { useRef } from "react";
 
 export default function Pricing() {
   const [showPopup, setShowPopup] = useState(false);
@@ -20,16 +19,15 @@ export default function Pricing() {
   const okrRef = useRef(null);
   const howItWorksRef = useRef(null);
   const awardsRef = useRef(null);
-  // const itWorksRef = useRef(null)
+
   const executeScroll = () => myRef.current?.scrollIntoView();
   const homerefScroll = () => homeRef.current?.scrollIntoView();
   const okrrefScroll = () => okrRef.current?.scrollIntoView();
   const howItWorksScroll = () => howItWorksRef.current?.scrollIntoView();
-  const awardsScroll = () =>
-    awardsRef.current?.scrollIntoView({ behavior: "smooth" });
-  // const itworksref=()=> ititWorksRefWorks.current.scrollIntoView()
+  const awardsScroll = () => awardsRef.current?.scrollIntoView({ behavior: "smooth" });
 
-  const  isMobile  = useWindowSize();
+  const isMobile = useWindowSize();
+
   const data1 = {
     heading: "Basic",
     description: "OKR + Rewards + Recognition",
@@ -46,6 +44,7 @@ export default function Pricing() {
     ],
     image: image1,
   };
+
   const data2 = {
     heading: "Pro",
     description: "Basic + Performance Review",
@@ -64,6 +63,7 @@ export default function Pricing() {
     ],
     image: image2,
   };
+
   const data3 = {
     heading: "Enterprise Plan",
     description: "Pro + Integration",
@@ -83,10 +83,7 @@ export default function Pricing() {
   };
 
   return (
-    <div className="bg-[#EAE3D6] " style={{ height: "100vh", overflow: "auto", background: "#EAE3D6" }}>
-      
-      
-
+    <div className="" style={{ height: "100vh", overflow: "auto", backgroundColor:"#ebe3d5" }}>
       <Navigation
         showPopup={showPopup}
         executeScroll={executeScroll}
@@ -94,39 +91,36 @@ export default function Pricing() {
         setShowPopup={() => setShowPopup(false)}
         setShowDemo={setShowTrail}
       />
-<div style={{marginTop:"6rem"}} className=" text-center container">
-      <h1 className="font-bold mb-4 ">Transparent Pricing According to your need</h1>
-      </div>
-      <div className=" container grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-2 justify-items-center " >
-
-        
-
-        
-        <Card3
-          data={data1}
-          setShowPopup={setShowPopup}
-          className="w-[300px] p-2"
-        />
-        <Card3
-          data={data2}
-          top={true}
-          setShowPopup={setShowPopup}
-          className="w-[300px] p-2"
-        />
-        <Card3
-          data={data3}
-          setShowPopup={setShowPopup}
-          className="w-[300px] p-2"
-        />
+      <div style={{ marginTop: "6rem" }} className="text-center container">
+        <h1 className="font-weight-bold  fs-8 mb-4">
+          Transparent Pricing According To Your need
+        </h1>
       </div>
 
-      <h1 className="text-center">Compare our Plans</h1>
-      <div className="p-4">
+      <div className="container d-grid gap-3 gap-md-4 gap-lg-5 justify-content-center align-items-center">
+        <div className="row justify-content-center">
+          <div className="col-12 col-md-4 mb-4 d-flex">
+            <Card3 data={data1} setShowPopup={setShowPopup} className="shadow-lg flex-fill" />
+          </div>
+          <div className="col-12 col-md-4 mb-4 d-flex">
+            <Card3 data={data2} top={true} setShowPopup={setShowPopup} className="shadow-lg flex-fill" />
+          </div>
+          <div className="col-12 col-md-4 mb-4 d-flex">
+            <Card3 data={data3} setShowPopup={setShowPopup} className="shadow-lg flex-fill" />
+          </div>
+        </div>
+      </div>
+
+
+<h1 className="text-center mt-5 fs-2">Compare our Plans</h1>
+
+     
+
+      <div className="container p-4">
         <FeatureTable features={features} plans={plans} />
       </div>
 
       {isMobile ? (
-        
         <MobileFooter
           homerefScroll={homerefScroll}
           okrrefScroll={okrrefScroll}

@@ -72,7 +72,7 @@ export function Nav({
     >
       {!isMobile && <Logo logoImg="2" textColor={textColor ? true : false} />}
       {/*<AnchorLink title="About us" path="/aboutus" />*/}
-      <div className="d-none  d-lg-flex flex-wrap justify-content-start align-items-center ">
+      <div className="d-none  d-lg-flex flex-wrap  gap-4 justify-content-start align-items-center ">
         <Dropdown
           title="Product"
           selectedType={selectedType}

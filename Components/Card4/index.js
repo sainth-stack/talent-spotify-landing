@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 export default function Card({
@@ -7,39 +6,30 @@ export default function Card({
   heading,
   subheading,
   width = "100%",
-  height = "auto",
 }) {
   return (
-    <div
-      className="  w-auto mx-3 bg-gray-50    p-1 shadow-lg  "
-      style={{
-        width,
-        height,
-        border: "1px solid #D1D5DB",
-        borderRadius: "1rem",
-        
-      }}
-    >
-      <Image
-        src={image}
-        alt="cardicon"
-        className="object-cover bg-gray-100 shadow-lg w-full px-1 h-48 py-3 " 
-        width={500}  
-        height={250} 
-        style={{ objectFit: "cover" }}  
-        data-toggle="modal"
-        data-target="#exampleModal"
-        
-      />
-
-      <div className=" p-2">
-        <h6 className="font-weight-bold text-xl text-left text-gray-800">
-          {heading}
-        </h6>
-
-        <p className="text-sm text-left text-gray-600 line-clamp-3">
-          {subheading}
-        </p>
+    <div className="col-12 col-md-6 col-lg-4 mb-4" style={{ minWidth: width }}>
+      <div className="card h-100 shadow">
+        <div className="position-relative" style={{ height: "250px" }}>
+          <Image
+            src={image}
+            alt={heading}
+            layout="fill"
+            objectFit="cover"
+            className="card-img-top p-2 shadow-lg"
+             style={{ borderRadius:".3rem" }}
+          />
+        </div>
+        <div className="card-body d-flex flex-column">
+          <h5 className="card-title fw-bold  mb-1">{heading}</h5>
+          <p className="card-text text-muted flex-grow-1 " style={{
+            display: "-webkit-box",
+            WebkitLineClamp: 3,
+            WebkitBoxOrient: "vertical",
+          }}>
+            {subheading}
+          </p>
+        </div>
       </div>
     </div>
   );

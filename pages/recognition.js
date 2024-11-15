@@ -1,37 +1,63 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Footer from "../Components/Footer";
-import BlogNav from "../Components/BlogNav";
+import MobileFooter from "../Components/mobile-version/MobileFooter";
 import Recognitions from "../Components/Recognitions";
+import Navigation from "../Components/navigationNew";
+import useWindowSize from "../utilities/UseWindowSize";
 import { ProgressCircle } from "./../Components/Progress/ProgressCard";
 import { recognitionProgressData } from "../utilities/progressData";
 
 export default function Home() {
+  const [showTrail, setShowTrail] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
 
-  return (
-    <div className="bg-[#ebe3d5]">
-      <div className="container">
-        <BlogNav
-          showPopup={showPopup}
-          setShowPopup={() => setShowPopup(false)}
-          heading="Recognition"
-          subheading="Did You Know That Companies With Highly Engaged Employees Experience..."
-        />
-      </div>
+  const myRef = useRef(null);
+  const homeRef = useRef(null);
+  const okrRef = useRef(null);
+  const howItWorksRef = useRef(null);
+  const awardsRef = useRef(null);
 
-      <div className="flex justify-evenly flex-wrap gap-6 p-6">
+  const executeScroll = () => myRef.current?.scrollIntoView();
+  const homerefScroll = () => homeRef.current?.scrollIntoView();
+  const okrrefScroll = () => okrRef.current?.scrollIntoView();
+  const howItWorksScroll = () => howItWorksRef.current?.scrollIntoView();
+  const awardsScroll = () =>
+    awardsRef.current?.scrollIntoView({ behavior: "smooth" });
+
+  const isMobile = useWindowSize();
+
+  return (
+    <div
+      style={{
+        minHeight: "100vh",
+        overflow: "auto",
+        background: "#EAE3D6",
+        paddingTop: "80px", // Adjust padding to account for the navbar height
+      }}
+    >
+      <Navigation
+        showPopup={showPopup}
+        executeScroll={executeScroll}
+        showDemo={showTrail}
+        setShowPopup={() => setShowPopup(false)}
+        setShowDemo={setShowTrail}
+      />
+
+      <h1 className="text-center fs-2 fw-bold mt-5">
+        Did you know that companies with highly engaged employees experience...
+      </h1>
+      <div className="d-flex justify-content-evenly flex-wrap gap-3 mt-5 p-3">
         {recognitionProgressData.map((data, index) => (
           <div
             key={index}
-            className="flex flex-col justify-center items-center p-4"
+            className="d-flex flex-column justify-content-center align-items-center p-2"
           >
             <ProgressCircle
               percentage={data.percentage}
               text={data.text}
-              borderColor={data.borderColor || "border-gray-300"} // Fallback color if `borderColor` is not defined
+              borderColor={data.borderColor || "border-secondary"} // Using Bootstrap's border color classes
             />
-            {/* Directly placing the text under the circle */}
-            <div className="text-lg w-32 flex-wrap   text-center font-bold text-gray-700 mt-2">
+            <div className="fs-5 w-25 text-center fw-bold text-secondary mt-2">
               {data.text}
             </div>
           </div>
@@ -39,7 +65,16 @@ export default function Home() {
       </div>
 
       <Recognitions />
-      <Footer />
+      {isMobile ? (
+        <MobileFooter
+          homerefScroll={homerefScroll}
+          okrrefScroll={okrrefScroll}
+          howItWorksScroll={howItWorksScroll}
+          awardsScroll={awardsScroll}
+        />
+      ) : (
+        <Footer />
+      )}
     </div>
   );
 }

@@ -1,11 +1,11 @@
 import React from "react";
-import cards_images from "../assets/images/cards_images.png";
 import Image from "next/image";
+import cards_images from "../assets/images/cards_images.png";
 
 const ReviewCard = ({ reviewItems, imageSrc }) => {
     return (
-        <div
-            className="review-card "
+        <div 
+            className="review-card"
             style={{
                 backgroundColor: "white",
                 borderRadius: "10px",
@@ -16,6 +16,7 @@ const ReviewCard = ({ reviewItems, imageSrc }) => {
                 position: "relative",
                 borderImage: "linear-gradient(135deg, #4c6ef5, #6a4cfc) 1",
                 zIndex: 1, // Ensures content stays within the card boundaries
+                marginTop: "30px", // Add margin to the top to prevent overlap with Navbar
             }}
         >
             <h4 style={{ textAlign: "center", fontWeight: "bold", paddingBottom: "10px" }}>Rewards</h4>
@@ -35,7 +36,6 @@ const ReviewCard = ({ reviewItems, imageSrc }) => {
                         transform: "translateY(-50%)",
                         width: "auto", // Adjusts for perfect vertical centering
                         height: "auto", // Controls the height of the image relative to the card
-                        width: "auto", // Maintains aspect ratio
                         zIndex: 1000,
                     }}
                 >
@@ -47,7 +47,6 @@ const ReviewCard = ({ reviewItems, imageSrc }) => {
                         height={350}
                         style={{
                             borderRadius: "8px",
-
                         }}
                     />
                 </div>

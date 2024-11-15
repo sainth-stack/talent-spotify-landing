@@ -4,9 +4,7 @@ import create_recog from "../assets/svg/create_recog.svg";
 import feature_1 from "../assets/images/feature_1.png";
 import feature_2 from "../assets/images/feature_2.png";
 import recog_phone from "../assets/images/recog_phone.png";
-
 import feature_3 from "../assets/images/feature_3.png";
-
 
 import ReviewsAndCards from "./Reviews";
 import { recognitionData } from "../utilities/recognitionData";
@@ -27,7 +25,7 @@ export default function Recognitions() {
       image: feature_2,
       heading: "Manager to Report",
       subheading:
-        "Save your people leader’s time and effect running recognition and rewards programs to keep your employees engaged. Track activity from the administrative dashboard.",
+        "Save your people leader's time and effect running recognition and rewards programs to keep your employees engaged. Track activity from the administrative dashboard.",
       category: "Performance",
     },
     {
@@ -37,8 +35,6 @@ export default function Recognitions() {
         "Empower your team to go the extra mile. We provide 600+ rewards with quick implementation so you can easily start giving recognition and tracking performance.",
       category: "Rewards",
     },
-
-    // Add more webinars as needed
   ];
 
   const filteredWebinars =
@@ -47,72 +43,43 @@ export default function Recognitions() {
       : webinars.filter((w) => w.category === selectedCategory);
 
   return (
-    <div>
+    <div >
       {/* This is the section with the image */}
-      <div className="d-flex justify-center m-1 p-1 pl-5 ml-5">
-        <div className="pl-3">
+      <div className="d-flex justify-content-center m-1 p-1 ps-5 ms-5">
+        <div className="ps-3">
           <Image
             src={create_recog}
             alt="create_recog"
-            className="w-full h-auto "
+            className="img-fluid"
+           
           />
         </div>
       </div>
 
       {/* Card displaying objective design questions */}
-        <ReviewsAndCards reviewItems={recognitionData} imageSrc={recog_phone}
-         title={"Gamified and Real-Time Leaderboards"}  />
+      <ReviewsAndCards
+        reviewItems={recognitionData}
+        imageSrc={recog_phone}
+        title={"Gamified and Real-Time Leaderboards"}
+      />
 
-
-
-
-
-
-
-      {/* footer cardsa sad */}
-
-
-      {/* featutrers */}
-
-      <div className="bg-black py-8   flex mb-4 flex-col items-center">
-        {/* Heading Section */}
-        <div className="text-center mb-6">
-          <h2 className="text-white font-bold text-2xl">Features</h2>
-        </div>
-
-        {/* Cards Section */}
-
-        <div className=" flex container">
+      {/* Features */}
+     <div className="bg-dark py-5">
+      <div className="container">
+        <h2 className="text-white text-center mb-4">Features</h2>
+        <div className="row justify-content-center">
           {filteredWebinars.map((webinar, index) => (
-            <div
+            <Card
               key={index}
-              className="shadow-md   "
-
-            >
-              <Card
-                image={webinar.image}
-                heading={webinar.heading}
-                subheading={webinar.subheading}
-                width="450px" // Fixed width
-                height="400px"
-              
-                 // Fixed height
-              />
-            </div>
+              image={webinar.image}
+              heading={webinar.heading}
+              subheading={webinar.subheading}
+              width="30px"
+            />
           ))}
         </div>
       </div>
-
-
-      {/* featueres */}
-
-
-
-
-
-
-
-
     </div>
-  );
+    </div>
+  )
 }

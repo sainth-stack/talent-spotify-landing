@@ -10,6 +10,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.bg-gradient {
+    background: linear-gradient(to right, indigo, blue);
+}
+
 .appLogo2 {
   width: 60px !important;
   height: 60px !important;
@@ -1550,6 +1554,12 @@ padding-top: -40px; */
 
 .fs-22 {
   font-size: 22px;
+}
+
+/* Example of increasing specificity */
+.container h1 {
+  font-size: 2rem; /* Adjust size as needed */
+  font-weight: bold;
 }
 
 @media screen and (max-width: 420px) {
