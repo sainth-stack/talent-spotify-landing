@@ -12,11 +12,10 @@ export default function TermsConditions() {
           <h2 className="text-xs font-semibold mb-2">{section.title}</h2>
           <ul className="list-decimal list-unstyled list-inside text-gray-800">
             {section.items.map((item, itemIndex) => (
-              <li key={itemIndex} className="mb-2">
-                {/* {item.term && <strong>{`4.${itemIndex + 1} `}</strong>} */}
+              <div key={itemIndex} className="mb-2">
                 {item.term}
                 {item.description}
-              </li>
+              </div>
             ))}
           </ul>
         </div>
