@@ -2,14 +2,14 @@
   display: flex;
   background-color: #ebe3d5;
   justify-content: space-around;
-  width: 123px;
+  width:1330px;
   margin-left: -210px;
-  margin-top: -19px;
-  height: 350px;
+  margin-top: -10px;
+  height: 300px;
   padding: 20px;
 }
 .Carer-heading h1 {
-  margin-top: 35px;
+  margin-top: 40px;
 }
 .btn-open {
   background-color: #134595;
@@ -19,7 +19,7 @@
   margin-top: 30px;
 }
 .career-image {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .browse-file {
   width: 725px;
