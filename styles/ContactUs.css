@@ -68,9 +68,9 @@
     background-color: #ebe3d5;
   }
   .footer_container {
-    width: 1000px;
+    width: 1050px;
     background-color: #ebe3d5;
-    margin-left: 18px;
+    padding-left: 20px;
   }
   .main-contactus,
   .main-contactus2 {
@@ -92,3 +92,22 @@
     padding-left: 230px;
   }
 }
+
+/* @media (max-width:1080px){nop
+  .main-contact2{
+    padding-left:160px;
+  }
+  .browse-file{
+    width:620px;
+  }
+  .footer_container{
+    width:1210px;
+  padding:40px;
+  }
+  .Carer-heading {
+    width: 1210px;
+    padding-left:-0px;
+    padding:40px;
+    margin-left:-40px;
+  }
+} */

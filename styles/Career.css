@@ -2,7 +2,7 @@
   display: flex;
   background-color: #ebe3d5;
   justify-content: space-around;
-  width: 1550px;
+  width: 123px;
   margin-left: -210px;
   margin-top: -19px;
   height: 350px;
@@ -32,15 +32,16 @@
 }
 
 @media (max-width: 768px) {
-  ..main-contact2 {
+  .main-contact2 {
     width: 950px;
     margin-top: 20px;
   }
   .Carer-heading {
-    width: 1018px;
-    margin-left: -15px;
+    width: 1055px;
+    margin-left: -20px;
     display: flex;
 
+    margin-top: -25px;
     flex-direction: row;
   }
   .browse-border {

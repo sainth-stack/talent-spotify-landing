@@ -12,7 +12,7 @@ export default function Termsandconditions() {
 
   return (
     <div className="bg-[#EAE3D6]">
-      <div className="container">
+      <div className="container inner-terms">
         <BlogNav
           showPopup={showPopup}
           setShowPopup={() => setShowPopup(false)}
@@ -20,7 +20,7 @@ export default function Termsandconditions() {
           subheading=""
         />
       </div>
-      <div className="d-flex justify-content-center">
+      <div className="inner-terms d-flex justify-content-center">
         <TermsConditions />
       </div>
       <Footer />
