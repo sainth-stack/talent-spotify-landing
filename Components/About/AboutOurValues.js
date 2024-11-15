@@ -4,7 +4,7 @@ import FinalAboutus from "../../Components/About/FinalAboutus";
 export function AboutOurValues() {
   const ValueItem = ({ color, descriptionColor, title, description }) => {
     return (
-      <div className="flex   mobile_view items-center justify-center mb-4 w-full  max-w-3xl mx-auto">
+      <div className="flex    items-center justify-center mb-4 w-full  max-w-3xl mx-auto">
         <div
           className={`   text-white font-semibold px-4 py-2 text-center rounded-lg `}
           style={{
@@ -34,7 +34,7 @@ export function AboutOurValues() {
         <FinalAboutus />
         <h1 className="text-center pb-4 mt-4 font-bold text-xl">Our Values</h1>
 
-        <div className="flex flex-col items-center w-full mobile_values">
+        <div className="flex flex-col items-center w-full ">
           <ValueItem
             color="#6f9ce3"
             descriptionColor="#c7dcff"

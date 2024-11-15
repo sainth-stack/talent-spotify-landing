@@ -31,10 +31,10 @@ export default function FinalAboutus() {
             padding: "20px", // Adjust padding as needed for inner content
           }}
         >
-          <div className="flex justify-center m-4">
+          <div className=" justify-center m-4">
             {/* Title inside the border */}
             <h2
-              className="tablet_view absolute -top-4 left-1/2 transform -translate-x-1/2 text-xl text-white w-40 font-bold mb-4 px-6 rounded-full"
+              className=" absolute -top-4 left-1/2 transform -translate-x-1/2 text-xl text-white w-40 font-bold mb-4 px-6 rounded-full"
               style={{
                 backgroundImage: "linear-gradient(to right, #9967f5, #576afa)",
                 zIndex: 10,
@@ -46,7 +46,7 @@ export default function FinalAboutus() {
             {/* Cards */}
             <div className="flex justify-center flex-wrap gap-8 m-3">
               <Card
-                styles="tablet_Card shadow-lg"
+                styles=" shadow-lg"
                 icon={aneel}
                 heading="Aneel"
                 subheading="Founder, CEO"
@@ -56,7 +56,7 @@ export default function FinalAboutus() {
                 }}
               />
               <Card
-                styles="tablet_Card shadow-lg"
+                styles=" shadow-lg"
                 icon={prasanth}
                 heading="Prashanth Reddy"
                 subheading="Co-Founder, CTO"
