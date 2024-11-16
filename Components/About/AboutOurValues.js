@@ -4,7 +4,7 @@ import FinalAboutus from "../../Components/About/FinalAboutus";
 export function AboutOurValues() {
   const ValueItem = ({ color, descriptionColor, title, description }) => {
     return (
-      <div className="d-flex align-items-center justify-content-center mb-4 w-100 mx-auto" style={{ maxWidth: '768px' }}>
+      <div className="d-flex align-items-center justify-content-center mb-4 w-100 mx-auto mobile_values" style={{ maxWidth: '768px' }}>
         <div
           className="text-white font-weight-bold px-2  py-2 text-center rounded"
           style={{

@@ -112,7 +112,11 @@ export default function Home() {
         </div>
       </div>
 
-      {isMobile ? (
+
+        <Footer />
+
+
+      {/* {isMobile ? (
         <MobileFooter
           homerefScroll={homerefScroll}
           okrrefScroll={okrrefScroll}
@@ -121,7 +125,7 @@ export default function Home() {
         />
       ) : (
         <Footer />
-      )}
+      )} */}
     </div>
   );
 }

@@ -13,7 +13,7 @@ export const ProgressCircle = ({ percentage, borderColor = 'border-danger' }) =>
 
     return (
         <div
-            className={`position-relative d-flex  align-items-center justify-content-center rounded-circle bg-white container border border-4 ${borderClass} shadow p-2`}
+            className={`position-relative d-flex align-items-center justify-content-center rounded-circle bg-white container border border-4 ${borderClass} shadow p-2`}
             style={{
                 width: '6rem',
                 height: '6rem',
@@ -27,21 +27,25 @@ export const ProgressCircle = ({ percentage, borderColor = 'border-danger' }) =>
 
 const ProgressCard = () => {
     return (
-        <div className="d-flex flex-column   p-1  container">
+        <div className="d-flex flex-column  p-1 container">
             {progressData.map((data, index) => (
-                <div key={index} className="d-flex my-3 justify-content-center align-items-center">
+                <div
+                    key={index}
+                    className={`d-flex flex-column  gap-2 flex-md-row my-3 justify-content-center align-items-center ${
+                        data.align === 'right' ? 'flex-column-reverse flex-md-row' : 'flex-md-row'
+                    }`}
+                >
                     {data.align === 'right' ? (
                         <>
-                            <div className={`fs-6 my-1 fw-medium p-2 border border-2 border-dotted ${borderColorClasses[data.borderColor]} rounded-pill me-4`}>
+                            <div
+                                className={`fs-6 my-1 fw-medium p-2 border border-2 border-dotted ${borderColorClasses[data.borderColor]} rounded-pill me-md-4 mb-3 mb-md-0`}
+                            >
                                 {data.text}
                             </div>
-   <div
-  className={`w-25 border-top border-dotted ${borderColorClasses[data.borderColor]} mx-4`}
-  style={{ width: '1.5rem' }}
-></div>
-
-
-
+                            <div
+                                className={`w-25 border-top border-dotted ${borderColorClasses[data.borderColor]} mx-md-4`}
+                                style={{ width: '1.5rem' }}
+                            ></div>
                             <ProgressCircle
                                 percentage={data.percentage}
                                 borderColor={data.borderColor}
@@ -53,12 +57,13 @@ const ProgressCard = () => {
                                 percentage={data.percentage}
                                 borderColor={data.borderColor}
                             />
-                           <div
-  className={`w-25 border-top border-dotted ${borderColorClasses[data.borderColor]} mx-4`}
-  style={{ width: '1.5rem' }}
-></div>
-
-                            <div className={`fs-6 mx-3 fw-medium p-2 border border-2 ${borderColorClasses[data.borderColor]} rounded-pill ms-4`}>
+                            <div
+                                className={`w-25 border-top border-dotted ${borderColorClasses[data.borderColor]} mx-md-4`}
+                                style={{ width: '1.5rem' }}
+                            ></div>
+                            <div
+                                className={`fs-6 mx-3 fw-medium p-2 border border-2 ${borderColorClasses[data.borderColor]} rounded-pill ms-md-4 mb-3 mb-md-0`}
+                            >
                                 {data.text}
                             </div>
                         </>
@@ -66,8 +71,11 @@ const ProgressCard = () => {
                 </div>
             ))}
 
-            <div className="d-flex justify-content-center my-4 ">
-                <button className="px-4 py-2 btn btn-primary rounded-pill" style={{backgroundColor: '#083c61', borderColor: '#083c61'}}>
+            <div className="d-flex justify-content-center my-4">
+                <button
+                    className="px-4 py-2 btn btn-primary rounded-pill"
+                    style={{ backgroundColor: '#083c61', borderColor: '#083c61' }}
+                >
                     Book A Demo
                 </button>
             </div>

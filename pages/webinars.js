@@ -59,7 +59,10 @@ export default function WebinarMain() {
         showPopup={() => setShowPopup(true)}
       />
       </div>
-      {isMobile ? (
+
+        <Footer />
+
+      {/* {isMobile ? (
         <MobileFooter
           homerefScroll={homerefScroll}
           okrrefScroll={okrrefScroll}
@@ -68,7 +71,7 @@ export default function WebinarMain() {
         />
       ) : (
         <Footer />
-      )}
+      )} */}
     </div>
   );
 }

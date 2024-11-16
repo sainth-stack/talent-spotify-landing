@@ -12,7 +12,7 @@ export default function CardBlogDetails({
     <div className="cardhover mobile_blog_card d-flex flex-column flex-md-row bg-white rounded mb-2 container shadow-lg">
       {/* Image Section */}
       <div
-        className="position-relative col-12 col-md-4 mb-3 mb-md-0 rounded-top rounded-md-start"
+        className="position-relative  mobile_blog_image col-12 col-md-4 mb-3 mb-md-0 rounded-top rounded-md-start"
         style={{
           borderRadius: ".6rem",
           height: "auto", // Ensuring height adjusts based on content
@@ -25,12 +25,12 @@ export default function CardBlogDetails({
           width={400} // Set the width for the image
           height={250} // Set the height for the image
           objectFit="cover"
-          className="rounded-lg shadow-md py-2"
+          className="rounded-lg  mobile_blog_img shadow-md py-2"
         />
       </div>
 
       {/* Content Section */}
-      <div className="card-body p-3 d-flex flex-column justify-between col-12 col-md-8">
+      <div className="card-body p-3 d-flex mobile_blog_content  flex-column justify-between col-12 col-md-8">
         {/* Heading */}
         <p className="fs-5 fw-bold text-dark mb-2">{heading}</p>
 

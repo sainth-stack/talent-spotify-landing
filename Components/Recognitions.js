@@ -45,7 +45,7 @@ export default function Recognitions() {
   return (
     <div >
       {/* This is the section with the image */}
-      <div className="d-flex justify-content-center m-1 p-1 ps-5 ms-5">
+      <div className="create_recog_image d-flex justify-content-center m-1 p-1 ps-5 ms-5">
         <div className="ps-3">
           <Image
             src={create_recog}
@@ -64,7 +64,7 @@ export default function Recognitions() {
       />
 
       {/* Features */}
-     <div className="bg-dark py-5">
+     <div className="bg-dark py-5 mb-5">
       <div className="container">
         <h2 className="text-white text-center mb-4">Features</h2>
         <div className="row justify-content-center">

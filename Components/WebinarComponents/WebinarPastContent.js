@@ -69,7 +69,9 @@ export function WebinarPastContent() {
             heading="How To Measure Your OKRs Successfully"
             subheading="Exploring approaches to performance reviews and feedback for a more engaged, future-ready workplace."
             width="100%"
-            height="400px"
+                height="400px"
+
+           
           />
         </div>
 
@@ -82,7 +84,9 @@ export function WebinarPastContent() {
               zIndex: 1,
               transform: "translateY(-50%)",
               width: "50%",
+              
             }}
+            
           >
             Upcoming
           </div>
@@ -93,7 +97,9 @@ export function WebinarPastContent() {
             heading="Future of performance reviews and workplace feedback"
             subheading="Discover the next generation of performance reviews and feedback to drive growth and engagement."
             width="100%"
-            height="400px"
+                height="400px"
+
+           
           />
         </div>
       </div>
@@ -102,9 +108,9 @@ export function WebinarPastContent() {
       <h3 className="fs-5  fw-bold mt-4 mb-3">All Webinars</h3>
 
       {/* Grid for the list of webinars */}
-      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+      <div className="row row-cols-1 row-cols-md-2 row-cols-1  g-4">
         {filteredWebinars.map((webinar, index) => (
-          <div className="col" key={index}>
+          <div className="col " key={index}>
             <div className="position-relative ">
               {/* "Upcoming" badge */}
               
@@ -116,6 +122,7 @@ export function WebinarPastContent() {
                 subheading={webinar.subheading}
                 width="100%"
                 height="400px"
+                
               />
             </div>
           </div>

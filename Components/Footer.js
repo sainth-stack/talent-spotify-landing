@@ -16,7 +16,7 @@ export default function Footer() {
     <div style={{ backgroundColor: "#ebe3d5" }}>
       <div
         style={{ padding: isMobile ? "0px" : "0px 80px 30px 80px" }}
-        className="footer_container"
+        className=""
       >
         <footer className="footer-card">
           <div className="footer-content">

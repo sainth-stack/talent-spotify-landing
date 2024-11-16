@@ -3,9 +3,10 @@ import Navigation from "../Components/navigationNew";
 import { Content } from "../Components/new-dashboard/Content1";
 import Footer from "../Components/Footer";
 import { useRef } from "react";
-import MobileFooter from "../Components/mobile-version/MobileFooter";
+
 import useWindowSize from "../utilities/UseWindowSize";
 import { list1 } from "../utilities/data";
+import MobileFooter from './../Components/mobile-version/MobileFooter/index';
 export default function LandingPageNew() {
   const [showPopup, setShowPopup] = useState(false);
   const [showTrail, setShowTrail] = useState(false);
@@ -48,17 +49,14 @@ export default function LandingPageNew() {
         showFreeTrail={() => setShowTrail(true)}
       />
 
-      {isMobile ? (
+      <Footer />
+      
+   {/* {isMobile ? (
         
-        <MobileFooter
-          homerefScroll={homerefScroll}
-          okrrefScroll={okrrefScroll}
-          howItWorksScroll={howItWorksScroll}
-          awardsScroll={awardsScroll}
-        />
+       <MobileFooter/>
       ) : (
         <Footer />
-      )}
+      )}  */}
     </div>
   );
 }

@@ -8,7 +8,7 @@ export default function Card({
   width = "100%",
 }) {
   return (
-    <div className="col-12 col-md-6 col-lg-4 mb-4" style={{ minWidth: width }}>
+    <div className="col-12 col-md-6 col-lg-4 mb-4 "  style={{ minWidth: width }}>
       <div className="card h-100 shadow">
         <div className="position-relative" style={{ height: "250px" }}>
           <Image
@@ -20,9 +20,9 @@ export default function Card({
              style={{ borderRadius:".3rem" }}
           />
         </div>
-        <div className="card-body d-flex flex-column">
+        <div className="card-body d-flex flex-column h-50 ">
           <h5 className="card-title fw-bold  mb-1">{heading}</h5>
-          <p className="card-text text-muted flex-grow-1 " style={{
+          <p className="card-text text-muted mb-3 flex-grow-1 " style={{
             display: "-webkit-box",
             WebkitLineClamp: 3,
             WebkitBoxOrient: "vertical",

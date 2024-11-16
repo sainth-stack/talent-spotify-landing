@@ -10,6 +10,11 @@ html {
   scroll-behavior: smooth;
 }
 
+
+
+.review_image_center {
+  left: 10%;
+}
 .bg-gradient {
     background: linear-gradient(to right, indigo, blue);
 }
@@ -1844,6 +1849,18 @@ padding-top: -40px; */
 /* for tablets */
 @media (min-width: 768px) and (max-width: 1024px) {
 
+     .mobile_blog_card {
+      width:100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .mobile_blog_image,.mobile_blog_content{
+          width:100% !important;
+          max-height:30% !important;
+      
+    }
+   
+    
    
 /* /styles/about.module.css */
 .tablet_Card {
@@ -1913,10 +1930,7 @@ padding-top: -40px; */
     align-items: center !important;
   }
 
-  .okrMob {
-    /* margin-top: 2rem !important; */
-    min-height: 40px !important;
-  }
+
   .okrMob {
     margin-top: 2rem !important;
   }
@@ -1998,44 +2012,61 @@ padding-top: -40px; */
 /* for mobile */
 
 @media (max-width: 768px) {
-  .mobile_values{
+   .create_recog_image {
+    justify-content: center !important;
+    padding-left: 0 !important;
+    margin-left: 0!important ;
+    display: flex !important;
+    align-items: center!important;
+    justify-content: center !important;
+    /* This will make the container take full height of the viewport */
+  }
+
+  .create_recog_image .ps-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .review_image_center{
+    left:0;
+  }
+  .mobile_values {
+    display: flex !important;
+    flex-direction: column !important;
+    gap:.3rem !important;
     margin-bottom: 3rem !important;
   }
-  .mobile_table{
+
+  .mobile_table {
     margin-bottom: 5rem !important;
   }
-  .mobile_cards{
+
+  .mobile_cards {
     margin-bottom: 3rem !important;
-
-
   }
 
-  
-  .mobile_blog_card{
-        display: flex !important;
+  .mobile_blog_card {
+    display: flex !important;
     flex-direction: column;
-    height:350px !important;
-
-
+    
   }
 
-  
-  
   .mobile_view {
     display: flex;
     flex-direction: column; /* Change to column layout on mobile */
     align-items: center;
-    gap:.5rem/* Optional: Align items to the start */
+    gap: 0.5rem; /* Optional: Align items to the start */
   }
+
   .tablet_Card {
-    /* Example change for smaller screens */
     width: 100%; /* Ensure it takes up full width on smaller screens */
-    /* Reduce padding */
+    padding: 0; /* Reduce padding for smaller screens */
   }
+
   .footer-card {
     width: 100% !important;
     background: #f8f8f8;
-    border-radius: 36px 36px;
+    border-radius: 36px;
     padding: 10px !important;
     display: flex;
     flex-direction: column;
@@ -2043,8 +2074,8 @@ padding-top: -40px; */
 
     .footer-content {
       display: flex;
+    
       justify-content: space-evenly;
-
       margin-bottom: 30px;
 
       .footer-column {
@@ -2093,33 +2124,37 @@ padding-top: -40px; */
 
     .footer-bottom {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column; /* Adjust for smaller screens */
+      justify-content: center;
       align-items: center;
       padding-top: 20px;
       border-top: 1px solid #e0e0e0;
-    }
-    .footer-text {
-      font-family: "Poppins", sans-serif;
-      font-size: 14px;
-      font-weight: 400;
-      color: #333;
-    }
 
-    .footer-links {
-      display: flex;
-      gap: 15px;
-
-      a {
+      .footer-text {
         font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 400;
         color: #333;
-        text-decoration: none;
+        margin-bottom: 10px;
+      }
 
-        &:hover {
-          text-decoration: underline;
+      .footer-links {
+        display: flex;
+        gap: 15px;
+
+        a {
+          font-family: "Poppins", sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+          color: #333;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }
   }
 }
+

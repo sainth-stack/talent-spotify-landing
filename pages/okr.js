@@ -63,9 +63,12 @@ export default function Home() {
         />
       </div>
 
+        <Footer />
+
+
       {/* Mobile Footer: only shown if it's a mobile view */}
-      {isMobile ? (
-        <div style={{ marginTop: 'auto' }}> {/* Push mobile footer to the bottom */}
+     {/*  {isMobile ? (
+        <div style={{ marginTop: 'auto' }}> 
           <MobileFooter
             homerefScroll={homerefScroll}
             okrrefScroll={okrrefScroll}
@@ -75,7 +78,7 @@ export default function Home() {
         </div>
       ) : (
         <Footer />
-      )}
+      )} */}
     </div>
   );
 }

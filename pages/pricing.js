@@ -68,7 +68,7 @@ export default function Pricing() {
     heading: "Enterprise Plan",
     description: "Pro + Integration",
     name: "Contact us for Pricing",
-    buttonText: "REQUEST A DEMO",
+    buttonText: "Book A DEMO",
     description2: "Everything in Pro plus:",
     keypoints: [
       "Dedicated Account manager and priority service",
@@ -97,30 +97,35 @@ export default function Pricing() {
         </h1>
       </div>
 
-      <div className="container d-grid gap-3 gap-md-4 gap-lg-5 justify-content-center align-items-center">
-        <div className="row justify-content-center">
-          <div className="col-12 col-md-4 mb-4 d-flex">
-            <Card3 data={data1} setShowPopup={setShowPopup} className="shadow-lg flex-fill" />
-          </div>
-          <div className="col-12 col-md-4 mb-4 d-flex">
-            <Card3 data={data2} top={true} setShowPopup={setShowPopup} className="shadow-lg flex-fill" />
-          </div>
-          <div className="col-12 col-md-4 mb-4 d-flex">
-            <Card3 data={data3} setShowPopup={setShowPopup} className="shadow-lg flex-fill" />
-          </div>
-        </div>
-      </div>
+    <div className="container d-flex justify-content-center flex-column align-items-center p-3">
+  <div className="row justify-content-center mx-2 container  w-100" >
+    <div className="col-12 col-md-4 mb-4 d-flex justify-content-center">
+      <Card3 data={data1} setShowPopup={setShowPopup} className="shadow-lg w-100" />
+    </div>
+    <div className="col-12 col-md-4 mb-4 d-flex justify-content-center">
+      <Card3 data={data2} top={true} setShowPopup={setShowPopup} className="shadow-lg w-100" />
+    </div>
+    <div className="col-12 col-md-4 mb-4 d-flex justify-content-center">
+      <Card3 data={data3} setShowPopup={setShowPopup} className="shadow-lg w-100" />
+    </div>
+  </div>
+</div>
 
 
-<h1 className="text-center mt-5 fs-2">Compare our Plans</h1>
+
+
+
 
      
 
       <div className="container p-4">
+        <h1 className="text-center mt-5 fs-2">Compare our Plans</h1>
         <FeatureTable features={features} plans={plans} />
       </div>
 
-      {isMobile ? (
+      <Footer />
+
+    {/*   {isMobile ? (
         <MobileFooter
           homerefScroll={homerefScroll}
           okrrefScroll={okrrefScroll}
@@ -129,7 +134,7 @@ export default function Pricing() {
         />
       ) : (
         <Footer />
-      )}
+      )} */}
     </div>
   );
 }

@@ -51,7 +51,9 @@ export default function Review() {
         />
       </div>
 
-      {isMobile ? (
+        <Footer />
+
+      {/* {isMobile ? (
         <MobileFooter
           homerefScroll={homerefScroll}
           okrrefScroll={okrrefScroll}
@@ -60,7 +62,7 @@ export default function Review() {
         />
       ) : (
         <Footer />
-      )}
+      )} */}
     </div>
   );
 }

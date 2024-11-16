@@ -11,6 +11,7 @@ import "../styles/ContactUs.css"; // Custom contact page styles
 
 import { useEffect } from "react";
 import Layout from "./Layout";
+import Footer from "../Components/Footer";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -24,6 +25,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Layout>
       <Component {...pageProps} />
+     
     </Layout>
   );
 }
