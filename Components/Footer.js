@@ -24,7 +24,7 @@ export default function Footer() {
               <Image
                 src={logo}
                 alt="TalentSpotify Logo"
-                style={{ marginBottom: "18px" }}
+                style={{  }}
                 className=" "
               />
               <div className="flex flex-col mt-3">
