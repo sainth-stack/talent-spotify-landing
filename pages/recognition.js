@@ -46,23 +46,24 @@ export default function Home() {
       <h1 className="text-center fs-2 fw-bold mt-5">
         Did you know that companies with highly engaged employees experience...
       </h1>
-      <div className="d-flex justify-content-evenly flex-wrap gap-3 mt-2 p-3">
+      <div className="d-flex justify-content-center flex-wrap mt-2 p-3 ">
         {recognitionProgressData.map((data, index) => (
           <div
             key={index}
-            className="d-flex flex-column justify-content-center align-items-center p-2"
+            className="d-flex flex-column justify-content-center align-items-center mb-3"
           >
             <ProgressCircle
               percentage={data.percentage}
               text={data.text}
               borderColor={data.borderColor || "border-secondary"} // Using Bootstrap's border color classes
             />
-            <div className="fs-5 w-75 text-center fw-bold  mt-2">
+            <div className="fs-5 w-75 text-center fw-bold mt-2">
               {data.text}
             </div>
           </div>
         ))}
       </div>
+
 
       <Recognitions />
       <Footer />

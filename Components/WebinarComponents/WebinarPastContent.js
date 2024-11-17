@@ -51,17 +51,23 @@ export function WebinarPastContent() {
       <div className="row container row-cols-1 row-cols-sm-2  row-cols-md-2 g-4 pb-4 ">
         <div className="col position-relative">
           {/* "Upcoming" badge */}
-          <div
-            className="position-absolute top-0 start-0 bg-gradient  px-4 py-2 rounded-start fw-bold"
-            style={{
-              background: "linear-gradient(to right, #4f93f7, #9b65e9)",
-              zIndex: 1,
-              transform: "translateY(-50%)",
-              width: "50%",
-            }}
-          >
-            Upcoming
-          </div>
+      <div
+  className="position-absolute start-0 fw-bold"
+  style={{
+    background: "linear-gradient(to right, #4f93f7, #9b65e9)", // Gradient background
+    zIndex: 22,
+    top: "-1%", // Moved badge higher
+    transform: "translateY(-50%)",
+    width: "fit-content", // Dynamic width for responsiveness
+    padding: "0.3rem 1rem", // Compact padding
+    borderRadius: "12px", // Fully rounded corners
+    color: "white", // Text color for contrast
+    fontSize: "0.9rem", // Smaller font size for responsiveness
+  }}
+>
+  Upcoming
+</div>
+
 
           {/* Card for the first webinar */}
           <Card
@@ -77,19 +83,23 @@ export function WebinarPastContent() {
 
         <div className="col position-relative">
           {/* "Upcoming" badge */}
-          <div
-            className="position-absolute top-0 start-0 bg-gradient  px-4 py-2 rounded-start fw-bold"
-            style={{
-              background: "linear-gradient(to right, #4f93f7, #9b65e9)",
-              zIndex: 1,
-              transform: "translateY(-50%)",
-              width: "50%",
-              
-            }}
-            
-          >
-            Upcoming
-          </div>
+        <div
+  className="position-absolute start-0 fw-bold"
+  style={{
+    background: "linear-gradient(to right, #4f93f7, #9b65e9)", // Gradient background
+    zIndex: 22,
+    top: "-1%", // Moved badge higher
+    transform: "translateY(-50%)",
+    width: "fit-content", // Dynamic width for responsiveness
+    padding: "0.3rem 1rem", // Compact padding
+    borderRadius: "12px", // Fully rounded corners
+    color: "white", // Text color for contrast
+    fontSize: "0.9rem", // Smaller font size for responsiveness
+  }}
+>
+  Upcoming
+</div>
+
 
           {/* Card for the second webinar */}
           <Card

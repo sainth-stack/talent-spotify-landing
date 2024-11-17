@@ -30,7 +30,7 @@ export default function DropdownNormal({ title, options = [], handleClick, isOpe
               <a className="dropdown-item  text-capitalize text-left justify-content-start d-flex align-items-center" style={{ marginTop: '6px' }}>
 
                 {option.icon && (
-                  <span className="dropdown-icon mr-2">
+                  <span className="dropdown-icon me-3">
                     <Image src={option.icon} alt={`${option.key} icon`} width="20" height="20" />
                   </span>
                 )}

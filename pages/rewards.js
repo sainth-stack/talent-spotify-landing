@@ -23,7 +23,7 @@ export default function WebinarDetails() {
   const isMobile = useWindowSize();
 
   return (
-    <div className='' style={{ height: "100vh", background: "#EAE3D6" }}>
+    <div className='' style={{ minHeight: "100vh", background: "#EAE3D6" }}>
       <Navigation
         showPopup={showPopup}
         executeScroll={executeScroll}

@@ -1,43 +1,64 @@
-import React, { useState } from "react";
+import React, {useRef, useState } from "react";
 import Footer from "../Components/Footer";
 import image1 from ".././assets/images/pricing1.png";
 import image2 from ".././assets/images/pricing3.png";
-import image3 from "../assets/images/pricing3.png";
+import carrer_img from "../assets/images/carrer_img.png";
 import Card3 from "../Components/Card3";
 import BlogNav from "../Components/BlogNav";
 import TermsConditions from "../Components/TermsConditions";
 import Careers from "../Components/Careers";
 import Image from "next/image";
+import Navigation from "../Components/navigationNew";
+import useWindowSize from "../utilities/UseWindowSize";
 export default function Career() {
-  const [showPopup, setShowPopup] = useState(false);
+ const [showPopup, setShowPopup] = useState(false);
+  const [showTrail, setShowTrail] = useState(false);
+  const myRef = useRef(null);
+  const homeRef = useRef(null);
+  const okrRef = useRef(null);
+  const howItWorksRef = useRef(null);
+  const awardsRef = useRef(null);
+
+  const executeScroll = () => myRef.current?.scrollIntoView();
+  const homerefScroll = () => homeRef.current?.scrollIntoView();
+  const okrrefScroll = () => okrRef.current?.scrollIntoView();
+  const howItWorksScroll = () => howItWorksRef.current?.scrollIntoView();
+  const awardsScroll = () => awardsRef.current?.scrollIntoView({ behavior: "smooth" });
+
+  const isMobile = useWindowSize();
 
   return (
-    <div className="bg-white bgCareer">
+    <div className="" style={{ height: "100vh", overflow: "auto", backgroundColor:"#ebe3d5" }}>
+    <Navigation
+        showPopup={showPopup}
+        executeScroll={executeScroll}
+        showDemo={showTrail}
+        setShowPopup={() => setShowPopup(false)}
+        setShowDemo={setShowTrail}
+      />
       <div className="container">
-        <BlogNav
-          showPopup={showPopup}
-          setShowPopup={() => setShowPopup(false)}
-        />
-
-        <div className="Carer-heading">
-          <div>
+        
+        <div className="row justify-content-center align-items-center my-5">
+          <div className="col-12 col-md-6 text-center text-md-start">
             <h1>Work With Us!</h1>
-
             <p>
               To amplify human potential and create the <br />
-              next oppurtunity for people,businesses and communities.
+              next opportunity for people, businesses, and communities.
             </p>
-            <button className="btn-open">View Job Openings</button>
+            <button className="btn btn-primary">View Job Openings</button>
           </div>
-
-          <div className="career-image">
-            <Image src={image3} alt="image" />
+          <div className="col-12 col-md-6 d-flex justify-content-center">
+            <Image src={carrer_img} alt="Career image" className="img-fluid" />
           </div>
         </div>
       </div>
-      <div className="d-flex justify-content-center mt-lg-5 pt-lg-5 flex-wrap">
-        <Careers />
+
+      <div className="container">
+        <div className="d-flex justify-content-center mt-lg-5 pt-lg-5 flex-wrap">
+          <Careers />
+        </div>
       </div>
+
       <Footer />
     </div>
   );

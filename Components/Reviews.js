@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { GoDotFill } from "react-icons/go";
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 
 const ReviewsAndCards = ({
   reviewItems,
@@ -12,8 +12,8 @@ const ReviewsAndCards = ({
 }) => {
   return (
     <section className="container my-4 mt-3  py-3">
-      <header className="text-center mt-3  mb-4">
-        <h1 className="fw-bold fs-2 text-capitalize">
+      <header className="text-center   mb-4 mt-4">
+        <h1 className="fw-bold fs-2 text-capitalize mt-4">
           {topHeading}
         </h1>
       </header>
@@ -41,7 +41,7 @@ const ReviewsAndCards = ({
           minHeight: '400px',
           borderRadius: "15px !important",
         }}>
-          <h2 className="fw-bold fs-4 mb-4  mx-3 text-center text-lg-start">
+          <h2 className="fw-bold fs-4 mb-4  mx-5 text-center text-lg-start">
             {title}
           </h2>
 
@@ -52,7 +52,7 @@ const ReviewsAndCards = ({
               ) : (
                 <li key={index} className="d-flex align-items-start mb-3">
                   <div className="d-flex align-items-center justify-content-center me-3" style={{ minWidth: "32px", height: "32px" }}>
-                    <GoDotFill className="fs-4" style={{ color: "#083c61" }} aria-hidden="true" />
+                      <IoIosCheckmarkCircleOutline className="fs-4" style={{ color: "#083c61" }} aria-hidden="true" />
                   </div>
                   <p className="text-start mb-0">
                     <strong>{item.question || ""}</strong>{" "}
@@ -63,7 +63,7 @@ const ReviewsAndCards = ({
             )}
           </ol>
 
-          <div className="d-flex mx-3 justify-content-center justify-content-lg-start mt-4">
+          <div className="d-flex mx-5 justify-content-center justify-content-lg-start mt-4">
             <button className="btn btn-primary px-4 py-2 rounded-pill" style={{ backgroundColor: "#083c61", borderColor: "#083c61" }}>
               {buttonLabel}
             </button>

@@ -6,9 +6,9 @@ export default function TermsConditions() {
     <div
       className="d-flex flex-column"
       style={{
-        minHeight: "100vh", // Full height of the screen
-        backgroundColor: "#EAE3D6", // Hex background color
-        fontFamily: "'Arial', sans-serif", // Clean font for better readability
+        minHeight: "100vh", 
+        backgroundColor: "#EAE3D6", 
+        fontFamily: "'Arial', sans-serif", 
       }}
     >
       {/* Main Content */}
@@ -21,8 +21,8 @@ export default function TermsConditions() {
               <h2
                 className="font-weight-bold mb-3"
                 style={{
-                  fontSize: "1.5rem",  // Reduced font size for subheadings
-                  color: "#333", // Darker color for better readability
+                  fontSize: "1.5rem",  
+                  color: "#333",
                 }}
               >
                 {section.title}

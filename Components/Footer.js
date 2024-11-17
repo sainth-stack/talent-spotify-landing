@@ -63,7 +63,7 @@ export default function Footer() {
                 { href: "/blog", label: "Blog" },
                 { href: "/webinar", label: "Webinar" },
                 { href: "/press", label: "Press & Media" },
-                { href: "/case-studies", label: "Case Studies" },
+                { href: "#", label: "Case Studies" },
               ]}
             />
 

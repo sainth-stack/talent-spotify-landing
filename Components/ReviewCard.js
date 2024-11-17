@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import cards_images from "../assets/images/cards_images.png";
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
+
 
 const ReviewCard = ({ reviewItems, imageSrc }) => {
     const [isMobile, setIsMobile] = useState(false);
@@ -50,13 +52,35 @@ const ReviewCard = ({ reviewItems, imageSrc }) => {
             >
             
                 <h4 style={{ textAlign: "center", fontWeight: "bold", paddingBottom: "10px" }}>Rewards</h4>
-                <ul style={{ listStyleType: "disc", paddingLeft: "20px" }}>
+                <ul style={{ listStyleType: "none", padding: "0", margin: "0" }}>
                     {reviewItems.map((item, index) => (
-                        <div key={index} style={{ display: "flex", alignItems: "center", width: "80%",paddingLeft: "20px" }}>
-                            <li style={{ padding: "10px", flex: 1, listStyleType: "disc" }}>{item.answer}</li>
-                        </div>
+                        <li
+                        className="py-3"
+                            key={index}
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "6px",
+                                padding: "8px 0",
+                                fontSize: "0.9rem",
+                                wordBreak: "break-word"
+                            }}
+                        >
+                            <span
+                                style={{
+                                    display: "inline-block",
+                                    width: "5px",
+                                    height: "5px",
+                                    borderRadius: "50%",
+                                    backgroundColor: "#000",
+                                    flexShrink: 0
+                                }}
+                            ></span>
+                            <span>{item.answer}</span>
+                        </li>
                     ))}
                 </ul>
+
             </div>
 
             {/* Image Section */}

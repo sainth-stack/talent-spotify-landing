@@ -10,13 +10,13 @@ export default function Card({
   return (
     <div className="col-12 col-md-6 col-lg-4 mb-4 "  style={{ minWidth: width }}>
       <div className="card h-100 shadow">
-        <div className="position-relative" style={{ height: "250px" }}>
+        <div className="position-relative " style={{ height: "250px" }}>
           <Image
             src={image}
             alt={heading}
             layout="fill"
             objectFit="cover"
-            className="card-img-top p-2 shadow-lg"
+            className="card-img-top py-3 p-2 shadow-lg"
              style={{ borderRadius:".3rem" }}
           />
         </div>

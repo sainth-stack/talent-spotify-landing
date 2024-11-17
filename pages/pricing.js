@@ -97,19 +97,20 @@ export default function Pricing() {
         </h1>
       </div>
 
-    <div className="container d-flex justify-content-center flex-column align-items-center p-3">
-  <div className="row justify-content-center mx-2 container  w-100" >
-    <div className="col-12 col-md-4 mb-4 d-flex justify-content-center">
-      <Card3 data={data1} setShowPopup={setShowPopup} className="shadow-lg w-100" />
-    </div>
-    <div className="col-12 col-md-4 mb-4 d-flex justify-content-center">
-      <Card3 data={data2} top={true} setShowPopup={setShowPopup} className="shadow-lg w-100" />
-    </div>
-    <div className="col-12 col-md-4 mb-4 d-flex justify-content-center">
-      <Card3 data={data3} setShowPopup={setShowPopup} className="shadow-lg w-100" />
-    </div>
-  </div>
-</div>
+      <div className="container d-flex justify-content-center flex-column align-items-center p-3">
+        <div className="row justify-content-center mx-2 container w-100 g-2"> {/* Reduced gap with g-2 */}
+          <div className="col-12 col-md-4 mb-2 d-flex justify-content-center"> {/* Reduced mb-4 to mb-2 */}
+            <Card3 data={data1} setShowPopup={setShowPopup} className="shadow-lg w-100" />
+          </div>
+          <div className="col-12 col-md-4 mb-2 d-flex justify-content-center"> {/* Reduced mb-4 to mb-2 */}
+            <Card3 data={data2} top={true} setShowPopup={setShowPopup} className="shadow-lg w-100" />
+          </div>
+          <div className="col-12 col-md-4 mb-2 d-flex justify-content-center"> {/* Reduced mb-4 to mb-2 */}
+            <Card3 data={data3} setShowPopup={setShowPopup} className="shadow-lg w-100" />
+          </div>
+        </div>
+      </div>
+
 
 
 

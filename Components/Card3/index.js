@@ -12,8 +12,8 @@ export default function Card3({ data, top, setShowPopup }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="card h-100 shadow-sm" style={{ maxWidth: "250px" }}>
-      <div className="card-body d-flex flex-column">
+    <div className="card h-100 shadow-sm " style={{ minWidth:"300px",maxWidth:"300px"  }}>
+      <div className="card-body d-flex  my-2 flex-column">
         <div className="position-relative mb-2 ">
           {top && (
             <div
@@ -21,7 +21,7 @@ export default function Card3({ data, top, setShowPopup }) {
               style={{
                 fontSize: "0.7rem",
                 padding: "0.5em 0.5em",
-                marginTop: "-1rem",
+                marginTop: "-1.4rem",
                 background: "linear-gradient(to right, #9f69f5, #6b6bfa)" // Indigo to Blue gradient
               }}
             >
@@ -29,16 +29,17 @@ export default function Card3({ data, top, setShowPopup }) {
             </div>
 
           )}
-          <h5 className="card-title text-center mb-2" style={{ color: headingColor, fontSize: "1.25rem" }}>
+          <h5 className="card-title text-center my-2" style={{ color: headingColor, fontSize: "1.25rem" }}>
             {data.heading}
           </h5>
-          <p className="fw-bold text-center small mb-0" style={{ fontSize: "0.5rem" }}>
+          <p className="fw-bold w-100  text-center  my-1" style={{ fontSize: ".8rem" }}>
             {data.description}
           </p>
         </div>
 
+   <div className="row justify-content-center align-items-center my-3">
         <button
-          className={`btn ${buttonColor} w-100 mb-3`}
+          className={`btn ${buttonColor} w-50 text-center `}
           onClick={() => setShowPopup(true)}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
@@ -55,8 +56,18 @@ export default function Card3({ data, top, setShowPopup }) {
         >
           {data.buttonText}
         </button>
+        </div>
 
-        <hr className="w-75 mx-auto my-3" />
+       <hr
+  className="w-100 mx-auto my-3"
+  style={{
+    fontSize: "0.875rem",
+    height: "2px", // Increase thickness
+    backgroundColor: "currentColor", // Ensure visible color
+    border: "none", // Remove default border
+  }}
+/>
+
 
         <p className="text-start fw-bold small mb-2" style={{ fontSize: "0.875rem" }}>
           {data.description2}
@@ -64,7 +75,7 @@ export default function Card3({ data, top, setShowPopup }) {
 
         <ul className="list-unstyled small mb-0">
           {data.keypoints.map((item, index) => (
-            <li key={index} className="d-flex align-items-start justify-center mb-1">
+            <li key={index} className="d-flex align-items-start py-1 justify-center mb-1">
               <span
                 className="me-2 fw-bold"
                 style={{ fontSize: "1rem", color: "green", display: "flex", alignItems: "center" }}
