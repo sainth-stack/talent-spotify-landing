@@ -38,7 +38,7 @@ export default function CardBlogDetails({
         <p className="text-sm text-start mb-3">{subheading}</p>
 
         {/* Read More Link */}
-        <div className="d-flex justify-content-start justify-content-md-end align-items-center mt-3">
+        <div className="d-flex justify-content-end justify-content-md-end align-items-center mt-3">
           <a
             href={url}
             target="_blank"

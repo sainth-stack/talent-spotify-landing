@@ -70,20 +70,23 @@ export default function Home() {
           {mediaCards.map((mediaCard, index) => (
             <div key={index} className="col">
               <div className="card h-100 shadow-lg">
-                <div className="card-img-top " style={{ height: "200px", width: "100%" }}>
+                <div className="card-img-top" style={{ maxHeight: "200px", width: "100%" }}>
                   <Image
                     src={mediaCard.image}
                     alt="Card image"
                     layout="responsive"
-                    objectFit="contain" 
-                    className="w-100 h-100 p-2 rounded-lg"
+                    objectFit="contain"
+                    className="w-100 p-2 rounded-lg"
                   />
                 </div>
                 <div className="card-body d-flex flex-column">
                   <h5 className="card-title fw-bold">{mediaCard.heading}</h5>
                   <p className="card-text text-muted small">{mediaCard.subHeading}</p>
-                  <div className="d-flex justify-content-end mt-2 align-items-center">
-                    <a href="" className="text-primary text-decoration-none d-flex align-items-center">
+                  <div className="d-flex justify-content-end mt-auto align-items-center">
+                    <a
+                      href=""
+                      className="text-primary text-decoration-none d-flex align-items-center"
+                    >
                       View More <TfiArrowCircleRight className="ms-2" />
                     </a>
                   </div>
@@ -91,6 +94,7 @@ export default function Home() {
               </div>
             </div>
           ))}
+
         </div>
       </div>
 

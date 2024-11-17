@@ -27,7 +27,7 @@ const ReviewCard = ({ reviewItems, imageSrc }) => {
                 justifyContent: "center",
                 alignItems: "center",
                 padding: "20px",
-                marginTop: "30px", // Prevent overlap with Navbar
+                marginTop: "75px", // Prevent overlap with Navbar
                 position: "relative",
             }}
         >

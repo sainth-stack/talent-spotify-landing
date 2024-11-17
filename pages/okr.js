@@ -53,9 +53,17 @@ export default function Home() {
             What Makes OKR Powerful for startups?
           </h3>
         </div>
-        <div className="d-flex justify-content-center my-lg-5">
-          <Image src={okrflow} alt="okrflow" className="okrMob img image-container" />
-        </div>
+       <div className="d-flex justify-content-center my-lg-5 w-100">
+  <Image
+    src={okrflow}
+    alt="okrflow"
+    layout="intrinsic"  // Ensures the image scales based on its intrinsic size
+    objectFit="contain" // Ensures the image maintains its aspect ratio while fitting within the container
+    className="okrMob img-fluid" // Makes the image fluid and responsive
+  />
+</div>
+
+
         <ReviewsAndCards
           reviewItems={objectiveDesignQuestions}
           imageSrc={okrImage}

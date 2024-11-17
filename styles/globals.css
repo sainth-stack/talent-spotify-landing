@@ -10,7 +10,9 @@ html {
   scroll-behavior: smooth;
 }
 
-
+.rounded_corners{
+  border-radius: 30px !important;
+}
 
 .review_image_center {
   left: 10%;
@@ -1931,9 +1933,11 @@ padding-top: -40px; */
   }
 
 
-  .okrMob {
-    margin-top: 2rem !important;
-  }
+ .okrMob {
+  max-width: 100% !important;  /* Ensures the image never exceeds the container width */
+  height: auto !important;     /* Keeps the aspect ratio intact */
+}
+
 
   .tablet_login {
     display: flex !important;

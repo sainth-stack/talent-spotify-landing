@@ -12,13 +12,13 @@ const ReviewsAndCards = ({
 }) => {
   return (
     <section className="container my-4 mt-3  py-3">
-      <header className="text-center">
+      <header className="text-center mt-3  mb-4">
         <h1 className="fw-bold fs-2 text-capitalize">
           {topHeading}
         </h1>
       </header>
 
-      <div className="row align-items-center justify-content-center position-relative g-4">
+      <div className=" my-3 row align-items-center justify-content-center position-relative g-4">
         <div className=" review_image_center col-12 col-lg-4 d-flex justify-content-center justify-content-lg-end position-relative mb-4 mb-lg-0" style={{ zIndex: 10,}}>
           {imageSrc && (
             <div className="position-relative w-100" style={{ maxWidth: '300px', height: '400px' }}>
@@ -33,12 +33,13 @@ const ReviewsAndCards = ({
           )}
         </div>
 
-        <div className="col-12 col-lg-8 px-5 py-5 rounded container" style={{
+        <div className="col-12 col-lg-8 px-5 py-5 rounded container rounded_corners" style={{
           background: "linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))",
           border: "5px solid transparent",
           borderImage: "linear-gradient(to right, rgba(255, 255, 255, 0), #9967f5, #576afa) 1",
           boxShadow: "0px 1px 10px rgba(0, 0, 0, 0.1)",
-          minHeight: '400px'
+          minHeight: '400px',
+          borderRadius: "15px !important",
         }}>
           <h2 className="fw-bold fs-4 mb-4  mx-3 text-center text-lg-start">
             {title}
