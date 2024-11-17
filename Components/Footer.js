@@ -5,82 +5,72 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaYoutube,
-} from "react-icons/fa"; // React Icons
+} from "react-icons/fa";
 import Link from "next/link";
-import logo from "../assets/images/new-dashboard/logo.svg";
 import Image from "next/image";
+import logo from "../assets/images/new-dashboard/logo.svg";
 import useWindowSize from "../utilities/UseWindowSize";
+
+// Reusable component for footer sections
+const FooterSection = ({ title, links }) => (
+  <div className="footer-column mt-3">
+    {title && <h5>{title}</h5>}
+    {links.map((link, index) => (
+      <Link href={link.href} key={index}>
+        <a className="" style={{fontWeight:"600"}}>{link.label}</a>
+      </Link>
+    ))}
+  </div>
+);
+
 export default function Footer() {
   const isMobile = useWindowSize();
+
   return (
     <div style={{ backgroundColor: "#ebe3d5" }}>
-      <div
-        style={{ padding: isMobile ? "0px" : "0px 80px 30px 80px" }}
-        className=""
-      >
+      <div style={{ padding: isMobile ? "0px" : "0px 80px 30px 80px" }}>
         <footer className="footer-card">
           <div className="footer-content">
-            <div className="footer-column ">
-              <Image
-                src={logo}
-                alt="TalentSpotify Logo"
-                style={{  }}
-                className=" "
+            {/* Column 1: Logo and Links */}
+            <div className="footer-column">
+              <Image src={logo} alt="TalentSpotify Logo" />
+              <FooterSection
+                links={[
+                  { href: "/aboutus", label: "About Us" },
+                  { href: "/careers", label: "Career" },
+                  { href: "https://www.talentspotifyapp.com/auth/login", label: "Login" },
+                  { href: "/contactus", label: "Contact Us" },
+                  { href: "/pricing", label: "Pricing" },
+                ]}
               />
-              <div className="flex flex-col mt-3">
-                <Link href="/aboutus" className="font-bold">
-                  <a className="">About Us</a>
-                </Link>
-              </div>
-              <Link href="/careers">
-                <a>Career</a>
-              </Link>
-              <Link href="https://www.talentspotifyapp.com/auth/login">
-                <a>Login</a>
-              </Link>
-              <Link href="/contactus">
-                <a>Contact Us</a>
-              </Link>
-              <Link href="/pricing">
-                <a>Pricing</a>
-              </Link>
             </div>
 
-            <div className="footer-column mt-[2%]">
-              <h5>Products</h5>
-              <Link href="/okr">
-                <a>OKR</a>
-              </Link>
-              <Link href="/rewards">
-                <a>Rewards</a>
-              </Link>
-              <Link href="/recognition">
-                <a>Recognition</a>
-              </Link>
-              <Link href="/reviews">
-                <a>Reviews</a>
-              </Link>
-            </div>
+            {/* Column 2: Products */}
+            <FooterSection
+              title="Products"
+              links={[
+                { href: "/okr", label: "OKR" },
+                { href: "/rewards", label: "Rewards" },
+                { href: "/recognition", label: "Recognition" },
+                { href: "/reviews", label: "Reviews" },
+              ]}
+            />
 
-            <div className="footer-column  mt-[2%]">
-              <h5>Resources</h5>
-              <Link href="/blog">
-                <a>Blog</a>
-              </Link>
-              <Link href="/webinar">
-                <a>Webinar</a>
-              </Link>
-              <Link href="/press">
-                <a>Press & Media</a>
-              </Link>
-              <Link href="/case-studies">
-                <a>Case Studies</a>
-              </Link>
-            </div>
+            {/* Column 3: Resources */}
+            <FooterSection
+              title="Resources"
+              links={[
+                { href: "/blog", label: "Blog" },
+                { href: "/webinar", label: "Webinar" },
+                { href: "/press", label: "Press & Media" },
+                { href: "/case-studies", label: "Case Studies" },
+              ]}
+            />
 
-            <div className="footer-column mt-[2%] ">
+            {/* Column 4: Social Links */}
+            <div className="footer-column mt-3">
               <h5>Find us</h5>
-              <div className="footer-social">
+              <div className="footer-social " >
                 <a
                   href="https://www.facebook.com/Talentspotify"
                   target="_blank"
@@ -88,7 +78,7 @@ export default function Footer() {
                   className="social-link"
                 >
                   <FaFacebookF className="social-icon" />
-                  <span className="social-name">Facebook</span>
+                  <span className="social-name" style={{fontWeight:"600"}}>Facebook</span>
                 </a>
                 <a
                   href="https://twitter.com/TalentSpotify"
@@ -97,7 +87,7 @@ export default function Footer() {
                   className="social-link"
                 >
                   <FaTwitter className="social-icon" />
-                  <span className="social-name">Twitter</span>
+                  <span className="social-name"  style={{fontWeight:"600"}}>Twitter</span>
                 </a>
                 <a
                   href="https://www.instagram.com/talentspotify"
@@ -106,7 +96,7 @@ export default function Footer() {
                   className="social-link"
                 >
                   <FaInstagram className="social-icon" />
-                  <span className="social-name">Instagram</span>
+                  <span className="social-name" style={{fontWeight:"600"}}>Instagram</span>
                 </a>
                 <a
                   href="https://www.linkedin.com/company/talentspotify"
@@ -115,7 +105,7 @@ export default function Footer() {
                   className="social-link"
                 >
                   <FaLinkedinIn className="social-icon" />
-                  <span className="social-name">LinkedIn</span>
+                  <span className="social-name" style={{fontWeight:"600"}}>LinkedIn</span>
                 </a>
                 <a
                   href="https://www.youtube.com/channel/UCUng2BIcaPmfwVOryKAAa2A"
@@ -124,12 +114,13 @@ export default function Footer() {
                   className="social-link"
                 >
                   <FaYoutube className="social-icon" />
-                  <span className="social-name">YouTube</span>
+                  <span className="social-name" style={{fontWeight:"600"}}>YouTube</span>
                 </a>
               </div>
             </div>
           </div>
 
+          {/* Footer Bottom */}
           <div className="footer-bottom">
             <span className="footer-text">© 2024 TalentSpotify</span>
             <div className="footer-links">

@@ -11,7 +11,7 @@ const ReviewsAndCards = ({
   topHeading
 }) => {
   return (
-    <section className="container my-1 py-3">
+    <section className="container my-4 mt-3  py-3">
       <header className="text-center">
         <h1 className="fw-bold fs-2 text-capitalize">
           {topHeading}
