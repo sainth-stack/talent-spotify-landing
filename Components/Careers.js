@@ -270,7 +270,7 @@ export default function Carrers() {
           <h4
             style={{
               textAlign:"center",
-              marginTop: "-20px",
+              marginTop: "-90px",
               fontWeight: "1200px",
             }}
           >
