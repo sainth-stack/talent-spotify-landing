@@ -15,29 +15,25 @@ import useWindowSize from "../utilities/UseWindowSize";
 import MobileFooter from "../Components/mobile-version/MobileFooter";
 
 export default function Review() {
-   const [showPopup, setShowPopup] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
   const [showTrail, setShowTrail] = useState(false);
   const myRef = useRef(null);
   const homeRef = useRef(null);
   const okrRef = useRef(null);
   const howItWorksRef = useRef(null);
   const awardsRef = useRef(null);
-  // const itWorksRef = useRef(null)
+
   const executeScroll = () => myRef.current?.scrollIntoView();
   const homerefScroll = () => homeRef.current?.scrollIntoView();
   const okrrefScroll = () => okrRef.current?.scrollIntoView();
   const howItWorksScroll = () => howItWorksRef.current?.scrollIntoView();
   const awardsScroll = () =>
     awardsRef.current?.scrollIntoView({ behavior: "smooth" });
-  // const itworksref=()=> ititWorksRefWorks.current.scrollIntoView()
 
-  const  isMobile  = useWindowSize();
+  const isMobile = useWindowSize();
 
   return (
-    <div className="bg-[#ebe3d5]" 
-      style={{ height: "100vh", overflow: "auto", background: "#EAE3D6" }}
-    
-    >
+    <div className="" style={{ height: "100vh", overflow: "auto", background: "#EAE3D6" }}>
       <Navigation
         showPopup={showPopup}
         executeScroll={executeScroll}
@@ -45,16 +41,19 @@ export default function Review() {
         setShowPopup={() => setShowPopup(false)}
         setShowDemo={setShowTrail}
       />
-      
 
-      <div className="d-flex justify-content-center w-full  text-left mt-5 ">
-      
-        <ReviewsAndCards reviewItems={reviewItems} imageSrc={ChatImg} topHeading="One Platform for all your employee performance
-and enga" title="Review"/>
+      <div className="d-flex justify-content-center w-100 text-start mt-5">
+        <ReviewsAndCards
+          reviewItems={reviewItems}
+          imageSrc={ChatImg}
+          topHeading="One Platform for all your employee performance and Engagement"
+          title="Review"
+        />
       </div>
 
-       {isMobile ? (
-        
+        <Footer />
+
+      {/* {isMobile ? (
         <MobileFooter
           homerefScroll={homerefScroll}
           okrrefScroll={okrrefScroll}
@@ -63,7 +62,7 @@ and enga" title="Review"/>
         />
       ) : (
         <Footer />
-      )}
+      )} */}
     </div>
   );
 }

@@ -73,7 +73,10 @@ export default function AboutUs() {
         list52={list52}
         showPopup={() => setShowPopup(true)}
       />
-      {isMobile ? (
+
+      <Footer />
+
+     {/*  {isMobile ? (
 
         <MobileFooter
           homerefScroll={homerefScroll}
@@ -83,7 +86,7 @@ export default function AboutUs() {
         />
       ) : (
         <Footer />
-      )}
+      )} */}
     </div>
   );
 }

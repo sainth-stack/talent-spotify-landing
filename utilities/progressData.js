@@ -33,18 +33,18 @@ export const progressData = [
 
 export const recognitionProgressData = [
     {
-        percentage: 64,
+        percentage: 21,
         text: 'Reduction in Profitability',
         align: 'left',
     },
     {
-        percentage: 45,
+        percentage: 40,
         text: 'Reduction in Staff Turnover',
         align: 'right',
         borderColor: 'border-blue-500'
     },
     {
-        percentage: 82,
+        percentage: 20,
         text: 'Increases in Productivity',
         align: 'left',
         borderColor: 'border-green-500'

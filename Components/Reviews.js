@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { FaRegCheckCircle } from "react-icons/fa";
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 
 const ReviewsAndCards = ({
   reviewItems,
@@ -11,88 +11,66 @@ const ReviewsAndCards = ({
   topHeading
 }) => {
   return (
-    <div className="container mx-auto my-8 px-4 py-2">
-      {/* Header */}
-      <div className="text-center mb-8">
-        <h1 className="font-bold text-2xl lg:text-3xl capitalize">
-         {topHeading}
+    <section className="container my-4 mt-3  py-3">
+      <header className="text-center   mb-4 mt-4">
+        <h1 className="fw-bold fs-2 text-capitalize mt-4">
+          {topHeading}
         </h1>
-      </div>
+      </header>
 
-      {/* Main Content */}
-      <div className="flex flex-col lg:flex-row items-center  justify-center lg:space-x-8 relative ">
-
-        {/* Image Container with Overlay on larger screens */}
-        <div
-          className="w-full lg:w-5/12 flex justify-center lg:justify-end relative"
-          style={{
-            zIndex: 10,
-            left: "10%", // Adjust the left position as needed
-          }}
-        >
+      <div className=" my-3 row align-items-center justify-content-center position-relative g-4">
+        <div className=" review_image_center col-12 col-lg-4 d-flex justify-content-center justify-content-lg-end position-relative mb-4 mb-lg-0" style={{ zIndex: 10,}}>
           {imageSrc && (
-            <Image
-              src={imageSrc}
-              alt="Review Image"
-              className="w-3/4 lg:w-full rounded-lg shadow-lg"
-            />
+            <div className="position-relative w-100" style={{ maxWidth: '300px', height: '400px' }}>
+              <Image
+                src={imageSrc}
+                alt="Review Image"
+                layout="fill"
+                objectFit="contain"
+                className="rounded shadow"
+              />
+            </div>
           )}
         </div>
 
-        {/* Card Container with Transparent-to-White Gradient Background */}
-        <div
-          className="w-full lg:max-w-4xl px-5  py-2 flex flex-col items-start"
-          style={{
-            background: "linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))", // Transparent-to-white gradient background
-            borderRadius: "20px", // Rounded corners
-            border: "5px solid transparent", // Transparent border to allow the gradient border to be visible
-            borderImage: "linear-gradient(to right, rgba(255, 255, 255, 0), #9967f5, #576afa) 1", // Transparent-to-gradient border
-            boxShadow: "0px 1px 10px rgba(0, 0, 0, 0.1)", // Shadow for card visibility
-          }}
+        <div className="col-12 col-lg-8 px-5 py-5 rounded container rounded_corners" style={{
+          background: "linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))",
+          border: "5px solid transparent",
+          borderImage: "linear-gradient(to right, rgba(255, 255, 255, 0), #9967f5, #576afa) 1",
+          boxShadow: "0px 1px 10px rgba(0, 0, 0, 0.1)",
+          minHeight: '400px',
+          borderRadius: "15px !important",
+        }}>
+          <h2 className="fw-bold fs-4 mb-4  mx-5 text-center text-lg-start">
+            {title}
+          </h2>
 
-        >
-          {/* Card Header */}
-          <h3 className="font-bold text-xl mb-6 text-center lg:text-left w-full">
-           {title}
-          </h3>
-
-          {/* Review List */}
-          <ol className="space-y-1 w-full pl-8">
+          <ol className="list-unstyled ps-0 ps-lg-4 mb-4">
             {reviewItems.map((item, index) =>
               renderReviewItem ? (
                 renderReviewItem(item, index)
               ) : (
-                <li key={index} className="flex items-start space-x-3">
-                  {/* Icon */}
-                  <div
-                    className="flex items-center justify-center"
-                    style={{
-                      width: "32px",
-                      height: "32px",
-                    }}
-                  >
-                    <FaRegCheckCircle className="text-[#083c61] text-2xl" />
+                <li key={index} className="d-flex align-items-start mb-3">
+                  <div className="d-flex align-items-center justify-content-center me-3" style={{ minWidth: "32px", height: "32px" }}>
+                      <IoIosCheckmarkCircleOutline className="fs-4" style={{ color: "#083c61" }} aria-hidden="true" />
                   </div>
-                  {/* Text Content */}
-                  <p className="text-left">
-                    <span className="font-bold">{item.question || ""}</span>{" "}
+                  <p className="text-start mb-0">
+                    <strong>{item.question || ""}</strong>{" "}
                     {item.answer || ""}
                   </p>
                 </li>
               )
             )}
-             <div className="flex justify-center lg:justify-start mt-6 w-full">
-            <button className="px-6 py-3 bg-[#083c61] text-white rounded-full">
+          </ol>
+
+          <div className="d-flex mx-5 justify-content-center justify-content-lg-start mt-4">
+            <button className="btn btn-primary px-4 py-2 rounded-pill" style={{ backgroundColor: "#083c61", borderColor: "#083c61" }}>
               {buttonLabel}
             </button>
           </div>
-          </ol>
-
-          {/* Button */}
-         
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

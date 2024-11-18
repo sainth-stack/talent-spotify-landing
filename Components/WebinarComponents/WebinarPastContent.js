@@ -41,56 +41,106 @@ export function WebinarPastContent() {
       : webinars.filter((w) => w.category === selectedCategory);
 
   return (
-    <div className="container mx-auto px-4 py-10 lg:py-20">
-      <div className="text-center mb-10">
-        <h3 className="text-3xl font-bold mb-3">Get Access to Our Latest Webinar</h3>
+    <div className="container py-4">
+      <div className="text-center mb-4">
+        <h3 className="fs-4 fw-bold mb-3">Get Access to Our Latest Webinar</h3>
       </div>
 
-      {/* Scrollable container for top cards */}
-      <div className="flex gap-6 overflow-x-auto pb-4">
-        <div className="relative min-w-[320px] md:min-w-[45%]">
-          <span className="relative top-3 z-10 left-2 bg-gradient-to-r from-blue-500 to-violet-500 text-white px-3 py-1 rounded-lg text-sm font-semibold rounded-full">
-            Upcoming
-          </span>
+      {/* Scrollable container for the upcoming webinars */}
+      
+      <div className="row container row-cols-1 row-cols-sm-2  row-cols-md-2 g-4 pb-4 ">
+        <div className="col position-relative">
+          {/* "Upcoming" badge */}
+      <div
+  className="position-absolute start-0 fw-bold"
+  style={{
+    background: "linear-gradient(to right, #4f93f7, #9b65e9)", // Gradient background
+    zIndex: 22,
+    top: "-1%", // Moved badge higher
+    transform: "translateY(-50%)",
+    width: "fit-content", // Dynamic width for responsiveness
+    padding: "0.3rem 1rem", // Compact padding
+    borderRadius: "12px", // Fully rounded corners
+    color: "white", // Text color for contrast
+    fontSize: "0.9rem", // Smaller font size for responsiveness
+  }}
+>
+  Upcoming
+</div>
+
+
+          {/* Card for the first webinar */}
           <Card
             image={webinar_main_1}
             heading="How To Measure Your OKRs Successfully"
             subheading="Exploring approaches to performance reviews and feedback for a more engaged, future-ready workplace."
             width="100%"
-            height="400px"
+                height="400px"
+
+           
           />
         </div>
 
-        <div className="relative h-auto min-w-[320px] md:min-w-[45%]">
-          <span className="relative top-3 z-10 left-2 bg-gradient-to-r from-blue-500 to-violet-500 text-white px-3 py-1 rounded-lg text-sm font-semibold">
-            Upcoming
-          </span>
+        <div className="col position-relative">
+          {/* "Upcoming" badge */}
+        <div
+  className="position-absolute start-0 fw-bold"
+  style={{
+    background: "linear-gradient(to right, #4f93f7, #9b65e9)", // Gradient background
+    zIndex: 22,
+    top: "-1%", // Moved badge higher
+    transform: "translateY(-50%)",
+    width: "fit-content", // Dynamic width for responsiveness
+    padding: "0.3rem 1rem", // Compact padding
+    borderRadius: "12px", // Fully rounded corners
+    color: "white", // Text color for contrast
+    fontSize: "0.9rem", // Smaller font size for responsiveness
+  }}
+>
+  Upcoming
+</div>
+
+
+          {/* Card for the second webinar */}
           <Card
             image={webinar_main_2}
             heading="Future of performance reviews and workplace feedback"
             subheading="Discover the next generation of performance reviews and feedback to drive growth and engagement."
             width="100%"
-            height="400px"
+                height="400px"
+
+           
           />
         </div>
       </div>
 
-      {/* Bottom "All Webinars" section without horizontal scroll */}
-      <h3 className="text-3xl font-bold mt-10 mb-4">All Webinars</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* "All Webinars" Section */}
+      <h3 className="fs-5  fw-bold mt-4 mb-3">All Webinars</h3>
+
+      {/* Grid for the list of webinars */}
+      <div className="row row-cols-1 row-cols-md-2 row-cols-1  g-4">
         {filteredWebinars.map((webinar, index) => (
-          <Card
-            key={index}
-            image={webinar.image}
-            heading={webinar.heading}
-            subheading={webinar.subheading}
-            width="100%"
-            height="400px"
-          />
+          <div className="col " key={index}>
+            <div className="position-relative ">
+              {/* "Upcoming" badge */}
+              
+
+              {/* Card for each webinar */}
+              <Card
+                image={webinar.image}
+                heading={webinar.heading}
+                subheading={webinar.subheading}
+                width="100%"
+                height="400px"
+                
+              />
+            </div>
+          </div>
         ))}
       </div>
 
-      <div className="mt-8 flex justify-center">
+      {/* Show More Button */}
+      <div className="mt-4 text-center">
         <ShowMoreButton />
       </div>
     </div>

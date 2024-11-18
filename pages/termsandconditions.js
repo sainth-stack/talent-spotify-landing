@@ -1,28 +1,55 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Footer from "../Components/Footer";
-import image1 from ".././assets/images/pricing1.png";
-import image2 from ".././assets/images/pricing2.png";
-import image3 from ".././assets/images/pricing3.png";
-import Card3 from "../Components/Card3";
-import BlogNav from "../Components/BlogNav";
+import Navigation from "../Components/navigationNew";
+import useWindowSize from "../utilities/UseWindowSize";
 import TermsConditions from "../Components/TermsConditions";
 
 export default function Termsandconditions() {
+  const [showTrail, setShowTrail] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const myRef = useRef(null);
+  const homeRef = useRef(null);
+  const okrRef = useRef(null);
+  const howItWorksRef = useRef(null);
+  const awardsRef = useRef(null);
+  
+  const executeScroll = () => myRef.current?.scrollIntoView();
+  const homerefScroll = () => homeRef.current?.scrollIntoView();
+  const okrrefScroll = () => okrRef.current?.scrollIntoView();
+  const howItWorksScroll = () => howItWorksRef.current?.scrollIntoView();
+  const awardsScroll = () =>
+    awardsRef.current?.scrollIntoView({ behavior: "smooth" });
+
+  const isMobile = useWindowSize();
 
   return (
-    <div className="bg-[#EAE3D6]">
-      <div className="container inner-terms">
-        <BlogNav
-          showPopup={showPopup}
-          setShowPopup={() => setShowPopup(false)}
-          heading="Terms and Conditions"
-          subheading=""
-        />
+    <div
+      className="d-flex flex-column"
+      style={{
+        minHeight: "100vh", // Occupy full height of the viewport
+        backgroundColor: "#EAE3D6", // Hex background color
+      }}
+    >
+      {/* Navigation */}
+      <Navigation
+        showPopup={showPopup}
+        executeScroll={executeScroll}
+        showDemo={showTrail}
+        setShowPopup={() => setShowPopup(false)}
+        setShowDemo={setShowTrail}
+      />
+      
+      {/* Main Content */}
+      <div className="flex-grow-1 d-flex justify-content-center align-items-start">
+        
+          
+            <div className="col-12 col-md-10 col-lg-8">
+              <TermsConditions />
+       
+        </div>
       </div>
-      <div className="inner-terms d-flex justify-content-center">
-        <TermsConditions />
-      </div>
+
+      {/* Footer */}
       <Footer />
     </div>
   );

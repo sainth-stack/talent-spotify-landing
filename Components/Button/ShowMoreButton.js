@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { TfiArrowCircleRight } from "react-icons/tfi";
 const ShowMoreButton = ({
   initialText = "Show More",
   toggledText = "Show Less",
@@ -13,16 +13,15 @@ const ShowMoreButton = ({
   };
 
   return (
-    <>
-    <div className="flex items-center justify-center ">
-    <button
-      className="px-4 py-2 bg-[#083c61] text-white font-semibold rounded-lg transition duration-300"
-      onClick={handleClick}
-    >
-      {isExpanded ? toggledText : initialText}
-    </button>
+    <div className="d-flex justify-content-center">
+      <button
+        className="btn  px-4 py-2 fw-semibold rounded text-light"
+        style={{background:"#083c61"}}
+        onClick={handleClick}
+      >
+        {isExpanded ? toggledText : initialText}
+      </button>
     </div>
-    </>
   );
 };
 

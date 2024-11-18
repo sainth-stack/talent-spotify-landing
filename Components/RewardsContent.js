@@ -10,22 +10,15 @@ const RewardsFinal = () => {
     <>
       {/* Add margin-top to create a gap between the Navbar and the content */}
       <div
-        className="d-flex flex-wrap justify-center mt-4"
+        className="d-flex flex-column align-items-center mt-4"
         style={{
-          display: 'flex',
-          justifyContent: 'center', // Center the content horizontally
-          alignItems: 'center', // Center the content vertically
-          flexDirection: 'column',
           marginTop: "5%" // Ensure there's a gap from the top (Navbar)
         }}
       >
         {/* Render the ReviewCard with the reward data */}
         <div
-          className="d-flex justify-center items-center"
+          className="d-flex justify-content-center align-items-center"
           style={{
-            display: 'flex',
-            justifyContent: 'center', // Center the card horizontally
-            alignItems: 'center', // Center the card vertically
             width: '100%', // Make sure the div takes full width to enable proper centering
           }}
         >
@@ -34,8 +27,8 @@ const RewardsFinal = () => {
       </div>
 
       {/* Progress Card Section */}
-      <div className="container mt-6"> {/* Add margin-top to create space between sections */}
-          <h1 className="font-bold pt-4 text-center">Why It Matters?</h1>
+      <div className="container mt-4"> {/* Add margin-top to create space between sections */}
+        <h2 className="fw-bold fs-4  text-center ">Why It Matters?</h2>
         <ProgressCard />
       </div>
     </>

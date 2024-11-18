@@ -72,9 +72,9 @@ export function Nav({
     >
       {!isMobile && <Logo logoImg="2" textColor={textColor ? true : false} />}
       {/*<AnchorLink title="About us" path="/aboutus" />*/}
-      <div className="d-none  d-lg-flex flex-wrap justify-content-start align-items-center ">
+      <div className="d-none  d-lg-flex flex-wrap  gap-4 justify-content-start align-items-center ">
         <Dropdown
-          title="Product"
+          title="Products"
           selectedType={selectedType}
           bgColor={bgColor}
           options={dummyProducts}
@@ -83,7 +83,7 @@ export function Nav({
           handleClick={() => {}}
         />
         <Dropdown
-          title="Resources"
+          title="Resource"
           selectedType={selectedType}
           bgColor={bgColor}
           options={dummyResources}
@@ -92,7 +92,7 @@ export function Nav({
           handleClick={() => {}}
         />
         <Dropdown
-          title="Pricing"
+          title="Price"
           selectedType={selectedType}
           bgColor={""}
           // options={dummyPricing}
@@ -146,7 +146,7 @@ export function Nav({
         />
         <Button
           className={`text-white animate_startFree`}
-          text="Start for Free"
+          text="Book a Demo"
           style2={{ background: "#083C62", border: "none" }}
           onClick={() => handleClick()}
         />

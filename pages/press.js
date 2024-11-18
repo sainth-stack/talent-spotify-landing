@@ -14,81 +14,37 @@ import MobileFooter from "../Components/mobile-version/MobileFooter";
 import Navigation from "../Components/navigationNew";
 import useWindowSize from "../utilities/UseWindowSize";
 import ShowMoreButton from "../Components/Button/ShowMoreButton";
-
+import { TfiArrowCircleRight } from "react-icons/tfi";
 export default function Home() {
-
-
   const [showTrail, setShowTrail] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
   const myRef = useRef(null);
   const homeRef = useRef(null);
   const okrRef = useRef(null);
   const howItWorksRef = useRef(null);
   const awardsRef = useRef(null);
-  // const itWorksRef = useRef(null)
+  
   const executeScroll = () => myRef.current?.scrollIntoView();
   const homerefScroll = () => homeRef.current?.scrollIntoView();
   const okrrefScroll = () => okrRef.current?.scrollIntoView();
   const howItWorksScroll = () => howItWorksRef.current?.scrollIntoView();
   const awardsScroll = () =>
     awardsRef.current?.scrollIntoView({ behavior: "smooth" });
-  // const itworksref=()=> ititWorksRefWorks.current.scrollIntoView()
 
   const isMobile = useWindowSize();
-  
+
   const mediaCards = [
-    {
-      image: award1,
-      heading: "National HR Excellence Awards 24",
-      subHeading:
-        "Tata Consultancy Services recognized at the National HR Excellence Program",
-      link: "https://www.linkedin.com/posts/talentspotify_employeeengagement-hrawards-innovation-activity-7236591265268572160-0gk5?utm_source=share&utm_medium=member_desktop",
-    },
-    {
-      image: award2,
-      heading: "STPI Disburses Seed Fund",
-      subHeading:
-        "Submissions pouring in for businesses and startups looking for seed funding",
-      link: "https://startupstorymedia.com/stories-2023-07-talentspotify-startup-story/",
-    },
-    {
-      image: award3,
-      heading: "The Great Leaders Magazine",
-      subHeading:
-        "Featuring inspiring and influential HR leaders from across the world",
-      link: "https://gcpit.org/the-great-leaders-aug-2024-v09/",
-    },
-    {
-      image: award4,
-      heading: "Getting AI Into HR",
-      subHeading:
-        "Innovative methods in artificial intelligence transforming HR practices",
-      link: "https://www.viscan.in/getting-ai-into-hr/",
-    },
-    {
-      image: award5,
-      heading: "Fast-growing HR startups",
-      subHeading:
-        "Rapidly scaling HR tech startups leading innovation in the field",
-      link: "https://www.peoplematters.in/article/entrepreneurship-start-ups/fast-growing-hr-and-worktech-startups-to-track-at-people-matters-techhr-singapore-2022-34886",
-    },
-    {
-      image: award6,
-      heading: "Startup Story Media",
-      subHeading:
-        "Innovative solutions by renowned startup leaders and HR tech entrepreneurs",
-      link: "https://startupstorymedia.com/stories-2023-07-talentspotify-startup-story/",
-    },
+    { image: award1, heading: "National HR Excellence Awards 24", subHeading: "Tata Consultancy Services recognized at the National HR Excellence Program", link: "https://www.linkedin.com/posts/talentspotify_employeeengagement-hrawards-innovation-activity-7236591265268572160-0gk5?utm_source=share&utm_medium=member_desktop" },
+    { image: award2, heading: "STPI Disburses Seed Fund", subHeading: "Submissions pouring in for businesses and startups looking for seed funding", link: "https://startupstorymedia.com/stories-2023-07-talentspotify-startup-story/" },
+    { image: award3, heading: "The Great Leaders Magazine", subHeading: "Featuring inspiring and influential HR leaders from across the world", link: "https://gcpit.org/the-great-leaders-aug-2024-v09/" },
+    { image: award4, heading: "Getting AI Into HR", subHeading: "Innovative methods in artificial intelligence transforming HR practices", link: "https://www.viscan.in/getting-ai-into-hr/" },
+    { image: award5, heading: "Fast-growing HR startups", subHeading: "Rapidly scaling HR tech startups leading innovation in the field", link: "https://www.peoplematters.in/article/entrepreneurship-start-ups/fast-growing-hr-and-worktech-startups-to-track-at-people-matters-techhr-singapore-2022-34886" },
+    { image: award6, heading: "Startup Story Media", subHeading: "Innovative solutions by renowned startup leaders and HR tech entrepreneurs", link: "https://startupstorymedia.com/stories-2023-07-talentspotify-startup-story/" },
   ];
 
-  const [showPopup, setShowPopup] = useState(false);
-
-  console.log(mediaCards.map((item) => item.image)); // Debugging: Check if mediaCards data is available
 
   return (
-    <div className="bg-[#ebe3d5] "
-      style={{ height: "100vh", overflow: "auto", background: "#EAE3D6" }}
-
-    >
+    <div className="" style={{ height: "100vh",  background: "#EAE3D6" }}>
       <Navigation
         showPopup={showPopup}
         executeScroll={executeScroll}
@@ -96,80 +52,70 @@ export default function Home() {
         setShowPopup={() => setShowPopup(false)}
         setShowDemo={setShowTrail}
       />
-      <div style={{ marginTop: "6rem", textAlign: "center" }}>
-        <div style={{ position: "relative", width: "80%", height: "auto", margin: "0 auto", padding: 0 }}>
+      <div className="text-center mt-5">
+        <div className="position-relative w-75 mx-auto p-0 mt-5">
           <Image
             src={Spotlight}
             alt="Transparent Pricing"
-            width={500}  // Adjust width to make the image smaller
-            height={100}  // Adjust height accordingly to maintain aspect ratio
-            objectFit="contain"  // Ensures the entire image is visible, maintaining aspect ratio
-            objectPosition="center"  // Ensures the image is centered
-            style={{ display: "block", margin: "0", padding: "0", width: "100%", height: "6rem" }}  // Removes margin and padding
+            width={500}
+            height={200}
+            objectFit="contain" // Ensures the image is fully visible
+            className="mt-4 w-100"
           />
         </div>
       </div>
 
-     <div className="container mobile_cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 p-3">
-  {mediaCards.map((mediaCard, index) => (
-    <div
-      key={index}
-      className=" group border bg-white p-3 rounded-lg shadow-lg flex flex-col w-full min-h-80" // Slightly increased card height
-    >
-      <div className="overflow- rounded-t-lg h-40 flex items-center justify-center"> {/* Center the image */}
-        <Image
-          src={mediaCard.image}
-          alt="Card image"
-          layout="intrinsic"
-          className="object-fit w-full h-full" // Ensures the entire image is shown without cropping
-        />
-      </div>
-      <div className="flex-grow flex flex-col justify-between p-1">
-        <div>
-          <p className="font-bold text-md mb-1 text-gray-800 my-1">
-            {mediaCard.heading}
-          </p>
-          <p className="text-gray-600 text-sm line-clamp-1 group-hover:line-clamp-none transition-all duration-300">
-            {mediaCard.subHeading}
-          </p>
-        </div>
-        <div className="mt-1 flex justify-end">
-          <a
-            href={mediaCard.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500 hover:underline"
-          >
-            View more &#62;
-          </a>
+      <div className="container mt-4">
+        <div className=" container row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-4">
+          {mediaCards.map((mediaCard, index) => (
+            <div key={index} className="col">
+              <div className="card h-100 shadow-lg">
+                <div className="card-img-top" style={{ maxHeight: "200px", width: "100%" }}>
+                  <Image
+                    src={mediaCard.image}
+                    alt="Card image"
+                    layout="responsive"
+                    objectFit="contain"
+                    className="w-100 p-2 rounded-lg"
+                  />
+                </div>
+                <div className="card-body d-flex flex-column">
+                  <h5 className="card-title fw-bold">{mediaCard.heading}</h5>
+                  <p className="card-text text-muted small">{mediaCard.subHeading}</p>
+                  <div className="d-flex justify-content-end mt-auto align-items-center">
+                    <a
+                      href=""
+                      className="text-primary text-decoration-none d-flex align-items-center"
+                    >
+                      View More <TfiArrowCircleRight className="ms-2" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+
         </div>
       </div>
 
-    </div>
-  ))}
-        
-  
-        
-</div>
+      <div className="d-flex justify-content-center align-items-center my-4">
+        <ShowMoreButton />
+      </div>
 
-<div className=" flex justify-center items-center my-4">
-            <ShowMoreButton />
+      <Footer />
 
-  </div>
-
-
-
-      {isMobile ? (
-
-        <MobileFooter
-          homerefScroll={homerefScroll}
-          okrrefScroll={okrrefScroll}
-          howItWorksScroll={howItWorksScroll}
-          awardsScroll={awardsScroll}
-        />
+     {/*  {isMobile ? (
+        <div style={{ marginTop: "auto" }}> 
+          <MobileFooter
+            homerefScroll={homerefScroll}
+            okrrefScroll={okrrefScroll}
+            howItWorksScroll={howItWorksScroll}
+            awardsScroll={awardsScroll}
+          />
+        </div>
       ) : (
         <Footer />
-      )}
+      )} */}
     </div>
   );
 }

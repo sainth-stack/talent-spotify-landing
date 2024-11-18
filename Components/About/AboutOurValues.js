@@ -4,11 +4,11 @@ import FinalAboutus from "../../Components/About/FinalAboutus";
 export function AboutOurValues() {
   const ValueItem = ({ color, descriptionColor, title, description }) => {
     return (
-      <div className="flex    items-center justify-center mb-4 w-full  max-w-3xl mx-auto">
+      <div className="d-flex align-items-center justify-content-center mb-4 w-100 mx-auto mobile_values" style={{ maxWidth: '768px' }}>
         <div
-          className={`   text-white font-semibold px-4 py-2 text-center rounded-lg `}
+          className="text-white font-weight-bold px-2  py-2 text-center rounded"
           style={{
-            flex: "1 0 30%",
+            flex: " 30%",
             backgroundColor: color,
           }}
         >
@@ -16,10 +16,13 @@ export function AboutOurValues() {
         </div>
 
         <div
-          className={` px-4 py-2  text-gray-800  font-semibold rounded-r-lg w-full`}
+          className="px-2 py-2 font-weight-bold rounded-right w-100"
           style={{
             flexGrow: 1,
+            borderRadius:".rem",
+           
             backgroundColor: descriptionColor,
+            color: "#4a5568", // Equivalent to Tailwind's `text-gray-800`
           }}
         >
           {description}
@@ -29,12 +32,12 @@ export function AboutOurValues() {
   };
 
   return (
-    <div className="container mx-auto px-4">
-      <div className="text-center ">
+    <div className="container px-4 mx-auto">
+      <div className="text-center">
         <FinalAboutus />
-        <h1 className="text-center pb-4 mt-4 font-bold text-xl">Our Values</h1>
+        <h1 className="text-center pb-4 mt-4  font-weight-bold h4">Our Values</h1>
 
-        <div className="flex flex-col items-center w-full ">
+        <div className="d-flex flex-column align-items-center w-100 " >
           <ValueItem
             color="#6f9ce3"
             descriptionColor="#c7dcff"

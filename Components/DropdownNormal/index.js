@@ -6,9 +6,9 @@ import React from 'react';
 export default function DropdownNormal({ title, options = [], handleClick, isOpen, aniStyle, handleToggle, dropdown = true }) {
   return (
     <div className='d-flex align-items-center position-relative nav_item_animation'>
-      <div className={`dropdown actionDropdown drop ml-3 mr-3 border-0  `} style={{ fontSize: '18px' }}>
+      <div className={`dropdown actionDropdown drop mx-2 border-0  `} style={{ fontSize: '18px' }}>
         <button
-          className={`${dropdown ? 'dropdown-toggle':''} border-0 bg-transparent transition duration-300 ease-in-out 
+          className={` border-0  bg-transparent transition duration-300 ease-in-out 
              ${aniStyle} `}
           type="button"
           id="dropdownMenuButton"
@@ -30,7 +30,7 @@ export default function DropdownNormal({ title, options = [], handleClick, isOpe
               <a className="dropdown-item  text-capitalize text-left justify-content-start d-flex align-items-center" style={{ marginTop: '6px' }}>
 
                 {option.icon && (
-                  <span className="dropdown-icon mr-2">
+                  <span className="dropdown-icon me-3">
                     <Image src={option.icon} alt={`${option.key} icon`} width="20" height="20" />
                   </span>
                 )}

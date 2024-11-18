@@ -1,36 +1,128 @@
-import React, { useState } from 'react';
-import { Link } from "react-scroll";
-import Image from 'next/image';
-import dashboard from "../../../assets/svg/home.svg";
-import okrProgress from "../../../assets/svg/okrmob1.svg";
-import dashboardFill from "../../../assets/svg/homefill.svg";
-import okrProgressFill from "../../../assets/svg/okrmob1fill.svg";
-import howitworks from "../../../assets/svg/howItWorks.svg";
-import howitworksfill from "../../../assets/svg/howItWorksfill.svg";
-import awards from "../../../assets/svg/awards.svg";
-import awardsfill from "../../../assets/svg/awardsfill.svg";
+// import React from 'react';
+// import Image from 'next/image';
+// import Link from 'next/link';
+// import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 
-const MobileFooter = (props) => {
-  const [actObj, setIsActObj] = useState({
-    analytics: 1,
-    okrProgress: 0,
-    howItWorks: 0,
-    awards: 0
-    // celebrationList: 0,
-    // leaderBoard: 0
-  });
-  return (
-    <div  style={{ position: "absolute", bottom: "-0%", width: "100%", zIndex: 1 }}>
-      <nav className="m-footer">
-        <Link to="analyticsOverview" smooth={true} onClick={() => { setIsActObj({ ...actObj, analytics: 1, okrProgress: 0, howItWorks: 0, awards: 0 }); props?.homerefScroll() }}><Image src={actObj.analytics === 1 ? dashboardFill : dashboard} alt="dashboard" /></Link>
-        <Link to="okrProgress" smooth={true} onClick={() => { setIsActObj({ ...actObj, analytics: 0, okrProgress: 1, howItWorks: 0, awards: 0 }); props?.okrrefScroll() }}><Image src={actObj.okrProgress === 1 ? okrProgressFill : okrProgress} alt="okrProgress" /></Link>
-        {/* <Link to="howItWorks" smooth={true} onClick={() => { setIsActObj({ ...actObj, analytics: 0, okrProgress: 0, howItWorks: 1, awards: 0 }); props?.howItWorksScroll() }}><Image src={actObj.howItWorks === 1 ? howitworksfill : howitworks} alt="howitworks" /></Link> */}
-        <Link to="awards" smooth={true} onClick={() => { setIsActObj({ ...actObj, analytics: 0, okrProgress: 0, howItWorks: 0, awards: 1 }); props?.awardsScroll() }}><Image src={actObj.awards === 1 ? awardsfill : awards} alt="awards" /></Link>
-        {/* <Link to="celebrationList" smooth={true} onClick={() => setIsActObj({ ...actObj, analytics: 0, okrProgress: 0, celebrationList: 1, leaderBoard: 0 })}><Image src={actObj.celebrationList === 1 ? celebrationListFill : celebrationList} alt="celebrationList" /></Link>
-        <Link to="leaderBoard" smooth={true} onClick={() => setIsActObj({ ...actObj, analytics: 0, okrProgress: 0, celebrationList: 0, leaderBoard: 1 })}><Image src={actObj.leaderBoard === 1 ? leaderBoardFill : leaderBoard} alt="leaderBoard" /></Link> */}
-      </nav>
-    </div>
-  )
-}
+// const SocialLink = ({ href, icon: Icon, name }) => {
+//   return (
+//     <a
+//       href={href}
+//       target="_blank"
+//       rel="noreferrer noopener"
+//       className="d-flex align-items-center mb-2 text-dark"
+//       style={{ textDecoration: 'none' }}
+//     >
+//       <Icon className="me-2" />
+//       <span>{name}</span>
+//     </a>
+//   );
+// };
 
-export default MobileFooter;
+// function MobileFooter() {
+//   return (
+//     <footer className="bg-light py-5">
+//       <div className="container">
+//         {/* Main Grid */}
+//         <div className="row gy-4">
+//           {/* Logo and Links */}
+//           <div className="col-12 col-sm-6 col-lg-3">
+//             <Image
+//               src="/logo.svg"
+//               alt="TalentSpotify Logo"
+//               width={150}
+//               height={50}
+//               className="mb-3"
+//             />
+//             <div className="d-flex flex-column">
+//               <Link href="/aboutus" className="fw-bold mb-2 text-dark">
+//                 About Us
+//               </Link>
+//               <Link href="/careers" className="mb-2 text-dark">
+//                 Career
+//               </Link>
+//               <Link href="https://www.talentspotifyapp.com/auth/login" className="mb-2 text-dark">
+//                 Login
+//               </Link>
+//               <Link href="/contactus" className="mb-2 text-dark">
+//                 Contact Us
+//               </Link>
+//               <Link href="/pricing" className="mb-2 text-dark">
+//                 Pricing
+//               </Link>
+//             </div>
+//           </div>
+
+//           {/* Products Section */}
+//           <div className="col-12 col-sm-6 col-lg-3">
+//             <h5 className="mb-3">Products</h5>
+//             <div className="d-flex flex-column">
+//               <Link href="/okr" className="mb-2 text-dark">
+//                 OKR
+//               </Link>
+//               <Link href="/rewards" className="mb-2 text-dark">
+//                 Rewards
+//               </Link>
+//               <Link href="/recognition" className="mb-2 text-dark">
+//                 Recognition
+//               </Link>
+//               <Link href="/reviews" className="mb-2 text-dark">
+//                 Reviews
+//               </Link>
+//             </div>
+//           </div>
+
+//           {/* Resources Section */}
+//           <div className="col-12 col-sm-6 col-lg-3">
+//             <h5 className="mb-3">Resources</h5>
+//             <div className="d-flex flex-column">
+//               <Link href="/blog" className="mb-2 text-dark">
+//                 Blog
+//               </Link>
+//               <Link href="/webinar" className="mb-2 text-dark">
+//                 Webinar
+//               </Link>
+//               <Link href="/press" className="mb-2 text-dark">
+//                 Press & Media
+//               </Link>
+//               <Link href="/case-studies" className="mb-2 text-dark">
+//                 Case Studies
+//               </Link>
+//             </div>
+//           </div>
+
+//           {/* Social Media Section */}
+//           <div className="col-12 col-sm-6 col-lg-3">
+//             <h5 className="mb-3">Find us</h5>
+//             <div className="d-flex flex-column">
+//               <SocialLink href="https://www.facebook.com/Talentspotify" icon={FaFacebookF} name="Facebook" />
+//               <SocialLink href="https://twitter.com/TalentSpotify" icon={FaTwitter} name="Twitter" />
+//               <SocialLink href="https://www.instagram.com/talentspotify" icon={FaInstagram} name="Instagram" />
+//               <SocialLink href="https://www.linkedin.com/company/talentspotify" icon={FaLinkedinIn} name="LinkedIn" />
+//               <SocialLink href="https://www.youtube.com/channel/UCUng2BIcaPmfwVOryKAAa2A" icon={FaYoutube} name="YouTube" />
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Separator */}
+//         <hr className="my-4" />
+
+//         {/* Bottom Section */}
+//         <div className="row">
+//           <div className="col-12 col-md-6 text-center text-md-start mb-3 mb-md-0">
+//             <span className="text-muted">© 2024 TalentSpotify</span>
+//           </div>
+//           <div className="col-12 col-md-6 text-center text-md-end">
+//             <Link href="/privacypolicy" className="me-3 text-dark">
+//               Privacy Policy
+//             </Link>
+//             <Link href="/termsandconditions" className="text-dark">
+//               Terms & Conditions
+//             </Link>
+//           </div>
+//         </div>
+//       </div>
+//     </footer>
+//   );
+// }
+
+// export default MobileFooter;

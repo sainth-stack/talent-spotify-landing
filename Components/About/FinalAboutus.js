@@ -5,17 +5,19 @@ import linkedinIcon from "../../assets/svg/linkedinIcon.svg";
 import Image from "next/image";
 import { useTranslation, Trans } from "next-i18next";
 import Card from "../Card";
-//import  aboutCss from  "../../styles/about.module.css";
+
 export default function FinalAboutus() {
   return (
-    <div  className=" text-center">
-      <div style={{ marginTop: "7rem" }} className=" text-center">
-        <h1 className="font-bold mb-4 ">On a mission to build a culture that truly <br />works for you</h1>
+    <div className="text-center">
+      <div style={{ margin: "7rem 0 3rem 0" }} className="text-center">
+        <h1 className="font-weight-bold mb-4">
+          On a mission to build a culture that truly <br /> works for you
+        </h1>
       </div>
-      
-      {/* border */}
+
+      {/* Border */}
       <div
-        className="relative rounded-2xl"
+        className="position-relative rounded-3 "
         style={{
           padding: "5px", // Space for the gradient "border"
           borderRadius: "10px", // Rounded corners for the outer div
@@ -24,18 +26,27 @@ export default function FinalAboutus() {
       >
         {/* Inner content div with white background */}
         <div
-          className="d-flex justify-content-center rounded-2xl"
+          className="d-flex justify-content-center rounded-3"
           style={{
             borderRadius: "15px", // Inner border radius to match the outer div
             backgroundColor: "#ebe3d5", // Background color for inner content
             padding: "20px", // Adjust padding as needed for inner content
           }}
         >
-          <div className=" justify-center m-4">
+          <div className="d-flex justify-content-center m-4">
             {/* Title inside the border */}
             <h2
-              className=" absolute -top-4 left-1/2 transform -translate-x-1/2 text-xl text-white w-40 font-bold mb-4 px-6 rounded-full"
+              className="position-absolute"
               style={{
+                top: "-1.25rem",
+                left: "50%",
+                transform: "translateX(-50%)",
+                fontSize: "1.25rem",
+                color: "white",
+                width: "10rem",
+                fontWeight: "bold",
+                padding: "0.5rem 1.5rem",
+                borderRadius: "50px",
                 backgroundImage: "linear-gradient(to right, #9967f5, #576afa)",
                 zIndex: 10,
               }}
@@ -44,9 +55,9 @@ export default function FinalAboutus() {
             </h2>
 
             {/* Cards */}
-            <div className="flex justify-center flex-wrap gap-8 m-3">
+            <div className="d-flex justify-content-center flex-wrap gap-3 m-3">
               <Card
-                styles=" shadow-lg"
+                styles="shadow-lg"
                 icon={aneel}
                 heading="Aneel"
                 subheading="Founder, CEO"
@@ -56,7 +67,7 @@ export default function FinalAboutus() {
                 }}
               />
               <Card
-                styles=" shadow-lg"
+                styles="shadow-lg"
                 icon={prasanth}
                 heading="Prashanth Reddy"
                 subheading="Co-Founder, CTO"
@@ -70,20 +81,19 @@ export default function FinalAboutus() {
         </div>
       </div>
 
-
-      {/* border */}
-
+      {/* Motivation Section */}
       <div>
-        <h1 className="text-left pb-4 mt-4 font-weight-bold">Our Motivation</h1>
+        <h1 className="text-start pb-4 mt-4 fw-bold">Our Motivation</h1>
       </div>
-      <div className="d-flex justify-start mb-4">
-        <p className="fs-15 col-md-10 text-justify">
+
+      <div className="container mb-4">
+        <p className="fs-6 text-start">
           <Trans>
-            We empathized for the companies who are tired of using traditional
-            performance management tools. We build employee motivation,
-            transparency in reviews and nudges self management tool. We are
-            doing this by combing the behaviour science(Psychology) and data
-            science (machine learning and Artificial Intelligence).
+            We empathized with companies tired of using traditional performance
+            management tools. We build employee motivation, transparency in reviews, and
+            nudges self-management tools. We are doing this by combining
+            behavioral science (psychology) and data science (machine learning
+            and artificial intelligence).
           </Trans>
           <br />
           <br />
@@ -91,6 +101,7 @@ export default function FinalAboutus() {
           companies to retain and motivate their employees.
         </p>
       </div>
+
     </div>
   );
 }

@@ -9,36 +9,44 @@ export default function CardBlogDetails({
   url = "",
 }) {
   return (
-    <div className="cardhover mobile_blog_card flex flex-col md:flex-row w-full bg-white shadow-lg rounded-lg mb-6 container overflow-hidden">
+    <div className="cardhover mobile_blog_card d-flex flex-column flex-md-row bg-white rounded mb-2 container shadow-lg">
       {/* Image Section */}
-      <div className="relative w-full h-[200px] md:w-1/3 md:h-[250px] rounded-t-lg md:rounded-l-lg ">
+      <div
+        className="position-relative  mobile_blog_image col-12 col-md-4 mb-3 mb-md-0 rounded-top rounded-md-start"
+        style={{
+          borderRadius: ".6rem",
+          height: "auto", // Ensuring height adjusts based on content
+        }}
+      >
         <Image
           src={image}
           alt="cardicon"
-          layout="fill" // Ensures the image covers the container
-          objectFit="cover" // Ensures the image fits without distortion
-          className="rounded-t-lg md:rounded-l-lg py-2"
+          layout="responsive" // Use responsive layout for better scaling
+          width={400} // Set the width for the image
+          height={250} // Set the height for the image
+          objectFit="cover"
+          className="rounded-lg  mobile_blog_img shadow-md py-2"
         />
       </div>
 
       {/* Content Section */}
-      <div className="card-body h-auto p-4 flex flex-col justify-between md:w-2/3 md:pl-6 sm:p-2">
+      <div className="card-body p-3 d-flex mobile_blog_content  flex-column justify-between col-12 col-md-8">
         {/* Heading */}
-        <p className="text-lg sm:text-xl font-bold mb-1 text-gray-800">{heading}</p>
-        
+        <p className="fs-5 fw-bold text-dark mb-2">{heading}</p>
+
         {/* Subheading */}
-        <p className="text-sm sm:text-base text-gray-600 mb-4 h-auto">{subheading}</p>
+        <p className="text-sm text-start mb-3">{subheading}</p>
 
         {/* Read More Link */}
-        <div className="flex justify-start md:justify-end items-center mt-4">
+        <div className="d-flex justify-content-end justify-content-md-end align-items-center mt-3">
           <a
             href={url}
             target="_blank"
             rel="noreferrer"
-            className="text-blue-800 hover:text-blue-600 cursor-pointer flex items-center"
+            className="text-primary text-decoration-none d-flex align-items-center"
           >
             <span
-              className="flex items-center"
+              className="d-flex align-items-center"
               style={{
                 fontFamily: "Poppins",
                 fontSize: "14px",
@@ -46,7 +54,7 @@ export default function CardBlogDetails({
               }}
             >
               Read More
-              <CiCircleChevRight className="ml-1" />
+              <CiCircleChevRight className="ms-1" />
             </span>
           </a>
         </div>
