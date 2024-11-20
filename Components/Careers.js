@@ -1,218 +1,24 @@
-// import React, { useState } from "react";
-// import careerimg from "../assets/svg/careerimg.svg";
-// import Image from "next/image";
-// import Button from "./Button";
-// import BrowseFilesNormal from "./BrowseFilesNormal";
-// import { Validator } from "../utilities";
-// import axios from "axios";
-
-// export default function Carrers() {
-//   const validator = Validator();
-//   const [loading, setLoading] = useState(false);
-//   const [, setError] = useState(false);
-//   const [, forceUpdate] = useState(false);
-//   const [user, setUser] = useState({
-//     name: "",
-//     linkedinURL: "https://www.linkedin.com/in/name",
-//     email: "",
-//     phone: "",
-//     cvURL: "",
-//   })
-//   const handleChange = ({ target: { name, value } }) => {
-//     setUser((prevUser) => {
-//       return { ...prevUser, [name]: value }
-//     })
-//   }
-//   const clearAll = () => {
-//     setUser({
-//       name: "",
-//       linkedinURL: "https://www.linkedin.com/in/name",
-//       email: "",
-//       phone: "",
-//       cvURL: ""
-//     })
-//   }
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     if (validator.current.allValid()) {
-//       setLoading(true);
-//       let response = await axios.post("https://talent-spotify-backend-git-common-dev-talentspotify.vercel.app/api/landing/career", user
-//       )
-//       if (response.data.success) {
-//         setLoading(false);
-//         setError("");
-//         //Toast({ message: "Career Form Submitted Successfully!", type: "success", time: 4000 })
-//         alert("Career Form Submitted Successfully!");
-//         //clearAll();
-//         window.location.reload();
-//       } else {
-//         setLoading(false);
-//         alert(response.data.message);
-//         //Toast({ message: "Something went wrong in network", type: "error", time: 4000 })
-//       }
-//     } else {
-//       validator.current.showMessages();
-//       forceUpdate(true);
-//     }
-//   }
-//   return (
-//     // <div className="pt-lg-5">
-//     //   <p className="careerh d-flex justify-content-center">Careers</p>
-//     //   <div className="d-flex flex-wrap">
-//     //     <div className="col-lg-6 mr-5 bgcontent1 careerimg">
-//     //       <Image src={careerimg} alt="image1" />
-//     //     </div>
-//     //     <div className="col">
-//     //       <div className="  align-self-center  ">
-//     //         <p className="cform">Please fill below form:</p>
-//     //         <form className="mbform" onSubmit={handleSubmit}>
-//     //           <div className="row">
-//     //             <div className="col">
-//     //               <div className="d-flex flex-column">
-//     //                 <label className="textcareer ">Name*</label>
-//     //                 <input type="text" className="inputcareer" id="usr" name="name" value={user.name} onChange={handleChange} />
-//     //               </div>
-//     //               {validator.current.message("Name ", user.name, "required")}
-//     //               <div className="d-flex flex-column mt-4">
-//     //                 <label className="textcareer ">Linkedin URL*</label>
-//     //                 <input type="text" className="inputcareer" name="linkedinURL" value={user.linkedinURL} onChange={handleChange} id="pwd" />
-//     //               </div>
-//     //               {validator.current.message("Linkedin URL ", user.linkedinURL, "required")}
-//     //             </div>
-//     //             <div className="col">
-//     //               <div className="d-flex flex-column ">
-//     //                 <label className="textcareer emailmb">Email Address*</label>
-//     //                 <input type="email" className="inputcareer" id="usr" name="email" value={user.email} onChange={handleChange} />
-//     //               </div>
-//     //               {validator.current.message("Email ", user.email, "required|email")}
-//     //               <div className="d-flex flex-column mt-4 ">
-//     //                 <label className="textcareer ">Phone</label>
-//     //                 <input type="text" className="inputcareer " id="pwd" name="phone" value={user.phone} onChange={handleChange} />
-//     //               </div>
-//     //               {validator.current.message("Phone ", user.phone, "required|phone")}
-//     //             </div>
-//     //           </div>
-
-//               // <div className="mt-3 mb-3 p-3">
-//               //   <p className="textcareer ">Upload CV</p>
-//               //   <BrowseFilesNormal setData={({ url }) => setUser((prevUser) => ({ ...prevUser, cvURL: url }))} />
-//               // </div>
-//               // {validator.current.message("CV ", user.cvURL, "required")}
-//               // <div className="cbuttons d-flex justify-content-end mb-5  mt-3 ">
-//               //   <Button
-//               //     text="Clear"
-//               //     className="bg-light border border-dark text-dark"
-//               //     handleClick={clearAll}
-//               //   />
-//               //   <Button
-//               //     type="submit"
-//               //     //   handleClick={handleSave}
-//               //     text="Save"
-//               //     className="bg-green border text-white "
-//               //   />
-//               // </div>
-//     //         </form>
-
-//     //       </div>
-//     //     </div>
-
-//     //   </div>
-
-//     // </div>
-// <div>
-// <h4 style={{ marginLeft: "320px",marginTop:'40px',fontWeight:'800px' }}>JOB APPLY </h4>
-//         <form onSubmit={handleSubmit}>
-//           <div>
-//             <input
-//               type="text"
-//               name="name"
-//               className="inner-contact"
-//               placeholder="First name*"
-//               value={user.name}
-//               onChange={handleChange}
-//             />
-//           </div>
-//           <div>
-//             <input
-//               type="email"
-//               name="email"
-//               className="inner-contact"
-//               placeholder="Work Email*"
-//               value={user.email}
-//               onChange={handleChange}
-//             />
-//           </div>
-//           <div>
-//             <input
-//               type="text"
-//               name="phone"
-//               className="inner-contact"
-//               placeholder="Phone number*"
-//               value={user.phone}
-//               onChange={handleChange}
-//             />
-//           </div>
-//           <div>
-//             <input
-//               type="text"
-//               name="company"
-//               className="inner-contact"
-//               placeholder="Role*"
-//               value={user.Role}
-//               onChange={handleChange}
-//             />
-//           </div>
-//           <div>
-//             <input
-//               type="text"
-//               name="subject"
-//               className="inner-contact"
-//               placeholder="linkedinURL*"
-
-//               onChange={handleChange}
-//             />
-//           </div>
-//          <div>
-//          <div className="browse-file">
-
-//                 <BrowseFilesNormal setData={({ url }) => setUser((prevUser) => ({ ...prevUser, cvURL: url }))} />
-//               </div>
-//               {validator.current.message("CV ", user.cvURL, "required")}
-
-//          </div>
-//           <button type="submit" className="contact-button" disabled={loading}>
-//             {loading ? "Submitting..." : "Submit"}
-//           </button>
-//         </form>
-// </div>
-//   );
-// }
 import React, { useState } from "react";
-import careerimg from "../assets/svg/careerimg.svg";
-import Image from "next/image";
-import Button from "./Button";
 import BrowseFilesNormal from "./BrowseFilesNormal";
 import { Validator } from "../utilities";
 import axios from "axios";
 
-export default function Carrers() {
+export default function Careers() {
   const validator = Validator();
   const [loading, setLoading] = useState(false);
   const [, setError] = useState(false);
   const [, forceUpdate] = useState(false);
   const [user, setUser] = useState({
     name: "",
-    linkedinURL: "https://www.linkedin.com/in/name",
+    linkedinURL: "",
     email: "",
     phone: "",
     cvURL: "",
-    company: "", // added company to match Role input in the form
+    company: "",
   });
 
   const handleChange = ({ target: { name, value } }) => {
-    setUser((prevUser) => {
-      return { ...prevUser, [name]: value };
-    });
+    setUser((prevUser) => ({ ...prevUser, [name]: value }));
   };
 
   const clearAll = () => {
@@ -222,7 +28,7 @@ export default function Carrers() {
       email: "",
       phone: "",
       cvURL: "",
-      company: "", // Reset company as well
+      company: "",
     });
   };
 
@@ -264,157 +70,87 @@ export default function Carrers() {
   };
 
   return (
-    <div style={{ height: "100%", marginTop: "-20px" }}>
-      <div className="main-contactus2">
-        <div className="  main-contact2" style={{ backgroundColor: "white" }}>
-          <h4
-            style={{
-              textAlign:"center",
-              marginTop: "-20px",
-              fontWeight: "1200px",
-            }}
-          >
+    <div
+      className="container bg-light py-4"
+      style={{ backgroundColor: "#ebe3d5" }}
+    >
+      <div className="row justify-content-center">
+        <div className="col-md-9 col-sm-12 bg-white p-4 rounded ">
+          <h4 className="text-center mb-4" style={{ fontWeight: "bold" }}>
             JOB APPLY
           </h4>
           <form onSubmit={handleSubmit}>
-            <div>
+            <div className="mb-4">
               <input
                 type="text"
                 name="name"
-                className="inner-contact"
+                className="form-control form-control-sm"
                 placeholder="First name*"
                 value={user.name}
                 onChange={handleChange}
               />
             </div>
-            <div>
+            <div className="mb-4">
               <input
                 type="email"
                 name="email"
-                className="inner-contact"
-                placeholder="Work Email*"
+                className="form-control form-control-sm"
+                placeholder=" Email*"
                 value={user.email}
                 onChange={handleChange}
               />
             </div>
-            <div>
+            <div className="mb-4">
               <input
                 type="text"
                 name="phone"
-                className="inner-contact"
+                className="form-control form-control-sm"
                 placeholder="Phone number*"
                 value={user.phone}
                 onChange={handleChange}
               />
             </div>
-            <div>
+            <div className="mb-4">
               <input
                 type="text"
                 name="company"
-                className="inner-contact"
+                className="form-control form-control-sm"
                 placeholder="Role*"
                 value={user.company}
                 onChange={handleChange}
               />
             </div>
-            <div>
+            <div className="mb-4">
               <input
                 type="text"
                 name="linkedinURL"
-                className="inner-contact"
+                className="form-control form-control-sm"
                 placeholder="LinkedIn URL*"
                 value={user.linkedinURL}
                 onChange={handleChange}
               />
             </div>
-            <div>
-              <div className="browse-file">
-                <BrowseFilesNormal
-                  setData={({ url }) =>
-                    setUser((prevUser) => ({ ...prevUser, cvURL: url }))
-                  }
-                />
-              </div>
-              {validator.current.message("CV ", user.cvURL, "required")}
+            <div className="mb-4 row justify-content-center">
+              <BrowseFilesNormal
+                setData={({ url }) =>
+                  setUser((prevUser) => ({ ...prevUser, cvURL: url }))
+                }
+              />
+              {validator.current.message("CV", user.cvURL, "required")}
             </div>
-            <button type="submit" className="contact-button" disabled={loading}>
-              {loading ? "Submitting..." : "Submit"}
-            </button>
+            <div className="d-grid">
+              <button
+                type="submit"
+                style={{ background: "#083c61",color:"#fff" }}
+                className="btn"
+                disabled={loading}
+              >
+                {loading ? "Submitting..." : "Submit"}
+              </button>
+            </div>
           </form>
         </div>
       </div>
     </div>
   );
 }
-//  <div className="main-career">
-// <h4
-//   style={{ marginLeft: "320px", marginTop: "-20px", fontWeight: "1200px" }}
-// >
-//   JOB APPLY
-// </h4>
-// <form onSubmit={handleSubmit}>
-//   <div>
-//     <input
-//       type="text"
-//       name="name"
-//       className="inner-contact"
-//       placeholder="First name*"
-//       value={user.name}
-//       onChange={handleChange}
-//     />
-//   </div>
-//   <div>
-//     <input
-//       type="email"
-//       name="email"
-//       className="inner-contact"
-//       placeholder="Work Email*"
-//       value={user.email}
-//       onChange={handleChange}
-//     />
-//   </div>
-//   <div>
-//     <input
-//       type="text"
-//       name="phone"
-//       className="inner-contact"
-//       placeholder="Phone number*"
-//       value={user.phone}
-//       onChange={handleChange}
-//     />
-//   </div>
-//   <div>
-//     <input
-//       type="text"
-//       name="company"
-//       className="inner-contact"
-//       placeholder="Role*"
-//       value={user.company}
-//       onChange={handleChange}
-//     />
-//   </div>
-//   <div>
-//     <input
-//       type="text"
-//       name="linkedinURL"
-//       className="inner-contact"
-//       placeholder="LinkedIn URL*"
-//       value={user.linkedinURL}
-//       onChange={handleChange}
-//     />
-//   </div>
-//   <div>
-//     <div className="browse-file">
-//       <BrowseFilesNormal
-//         setData={({ url }) =>
-//           setUser((prevUser) => ({ ...prevUser, cvURL: url }))
-//         }
-//       />
-//     </div>
-//     {validator.current.message("CV ", user.cvURL, "required")}
-//   </div>
-//   <button type="submit" className="contact-button" disabled={loading}>
-//     {loading ? "Submitting..." : "Submit"}
-//   </button>
-// </form>
-// </div>

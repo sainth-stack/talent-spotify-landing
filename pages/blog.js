@@ -3,8 +3,8 @@ import { useRef } from "react";
 
 import Footer from "../Components/Footer";
 import Card from "../Components/CardBlogDetails";
-import image1 from ".././assets/images/blog1.png";
-import image2 from ".././assets/images/blog2.png";
+import image2 from ".././assets/images/blog1.png";
+import image1 from ".././assets/images/blog2.png";
 import image3 from ".././assets/images/blog3.png";
 
 import MobileFooter from "../Components/mobile-version/MobileFooter";
@@ -42,14 +42,14 @@ export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
   const heading1 =
     "Performance Management Can Make Your Company Recession-Proof";
-  const heading2 = "8 Tips for Strategic Performance Management";
-  const heading3 =
+  const heading3 = "8 Tips for Strategic Performance Management";
+  const heading2 =
     "How to Measure Employee Performance: The Top Performance...";
   const subheading1 =
     "Read on to know how effective performance management can give your company the edge and help you weather the storm.";
-  const subheading2 =
-    "Performance management strategies can be complex and challenging to implement. Here are some great tips to make strategic performance management easy.";
   const subheading3 =
+    "Performance management strategies can be complex and challenging to implement. Here are some great tips to make strategic performance management easy.";
+  const subheading2 =
     "Wondering how to measure employee performance? Check out our guide to the top performance metrics, and find out which ones are best for your business.";
 
   return (

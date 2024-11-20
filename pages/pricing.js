@@ -83,7 +83,10 @@ export default function Pricing() {
   };
 
   return (
-    <div className="" style={{ height: "100vh", overflow: "auto", backgroundColor:"#ebe3d5" }}>
+    <div
+      className=""
+      style={{ height: "100vh", overflow: "auto", backgroundColor: "#ebe3d5" }}
+    >
       <Navigation
         showPopup={showPopup}
         executeScroll={executeScroll}
@@ -97,27 +100,36 @@ export default function Pricing() {
         </h1>
       </div>
 
-      <div className="container d-flex justify-content-center flex-column align-items-center p-3">
-        <div className="row justify-content-center mx-2 container w-100 g-2"> {/* Reduced gap with g-2 */}
-          <div className="col-12 col-md-4 mb-2 d-flex justify-content-center"> {/* Reduced mb-4 to mb-2 */}
-            <Card3 data={data1} setShowPopup={setShowPopup} className="shadow-lg w-100" />
+      {/* cards */}
+
+      <div className=" container d-flex flex-column align-items-center p-3 ">
+        <div className="row justify-content-center g-2 w-100">
+          <div className="col-12 col-sm-6 col-md-6 col-lg-4  mb-2 d-flex justify-content-center">
+            <Card3
+              data={data1}
+              setShowPopup={setShowPopup}
+              className="shadow-lg w-100"
+            />
           </div>
-          <div className="col-12 col-md-4 mb-2 d-flex justify-content-center"> {/* Reduced mb-4 to mb-2 */}
-            <Card3 data={data2} top={true} setShowPopup={setShowPopup} className="shadow-lg w-100" />
+          <div className="col-12 col-sm-6 col-md-4 mb-2 d-flex justify-content-center">
+            <Card3
+              data={data2}
+              top={true}
+              setShowPopup={setShowPopup}
+              className="shadow-lg w-100"
+            />
           </div>
-          <div className="col-12 col-md-4 mb-2 d-flex justify-content-center"> {/* Reduced mb-4 to mb-2 */}
-            <Card3 data={data3} setShowPopup={setShowPopup} className="shadow-lg w-100" />
+          <div className="col-12 col-sm-6 col-md-6 col-lg-4  mb-2 d-flex justify-content-center">
+            <Card3
+              data={data3}
+              setShowPopup={setShowPopup}
+              className="shadow-lg w-100"
+            />
           </div>
         </div>
       </div>
 
-
-
-
-
-
-
-     
+      {/* cards */}
 
       <div className="container p-4">
         <h1 className="text-center mt-5 fs-2">Compare our Plans</h1>
@@ -126,7 +138,7 @@ export default function Pricing() {
 
       <Footer />
 
-    {/*   {isMobile ? (
+      {/*   {isMobile ? (
         <MobileFooter
           homerefScroll={homerefScroll}
           okrrefScroll={okrrefScroll}

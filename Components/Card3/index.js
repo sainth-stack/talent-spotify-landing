@@ -12,7 +12,7 @@ export default function Card3({ data, top, setShowPopup }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="card h-100 shadow-sm " style={{ minWidth:"300px",maxWidth:"300px"  }}>
+    <div className="card h-100 shadow-sm  " style={{ minWidth:"300px",maxWidth:"300px"  }}>
       <div className="card-body d-flex  my-2 flex-column">
         <div className="position-relative mb-2 ">
           {top && (

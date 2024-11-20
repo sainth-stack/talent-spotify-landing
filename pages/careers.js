@@ -28,7 +28,7 @@ export default function Career() {
   const isMobile = useWindowSize();
 
   return (
-    <div className="" style={{ height: "100vh", overflow: "auto", backgroundColor:"#ebe3d5" }}>
+    <div className="mt-5" style={{ height: "100vh", overflow: "auto", backgroundColor:"#ebe3d5" }}>
     <Navigation
         showPopup={showPopup}
         executeScroll={executeScroll}
@@ -36,25 +36,25 @@ export default function Career() {
         setShowPopup={() => setShowPopup(false)}
         setShowDemo={setShowTrail}
       />
-      <div className="container">
+      <div className="container mt-5">
         
-        <div className="row justify-content-center align-items-center my-5">
-          <div className="col-12 col-md-6 text-center text-md-start">
-            <h1>Work With Us!</h1>
-            <p>
+        <div className="row  justify-center align-items-center my-5">
+          <div className="col-12 col-md-5  ms-2   ">
+            <h1 className="mb-2  ms-4">Work With Us!</h1>
+            <p className="py-1 ms-4 ">
               To amplify human potential and create the <br />
               next opportunity for people, businesses, and communities.
             </p>
-            <button className="btn btn-primary">View Job Openings</button>
+            <button className="btn btn-primary ms-4">View Job Openings</button>
           </div>
-          <div className="col-12 col-md-6 d-flex justify-content-center">
-            <Image src={carrer_img} alt="Career image" className="img-fluid" />
+          <div className="col-12 col-md-6 d-flex ">
+            <Image src={carrer_img} alt="Career image" className="img" />
           </div>
         </div>
       </div>
 
-      <div className="container">
-        <div className="d-flex justify-content-center mt-lg-5 pt-lg-5 flex-wrap">
+      <div className=" bg-light  " >
+        <div className="d-flex justify-content-center m-5 pt-lg-5 flex-wrap">
           <Careers />
         </div>
       </div>

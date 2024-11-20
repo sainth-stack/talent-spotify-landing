@@ -59,7 +59,8 @@ export function WebinarPastContent() {
     top: "-1%", // Moved badge higher
     transform: "translateY(-50%)",
     width: "fit-content", // Dynamic width for responsiveness
-    padding: "0.3rem 1rem", // Compact padding
+       padding: "0.1rem 1rem", // Compact padding
+ // Compact padding
     borderRadius: "12px", // Fully rounded corners
     color: "white", // Text color for contrast
     fontSize: "0.9rem", // Smaller font size for responsiveness
@@ -91,13 +92,13 @@ export function WebinarPastContent() {
     top: "-1%", // Moved badge higher
     transform: "translateY(-50%)",
     width: "fit-content", // Dynamic width for responsiveness
-    padding: "0.3rem 1rem", // Compact padding
+    padding: "0.1rem 1rem", // Compact padding
     borderRadius: "12px", // Fully rounded corners
     color: "white", // Text color for contrast
     fontSize: "0.9rem", // Smaller font size for responsiveness
   }}
 >
-  Upcoming
+  Latest
 </div>
 
 
@@ -118,7 +119,7 @@ export function WebinarPastContent() {
       <h3 className="fs-5  fw-bold mt-4 mb-3">All Webinars</h3>
 
       {/* Grid for the list of webinars */}
-      <div className="row row-cols-1 row-cols-md-2 row-cols-1  g-4">
+      <div className="row row-cols-1 row-cols-md-3 row-cols-1  g-4">
         {filteredWebinars.map((webinar, index) => (
           <div className="col " key={index}>
             <div className="position-relative ">

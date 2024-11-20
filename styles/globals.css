@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.no-rounded-corners {
+  border-radius: 0 !important; /* Removes rounded corners */
+}
+
+
 *,
 body,
 html {
@@ -1851,6 +1856,14 @@ padding-top: -40px; */
 /* for tablets */
 @media (min-width: 768px) and (max-width: 1024px) {
 
+  .price_cards{
+    background:red !important;
+    
+    display:flex !important;
+    flex-wrap:wrap !important;
+    margin:2rem !important;
+
+  }
      .mobile_blog_card {
       width:100% !important;
         display: flex !important;

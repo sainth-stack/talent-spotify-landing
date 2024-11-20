@@ -48,13 +48,16 @@ export default function BrowseFilesNormal({ text = "", setData }) {
       })
   };
   return (
-    <div className="browse-border text-center mt-3">
+    <div className="browse-border  text-center p-1 m-2 mt-3">
       {/* <div>Uploading </div>  */}
       <FileUploader handleChange={handleUpload} name="file" types={fileTypes}>
-        <div className="p-2 mt-2 w-100">
+        <div className="p-2 mt-2 w-80">
           <Image src={upload} alt="upload icon" />
-          <p className="drag-text">Drag &amp; Drop file to upload or</p>
-          <button className="browse-button"><Image src={arrow} alt="arrow up" /> Browse file</button>
+          <br/>
+          <strong className=""  style={{fontWeight:"600"}}>Drag your Resume here Or Click Upload </strong>
+          <h6 className="text-secondary">Accept file type: PDF, DOCX (5MB max) </h6>
+
+          
         </div>
       </FileUploader>
 
