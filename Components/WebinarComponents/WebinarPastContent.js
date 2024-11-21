@@ -48,7 +48,7 @@ export function WebinarPastContent() {
 
       {/* Scrollable container for the upcoming webinars */}
       
-      <div className="row container row-cols-1 row-cols-sm-2  row-cols-md-2 g-4 pb-4 ">
+      <div className="row  row-cols-1 row-cols-sm-2  row-cols-md-2 g-4 pb-4 ">
         <div className="col position-relative">
           {/* "Upcoming" badge */}
       <div
@@ -119,7 +119,7 @@ export function WebinarPastContent() {
       <h3 className="fs-5  fw-bold mt-4 mb-3">All Webinars</h3>
 
       {/* Grid for the list of webinars */}
-      <div className="row row-cols-1 row-cols-md-3 row-cols-1  g-4">
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-1  g-4">
         {filteredWebinars.map((webinar, index) => (
           <div className="col " key={index}>
             <div className="position-relative ">

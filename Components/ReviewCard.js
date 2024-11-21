@@ -55,14 +55,14 @@ const ReviewCard = ({ reviewItems, imageSrc }) => {
                 <ul style={{ listStyleType: "none", padding: "0", margin: "0" }}>
                     {reviewItems.map((item, index) => (
                         <li
-                        className="py-3"
+                        className="py-3 ipadpro_font"
                             key={index}
                             style={{
                                 display: "flex",
                                 alignItems: "center",
                                 gap: "6px",
                                 padding: "8px 0",
-                                fontSize: "0.9rem",
+                                fontSize: ".94rem",
                                 wordBreak: "break-word"
                             }}
                         >

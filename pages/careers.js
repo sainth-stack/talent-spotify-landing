@@ -45,7 +45,10 @@ export default function Career() {
               To amplify human potential and create the <br />
               next opportunity for people, businesses, and communities.
             </p>
-            <button className="btn btn-primary ms-4">View Job Openings</button>
+            <button className="btn  ms-4" 
+                style={{ background: "#083c61",color:"#fff" }}
+            
+            >View Job Openings</button>
           </div>
           <div className="col-12 col-md-6 d-flex ">
             <Image src={carrer_img} alt="Career image" className="img" />

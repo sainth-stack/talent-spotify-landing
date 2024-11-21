@@ -44,7 +44,7 @@ export default function Home() {
 
 
   return (
-    <div className="" style={{ height: "100vh",  background: "#EAE3D6" }}>
+    <div className="" style={{ height: "100%",  background: "#EAE3D6" }}>
       <Navigation
         showPopup={showPopup}
         executeScroll={executeScroll}
@@ -66,7 +66,7 @@ export default function Home() {
       </div>
 
       <div className="container mt-4">
-        <div className=" container row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-4">
+        <div className="  row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-4 ">
           {mediaCards.map((mediaCard, index) => (
             <div key={index} className="col">
               <div className="card h-100 shadow-lg">
