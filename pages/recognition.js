@@ -44,13 +44,14 @@ export default function Home() {
       />
 
       <h1 className="text-center fs-2 fw-bold mt-5">
-        Did you know that companies with highly engaged employees experience...
+        Did you know that companies with highly engaged employees
+        <br /> experience...
       </h1>
       <div className="d-flex justify-content-center flex-wrap mt-2 p-3 ">
         {recognitionProgressData.map((data, index) => (
           <div
             key={index}
-            className="d-flex flex-column justify-content-center align-items-center mb-3"
+            className="d-flex flex-column justify-content-center  align-items-center mb-3"
           >
             <ProgressCircle
               percentage={data.percentage}
@@ -63,7 +64,6 @@ export default function Home() {
           </div>
         ))}
       </div>
-
 
       <Recognitions />
       <Footer />

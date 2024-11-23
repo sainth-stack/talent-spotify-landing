@@ -17,7 +17,9 @@ const FooterSection = ({ title, links }) => (
     {title && <h5>{title}</h5>}
     {links.map((link, index) => (
       <Link href={link.href} key={index}>
-        <a className="" style={{fontWeight:"600"}}>{link.label}</a>
+        <a className="" style={{ fontWeight: "600" }}>
+          {link.label}
+        </a>
       </Link>
     ))}
   </div>
@@ -38,7 +40,10 @@ export default function Footer() {
                 links={[
                   { href: "/aboutus", label: "About Us" },
                   { href: "/careers", label: "Career" },
-                  { href: "https://www.talentspotifyapp.com/auth/login", label: "Login" },
+                  {
+                    href: "https://www.talentspotifyapp.com/auth/login",
+                    label: "Login",
+                  },
                   { href: "/contactus", label: "Contact Us" },
                   { href: "/pricing", label: "Pricing" },
                 ]}
@@ -70,7 +75,7 @@ export default function Footer() {
             {/* Column 4: Social Links */}
             <div className="footer-column mt-3">
               <h5>Find us</h5>
-              <div className="footer-social " >
+              <div className="footer-social ">
                 <a
                   href="https://www.facebook.com/Talentspotify"
                   target="_blank"
@@ -78,7 +83,9 @@ export default function Footer() {
                   className="social-link"
                 >
                   <FaFacebookF className="social-icon" />
-                  <span className="social-name" style={{fontWeight:"600"}}>Facebook</span>
+                  <span className="social-name" style={{ fontWeight: "600" }}>
+                    Facebook
+                  </span>
                 </a>
                 <a
                   href="https://twitter.com/TalentSpotify"
@@ -87,7 +94,9 @@ export default function Footer() {
                   className="social-link"
                 >
                   <FaTwitter className="social-icon" />
-                  <span className="social-name"  style={{fontWeight:"600"}}>Twitter</span>
+                  <span className="social-name" style={{ fontWeight: "600" }}>
+                    Twitter
+                  </span>
                 </a>
                 <a
                   href="https://www.instagram.com/talentspotify"
@@ -96,7 +105,9 @@ export default function Footer() {
                   className="social-link"
                 >
                   <FaInstagram className="social-icon" />
-                  <span className="social-name" style={{fontWeight:"600"}}>Instagram</span>
+                  <span className="social-name" style={{ fontWeight: "600" }}>
+                    Instagram
+                  </span>
                 </a>
                 <a
                   href="https://www.linkedin.com/company/talentspotify"
@@ -105,7 +116,9 @@ export default function Footer() {
                   className="social-link"
                 >
                   <FaLinkedinIn className="social-icon" />
-                  <span className="social-name" style={{fontWeight:"600"}}>LinkedIn</span>
+                  <span className="social-name" style={{ fontWeight: "600" }}>
+                    LinkedIn
+                  </span>
                 </a>
                 <a
                   href="https://www.youtube.com/channel/UCUng2BIcaPmfwVOryKAAa2A"
@@ -114,7 +127,9 @@ export default function Footer() {
                   className="social-link"
                 >
                   <FaYoutube className="social-icon" />
-                  <span className="social-name" style={{fontWeight:"600"}}>YouTube</span>
+                  <span className="social-name" style={{ fontWeight: "600" }}>
+                    YouTube
+                  </span>
                 </a>
               </div>
             </div>

@@ -33,13 +33,16 @@ export default function Home() {
   const isMobile = useWindowSize();
 
   return (
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      minHeight: '100vh',
-      background: '#EAE3D6',
-      overflow: 'auto',
-    }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+
+        background: "#EAE3D6",
+        overflow: "auto",
+      }}
+    >
       <Navigation
         showPopup={showPopup}
         executeScroll={executeScroll}
@@ -47,23 +50,32 @@ export default function Home() {
         setShowPopup={() => setShowPopup(false)}
         setShowDemo={setShowTrail}
       />
-      <div className="container" style={{ flex: 1, paddingTop: '100px' }}> {/* Add padding to ensure content is visible */}
+      <div
+        className="container"
+        style={{
+          flex: 1,
+          paddingTop: "100px",
+          paddingLeft: "60px",
+          width: "1300px",
+        }}
+      >
+        {" "}
+        {/* Add padding to ensure content is visible */}
         <div className="text-center position-relative">
           <h3 className="fw-bold fs-4 ">
             What Makes OKR Powerful for startups?
           </h3>
         </div>
-       <div className="d-flex justify-content-center my-lg-5 w-100">
-  <Image
-    src={okrflow}
-    alt="okrflow"
-    layout="intrinsic"  // Ensures the image scales based on its intrinsic size
-    objectFit="contain" // Ensures the image maintains its aspect ratio while fitting within the container
-    className="okrMob img-fluid" // Makes the image fluid and responsive
-  />
-</div>
-
-
+        <div className="d-flex justify-content-center   my-lg-5 w-100">
+          <Image
+            src={okrflow}
+            width={800}
+            alt="okrflow"
+            layout="intrinsic" // Ensures the image scales based on its intrinsic size
+            objectFit="contain" // Ensures the image maintains its aspect ratio while fitting within the container
+            className="okrMob img-fluid" // Makes the image fluid and responsive
+          />
+        </div>
         <ReviewsAndCards
           reviewItems={objectiveDesignQuestions}
           imageSrc={okrImage}
@@ -71,11 +83,10 @@ export default function Home() {
         />
       </div>
 
-        <Footer />
-
+      <Footer />
 
       {/* Mobile Footer: only shown if it's a mobile view */}
-     {/*  {isMobile ? (
+      {/*  {isMobile ? (
         <div style={{ marginTop: 'auto' }}> 
           <MobileFooter
             homerefScroll={homerefScroll}
