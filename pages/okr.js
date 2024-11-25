@@ -56,12 +56,12 @@ export default function Home() {
           flex: 1,
           paddingTop: "100px",
           paddingLeft: "60px",
-          width: "1300px",
+          // width: "1300px",
         }}
       >
         {" "}
         {/* Add padding to ensure content is visible */}
-        <div className="text-center position-relative">
+        <div className="text-center position-relative ">
           <h3 className="fw-bold fs-4 ">
             What Makes OKR Powerful for startups?
           </h3>

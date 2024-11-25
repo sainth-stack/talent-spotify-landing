@@ -25,9 +25,9 @@ const ReviewsAndCards = ({
             <div
               className="position-relative w-100 "
               style={{
-                maxWidth: "300px",
+                maxWidth: "400px",
 
-                height: "400px",
+                height: "600px",
               }}
             >
               <Image
@@ -51,28 +51,35 @@ const ReviewsAndCards = ({
               "linear-gradient(to right, rgba(255, 255, 255, 0), #9967f5, #576afa) 1",
             boxShadow: "0px 1px 10px rgba(0, 0, 0, 0.1)",
             minHeight: "400px",
+
             borderRadius: "15px !important",
-            border: "4px solid  blue",
+            border: "4px solid Blue",
             borderLeft: "0 ",
           }}
         >
-          <h2 className="fw-bold fs-4 mb-4  mx-5 text-center text-lg-start">
-            {title}
-          </h2>
-
-          <ol className="list-unstyled ps-0 ps-lg-4 mb-4">
+          <h2 className="fw-bold fs-4 mb-4  mx-5    text-center ">{title}</h2>
+          <ol
+            className="list-unstyled ps-0 ps-lg-4 mb-4"
+            style={{ paddingLeft: "100px" }}
+          >
             {reviewItems.map((item, index) =>
               renderReviewItem ? (
                 renderReviewItem(item, index)
               ) : (
-                <li key={index} className="d-flex align-items-start mb-3">
+                <li
+                  key={index}
+                  className="d-flex   align-items-start mb-3 pl-2 "
+                >
                   <div
                     className="d-flex align-items-center justify-content-center me-3"
-                    style={{ minWidth: "32px", height: "32px" }}
+                    style={{
+                      minWidth: "60px",
+                      height: "32px",
+                    }}
                   >
                     <IoIosCheckmarkCircleOutline
                       className="fs-4"
-                      style={{ color: "#083c61" }}
+                      style={{ color: "#083c61", marginLeft: "20px" }}
                       aria-hidden="true"
                     />
                   </div>
@@ -87,7 +94,11 @@ const ReviewsAndCards = ({
           <div className="d-flex mx-5 justify-content-center justify-content-lg-start mt-4">
             <button
               className="btn btn-primary px-4 py-2 rounded-pill"
-              style={{ backgroundColor: "#083c61", borderColor: "#083c61" }}
+              style={{
+                backgroundColor: "#083c61",
+                borderColor: "#083c61",
+                marginLeft: "80px",
+              }}
             >
               {buttonLabel}
             </button>

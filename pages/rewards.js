@@ -1,8 +1,8 @@
-import React, {useRef, useState } from 'react';
+import React, { useRef, useState } from "react";
 import Navigation from "../Components/navigationNew";
 import useWindowSize from "../utilities/UseWindowSize";
-import Footer from '../Components/Footer';
-import RewardsFinal from '../Components/RewardsContent';
+import Footer from "../Components/Footer";
+import RewardsFinal from "../Components/RewardsContent";
 
 export default function WebinarDetails() {
   const [showTrail, setShowTrail] = useState(false);
@@ -23,7 +23,7 @@ export default function WebinarDetails() {
   const isMobile = useWindowSize();
 
   return (
-    <div className='' style={{ minHeight: "100vh", background: "#EAE3D6" }}>
+    <div className="" style={{ minHeight: "100vh", background: "#EAE3D6" }}>
       <Navigation
         showPopup={showPopup}
         executeScroll={executeScroll}
