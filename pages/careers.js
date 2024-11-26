@@ -1,17 +1,13 @@
-import React, {useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Footer from "../Components/Footer";
-import image1 from ".././assets/images/pricing1.png";
-import image2 from ".././assets/images/pricing3.png";
 import carrer_img from "../assets/images/carrer_img.png";
-import Card3 from "../Components/Card3";
-import BlogNav from "../Components/BlogNav";
-import TermsConditions from "../Components/TermsConditions";
 import Careers from "../Components/Careers";
 import Image from "next/image";
 import Navigation from "../Components/navigationNew";
 import useWindowSize from "../utilities/UseWindowSize";
+
 export default function Career() {
- const [showPopup, setShowPopup] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
   const [showTrail, setShowTrail] = useState(false);
   const myRef = useRef(null);
   const homeRef = useRef(null);
@@ -28,8 +24,15 @@ export default function Career() {
   const isMobile = useWindowSize();
 
   return (
-    <div className="mt-5" style={{ height: "100vh", overflow: "auto", backgroundColor:"#ebe3d5" }}>
-    <Navigation
+    <div
+      className="mt-5"
+      style={{
+        height: "100vh",
+        overflow: "auto",
+        backgroundColor: "#ebe3d5",
+      }}
+    >
+      <Navigation
         showPopup={showPopup}
         executeScroll={executeScroll}
         showDemo={showTrail}
@@ -37,26 +40,42 @@ export default function Career() {
         setShowDemo={setShowTrail}
       />
       <div className="container mt-5">
-        
-        <div className="row  justify-center align-items-center my-5">
-          <div className="col-12 col-md-5  ms-2   ">
-            <h1 className="mb-2  ms-4">Work With Us!</h1>
-            <p className="py-1 ms-4 ">
+        <div className="row justify-center align-items-center my-5">
+          {/* Left Section */}
+          <div className="col-12 col-md-5 ms-2">
+            <h1 className="mb-2 ms-4">Work With Us!</h1>
+            <p className="py-1 ms-4">
               To amplify human potential and create the <br />
               next opportunity for people, businesses, and communities.
             </p>
-            <button className="btn  ms-4" 
-                style={{ background: "#083c61",color:"#fff" }}
-            
-            >View Job Openings</button>
+            <button
+              className="btn ms-4"
+              style={{ background: "#083c61", color: "#fff" }}
+            >
+              View Job Openings
+            </button>
           </div>
-          <div className="col-12 col-md-6 d-flex ">
-            <Image src={carrer_img} alt="Career image" className="img" />
+
+          {/* Right Section with Image */}
+          <div
+            className="col-12 col-md-6 d-flex justify-content-end"
+            style={{
+              paddingRight: "80px", // Moves the image further right
+              position: "relative",
+            }}
+          >
+            <Image
+              src={carrer_img}
+              alt="Career image"
+              className="img"
+              style={{ maxWidth: "100%", height: "auto" }}
+            />
           </div>
         </div>
       </div>
 
-      <div className=" bg-light  " >
+      {/* Careers Section */}
+      <div className="bg-light col-12">
         <div className="d-flex justify-content-center m-5 pt-lg-5 flex-wrap">
           <Careers />
         </div>

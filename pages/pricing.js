@@ -65,7 +65,7 @@ export default function Pricing() {
   };
 
   const data3 = {
-    heading: "Enterprise Plan",
+    heading: "Enterprise",
     description: "Pro + Integration",
     name: "Contact us for Pricing",
     buttonText: "Book A DEMO",
@@ -102,16 +102,16 @@ export default function Pricing() {
 
       {/* cards */}
 
-      <div className=" container d-flex flex-column align-items-center p-3 ">
-        <div className="row justify-content-center g-2 w-100">
-          <div className="col-12 col-sm-6 col-md-6 col-lg-4  mb-2 d-flex justify-content-center">
+      <div className=" container d-flex flex-column align-items-center p-3  ">
+        <div className="row justify-content-center gap-3  w-100">
+          <div className="col-12 col-sm-6 col-md-6 col-lg-3   mb-2 d-flex justify-content-center">
             <Card3
               data={data1}
               setShowPopup={setShowPopup}
               className="shadow-lg w-100"
             />
           </div>
-          <div className="col-12 col-sm-6 col-md-4 mb-2 d-flex justify-content-center">
+          <div className="col-12 col-sm-6 col-md-5 col-lg-3 mb-2 d-flex justify-content-center">
             <Card3
               data={data2}
               top={true}
@@ -119,7 +119,7 @@ export default function Pricing() {
               className="shadow-lg w-100"
             />
           </div>
-          <div className="col-12 col-sm-6 col-md-6 col-lg-4  mb-2 d-flex justify-content-center">
+          <div className="col-12 col-sm-6 col-md-5 col-lg-3  mb-2 d-flex justify-content-center">
             <Card3
               data={data3}
               setShowPopup={setShowPopup}

@@ -59,20 +59,20 @@ export default function Contact() {
   };
 
   return (
-    <div  className="p-2" style={{ backgroundColor: "#fff", paddingTop: "20px" }}>
+    <div  className="p-4 shadow-md rounded" style={{ backgroundColor: "#fff", paddingTop: "20px" }}>
       <div className="container ">
-        <div className="row justify-content-center">
-          <div className="col-12 col-md-9 col-sm-12 p-4">
-            <div className="card p-4">
-              <h4 className="text-center mb-4 p-3" style={{ fontWeight: "800" }}>
+        <div className="row justify-content-center mx-4">
+          <div className="col-12 col-md-9 col-sm-12">
+            <div className="">
+              <h4 className="text-center mb-4 " style={{ fontWeight: "800" }}>
                 Get in touch with us
               </h4>
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} >
                 <div className="mb-3">
                   <input
                     type="text"
                     name="name"
-                    className="form-control "
+                    className="form-control f "
                     placeholder="First name*"
                     value={user.name}
                     onChange={handleChange}

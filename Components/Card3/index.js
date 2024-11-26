@@ -25,7 +25,7 @@ export default function Card3({ data, top, setShowPopup }) {
                 background: "linear-gradient(to right, #9f69f5, #6b6bfa)" // Indigo to Blue gradient
               }}
             >
-              MOST POPULAR PLAN
+              MOST POPULAR 
             </div>
 
           )}
