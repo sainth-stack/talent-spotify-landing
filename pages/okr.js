@@ -55,7 +55,7 @@ export default function Home() {
         style={{
           flex: 1,
           paddingTop: "100px",
-          paddingLeft: "60px",
+
           // width: "1300px",
         }}
       >
