@@ -141,7 +141,7 @@ export function Nav({
           className="bg-[#ded7c8] login_animation"
           text="Login"
           handleClick={() =>
-            window.open("https://www.talentspotifyapp.com/login", "_blank")
+            window.open("https://talentspotifyapp.com/auth/login", "_blank")
           }
         />
         <Button

@@ -1,15 +1,54 @@
-import React from "react";
+import {React,useState,useEffect} from "react";
 import Image from "next/image";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
+import Button from "./Button";
+import RequestDemoPopup from "./requestDemoPopup";
+import FreetrailPopup from "./freetrailPopup";
+import axios from "axios";
 
 const ReviewsAndCards = ({
   reviewItems,
+  
+  
   buttonLabel = "Book a Demo",
   imageSrc,
   renderReviewItem,
   title,
   topHeading,
 }) => {
+
+  
+  const [orderModalShow, setOrderModalShow] = useState(false);
+  const [orderModalShow2, setOrderModalShow2] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [, setError] = useState(false);
+  const [selectedType, setType] = useState("");
+  const handleClick = () => {
+    setOrderModalShow(true);
+  };
+
+  const handleClick2 = () => {
+    setOrderModalShow2(true);
+  };
+  const handleCallback = async (childData) => {
+    setLoading(true);
+    let response = await axios.post(
+      "https://talent-spotify-backend.vercel.app/api/landing/requestDemo",
+      childData.data
+    );
+    if (response.data.success) {
+      setLoading(false);
+      setOrderModalShow(false);
+      setError("");
+      //Toast({ message: "Schedule Demo Sent Successfully!", type: "success", time: 4000 })
+      alert("Schedule Demo Sent Successfully!");
+    } else {
+      setLoading(false);
+      setError("Something went wrong in network");
+      //Toast({ message: "Something went wrong in network", type: "error", time: 4000 })
+    }
+  };
+ 
   return (
     <section className="container   my-4 mt-3 py-3   ">
       <header className="text-center   mb-4 mt-4">
@@ -91,17 +130,28 @@ const ReviewsAndCards = ({
             )}
           </ol>
 
+         
+          <RequestDemoPopup
+            show={orderModalShow}
+            onHide={() => setOrderModalShow(false)}
+            handlecallback={handleCallback}
+            loading={loading}
+          />
+
+          <FreetrailPopup
+            show={orderModalShow2}
+            onHide={() => setOrderModalShow2(false)}
+            handlecallback={handleCallback}
+            loading={loading}
+          />
+
           <div className="d-flex mx-5 justify-content-center justify-content-lg-start mt-4">
-            <button
-              className="btn btn-primary px-4 py-2 rounded-pill"
-              style={{
-                backgroundColor: "#083c61",
-                borderColor: "#083c61",
-                marginLeft: "80px",
-              }}
-            >
-              {buttonLabel}
-            </button>
+            <Button
+              className={`text-white animate_startFree`}
+              text="Book a Demo"
+              style2={{ background: "#083C62", border: "none" }}
+              onClick={() => handleClick()}
+            />
           </div>
         </div>
       </div>

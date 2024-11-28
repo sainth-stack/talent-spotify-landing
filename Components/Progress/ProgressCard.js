@@ -47,7 +47,7 @@ export const ProgressCircle = ({
       }}
     >
 
-      <div style={progressStyle}></div>
+      <div style={progressStyle} className=""></div>
 
       <div
         className="rounded-circle bg-white shadow d-flex align-items-center justify-content-center"
