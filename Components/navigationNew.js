@@ -33,7 +33,7 @@ export default function Navigation(props) {
   };
   const handleCallback = async (childData) => {
     setLoading(true);
-    let response = await axios.post("https://talent-spotify-backend.vercel.app/api/landing/requestDemo", childData.data
+    let response = await axios.post("http://localhost:4000/api/landing/requestDemo", childData.data
     )
     if (response.data.success) {
       setLoading(false);

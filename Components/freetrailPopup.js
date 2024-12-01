@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal } from "react-bootstrap";
-// import "./styles.scss";
-import wrong from "../assets/svg/wrong.svg"
+import wrong from "../assets/svg/wrong.svg";
 import { Col, Row } from "react-bootstrap";
-import { LoadingIndicator, Organization, Region, Validator } from "../utilities";
+import {
+  LoadingIndicator,
+  Organization,
+  Region,
+  Validator,
+} from "../utilities";
 import Select from "react-select";
 import Image from "next/image";
 
@@ -11,34 +15,42 @@ export default function FreetrailPopup(props) {
   const [, setError] = useState(false);
   const [, forceUpdate] = useState(false);
   const validator = Validator();
-  let defaultData = {
+
+  const defaultData = {
     firstName: "",
     secondName: "",
     businessEmail: "",
     phoneNumber: "",
     sizeOfOrganization: "",
     region: "",
-  }
+  };
+
   const [data, setData] = useState(defaultData);
 
+  // Handle form field change
   const handleChangeSearch = ({ target: { name, value, label } }) => {
-    let updatedData = { ...data };
-    updatedData[name] = value;
-    setData(updatedData);
+    setData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
     setError("");
   };
 
   let options = Region;
   let updatedOptions = options.map((item) => ({ ...item, label: item.key }));
+
   const onSubmit = () => {
     if (validator.current.allValid()) {
-      props.handlecallback({
-        data: data,
-      });
+      // Check if form data is valid before calling the callback
+      if (data.firstName && data.secondName && data.businessEmail) {
+        props.handlecallback({
+          data: data,
+        });
+      }
       if (!props.loading) {
         setTimeout(() => {
-          setData(defaultData);
-          validator.current.hideMessages();
+          setData(defaultData); // Reset form data after submission
+          validator.current.hideMessages(); // Hide validation messages
         }, 1000);
       }
     } else {
@@ -46,8 +58,17 @@ export default function FreetrailPopup(props) {
       forceUpdate(true);
     }
   };
+
   let options1 = Organization;
   let updatedOptions1 = options1.map((item) => ({ ...item, label: item.key }));
+
+  // Reset form data if props.show changes (for example, when modal is closed)
+  useEffect(() => {
+    if (!props.show) {
+      setData(defaultData); // Reset data when modal is closed
+    }
+  }, [props.show]);
+
   return (
     <Modal
       show={props.show}
@@ -58,7 +79,7 @@ export default function FreetrailPopup(props) {
     >
       <Modal.Body>
         <div>
-          <div className="d-flex justify-content-between align-items-start m-0 p-0 ">
+          <div className="d-flex justify-content-between align-items-start m-0 p-0">
             <Col sm={11} className="m-0 p-0">
               <Modal.Title
                 id="contained-modal-title-vcenter"
@@ -94,18 +115,18 @@ export default function FreetrailPopup(props) {
             />
           </div>
         </div>
-        <div className="bg-light-white rounded-12 mh-100 ">
+        <div className="bg-light-white rounded-12 mh-100">
           <Row className="mt-3 d-block">
             <Col>
               <div className="d-flex flex-column justify-content-between">
                 <label className="label fs13 col-md-12 col-xs-12 col-sm-12">
                   FIRST NAME<span className="text-danger">*</span>
                 </label>
-                <div className="d-flex col-md-12  col-xs-12 col-sm-12">
+                <div className="d-flex col-md-12 col-xs-12 col-sm-12">
                   <input
                     required
                     type="text"
-                    className={`form-control  rounded`}
+                    className={`form-control rounded`}
                     placeholder=""
                     name="firstName"
                     value={data.firstName}
@@ -113,7 +134,11 @@ export default function FreetrailPopup(props) {
                   />
                 </div>
                 <div className="ml-3">
-                  {validator.current.message("First Name ", data.firstName, "required")}
+                  {validator.current.message(
+                    "First Name ",
+                    data.firstName,
+                    "required"
+                  )}
                 </div>
               </div>
             </Col>
@@ -122,11 +147,11 @@ export default function FreetrailPopup(props) {
                 <label className="label fs13 col-md-12 col-xs-12 col-sm-12">
                   SECOND NAME<span className="text-danger">*</span>
                 </label>
-                <div className="d-flex col-md-12  col-xs-12 col-sm-12">
+                <div className="d-flex col-md-12 col-xs-12 col-sm-12">
                   <input
                     required
                     type="text"
-                    className={`form-control  rounded`}
+                    className={`form-control rounded`}
                     placeholder=""
                     name="secondName"
                     value={data.secondName}
@@ -134,7 +159,11 @@ export default function FreetrailPopup(props) {
                   />
                 </div>
                 <div className="ml-3">
-                  {validator.current.message("Second Name ", data.secondName, "required")}
+                  {validator.current.message(
+                    "Second Name ",
+                    data.secondName,
+                    "required"
+                  )}
                 </div>
               </div>
             </Col>
@@ -144,11 +173,11 @@ export default function FreetrailPopup(props) {
               <label className="label fs13 col-md-12 col-xs-12 col-sm-12">
                 BUSINESS EMAIL<span className="text-danger">*</span>
               </label>
-              <div className="d-flex col-md-12  col-xs-12 col-sm-12">
+              <div className="d-flex col-md-12 col-xs-12 col-sm-12">
                 <input
                   required
                   type="text"
-                  className={`form-control  rounded`}
+                  className={`form-control rounded`}
                   placeholder=""
                   name="businessEmail"
                   value={data.businessEmail}
@@ -156,7 +185,11 @@ export default function FreetrailPopup(props) {
                 />
               </div>
               <div className="ml-3">
-                {validator.current.message("Business Email ", data.businessEmail, "required|email")}
+                {validator.current.message(
+                  "Business Email ",
+                  data.businessEmail,
+                  "required|email"
+                )}
               </div>
             </div>
           </div>
@@ -165,10 +198,10 @@ export default function FreetrailPopup(props) {
               <label className="label fs13 col-md-12 col-xs-12 col-sm-12">
                 PHONE NO.
               </label>
-              <div className="d-flex col-md-12  col-xs-12 col-sm-12">
+              <div className="d-flex col-md-12 col-xs-12 col-sm-12">
                 <input
                   type="number"
-                  className={`form-control  rounded`}
+                  className={`form-control rounded`}
                   placeholder=""
                   name="phoneNumber"
                   value={data.phoneNumber}
@@ -186,9 +219,9 @@ export default function FreetrailPopup(props) {
                   </label>
                   <Select
                     required
-                    value={updatedOptions.filter(function (option) {
-                      return option.value === data.region;
-                    })}
+                    value={updatedOptions.filter(
+                      (option) => option.value === data.region
+                    )}
                     options={updatedOptions}
                     onChange={(e) =>
                       handleChangeSearch({
@@ -202,7 +235,11 @@ export default function FreetrailPopup(props) {
                     className="custom-dropdown col-md-12"
                   />
                   <div className="ml-3">
-                    {validator.current.message("Region ", data.region, "required")}
+                    {validator.current.message(
+                      "Region ",
+                      data.region,
+                      "required"
+                    )}
                   </div>
                 </div>
               </Col>
@@ -217,9 +254,9 @@ export default function FreetrailPopup(props) {
                   </label>
                   <Select
                     required
-                    value={updatedOptions1.filter(function (option) {
-                      return option.value === data.sizeOfOrganization;
-                    })}
+                    value={updatedOptions1.filter(
+                      (option) => option.value === data.sizeOfOrganization
+                    )}
                     options={updatedOptions1}
                     onChange={(e) =>
                       handleChangeSearch({
@@ -233,7 +270,11 @@ export default function FreetrailPopup(props) {
                     className="custom-dropdown col-md-12"
                   />
                   <div className="ml-3">
-                    {validator.current.message("Size Of Organization ", data.sizeOfOrganization, "required")}
+                    {validator.current.message(
+                      "Size Of Organization ",
+                      data.sizeOfOrganization,
+                      "required"
+                    )}
                   </div>
                 </div>
               </Col>
@@ -241,16 +282,21 @@ export default function FreetrailPopup(props) {
           </div>
         </div>
         <div className="m-2 p-2 text-center">
-          {props.loading ? <div>Free Trail <LoadingIndicator /></div> : <input
-            style={{
-              fontSize: "14px",
-              backgroundColor: "#2A7A7B",
-            }}
-            className="border-0 rounded text-white form-control"
-            onClick={onSubmit}
-            type="submit"
-            value="Free Trail"
-          />}
+          {props.loading ? (
+            <div>
+              Free Trail <LoadingIndicator />
+            </div>
+          ) : (
+            <input
+              style={{
+                fontSize: "14px",
+                backgroundColor: "#2A7A7B",
+              }}
+              className="border-0 rounded text-white form-control"
+              onClick={onSubmit}
+              value="START FREE TRIAL"
+            />
+          )}
         </div>
       </Modal.Body>
     </Modal>
