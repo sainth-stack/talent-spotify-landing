@@ -1,19 +1,18 @@
-import image1 from "../assets/images/new-dashboard/pedict.png";
 import image2 from "../assets/images/new-dashboard/image2.png";
 import image3 from "../assets/images/new-dashboard/Reward.png";
 import image4 from "../assets/images/new-dashboard/apple.png";
 export const list1 = [
-  {
-    list: [
-      "Use Extensive OKR Library",
-      "Predict success of your Key Results",
-      "Get a bird’s eye view of your Team",
-    ],
-    title: "AI-powered OKR Management",
-    reverse: false,
-    image: image1,
-    path: "/okr",
-  },
+  // {
+  //   list: [
+  //     "Use Extensive OKR Library",
+  //     "Predict success of your Key Results",
+  //     "Get a bird’s eye view of your Team",
+  //   ],
+  //   title: "AI-powered OKR Management",
+  //   reverse: false,
+  //   image: image2,
+  //   path: "/okr",
+  // },
   {
     list: [
       "Get reward on task completion",

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Modal } from "react-bootstrap";
 // import "./styles.scss";
 import wrong from "../assets/svg/wrong.svg"
@@ -8,16 +8,16 @@ import Select from "react-select";
 import Image from "next/image";
 
 export default function RequestDemoPopup(props) {
+   const selectRef = useRef(null); 
   const [, setError] = useState(false);
   const [, forceUpdate] = useState(false);
   const validator = Validator();
   let defaultData = {
-    firstName: "",
-    secondName: "",
+    fullName: "",
     businessEmail: "",
     phoneNumber: "",
     sizeOfOrganization: "",
-    region: "",
+  
   }
   const [data, setData] = useState(defaultData);
 
@@ -71,16 +71,6 @@ export default function RequestDemoPopup(props) {
               >
                 Welcome to Talent Spotify
               </Modal.Title>
-              <p
-                style={{
-                  paddingTop: "10px",
-                  paddingLeft: "15px",
-                  fontSize: "15px",
-                }}
-              >
-                Our customer success team will reach out shortly to schedule a
-                personalised demo for you
-              </p>
             </Col>
             <Image
               style={{
@@ -98,78 +88,56 @@ export default function RequestDemoPopup(props) {
           <Row className="mt-3 d-block">
             <Col>
               <div className="d-flex flex-column justify-content-between">
-                <label className="label fs13 col-md-12 col-xs-12 col-sm-12">
-                  FIRST NAME<span className="text-danger">*</span>
-                </label>
                 <div className="d-flex col-md-12  col-xs-12 col-sm-12">
                   <input
                     required
                     type="text"
                     className={`form-control  rounded`}
-                    placeholder=""
-                    name="firstName"
-                    value={data.firstName}
+                    placeholder="Full name*"
+                    name="fullName"
+                    value={data.fullName}
                     onChange={handleChangeSearch}
                   />
                 </div>
                 <div className="ml-3">
-                  {validator.current.message("First Name ", data.firstName, "required")}
-                </div>
-              </div>
-            </Col>
-            <Col>
-              <div className="d-flex flex-column justify-content-between">
-                <label className="label fs13 col-md-12 col-xs-12 col-sm-12">
-                  SECOND NAME<span className="text-danger">*</span>
-                </label>
-                <div className="d-flex col-md-12  col-xs-12 col-sm-12">
-                  <input
-                    required
-                    type="text"
-                    className={`form-control  rounded`}
-                    placeholder=""
-                    name="secondName"
-                    value={data.secondName}
-                    onChange={handleChangeSearch}
-                  />
-                </div>
-                <div className="ml-3">
-                  {validator.current.message("Second Name ", data.secondName, "required")}
+                  {validator.current.message(
+                    "First Name ",
+                    data.firstName,
+                    "required"
+                  )}
                 </div>
               </div>
             </Col>
           </Row>
           <div className="mt-3">
             <div className="d-flex flex-column justify-content-between">
-              <label className="label fs13 col-md-12 col-xs-12 col-sm-12">
-                BUSINESS EMAIL<span className="text-danger">*</span>
-              </label>
               <div className="d-flex col-md-12  col-xs-12 col-sm-12">
                 <input
                   required
                   type="text"
                   className={`form-control  rounded`}
-                  placeholder=""
+                  placeholder="Work Email*"
                   name="businessEmail"
                   value={data.businessEmail}
                   onChange={handleChangeSearch}
                 />
               </div>
               <div className="ml-3">
-                {validator.current.message("Business Email ", data.businessEmail, "required|email")}
+                {validator.current.message(
+                  "Business Email ",
+                  data.businessEmail,
+                  "required|email"
+                )}
               </div>
             </div>
           </div>
           <div className="mt-3">
             <div className="d-flex flex-column justify-content-between">
-              <label className="label fs13 col-md-12 col-xs-12 col-sm-12">
-                PHONE NO.
-              </label>
               <div className="d-flex col-md-12  col-xs-12 col-sm-12">
                 <input
                   type="number"
                   className={`form-control  rounded`}
-                  placeholder=""
+                  placeholder="Phone number"
                   name="phoneNumber"
                   value={data.phoneNumber}
                   onChange={handleChangeSearch}
@@ -177,49 +145,27 @@ export default function RequestDemoPopup(props) {
               </div>
             </div>
           </div>
-          <div className="mt-3">
+
+          <div className="mt-3 mx-auto">
             <Row>
               <Col>
-                <div className="d-flex flex-column justify-content-between align-items-start">
-                  <label className="label fs14 col-md-12">
-                    REGION<span className="text-danger">*</span>
-                  </label>
+                <label
+                  htmlFor="sizeOfOrganization"
+                  className="text-gray-500 text-sm mb-2 text-center sm:text-left"
+                  onClick={() => selectRef.current.focus()}
+                >
+                  Size of Organization*
+                </label>
+                <div className="d-flex flex-column justify-content-between align-items-center">
                   <Select
+                    id="sizeOfOrganization"
+                    ref={selectRef}
                     required
-                    value={updatedOptions.filter(function (option) {
-                      return option.value === data.region;
-                    })}
-                    options={updatedOptions}
-                    onChange={(e) =>
-                      handleChangeSearch({
-                        target: {
-                          name: "region",
-                          value: e.value,
-                          label: e.label,
-                        },
-                      })
+                    value={
+                      updatedOptions1.find(
+                        (option) => option.value === data.sizeOfOrganization
+                      ) || null
                     }
-                    className="custom-dropdown col-md-12"
-                  />
-                  <div className="ml-3">
-                    {validator.current.message("Region ", data.region, "required")}
-                  </div>
-                </div>
-              </Col>
-            </Row>
-          </div>
-          <div className="mt-3">
-            <Row>
-              <Col>
-                <div className="d-flex flex-column justify-content-between align-items-start">
-                  <label className="label fs14 col-md-12">
-                    SIZE OF ORGANIZATION<span className="text-danger">*</span>
-                  </label>
-                  <Select
-                    required
-                    value={updatedOptions1.filter(function (option) {
-                      return option.value === data.sizeOfOrganization;
-                    })}
                     options={updatedOptions1}
                     onChange={(e) =>
                       handleChangeSearch({
@@ -231,9 +177,28 @@ export default function RequestDemoPopup(props) {
                       })
                     }
                     className="custom-dropdown col-md-12"
+                    placeholder="Please choose"
+                    styles={{
+                      control: (base) => ({
+                        ...base,
+                        padding: "0.5rem",
+                        borderRadius: "0.375rem",
+                        borderColor: "#D1D5DB",
+                      }),
+                      placeholder: (defaultStyles) => ({
+                        ...defaultStyles,
+                        color: "#6B7280",
+                        fontWeight: "normal",
+                        fontSize: "1rem",
+                      }),
+                    }}
                   />
                   <div className="ml-3">
-                    {validator.current.message("Size Of Organization ", data.sizeOfOrganization, "required")}
+                    {validator.current.message(
+                      "Size Of Organization",
+                      data.sizeOfOrganization,
+                      "required"
+                    )}
                   </div>
                 </div>
               </Col>
@@ -241,16 +206,22 @@ export default function RequestDemoPopup(props) {
           </div>
         </div>
         <div className="m-2 p-2 text-center">
-          {props.loading ? <div>Schedule Demo <LoadingIndicator /></div> : <input
-            style={{
-              fontSize: "14px",
-              backgroundColor: "#2A7A7B",
-            }}
-            className="border-0 rounded text-white form-control"
-            onClick={onSubmit}
-            type="submit"
-            value="Schedule Demo"
-          />}
+          {props.loading ? (
+            <div>
+              Schedule Demo <LoadingIndicator />
+            </div>
+          ) : (
+            <input
+              style={{
+                fontSize: "14px",
+                backgroundColor: "#083c61",
+              }}
+              className="border-0 rounded text-white form-control"
+              onClick={onSubmit}
+              type="submit"
+              value="Schedule Demo"
+            />
+          )}
         </div>
       </Modal.Body>
     </Modal>

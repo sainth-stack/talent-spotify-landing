@@ -358,7 +358,7 @@
 
 .landing-page-bottom__heading {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   margin-top: 20px;
   font-weight: bold;
 }
@@ -794,7 +794,7 @@
 .footer-social {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: start;
   gap: 10px;
   /* Spacing between each link */

@@ -3,6 +3,80 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Main image container */
+.image-container {
+  position: relative; /* Ensure positioning for child images */
+  overflow: hidden; /* Hide images when moving outside the container */
+}
+
+.image-container.reverse {
+  padding-right: 20px;
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease; /* Add transition for opacity */
+}
+
+/* Container for hover images */
+.hover-images-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0; /* Hide images by default */
+  transition: opacity 0.3s ease; /* Transition for opacity */
+}
+
+.hover-images-container.visible {
+  opacity: 1; /* Make visible when hover is active */
+}
+
+/* Top-right image */
+.hover-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(100%); /* Start off-screen at the bottom */
+  transition: transform 0.5s ease-out; /* Animate from bottom to top */
+  z-index: 1; /* Ensure it's above other elements */
+}
+
+/* Bottom-left image */
+.hover-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%); /* Start off-screen to the left */
+  transition: transform 0.5s ease-out; /* Animate from left to right */
+  z-index: 1; /* Ensure it's above other elements */
+}
+
+/* Show the images when hovered */
+.image-container:hover .hover-top-right {
+  transform: translateY(0); /* Move from bottom to top */
+}
+
+.image-container:hover .hover-bottom-left {
+  transform: translateX(0); /* Move from left to right */
+}
+
+/* .label_organization{
+  display:flex;
+  justify-content:center;
+  text-align:start !important;
+  background:red
+} */
 .no-rounded-corners {
   border-radius: 0 !important; /* Removes rounded corners */
 }
@@ -1755,6 +1829,7 @@ padding-top: -40px; */
   margin-right: 200px;
 }
 
+
 .border-line3 {
   border: 2px solid #2a7a7b;
   height: 100px;
@@ -2096,22 +2171,21 @@ font-size: 0.5rem !important ;
     justify-content: space-between;
 
     .footer-content {
-   
+   margin-bottom: 0 !important;
       display: flex;
     
-      justify-content: space-evenly;
-      margin-bottom: 30px;
+      flex-wrap: wrap !important;
 
       .footer-column {
+        min-width: 9rem !important;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-
+align-items: center !important;
         h5 {
           font-family: "Poppins", sans-serif;
           font-size: 18px;
           font-weight: 600;
-          margin-bottom: 16px;
+          
           color: #000;
           padding-bottom: 8px;
         }

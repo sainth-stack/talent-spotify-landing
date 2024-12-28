@@ -40,6 +40,7 @@ export default function ListPoints({
             color: '#000000'
           }}>
             <Image src={tick} alt="Tick" width={18} height={18} />
+
             <span style={{ marginLeft: '10px' }}>{item}</span>
           </li>
         ))}

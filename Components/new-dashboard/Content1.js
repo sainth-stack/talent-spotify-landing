@@ -7,6 +7,8 @@ import LandingPageBottom from "../LandingPageBottom";
 import { Section1 } from "./section1";
 import { Section2 } from "./section2";
 import useWindowSize from "../../utilities/UseWindowSize";
+import { Section2OKR } from "../section3/Section2Section2OKR";
+
 
 export function Content({
   data,
@@ -20,6 +22,8 @@ export function Content({
   return (
     <div className="container-fluid mt-5 p-2">
       <Section1 showPopup={showPopup} homerefScroll={homerefScroll} />
+      <Section2OKR showPopup={showPopup} homerefScroll={homerefScroll} />
+
       <div ref={okrrefScroll}>
         {data.map((item) => {
           return (
@@ -80,6 +84,7 @@ function List1({
           width: 530,
         }}
       >
+       
         <Image
           src={image}
           alt={title}
