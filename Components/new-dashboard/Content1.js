@@ -46,7 +46,7 @@ export function Content({
         showFreeTrail={showFreeTrail}
         awardsScroll={awardsScroll}
       />
-      <Section2 />
+      <Section2 showPopup={showPopup} homerefScroll={homerefScroll} />
     </div>
   );
 }

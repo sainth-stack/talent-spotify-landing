@@ -29,6 +29,7 @@ export const Section1 = ({ reverse = true, showPopup, homerefScroll }) => {
                 </p>
                 <div className="button-group">
                     <button className="start-button lg:!bg-red-500 sm:mx-2 hover:bg-blue-600 transition duration-200 ease-in" onClick={() => showPopup(true)}><span>Start for Free</span></button>
+                    
                     <button className="demo-button" onClick={() => showPopup(true)}>Book a Demo</button>
                 </div>
                 <div className="watch-demo">

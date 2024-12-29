@@ -49,7 +49,7 @@ export default function LandingPageNew() {
         showFreeTrail={() => setShowTrail(true)}
       />
 
-      <Footer />
+      <Footer  />
       
    {/* {isMobile ? (
         

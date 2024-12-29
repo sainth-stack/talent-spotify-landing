@@ -69,7 +69,7 @@ export default function RequestDemoPopup(props) {
                   fontWeight: "bold",
                 }}
               >
-                Welcome to Talent Spotify
+                Welcome to Talent Spotify hi
               </Modal.Title>
             </Col>
             <Image
@@ -101,8 +101,8 @@ export default function RequestDemoPopup(props) {
                 </div>
                 <div className="ml-3">
                   {validator.current.message(
-                    "First Name ",
-                    data.firstName,
+                    "Full Name ",
+                    data.fullName,
                     "required"
                   )}
                 </div>
@@ -143,6 +143,13 @@ export default function RequestDemoPopup(props) {
                   onChange={handleChangeSearch}
                 />
               </div>
+              <div className="ml-3">
+                {validator.current.message(
+                  "Phone Number ",
+                  data.phoneNumber,
+                  "required|phoneNumber"
+                )}
+              </div>
             </div>
           </div>
 
@@ -177,21 +184,6 @@ export default function RequestDemoPopup(props) {
                       })
                     }
                     className="custom-dropdown col-md-12"
-                    placeholder="Please choose"
-                    styles={{
-                      control: (base) => ({
-                        ...base,
-                        padding: "0.5rem",
-                        borderRadius: "0.375rem",
-                        borderColor: "#D1D5DB",
-                      }),
-                      placeholder: (defaultStyles) => ({
-                        ...defaultStyles,
-                        color: "#6B7280",
-                        fontWeight: "normal",
-                        fontSize: "1rem",
-                      }),
-                    }}
                   />
                   <div className="ml-3">
                     {validator.current.message(
