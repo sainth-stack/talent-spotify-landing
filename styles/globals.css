@@ -27,7 +27,7 @@
 /* Container for hover images */
 .hover-images-container {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -45,31 +45,44 @@
 /* Top-right image */
 .hover-top-right {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 4rem;
+  right: 12rem !important;
   transform: translateY(100%); /* Start off-screen at the bottom */
   transition: transform 0.5s ease-out; /* Animate from bottom to top */
   z-index: 1; /* Ensure it's above other elements */
 }
 
-/* Bottom-left image */
+/* Bottom-left image (moves from bottom to top) */
 .hover-bottom-left {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transform: translateX(-100%); /* Start off-screen to the left */
-  transition: transform 0.5s ease-out; /* Animate from left to right */
+  position: relative;
+  bottom: -4rem; /* Start off-screen at the bottom */
+  right: 9rem; /* Position it on the left */
+  transform: translateY(100%); /* Positioned off-screen vertically */
+  transition: transform 0.5s ease-out; /* Smooth animation */
   z-index: 1; /* Ensure it's above other elements */
 }
 
-/* Show the images when hovered */
-.image-container:hover .hover-top-right {
-  transform: translateY(0); /* Move from bottom to top */
+/* Top-right image (moves from right to left) */
+.hover-top-right {
+  position: relative !important;
+  top: 0; /* Keep initial position */
+  right: -20rem !important; /* Start off-screen to the right */
+  transform: translateX(100%); /* Positioned off-screen horizontally */
+  transition: transform 0.5s ease-out; /* Smooth animation */
+  z-index: 2; /* Ensure it's above other elements */
 }
 
+/* Hover effect for the image container */
 .image-container:hover .hover-bottom-left {
-  transform: translateX(0); /* Move from left to right */
+  transform: translateY(0); /* Move from bottom to top */
+  bottom: 0; /* Reset position */
 }
+
+.image-container:hover .hover-top-right {
+  transform: translateX(0); /* Move from right to left */
+  right: 0; /* Reset position */
+}
+
 
 /* .label_organization{
   display:flex;
@@ -1649,6 +1662,17 @@ padding-top: -40px; */
 }
 
 @media screen and (max-width: 420px) {
+ 
+  
+   .hover-bottom-left {
+    position: relative;
+    bottom: 0;
+    right: 2rem;
+    transform: none;
+    z-index: 1;
+    visibility: visible;
+  }
+
   h1 {
     font-size: 25px !important;
   }
@@ -1930,6 +1954,73 @@ padding-top: -40px; */
 
 /* for tablets */
 @media (min-width: 768px) and (max-width: 1024px) {
+
+  
+  .image-container {
+  position: relative; /* Ensure positioning for child images */
+  overflow: hidden; /* Hide images when moving outside the container */
+}
+   /* Make the images responsive */
+  .main-image {
+   
+    width: 100%;
+    height: auto;
+    transition: opacity 1s ease
+  }
+
+  /* Adjust hover images container for mobile */
+  .hover-images-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0; /* Hide images by default */
+  transition: opacity 0.3s ease; /* Transition for opacity */
+}
+
+.hover-images-container.visible {
+  opacity: 1; /* Make visible when hover is active */
+}
+  /* Top-right image for mobile */
+  .hover-top-right {
+    position: relative;
+    top: .5rem !important;
+    left: 20rem !important;
+    transform: translateX(100%); /* Start from below */
+   transition: transform 0.5s ease-out;
+    z-index: 2;
+    width: 60%; /* Resize image */
+  }
+
+  /* Bottom-left image for mobile */
+  .hover-bottom-left {
+    position: relative;
+    left: -9rem !important;
+    bottom: -1rem !important;
+    
+    transform: translate(0, 100%); /* Start from below */
+    transition: transform 0.5s ease-out;
+    z-index: 1;
+    width: 60%; /* Resize image */
+  }
+
+  /* Hover effect for the image container */
+  .image-container:hover .hover-bottom-left {
+  transform: translateY(0); /* Move from bottom to top */
+  bottom: 0; /* Reset position */
+  opacity: 1; /* Make the image visible */
+}
+
+.image-container:hover .hover-top-right {
+  transform: translateX(0); /* Move from right to left */
+  right: 0; /* Reset position */
+  opacity: 1; /* Make the image visible */
+}
+
    .ipadpro_font{
 
 font-size: 0.5rem !important ;
@@ -2110,6 +2201,11 @@ font-size: 0.5rem !important ;
 /* for mobile */
 
 @media (max-width: 768px) {
+  
+  
+
+
+
    .create_recog_image {
     justify-content: center !important;
     padding-left: 0 !important;
