@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import image3 from "../../assets/images/left_key_result.png"; // Assuming the 
 import image2 from "../../assets/images/pedict.png"; 
-import image1 from "../../assets/images/Right_KeyResult.png";
+import image1 from "../../assets/images/right_keyresult.png";
 import Image from "next/image";
 import ListPoints from "../ListPoints";
 
@@ -51,8 +51,8 @@ export const Section2OKR = ({ reverse = false, showPopup, homerefScroll }) => {
               <Image
                 src={image1}
                 alt="Top Right Image"
-                width={150}
-                height={200}
+                width={120}
+                height={150}
                 className="corner-image"
               />
             </div>
@@ -61,8 +61,8 @@ export const Section2OKR = ({ reverse = false, showPopup, homerefScroll }) => {
               <Image
                 src={image3}
                 alt="Bottom Left Image"
-                width={270}
-                height={150}
+                width={300}
+                height={220}
                 className="corner-image"
               />
             </div>
