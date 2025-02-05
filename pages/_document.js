@@ -25,6 +25,14 @@ export default function Document() {
         <script src='/clarity.js' async></script>
         <script src='/faittracker.js' async></script>
         <script async src="https://tag.clearbitscripts.com/v1/pk_dc97a33b14aa2e9ebc805625c1f38492/tags.js" referrerPolicy='strict-origin-when-cross-origin'></script>
+        <script 
+      type="text/javascript"
+      src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
+      id="aisensy-wa-widget"
+      widget-id="Stjwdu"
+    >
+    </script>
+
       </Head>
       <body>
         <Main />
