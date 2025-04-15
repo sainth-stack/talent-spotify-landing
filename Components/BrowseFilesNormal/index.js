@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import arrow from "../../assets/svg/arrow-up.svg";
 import { FileUploader } from "react-drag-drop-files";
 import axios from 'axios';
-// import { Toast } from 'service/toast';
+import { Toast } from 'service/toast';
 import { NotificationContainer } from 'react-notifications';
+import "react-notifications/lib/notifications.css";
 //import { LoadingIndicator } from 'utilities';
 const fileTypes = ["XLSX", "CSV", "PNG", "JPG", "JPEG", "PDF"];
 import upload from "../../assets/svg/upload.svg";
@@ -30,20 +31,20 @@ export default function BrowseFilesNormal({ text = "", setData }) {
             );
             if (percent === 25 || percent === 50 || percent === 75 || percent === 100) {
               //alert("Uploaded successfully");
-              //Toast({ message: "Uploaded " + percent + "%", type: "success", time: 500 })
+              Toast({ message: "Uploaded " + percent + "%", type: "success", time: 500 })
             }
           },
         }
       )
       .then((response) => {
-        alert("Uploaded successfully");
-        //Toast({ message: "Uploaded Successfully", type: "success", time: 1000 })
+        // alert("Uploaded successfully");
+        Toast({ message: "Uploaded Successfully", type: "success", time: 1000 })
         setData({ url: response.data.secure_url })
         setUploading(false)
       }).catch(error => {
-        alert("Upload failed");
+        // alert("Upload failed");
         console.log(error);
-        //Toast({ message: "Uploaded Failed", type: "error", time: 1000 })
+        Toast({ message: "Uploaded Failed", type: "error", time: 1000 })
         setUploading(false)
       })
   };

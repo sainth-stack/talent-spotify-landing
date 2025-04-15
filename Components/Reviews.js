@@ -5,6 +5,7 @@ import Button from "./Button";
 import RequestDemoPopup from "./requestDemoPopup";
 import FreetrailPopup from "./freetrailPopup";
 import axios from "axios";
+import { baseURL } from "../utilities/cons";
 
 const ReviewsAndCards = ({
   reviewItems,
@@ -33,19 +34,18 @@ const ReviewsAndCards = ({
   const handleCallback = async (childData) => {
     setLoading(true);
     let response = await axios.post(
-      "http://localhost:4000/api/landing/requestDemo",
+      baseURL,
       childData.data
     );
     if (response.data.success) {
       setLoading(false);
       setOrderModalShow(false);
       setError("");
-      //Toast({ message: "Schedule Demo Sent Successfully!", type: "success", time: 4000 })
-      alert("Schedule Demo Sent Successfully!");
+      Toast({ message: "Schedule Demo Sent Successfully!", type: "success", time: 4000 })
     } else {
       setLoading(false);
       setError("Something went wrong in network");
-      //Toast({ message: "Something went wrong in network", type: "error", time: 4000 })
+      Toast({ message: "Something went wrong in network", type: "error", time: 4000 })
     }
   };
  

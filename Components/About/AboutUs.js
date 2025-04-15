@@ -7,6 +7,7 @@ import axios from "axios";
 import RequestDemoPopup from "../requestDemoPopup";
 import ShowMenuMobile from "../ShowMenuMobile";
 import FreetrailPopup from "../freetrailPopup";
+import { baseURL } from "../../utilities/cons";
 export default function AboutUs(props) {
   const [orderModalShow, setOrderModalShow] = useState(false);
   const [orderModalShow2, setOrderModalShow2] = useState(false);
@@ -22,19 +23,18 @@ export default function AboutUs(props) {
   const handleCallback = async (childData) => {
     setLoading(true);
     let response = await axios.post(
-      "http://localhost:4000/api/landing/requestDemo",
+     baseURL,
       childData.data
     );
     if (response.data.success) {
       setLoading(false);
       setOrderModalShow(false);
       setError("");
-      //Toast({ message: "Schedule Demo Sent Successfully!", type: "success", time: 4000 })
-      alert("Schedule Demo Sent Successfully!");
+      Toast({ message: "Schedule Demo Sent Successfully!", type: "success", time: 4000 })
     } else {
       setLoading(false);
       setError("Something went wrong in network");
-      //Toast({ message: "Something went wrong in network", type: "error", time: 4000 })
+      Toast({ message: "Something went wrong in network", type: "error", time: 4000 })
     }
   };
   useEffect(() => {

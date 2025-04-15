@@ -1,14 +1,19 @@
 import React, { useRef, useState } from "react";
 import { Modal } from "react-bootstrap";
 // import "./styles.scss";
-import wrong from "../assets/svg/wrong.svg"
+import wrong from "../assets/svg/wrong.svg";
 import { Col, Row } from "react-bootstrap";
-import { LoadingIndicator, Organization, Region, Validator } from "../utilities";
+import {
+  LoadingIndicator,
+  Organization,
+  Region,
+  Validator,
+} from "../utilities";
 import Select from "react-select";
 import Image from "next/image";
 
 export default function RequestDemoPopup(props) {
-   const selectRef = useRef(null); 
+  const selectRef = useRef(null);
   const [, setError] = useState(false);
   const [, forceUpdate] = useState(false);
   const validator = Validator();
@@ -17,8 +22,7 @@ export default function RequestDemoPopup(props) {
     businessEmail: "",
     phoneNumber: "",
     sizeOfOrganization: "",
-  
-  }
+  };
   const [data, setData] = useState(defaultData);
 
   const handleChangeSearch = ({ target: { name, value, label } }) => {
@@ -52,24 +56,25 @@ export default function RequestDemoPopup(props) {
     <Modal
       show={props.show}
       onHide={props.onHide}
-      size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      style={{ maxWidth: "100%" }}
+      dialogClassName="custom-modal-900"
     >
       <Modal.Body>
         <div>
           <div className="d-flex justify-content-between align-items-start m-0 p-0 ">
-            <Col sm={11} className="m-0 p-0">
+            <Col sm={10} className="m-0 p-0">
               <Modal.Title
                 id="contained-modal-title-vcenter"
                 style={{
                   paddingTop: "10px",
-                  paddingLeft: "15px",
+                  // paddingLeft: "15px",
                   fontSize: "20px",
                   fontWeight: "bold",
                 }}
               >
-                Welcome to Talent Spotify hi
+                Welcome to Talent Spotify
               </Modal.Title>
             </Col>
             <Image
@@ -197,23 +202,26 @@ export default function RequestDemoPopup(props) {
             </Row>
           </div>
         </div>
-        <div className="m-2 p-2 text-center">
-          {props.loading ? (
-            <div>
-              Schedule Demo <LoadingIndicator />
-            </div>
-          ) : (
-            <input
-              style={{
-                fontSize: "14px",
-                backgroundColor: "#083c61",
-              }}
-              className="border-0 rounded text-white form-control"
-              onClick={onSubmit}
-              type="submit"
-              value="Schedule Demo"
-            />
-          )}
+        <div className="text-center mt-3">
+          <button
+            style={{
+              fontSize: "14px",
+              backgroundColor: "#083c61",
+            }}
+            className="border-0 rounded text-white form-control d-flex justify-content-center align-items-center"
+            onClick={onSubmit}
+            type="button"
+            disabled={props.loading}
+          >
+            {props.loading ? (
+              <>
+                <span className="me-2">Scheduling</span>
+                <LoadingIndicator />
+              </>
+            ) : (
+              "Schedule Demo"
+            )}
+          </button>
         </div>
       </Modal.Body>
     </Modal>

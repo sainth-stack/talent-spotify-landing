@@ -2,6 +2,7 @@ import { NotificationManager } from "react-notifications";
 import "react-notifications/lib/notifications.css";
 
 export const Toast = ({ type = "success", message, time = 4000 }) => {
+  console.log(type,message,'sdfaskjd')
   if (Array.isArray(message)) {
     let item;
 

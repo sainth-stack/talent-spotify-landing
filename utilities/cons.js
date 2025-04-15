@@ -1,0 +1,1 @@
+export const baseURL="https://talentspotifyapp.com/api/landing/requestDemo"

@@ -7,7 +7,8 @@ import "../styles/navbar.css"; // Custom navbar styles
 import "../styles/Animate.css"; // Custom animation styles
 import "../styles/Career.css"; // Custom career page styles
 import "../styles/ContactUs.css"; // Custom contact page styles
-
+import { NotificationContainer } from 'react-notifications';
+import "react-notifications/lib/notifications.css";
 
 import { useEffect } from "react";
 import Layout from "./Layout";
@@ -25,7 +26,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Layout>
       <Component {...pageProps} />
-     
+     <NotificationContainer />
     </Layout>
   );
 }
