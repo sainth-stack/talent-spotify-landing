@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import BrowseFilesNormal from "./BrowseFilesNormal";
 import { Validator } from "../utilities";
 import axios from "axios";
+import { landingApiBase, companyIdForLanding } from "../utilities/cons";
 
-export default function Careers() {
+export default function Careers({ jobId = null, jobTitle = "", onSuccess }) {
   const validator = Validator();
   const [loading, setLoading] = useState(false);
   const [, setError] = useState(false);
@@ -37,21 +38,24 @@ export default function Careers() {
     if (validator.current.allValid()) {
       setLoading(true);
       try {
-        const response = await axios.post(
-          "https://talent-spotify-backend-git-common-dev-talentspotify.vercel.app/api/landing/career",
-          user,
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
+        const url = jobId
+          ? `${landingApiBase}/jobs/${jobId}/apply`
+          : `${landingApiBase}/career`;
+        const payload = jobId && companyIdForLanding ? { ...user, companyId: companyIdForLanding } : user;
+        const response = await axios.post(url, payload, {
+          headers: { "Content-Type": "application/json" },
+        });
         if (response.data.success) {
           setLoading(false);
           setError("");
-          alert("Career Form Submitted Successfully!");
+          alert(
+            jobId
+              ? "Application submitted successfully!"
+              : "Career Form Submitted Successfully!"
+          );
           clearAll();
-          window.location.reload();
+          if (typeof onSuccess === "function") onSuccess();
+          else window.location.reload();
         } else {
           setLoading(false);
           alert(response.data.message || "Something went wrong.");
@@ -69,6 +73,8 @@ export default function Careers() {
     }
   };
 
+  const formTitle = jobTitle ? `Apply for: ${jobTitle}` : "JOB APPLY";
+
   return (
     <div
       className="container bg-light py-4"
@@ -76,8 +82,8 @@ export default function Careers() {
     >
       <div className="row justify-content-center">
         <div className="col-md-9 col-sm-12 bg-white p-4 rounded ">
-          <h4 className="text-center mb-4" style={{ fontWeight: "bold" }}>
-            JOB APPLY
+          <h4 className="text-center mb-4" style={{ fontWeight: "bold", color: "#083c61" }}>
+            {formTitle}
           </h4>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
