@@ -1,13 +1,11 @@
-/** Hardcoded endpoints — same URLs as legacy landing (no env required). */
+/** Production backend — single base URL for all landing APIs (same host as requestDemo). */
+const API_BASE = "https://ai.talentspotifyapp.com/api";
+
 export const LANDING = {
-  requestDemo:
-    "https://talent-spotify-backend.vercel.app/api/landing/requestDemo",
-  contactUs:
-    "https://talent-spotify-backend-git-common-dev-talentspotify.vercel.app/api/landing/contactus",
-  career:
-    "https://talent-spotify-backend-git-common-dev-talentspotify.vercel.app/api/landing/career",
-  emailSignup:
-    "https://talent-spotify-backend-git-common-dev-talentspotify.vercel.app/api/landing/emailsignup",
+  requestDemo: `${API_BASE}/landing/requestDemo`,
+  contactUs: `${API_BASE}/landing/contactus`,
+  career: `${API_BASE}/landing/career`,
+  emailSignup: `${API_BASE}/landing/emailsignup`,
 } as const;
 
 /** Cloudinary CV upload — same as legacy BrowseFilesNormal. */

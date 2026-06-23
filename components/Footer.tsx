@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "@/components/Logo";
+import { FooterEmailSignup } from "@/components/FooterEmailSignup";
 
 const LIVE = "https://www.talentspotify.com";
 
@@ -68,6 +69,11 @@ export function Footer() {
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/65">
               Fairer performance reviews, OKRs and recognition.
             </p>
+            <p className="mt-4 text-sm font-semibold text-white">Become a People Engagement pro!</p>
+            <p className="mt-1 max-w-xs text-xs leading-relaxed text-white/55">
+              Sign up for best practices, news and product updates.
+            </p>
+            <FooterEmailSignup />
           </div>
           {columns.map(({ heading, links }) => (
             <nav key={heading} aria-label={heading}>
