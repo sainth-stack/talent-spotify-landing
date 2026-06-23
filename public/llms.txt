@@ -1,0 +1,15 @@
+# TalentSpotify
+
+> TalentSpotify is an India-first AI performance management platform for fairer performance reviews, OKRs, and recognition. Its AI voice agent, TARA, runs review and goal conversations and flags bias signals before ratings are finalized.
+
+## Core pages
+
+- [Homepage](https://www.talentspotify.com/): What TalentSpotify is — fairer performance reviews, OKRs, recognition, and the TARA AI voice agent.
+- [Product](https://www.talentspotify.com/#product): The three modules — Perform (reviews), Align (OKRs), and Recognise (rewards & recognition).
+- [TARA AI](https://www.talentspotify.com/#tara): How the AI voice agent runs the performance cycle and flags bias before ratings lock.
+- [Why fairness](https://www.talentspotify.com/#fairness): Fairness scoring and the 14-bias taxonomy that make bias measurable, not just promised.
+- [Pricing](https://www.talentspotify.com/#pricing): Per-employee pricing for Indian mid-market teams — TARA Standalone, full platform, and enterprise.
+- [Customer story](https://www.talentspotify.com/case-study): How a distributed social-enterprise field workforce runs fairer reviews on TalentSpotify.
+- [ROI calculator](https://www.talentspotify.com/roi-calculator): Estimate the cost of biased reviews and what TARA recovers.
+- [FAQ](https://www.talentspotify.com/#faq): Answers for HR leaders, founders, IT, and finance on bias, data handling, and pricing.
+- [Request a demo / contact](https://www.talentspotify.com/#book-demo): Book a 30-minute walkthrough or contact sales.

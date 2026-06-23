@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ::selection {
+    background-color: #33685a;
+    color: #fff;
+  }
+}
+
+@layer utilities {
+  /* For dark sections (muted sage tones) */
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-light to-fair bg-clip-text text-transparent;
+  }
+  /* For the light hero */
+  .gradient-text-light {
+    @apply bg-gradient-to-r from-brand-dark to-brand bg-clip-text text-transparent;
+  }
+  .hero-grid {
+    background-image: linear-gradient(to right, rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse at center, black 25%, transparent 72%);
+  }
+  .section {
+    @apply py-20 md:py-28;
+  }
+  .container-site {
+    @apply mx-auto max-w-7xl px-5 sm:px-8;
+  }
+}

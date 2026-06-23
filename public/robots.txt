@@ -1,0 +1,35 @@
+# TalentSpotify robots.txt
+# AI search/fetch bots are explicitly allowed so the site is eligible for
+# citation in ChatGPT, Claude, Perplexity, and Gemini.
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.talentspotify.com/sitemap.xml
+
+# NOTE TO IMPLEMENTER: The search/fetch bots (OAI-SearchBot, ChatGPT-User,
+# Claude-SearchBot, PerplexityBot) must stay allowed for AI citations.
+# GPTBot and Google-Extended are TRAINING crawlers. Default = allow (so models
+# "know" TalentSpotify). If the owner later wants to opt out of AI training,
+# change ONLY those two to Disallow: / — do not touch the others.
