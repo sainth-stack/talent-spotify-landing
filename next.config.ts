@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  /** Hide the Next.js "N" dev indicator in the corner during `next dev`. */
+  devIndicators: false,
   async redirects() {
     return [
       { source: "/aboutus", destination: "/about", permanent: true },
