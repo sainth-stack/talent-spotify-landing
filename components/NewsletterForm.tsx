@@ -10,15 +10,16 @@ export function NewsletterForm() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
     setStatus("submitting");
     setErrorMsg("");
-    const fd = new FormData(e.currentTarget);
+    const fd = new FormData(form);
     const email = String(fd.get("email") ?? "");
     try {
       const result = await submitEmailSignup(email);
       if (result.success) {
         setStatus("success");
-        e.currentTarget.reset();
+        form.reset();
       } else {
         setErrorMsg(result.message ?? "Subscription failed.");
         setStatus("error");

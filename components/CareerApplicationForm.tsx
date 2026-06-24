@@ -56,6 +56,7 @@ export function CareerApplicationForm({
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
     if (!cvUrl) {
       setErrorMsg("Please upload your CV before submitting.");
       setStatus("error");
@@ -63,7 +64,7 @@ export function CareerApplicationForm({
     }
     setStatus("submitting");
     setErrorMsg("");
-    const fd = new FormData(e.currentTarget);
+    const fd = new FormData(form);
     const payload = {
       name: String(fd.get("name") ?? ""),
       linkedinURL: String(fd.get("linkedinURL") ?? ""),
@@ -82,7 +83,7 @@ export function CareerApplicationForm({
 
       if (result.success) {
         setStatus("success");
-        e.currentTarget.reset();
+        form.reset();
         setCvUrl("");
         setCvName("");
         onSuccess?.();

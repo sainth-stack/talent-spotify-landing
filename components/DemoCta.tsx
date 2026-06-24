@@ -30,8 +30,9 @@ export function DemoCta() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
     setStatus("submitting");
-    const data = Object.fromEntries(new FormData(e.currentTarget).entries());
+    const data = Object.fromEntries(new FormData(form).entries());
 
     // Client-side bot trap (legacy landing had no server-side check here)
     if (Date.now() - renderedAt.current < 2000) {
@@ -53,7 +54,7 @@ export function DemoCta() {
       });
       if (result.success) {
         setStatus("success");
-        e.currentTarget.reset();
+        form.reset();
         return;
       }
       setErrorMsg(result.message ?? DEFAULT_ERROR);

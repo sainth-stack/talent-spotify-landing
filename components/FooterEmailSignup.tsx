@@ -11,14 +11,15 @@ export function FooterEmailSignup() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
     setStatus("submitting");
     setErrorMsg("");
-    const email = String(new FormData(e.currentTarget).get("email") ?? "");
+    const email = String(new FormData(form).get("email") ?? "");
     try {
       const result = await submitEmailSignup(email);
       if (result.success) {
         setStatus("success");
-        e.currentTarget.reset();
+        form.reset();
       } else {
         setErrorMsg(result.message ?? "Subscription failed.");
         setStatus("error");

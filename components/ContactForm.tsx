@@ -17,9 +17,10 @@ export function ContactForm() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
     setStatus("submitting");
     setErrorMsg("");
-    const fd = new FormData(e.currentTarget);
+    const fd = new FormData(form);
     try {
       const result = await submitContactUs({
         name: String(fd.get("name") ?? ""),
@@ -30,7 +31,7 @@ export function ContactForm() {
       });
       if (result.success) {
         setStatus("success");
-        e.currentTarget.reset();
+        form.reset();
       } else {
         setErrorMsg(result.message ?? "Something went wrong.");
         setStatus("error");
