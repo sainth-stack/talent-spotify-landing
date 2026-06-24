@@ -3,9 +3,9 @@
  * Override via NEXT_PUBLIC_* env vars in `.env.local`.
  */
 
-/** API base (no trailing path) — same host for all landing endpoints. */
+/** API base (no trailing path). Use ai.talentspotify.com — ai.talentspotifyapp.com 301-redirects and breaks CORS preflight. */
 export const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL ?? "https://ai.talentspotifyapp.com/api";
+  process.env.NEXT_PUBLIC_API_BASE_URL ?? "https://ai.talentspotify.com/api";
 
 /** Careers/jobs API base — same as legacy `landingApiBase`. */
 export const LANDING_API_BASE =
@@ -21,7 +21,7 @@ export const COMPANY_ID_FOR_LANDING =
 
 /** App login URL — same as legacy `loginPage`. */
 export const LOGIN_PAGE =
-  process.env.NEXT_PUBLIC_LOGIN_PAGE ?? "https://ai.talentspotifyapp.com";
+  process.env.NEXT_PUBLIC_LOGIN_PAGE ?? "https://ai.talentspotify.com";
 
 export const LANDING = {
   requestDemo: REQUEST_DEMO_URL,
