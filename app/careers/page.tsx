@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import {
   Sparkles,
   MapPin,
-  Briefcase,
   Brain,
   Globe,
   TrendingUp,
@@ -17,6 +16,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CareerApplicationForm } from "@/components/CareerApplicationForm";
+import { OpenRolesSection } from "@/components/OpenRolesSection";
 
 export const metadata: Metadata = {
   title: "Careers — TalentSpotify",
@@ -80,104 +80,6 @@ const perks = [
     desc: "No layers, no politics. You will shape the product alongside the people who started it.",
   },
 ];
-
-const roles = [
-  {
-    title: "Full-Stack Product Engineer",
-    team: "Engineering",
-    location: "Remote · India",
-    type: "Full-time",
-    description:
-      "Own features end-to-end across our Next.js + React frontend and Node/Python backend. You will work on the review engine, OKR cascade, and TARA's web interface — code that directly changes how people experience fairness at work.",
-    skills: ["React / Next.js", "TypeScript", "Node.js or Python", "PostgreSQL", "REST & WebSocket APIs"],
-  },
-  {
-    title: "AI / ML Engineer — Voice & NLP",
-    team: "AI Platform",
-    location: "Remote · India",
-    type: "Full-time",
-    description:
-      "Build the intelligence behind TARA: speech-to-text pipelines, multilingual transcript analysis, bias-signal classifiers, and feedback-quality scoring. This is applied AI with a clear fairness mandate.",
-    skills: ["Python", "NLP / LLMs", "Speech processing", "MLOps", "Indian languages familiarity a plus"],
-  },
-  {
-    title: "Product Manager — HR Platform",
-    team: "Product",
-    location: "Bengaluru or Remote",
-    type: "Full-time",
-    description:
-      "Define the roadmap for TalentSpotify's core platform — reviews, OKRs, recognition, and HR analytics. Deep empathy for HR buyers and employees is more important than experience with enterprise software.",
-    skills: ["Product strategy", "HR domain knowledge", "Data-informed decision-making", "Customer interviews", "Roadmapping"],
-  },
-  {
-    title: "Growth & Demand Generation",
-    team: "Growth",
-    location: "Remote · India",
-    type: "Full-time",
-    description:
-      "Drive pipeline for TalentSpotify among India's mid-market CHROs and HR leaders. Own the full funnel — content, outbound, events, partnerships — and build the playbook from the ground up.",
-    skills: ["B2B SaaS growth", "HRTech domain", "Content & SEO", "Outbound sequences", "Marketing analytics"],
-  },
-  {
-    title: "Customer Success Lead",
-    team: "Customer",
-    location: "Bengaluru or Remote",
-    type: "Full-time",
-    description:
-      "Own onboarding, adoption, and renewal for our growing customer base. You are the bridge between customers and product — translating what HR teams need into roadmap input and ensuring every customer sees measurable value.",
-    skills: ["SaaS CS", "HR stakeholder management", "Onboarding design", "Data storytelling", "Renewal & expansion"],
-  },
-];
-
-function RoleCard({ role }: { role: typeof roles[0] }) {
-  return (
-    <article className="group rounded-2xl border border-slate-200 bg-white p-7 transition-shadow hover:shadow-md">
-      <div className="flex flex-wrap items-start justify-between gap-3">
-        <div>
-          <h3 className="text-lg font-bold text-slate-900 group-hover:text-brand transition-colors">
-            {role.title}
-          </h3>
-          <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-slate-500">
-            <span className="inline-flex items-center gap-1">
-              <Briefcase className="h-3.5 w-3.5" aria-hidden="true" />
-              {role.team}
-            </span>
-            <span aria-hidden="true">·</span>
-            <span className="inline-flex items-center gap-1">
-              <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
-              {role.location}
-            </span>
-            <span aria-hidden="true">·</span>
-            <span>{role.type}</span>
-          </div>
-        </div>
-        <span className="shrink-0 rounded-full bg-brand/10 px-3 py-1 text-xs font-semibold text-brand-dark">
-          {role.team}
-        </span>
-      </div>
-
-      <p className="mt-4 leading-relaxed text-slate-600">{role.description}</p>
-
-      <div className="mt-5 flex flex-wrap gap-2">
-        {role.skills.map((s) => (
-          <span
-            key={s}
-            className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600"
-          >
-            {s}
-          </span>
-        ))}
-      </div>
-
-      <a
-        href="#apply"
-        className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-dark"
-      >
-        Apply now <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-      </a>
-    </article>
-  );
-}
 
 export default function CareersPage() {
   return (
@@ -312,37 +214,8 @@ export default function CareersPage() {
           </div>
         </section>
 
-        {/* ── OPEN ROLES ── */}
-        <section id="open-roles" className="section scroll-mt-20 bg-white">
-          <div className="container-site">
-            <SectionHeading
-              eyebrow="Open roles"
-              title="Find your place on the team"
-              subtitle="We hire for high ownership, strong opinions, and genuine curiosity about fairness in the workplace. Not for pedigree."
-            />
-            <div className="space-y-5">
-              {roles.map((role) => (
-                <RoleCard key={role.title} role={role} />
-              ))}
-            </div>
-
-            {/* No role that fits */}
-            <div className="mt-12 rounded-2xl border border-dashed border-brand/30 bg-brand/5 p-8 text-center">
-              <p className="text-lg font-semibold text-slate-800">
-                Don&apos;t see a role that fits?
-              </p>
-              <p className="mt-2 text-slate-600">
-                We sometimes hire ahead of a specific role for the right person. Tell us who you are and what you want to build.
-              </p>
-              <a
-                href="#apply"
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-dark"
-              >
-                Send a general application <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-              </a>
-            </div>
-          </div>
-        </section>
+        {/* ── OPEN ROLES (API-driven, same as legacy landing) ── */}
+        <OpenRolesSection />
 
         {/* ── APPLICATION FORM ── */}
         <section id="apply" className="section scroll-mt-20 bg-surface">

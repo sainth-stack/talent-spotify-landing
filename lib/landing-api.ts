@@ -1,4 +1,11 @@
-import { CLOUDINARY, LANDING, type ApiResult } from "./api-config";
+import {
+  CLOUDINARY,
+  COMPANY_ID_FOR_LANDING,
+  LANDING,
+  MAX_CV_BYTES,
+  type ApiJob,
+  type ApiResult,
+} from "./api-config";
 
 async function postJson<T>(url: string, body: unknown): Promise<T> {
   const res = await fetch(url, {
@@ -57,6 +64,7 @@ export async function submitContactUs(fields: {
   return postJson<ApiResult>(LANDING.contactUs, fields);
 }
 
+/** General career interest — POST /landing/career */
 export async function submitCareerApplication(fields: {
   name: string;
   linkedinURL: string;
@@ -67,7 +75,45 @@ export async function submitCareerApplication(fields: {
   return postJson<ApiResult>(LANDING.career, fields);
 }
 
+/** Open jobs from admin portal — GET /landing/jobs */
+export async function fetchOpenJobs(): Promise<ApiJob[]> {
+  const res = await fetch(LANDING.jobs);
+  const json = (await res.json().catch(() => null)) as {
+    success?: boolean;
+    data?: ApiJob[];
+  } | null;
+  if (json?.success && Array.isArray(json.data)) return json.data;
+  return [];
+}
+
+/** Per-job application — POST /landing/jobs/:id/apply (legacy Careers page). */
+export async function submitJobApplication(
+  jobId: string,
+  fields: {
+    name: string;
+    email: string;
+    phone: string;
+    company: string;
+    linkedinURL: string;
+    cvURL: string;
+  }
+): Promise<ApiResult> {
+  return postJson<ApiResult>(LANDING.jobApply(jobId), {
+    name: fields.name.trim(),
+    email: fields.email.trim(),
+    phone: fields.phone.trim(),
+    company: fields.company.trim(),
+    linkedinURL: fields.linkedinURL.trim(),
+    cvURL: fields.cvURL.trim(),
+    ...(COMPANY_ID_FOR_LANDING ? { companyId: COMPANY_ID_FOR_LANDING } : {}),
+  });
+}
+
 export async function uploadCvToCloudinary(file: File): Promise<string> {
+  if (file.size > MAX_CV_BYTES) {
+    throw new Error("File must be 5MB or smaller.");
+  }
+
   const formData = new FormData();
   formData.append("file", file);
   formData.append("upload_preset", CLOUDINARY.uploadPreset);
@@ -76,8 +122,14 @@ export async function uploadCvToCloudinary(file: File): Promise<string> {
     method: "POST",
     body: formData,
   });
-  if (!res.ok) throw new Error("CV upload failed");
-  const data = (await res.json()) as { secure_url?: string };
-  if (!data.secure_url) throw new Error("CV upload failed");
+  const data = (await res.json().catch(() => null)) as {
+    secure_url?: string;
+    error?: { message?: string };
+  } | null;
+  if (!res.ok || !data?.secure_url) {
+    throw new Error(
+      typeof data?.error?.message === "string" ? data.error.message : "CV upload failed"
+    );
+  }
   return data.secure_url;
 }

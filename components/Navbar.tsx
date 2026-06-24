@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { CtaLink } from "@/components/ui/cta-link";
 import { Logo } from "@/components/Logo";
+import { LOGIN_PAGE } from "@/lib/api-config";
 
 const navLinks = [
   { label: "Product", href: "/#product" },
@@ -35,7 +36,7 @@ export function Navbar() {
         </ul>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <CtaLink href="https://ai.talentspotifyapp.com" variant="ghost">
+          <CtaLink href={LOGIN_PAGE} variant="ghost">
             Login
           </CtaLink>
           <CtaLink href="/#book-demo" variant="primary">
@@ -70,7 +71,7 @@ export function Navbar() {
               </li>
             ))}
             <li className="mt-2 flex flex-col gap-2 px-3">
-              <CtaLink href="https://ai.talentspotifyapp.com" variant="outline" className="w-full">
+              <CtaLink href={LOGIN_PAGE} variant="outline" className="w-full">
                 Login
               </CtaLink>
               <CtaLink href="/#book-demo" variant="primary" className="w-full" onClick={() => setOpen(false)}>

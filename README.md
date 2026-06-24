@@ -7,7 +7,7 @@ positioning, pricing, an interactive ROI calculator, and a demo-request form.
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000
+npm run dev      # http://localhost:5001
 ```
 
 Build / checks:
