@@ -23,6 +23,9 @@ export const COMPANY_ID_FOR_LANDING =
 export const LOGIN_PAGE =
   process.env.NEXT_PUBLIC_LOGIN_PAGE ?? "https://ai.talentspotify.com";
 
+/** Brand key sent with all landing form submissions for email logo resolution. */
+export const LANDING_BRAND = "talentspotify";
+
 export const LANDING = {
   requestDemo: REQUEST_DEMO_URL,
   contactUs: `${LANDING_API_BASE}/contactus`,

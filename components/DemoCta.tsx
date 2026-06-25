@@ -9,6 +9,9 @@ import { submitRequestDemo } from "@/lib/landing-api";
 const inputClasses =
   "h-12 w-full rounded-lg border border-white/20 bg-white/5 px-4 text-white placeholder:text-white/55 focus:border-brand-light focus:outline-none focus:ring-2 focus:ring-brand-light";
 
+const selectClasses =
+  "h-12 w-full rounded-lg border border-white/20 bg-white px-4 text-slate-900 focus:border-brand-light focus:outline-none focus:ring-2 focus:ring-brand-light [&>option]:bg-white [&>option]:text-slate-900";
+
 // Off-screen honeypot — visible to bots, never to humans (not display:none, so
 // bots that skip hidden fields still fill it). No tab stop, no autofill.
 const honeypotStyle: React.CSSProperties = {
@@ -150,7 +153,7 @@ export function DemoCta() {
                   <label htmlFor="companySize" className="mb-1.5 block text-sm font-medium text-white/85">
                     Company size
                   </label>
-                  <select id="companySize" name="companySize" required className={inputClasses} defaultValue="">
+                  <select id="companySize" name="companySize" required className={selectClasses} defaultValue="">
                     <option value="" disabled>
                       Select
                     </option>

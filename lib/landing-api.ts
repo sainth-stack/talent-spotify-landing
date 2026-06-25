@@ -2,6 +2,7 @@ import {
   CLOUDINARY,
   COMPANY_ID_FOR_LANDING,
   LANDING,
+  LANDING_BRAND,
   MAX_CV_BYTES,
   type ApiJob,
   type ApiResult,
@@ -24,6 +25,10 @@ async function postJson<T>(url: string, body: unknown): Promise<T> {
   return data as T;
 }
 
+function withLandingBrand<T extends Record<string, unknown>>(body: T): T & { brand: string } {
+  return { ...body, brand: LANDING_BRAND };
+}
+
 /** Split full name into first/second — legacy popup sent both fields separately. */
 function splitName(fullName: string): { firstName: string; secondName: string } {
   const parts = fullName.trim().split(/\s+/);
@@ -40,18 +45,22 @@ export async function submitRequestDemo(fields: {
   region?: string;
 }): Promise<ApiResult> {
   const { firstName, secondName } = splitName(fields.fullName);
-  return postJson<ApiResult>(LANDING.requestDemo, {
-    firstName,
-    secondName,
-    businessEmail: fields.workEmail.trim(),
-    phoneNumber: fields.phone.trim(),
-    sizeOfOrganization: fields.companySize,
-    region: fields.region ?? "Asia Pacific",
-  });
+  return postJson<ApiResult>(
+    LANDING.requestDemo,
+    withLandingBrand({
+      fullName: fields.fullName.trim(),
+      firstName,
+      secondName,
+      businessEmail: fields.workEmail.trim(),
+      phoneNumber: fields.phone.trim(),
+      sizeOfOrganization: fields.companySize,
+      region: fields.region ?? "Asia Pacific",
+    })
+  );
 }
 
 export async function submitEmailSignup(email: string): Promise<ApiResult> {
-  return postJson<ApiResult>(LANDING.emailSignup, { email: email.trim() });
+  return postJson<ApiResult>(LANDING.emailSignup, withLandingBrand({ email: email.trim() }));
 }
 
 export async function submitContactUs(fields: {
@@ -61,7 +70,7 @@ export async function submitContactUs(fields: {
   phone: string;
   message: string;
 }): Promise<ApiResult> {
-  return postJson<ApiResult>(LANDING.contactUs, fields);
+  return postJson<ApiResult>(LANDING.contactUs, withLandingBrand(fields));
 }
 
 /** General career interest — POST /landing/career */
@@ -72,7 +81,7 @@ export async function submitCareerApplication(fields: {
   phone: string;
   cvURL: string;
 }): Promise<ApiResult> {
-  return postJson<ApiResult>(LANDING.career, fields);
+  return postJson<ApiResult>(LANDING.career, withLandingBrand(fields));
 }
 
 /** Open jobs from admin portal — GET /landing/jobs */
@@ -98,15 +107,18 @@ export async function submitJobApplication(
     cvURL: string;
   }
 ): Promise<ApiResult> {
-  return postJson<ApiResult>(LANDING.jobApply(jobId), {
-    name: fields.name.trim(),
-    email: fields.email.trim(),
-    phone: fields.phone.trim(),
-    company: fields.company.trim(),
-    linkedinURL: fields.linkedinURL.trim(),
-    cvURL: fields.cvURL.trim(),
-    ...(COMPANY_ID_FOR_LANDING ? { companyId: COMPANY_ID_FOR_LANDING } : {}),
-  });
+  return postJson<ApiResult>(
+    LANDING.jobApply(jobId),
+    withLandingBrand({
+      name: fields.name.trim(),
+      email: fields.email.trim(),
+      phone: fields.phone.trim(),
+      company: fields.company.trim(),
+      linkedinURL: fields.linkedinURL.trim(),
+      cvURL: fields.cvURL.trim(),
+      ...(COMPANY_ID_FOR_LANDING ? { companyId: COMPANY_ID_FOR_LANDING } : {}),
+    })
+  );
 }
 
 export async function uploadCvToCloudinary(file: File): Promise<string> {
