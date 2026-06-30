@@ -24,6 +24,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/privacy`,  lastModified: now, changeFrequency: "yearly",  priority: 0.3 },
     { url: `${SITE}/terms`,    lastModified: now, changeFrequency: "yearly",  priority: 0.3 },
     { url: `${SITE}/gdpr`,     lastModified: now, changeFrequency: "yearly",  priority: 0.3 },
+    { url: `${SITE}/compare`,  lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE}/compare/talentspotify-vs-darwinbox`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE}/compare/talentspotify-vs-lattice`,   lastModified: now, changeFrequency: "monthly", priority: 0.8 },
   ];
 
   const blogRoutes: MetadataRoute.Sitemap = posts.map((p) => ({

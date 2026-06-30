@@ -2,14 +2,32 @@ import { faqGroups } from "@/lib/faqs";
 
 const SITE = "https://www.talentspotify.com";
 
-// Flatten the grouped FAQ content so the FAQPage schema always mirrors the
-// questions visitors actually see on the page (single source of truth).
 const faqs = faqGroups.flatMap((g) => g.items);
 
-/** JSON-LD structured data for the homepage: Organization, SoftwareApplication,
+/** JSON-LD structured data for the homepage: Organization (with sameAs entity
+ *  graph + founders), SoftwareApplication (all three pricing tiers + featureList),
  *  and FAQPage. Rendered server-side as a single script tag. */
 export function StructuredData() {
   const graph = [
+    {
+      "@type": "Person",
+      "@id": `${SITE}/#aneel`,
+      name: "Aneel Kumar Bonu",
+      jobTitle: "Founder & CEO",
+      worksFor: { "@id": `${SITE}/#organization` },
+      url: `${SITE}/about`,
+      image: `${SITE}/team/aneel.jpg`,
+      sameAs: ["https://www.linkedin.com/in/aneelkumarbonu/"],
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE}/#prashanth`,
+      name: "Prashanth Guraka",
+      jobTitle: "Co-Founder & CTO",
+      worksFor: { "@id": `${SITE}/#organization` },
+      url: `${SITE}/about`,
+      image: `${SITE}/team/prashanth.jpg`,
+    },
     {
       "@type": "Organization",
       "@id": `${SITE}/#organization`,
@@ -32,22 +50,59 @@ export function StructuredData() {
         { "@type": "Country", name: "India" },
         { "@type": "Place", name: "GCC" },
       ],
-      // TODO(owner): add real social profile URLs (LinkedIn, X, etc.) to sameAs.
-      sameAs: [] as string[],
+      founder: [
+        { "@id": `${SITE}/#aneel` },
+        { "@id": `${SITE}/#prashanth` },
+      ],
+      sameAs: [
+        "https://www.linkedin.com/company/talentspotify/",
+        "https://www.crunchbase.com/organization/talentspotify",
+        "https://x.com/talentspotify",
+        "https://www.instagram.com/talentspotify/",
+        "https://www.g2.com/products/talentspotify",
+      ],
     },
     {
       "@type": "SoftwareApplication",
+      "@id": `${SITE}/#software`,
       name: "TalentSpotify",
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
       description:
         "AI performance review software with TARA, an AI voice agent that surfaces bias signals, generates a fairness score, captures OKR progress, and helps HR teams prevent unfair review outcomes.",
-      offers: {
-        "@type": "Offer",
-        price: "76",
-        priceCurrency: "INR",
-        description: "Per employee / month, billed annually. Final pricing depends on employee count, TARA usage, and implementation scope.",
-      },
+      featureList: [
+        "AI voice agent (TARA) for performance conversations",
+        "Real-time bias detection across 14 bias types",
+        "Fairness score and evidence trail on every review",
+        "OKR setting and continuous check-ins",
+        "Recognition and rewards feed",
+        "Calibration and fairness dashboards",
+        "DPDPA & GDPR compliant data handling",
+        "Multilingual support for Indian workforces",
+      ],
+      offers: [
+        {
+          "@type": "Offer",
+          name: "Platform",
+          price: "76",
+          priceCurrency: "INR",
+          description: "OKR & goal setting, performance reviews, fairness scoring, recognition feed. ₹76/employee/month billed annually.",
+        },
+        {
+          "@type": "Offer",
+          name: "TARA Standalone",
+          price: "99",
+          priceCurrency: "INR",
+          description: "TARA AI voice agent for bias-detected reviews and OKR conversations, layered onto your existing HRMS. ₹99/employee/month billed annually.",
+        },
+        {
+          "@type": "Offer",
+          name: "TARA on TalentSpotify",
+          price: "149",
+          priceCurrency: "INR",
+          description: "Full platform plus TARA AI voice reviews, calibration, and fairness dashboards. ₹149/employee/month billed annually.",
+        },
+      ],
       publisher: { "@id": `${SITE}/#organization` },
     },
     {

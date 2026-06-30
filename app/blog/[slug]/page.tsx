@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { ArticleSchema } from "@/components/ArticleSchema";
 import { posts, type Category, type ContentBlock } from "@/app/blog/data";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -138,6 +139,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
+      <ArticleSchema post={post} />
       <Navbar />
       <main>
         {/* ── Hero ── */}

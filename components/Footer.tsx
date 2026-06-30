@@ -22,6 +22,8 @@ const columns = [
     links: [
       { label: "Blog", href: "/blog" },
       { label: "Customer Stories", href: "/case-study" },
+      { label: "vs Darwinbox", href: "/compare/talentspotify-vs-darwinbox" },
+      { label: "vs Lattice", href: "/compare/talentspotify-vs-lattice" },
     ],
   },
   {

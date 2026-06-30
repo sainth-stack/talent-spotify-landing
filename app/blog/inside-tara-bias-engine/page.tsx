@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
+import { ArticleSchema } from '@/components/ArticleSchema';
+import { posts } from '@/app/blog/data';
 
 export const metadata: Metadata = {
   title: 'Many biases. One transparent score. — TalentSpotify Blog',
@@ -559,8 +561,10 @@ function PullQuote() {
 
 /* ── Page ──────────────────────────────────────────────────── */
 export default function TaraBiasEnginePage() {
+  const post = posts.find((p) => p.slug === "inside-tara-bias-engine")!;
   return (
     <>
+      <ArticleSchema post={post} />
       <Navbar />
       <main>
         {/* ── 1. Hero ── */}

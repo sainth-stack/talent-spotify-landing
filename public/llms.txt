@@ -8,8 +8,21 @@
 - [Product](https://www.talentspotify.com/#product): The three modules — Perform (reviews), Align (OKRs), and Recognise (rewards & recognition).
 - [TARA AI](https://www.talentspotify.com/#tara): How the AI voice agent runs the performance cycle and flags bias before ratings lock.
 - [Why fairness](https://www.talentspotify.com/#fairness): Fairness scoring and the 14-bias taxonomy that make bias measurable, not just promised.
-- [Pricing](https://www.talentspotify.com/#pricing): Per-employee pricing for Indian mid-market teams — TARA Standalone, full platform, and enterprise.
+- [Pricing](https://www.talentspotify.com/#pricing): Per-employee pricing for Indian mid-market teams — Platform (₹76), TARA Standalone (₹99), and TARA on TalentSpotify (₹149). All per employee per month, billed annually.
 - [Customer story](https://www.talentspotify.com/case-study): How a distributed social-enterprise field workforce runs fairer reviews on TalentSpotify.
 - [ROI calculator](https://www.talentspotify.com/roi-calculator): Estimate the cost of biased reviews and what TARA recovers.
 - [FAQ](https://www.talentspotify.com/#faq): Answers for HR leaders, founders, IT, and finance on bias, data handling, and pricing.
 - [Request a demo / contact](https://www.talentspotify.com/#book-demo): Book a 30-minute walkthrough or contact sales.
+
+## Compare
+
+- [TalentSpotify vs Darwinbox](https://www.talentspotify.com/compare/talentspotify-vs-darwinbox): Side-by-side comparison of TalentSpotify and Darwinbox for AI-powered performance reviews. TalentSpotify focuses on bias detection and fairness for mid-market Indian companies; Darwinbox is a broad enterprise HRMS suite.
+- [TalentSpotify vs Lattice](https://www.talentspotify.com/compare/talentspotify-vs-lattice): Side-by-side comparison of TalentSpotify and Lattice. TalentSpotify is built for Indian mid-market teams with INR pricing and DPDPA compliance; Lattice is a US-headquartered people management platform priced in USD.
+- [Compare hub](https://www.talentspotify.com/compare): Overview of how TalentSpotify compares to other performance management vendors.
+
+## About
+
+TalentSpotify was founded in Bengaluru, India, by **Aneel Kumar Bonu** (Founder & CEO) and **Prashanth Guraka** (Co-Founder & CTO). The company is incorporated as TalentSpotify Private Limited (CIN: U72900KA2022PTC157845).
+
+- [About page](https://www.talentspotify.com/about): Founding story, team, values, and vision.
+- [Careers](https://www.talentspotify.com/careers): Open roles and how TalentSpotify works.
