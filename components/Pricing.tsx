@@ -200,11 +200,24 @@ export function Pricing() {
         </div>
 
         <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-slate-500">
-          500+ employees or a custom HRMS integration?{" "}
-          <a href="/#contact-sales" className="font-semibold text-brand underline-offset-4 hover:underline">
-            Contact Sales
+          Pricing shown applies to entities legally registered in India.
+          <br />
+          For organisations outside India, pricing is tailored to your region, team
+          size and HRMS setup. Email{" "}
+          <a
+            href="mailto:contact@talentspotify.com"
+            className="font-semibold text-brand underline-offset-4 hover:underline"
+          >
+            contact@talentspotify.com
           </a>{" "}
-          for GCC / enterprise pricing.
+          or{" "}
+          <a
+            href="/#contact-sales"
+            className="font-semibold text-brand underline-offset-4 hover:underline"
+          >
+            request pricing here
+          </a>
+          .
         </p>
       </div>
     </section>
